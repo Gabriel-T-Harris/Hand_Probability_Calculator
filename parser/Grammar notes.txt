@@ -1,5 +1,5 @@
 Configuration file grammar:
-//regex which replace litteral values used are represented by the following:
+//regex which replace literal values used are represented by the following:
 deck_list: deck list:
 card_name: [^;\]]+ //include CONDITION_CARD_END
 scenarios: scenarios:
@@ -8,7 +8,7 @@ display: display
 Upper case: and, or, xor, true, false.
 single symbol are exactly the same.
 
-//lowercase for literal, capital for production rule.
+//lower case for literal, capital for production rule.
 START -> DECK PROBABILITY .
 
 DECK -> DECK_START SENTINEL_START DECK_LIST SENTINEL_END.
