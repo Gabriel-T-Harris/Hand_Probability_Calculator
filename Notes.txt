@@ -1,0 +1,56 @@
+Configuration File:
+
+-deck list
+    -throw away none main deck parts
+-maybe read a ydk file instead of in same file.
+-declare scenarios
+-state which to display at the end
+
+Structure:
+
+-store scenarios to do not repeat evaluation
+-tree of nodes
+    -operators and scenarios
+-short circuit operator evaluation
+-node per operator
+-node per single match as leaf
+-TODO: figure out duplicates and overlap of sub-scenarios.
+
+Parser:
+
+-Like a compiler going over expressions.
+-Table driven?
+
+Later Versions:
+
+-add special ability to cards
+    -example, when a hand includes a draw card, apply draw to look at more cards for evaluations
+
+-provide more options for writing configuration file?
+-additional options for command line arguments?
+    -maybe put in the planned (yet to be written) command line argument parser
+
+
+Configuration file grammar:
+//TODO: finish
+//quotation for literal, capital for production rule.
+START -> DECK PROBABILITY
+DECK -> "Deck list:{" CARD ENTRY //deck list
+ENTRY -> CARD ENTRY | "}" //any number of cards
+CARD -> NAME ";" //card
+
+PROBABILITY -> "Scenarios:{" SCENARIO MORE //stuff to be calculated
+MORE -> SCENARIO MORE | "}" //any number scenarios
+SCENARIO -> SCENARIO_NAME TREE DISPLAY "}"//scenario
+SCENARIO_NAME -> NAME "= {" //name of scenario
+TREE -> "Scenario = {" EXPRESSION "}"//probability being calculated
+DISPLAY -> "Display = " ("true" | "false") ";" | NULL //optional
+
+EXPRESSION -> NEGATE "(" EXPRESSION ")" | PART OPERATOR
+PART -> NEGATE ("[" NAME "]" | "<" NAME ">") //brackets for card and angular braces for scenario
+NEGATE -> "NOT" | NULL //optional
+OPERATOR -> ("OR" | "AND" | "XOR") (PART | EXPRESSION) | NULL
+
+NAME -> [^;]+
+
+https://smlweb.cpsc.ucalgary.ca/vital-stats.php?grammar=START+-%3E+DECK+PROBABILITY+.%0D%0ADECK+-%3E+deck+list%3A+open_brace+CARD+ENTRY+.%0D%0AENTRY+-%3E+CARD+ENTRY+%7C+close_brace+.%0D%0ACARD+-%3E+NAME+%3B+.%0D%0A%0D%0APROBABILITY+-%3E+scenarios%3A+open_brace+SCENARIO+MORE+.%0D%0AMORE+-%3E+SCENARIO+MORE+%7C+close_brace+.%0D%0ASCENARIO+-%3E+SCENARIO_NAME+TREE+DISPLAY+close_brace+.%0D%0ASCENARIO_NAME+-%3E+NAME+equals+open_brace+.%0D%0ATREE+-%3E+scenario+equals+open_brace+EXPRESSION+close_brace+.%0D%0ADISPLAY+-%3E+display+equals+DISPLAY1+%3B+%7C+.%0D%0ADISPLAY1+-%3E+true+%7C+false+.%0D%0A%0D%0AEXPRESSION+-%3E+NEGATE+open_parenthese+EXPRESSION+close_parenthese+%7C+PART+OPERATOR+.%0D%0APART+-%3E+NEGATE+PART1+.%0D%0APART1+-%3E+open_bracket+NAME+close_bracket+%7C+open_angular+NAME+close_angular+.%0D%0ANEGATE+-%3E+not+%7C+.%0D%0AOPERATOR+-%3E+OPERATOR1+OPERATOR2+%7C+.%0D%0AOPERATOR1+-%3E+or+%7C+and+%7C+xor+.%0D%0AOPERATOR2+-%3E+PART+%7C+EXPRESSION+.%0D%0A%0D%0ANAME+-%3E+name+.
