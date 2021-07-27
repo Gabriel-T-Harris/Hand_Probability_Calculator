@@ -1,0 +1,137 @@
+/*
+Using 5 Card Poker as a base line for testing the evaluation part. Very complicated base line, so is rather robust test.
+
+"
+Hand                                                 Probability    Number of Hands
+Single Pair                                          0.422569       1098240
+Two Pair                                             0.047539       123552
+Triple                                               0.0211285      54912
+Full House                                           0.00144058     3744
+Four of a Kind                                       0.000240096    624
+Straight (excluding Straight Flush and Royal Flush)  0.00392465     10200
+Flush (but not a Straight)                           0.0019654      5108
+Straight Flush (but not Royal)                       0.0000138517   36
+Royal Flush                                          0.00000153908  4
+None of the Above                                    0.501177       1302540
+Sum over except this list                            0.999999616    2598960"
+
+Values from:
+http://people.math.sfu.ca/~alspach/comp18/
+http://www.math.hawaii.edu/~ramsey/Probability/PokerHands.html
+*/
+
+deck list:
+{
+ Ace Clubs; Ace Diamonds; Ace Hearts; Ace Spades;
+ Two Clubs; Two Diamonds; Two Hearts; Two Spades;
+ Three Clubs; Three Diamonds; Three Hearts; Three Spades;
+ Four Clubs; Four Diamonds; Four Hearts; Four Spades;
+ Five Clubs; Five Diamonds; Five Hearts; Five Spades;
+ Six Clubs; Six Diamonds; Six Hearts; Six Spades;
+ Seven Clubs; Seven Diamonds; Seven Hearts; Seven Spades;
+ Eight Clubs; Eight Diamonds; Eight Hearts; Eight Spades;
+ Nine Clubs; Nine Diamonds; Nine Hearts; Nine Spades;
+ Ten Clubs; Ten Diamonds; Ten Hearts; Ten Spades;
+ Jack Clubs; Jack Diamonds; Jack Hearts; Jack Spades;
+ Queen Clubs; Queen Diamonds; Queen Hearts; Queen Spades;
+ King Clubs; King Diamonds; King Hearts; King Spades;
+}
+scenarios:
+{
+ Aces = {scenario = {[Ace Clubs] OR [Ace Diamonds] OR [Ace Hearts] OR [Ace Spades]};display = false;}
+ Twos = {scenario = {[Two Clubs] OR [Two Diamonds] OR [Two Hearts] OR [Two Spades]};display = false;}
+ Threes = {scenario = {[Three Clubs] OR [Three Diamonds] OR [Three Hearts] OR [Three Spades]};display = false;}
+ Fours = {scenario = {[Four Clubs] OR [Four Diamonds] OR [Four Hearts] OR [Four Spades]};display = false;}
+ Fives = {scenario = {[Five Clubs] OR [Five Diamonds] OR [Five Hearts] OR [Five Spades]};display = false;}
+ Sixes = {scenario = {[Six Clubs] OR [Six Diamonds] OR [Six Hearts] OR [Six Spades]};display = false;}
+ Sevens = {scenario = {[Seven Clubs] OR [Seven Diamonds] OR [Seven Hearts] OR [Seven Spades]};display = false;}
+ Eights = {scenario = {[Eight Clubs] OR [Eight Diamonds] OR [Eight Hearts] OR [Eight Spades]};display = false;}
+ Nines = {scenario = {[Nine Clubs] OR [Nine Diamonds] OR [Nine Hearts] OR [Nine Spades]};display = false;}
+ Tens = {scenario = {[Ten Clubs] OR [Ten Diamonds] OR [Ten Hearts] OR [Ten Spades]};display = false;}
+ Jacks = {scenario = {[Jack Clubs] OR [Jack Diamonds] OR [Jack Hearts] OR [Jack Spades]};display = false;}
+ Queens = {scenario = {[Queen Clubs] OR [Queen Diamonds] OR [Queen Hearts] OR [Queen Spades]};display = false;}
+ Kings = {scenario = {[King Clubs] OR [King Diamonds] OR [King Hearts] OR [King Spades]};display = false;}
+
+ //Not necessarily the most effective in terms of set up, but should be correct.
+
+ Single Pair       = {scenario = {};}
+ 
+ Triple            = {scenario = {
+                                  (
+                                   (<Aces> AND <Aces> AND <Aces> AND NOT <Aces>) OR 
+                                   (<Twos> AND <Twos> AND <Twos> AND NOT <Twos>) OR 
+                                   (<Threes> AND <Threes> AND <Threes> AND NOT <Threes>) OR 
+                                   (<Fours> AND <Fours> AND <Fours> AND NOT <Fours>) OR 
+                                   (<Fives> AND <Fives> AND <Fives> AND NOT <Fives>) OR 
+                                   (<Sixes> AND <Sixes> AND <Sixes> AND NOT <Sixes>) OR 
+                                   (<Sevens> AND <Sevens> AND <Sevens> AND NOT <Sevens>) OR 
+                                   (<Eights> AND <Eights> AND <Eights> AND NOT <Eights>) OR 
+                                   (<Nines> AND <Nines> AND <Nines> AND NOT <Nines>) OR 
+                                   (<Tens> AND <Tens> AND <Tens> AND NOT <Tens>) OR 
+                                   (<Jacks> AND <Jacks> AND <Jacks> AND NOT <Jacks>) OR 
+                                   (<Queens> AND <Queens> AND <Queens> AND NOT <Queens>) OR 
+                                   (<Kings> AND <Kings> AND <Kings> AND NOT <Kings>)
+                                  ) AND NOT <Single Pair>
+                                 };}
+ 
+ Full House        = {scenario = {<Triple> AND <Single Pair>};}
+ 
+ Four of a Kind    = {scenario = {
+                                  (<Aces> AND <Aces> AND <Aces> AND <Aces>) OR 
+                                  (<Twos> AND <Twos> AND <Twos> AND <Twos>) OR 
+                                  (<Threes> AND <Threes> AND <Threes> AND <Threes>) OR 
+                                  (<Fours> AND <Fours> AND <Fours> AND <Fours>) OR 
+                                  (<Fives> AND <Fives> AND <Fives> AND <Fives>) OR 
+                                  (<Sixes> AND <Sixes> AND <Sixes> AND <Sixes>) OR 
+                                  (<Sevens> AND <Sevens> AND <Sevens> AND <Sevens>) OR 
+                                  (<Eights> AND <Eights> AND <Eights> AND <Eights>) OR 
+                                  (<Nines> AND <Nines> AND <Nines> AND <Nines>) OR 
+                                  (<Tens> AND <Tens> AND <Tens> AND <Tens>) OR 
+                                  (<Jacks> AND <Jacks> AND <Jacks> AND <Jacks>) OR 
+                                  (<Queens> AND <Queens> AND <Queens> AND <Queens>) OR 
+                                  (<Kings> AND <Kings> AND <Kings> AND <Kings>)
+                                 };}
+                                 
+ Two Pair          = {scenario = {NOT <Four of a Kind> NOT <Triple> AND <Single Pair> AND <Single Pair>};} //Not for of a kind prevents pairs from being same rank and not triple prevents last card from being same rank as any of the pairs.
+ 
+ Straight          = {scenario = {};}
+ 
+ Flush             = {scenario = {};}
+ 
+ Straight Flush    = {scenario = {};}
+ 
+ Royal Flush       = {scenario = {};}
+ 
+ None of the Above = {scenario = {
+                                  NOT (<Single Pair> OR <Two Pair> OR <Triple> OR
+                                       <Full House> OR <Four of a Kind> OR <Straight> OR
+                                       <Flush> OR <Straight Flush> OR <Royal Flush>)
+                                 };}
+}
+
+/*
+Other:
+Line Comment, yes
+Block Comment, yes
+Block Comment error, no
+
+Deck List properties:
+Duplicate Card, no
+Invalid Card, no
+No Deck Error, no
+
+Scenario List Properties:
+No Scenario Defined Error, no
+Invalid Name, no
+Repeated Name Error, no
+Binary Operator, yes
+Binary Operand Missing, no
+Reference Scenario, yes
+Undefined Referenced Scenario Error, no
+Empty scenario, no
+Has Display, yes
+Invalid Display, no
+Unary Operator, yes
+Multiple Unary, no
+Nesting of Expressions, yes
+*/

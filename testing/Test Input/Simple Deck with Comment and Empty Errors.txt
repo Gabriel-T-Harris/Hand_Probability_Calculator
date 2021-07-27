@@ -1,0 +1,45 @@
+deck list:{} // no deck error
+
+scenarios:{} // no scenarios error
+
+//ending block comment without start
+
+*/
+
+/*
+Line Comment, yes
+Block Comment, yes
+Block Comment error, yes
+
+Deck List properties:
+Duplicate Card, no
+Invalid Card, no
+No Deck Error, yes
+
+Scenario List Properties:
+No Scenario Defined Error, yes
+Invalid Name, no
+Repeated Name Error, no
+Binary Operator, no
+Binary Operand Missing, no
+Reference Scenario, no
+Undefined Referenced Scenario Error, no
+Empty scenario, no
+Has Display, no
+Invalid Display, no
+Unary Operator, no
+Multiple Unary, no
+Nesting of Expressions, no
+*/
+
+//block comment started but never ended
+
+/*
+
+agdg
+
+dfg
+sdf
+gs
+fdg
+sdfg

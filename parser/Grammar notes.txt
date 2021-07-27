@@ -8,7 +8,11 @@ display: display
 Upper case: and, or, xor, true, false.
 single symbol are exactly the same.
 
+Merge card_name and scenario_name and not allowing any already reserved special characters into unified ID regex for tokenizer.
+Thus ID: [^;:=<>\(\)\{\}]+ and grammar will defer to ID in places it used to use them.
+
 //lower case for literal, capital for production rule.
+//Note grammar does not have the unification resulting in ID, though is coded with that change.
 START -> DECK PROBABILITY .
 
 DECK -> DECK_START SENTINEL_START DECK_LIST SENTINEL_END.
@@ -28,7 +32,7 @@ SCENARIO -> SCENARIO_NAME equals SENTINEL_START TREE DISPLAY SENTINEL_END .
 SCENARIO_NAME -> scenario_name .
 
 TREE -> TREE_START SENTINEL_START EXPR SENTINEL_END ; .
-TREE_START -> scenario equals .
+TREE_START -> scenario = .
 
 EXPR -> UNARY_EXPR BINARY_EXPR .
 
@@ -49,7 +53,7 @@ BINARY_EXPR -> BINARY_OPERATOR UNARY_EXPR BINARY_EXPR | .
 BINARY_OPERATOR -> and | or | xor .
 
 DISPLAY -> DISPLAY_START DISPLAY_VALUE ; | .
-DISPLAY_START -> display equals .
+DISPLAY_START -> display = .
 DISPLAY_VALUE -> true | false .
 
 SENTINEL_START -> {.

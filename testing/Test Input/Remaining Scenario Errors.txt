@@ -1,0 +1,58 @@
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+//Some other variations exist for errors, but am not specifically noting them in error files.
+scenarios:
+{
+ Duplicate = {scenario = {[7th]};}
+ 
+ Duplicate = {scenario = {[6th]};} //repeated name error
+ 
+ //Other variations of missing stuff with binary operators is not specifically tested for but is invalid.
+ Binary Operand Missing = {scenario = {[A] XOR};} //missing operand error
+ 
+ Undefined reference = {scenario = {<Does Not Exist>};}//undefined referenced scenario
+ 
+ Empty Scenario Error = {scenario = {};} //empty scenario error
+ 
+ Display Error 1 = {scenario = {[Forth]}; display =}//invalid display value
+ 
+ Display Error 2 = {scenario = {<Duplicate>}; display = invalid_value}//invalid display value
+}
+
+/*
+Other:
+Line Comment, yes
+Block Comment, yes
+Block Comment error, no
+
+Deck List properties:
+Duplicate Card, yes
+Invalid Card, no
+No Deck Error, no
+
+Scenario List Properties:
+No Scenario Defined Error, no
+Invalid Name, no
+Repeated Name Error, yes
+Binary Operator, yes
+Binary Operand Missing, yes
+Reference Scenario, yes
+Undefined Referenced Scenario Error, yes
+Empty scenario, yes
+Has Display, yes
+Invalid Display, yes
+Unary Operator, no
+Multiple Unary, no
+Nesting of Expressions, no
+*/

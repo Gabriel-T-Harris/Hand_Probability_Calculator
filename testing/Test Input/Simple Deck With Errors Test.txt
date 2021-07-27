@@ -1,0 +1,50 @@
+deck list:
+{
+First Card;
+Second Card;
+First Card; //duplicate card
+;; //invalid due to empty name
+]; //invalid due to having an ]
+// line comment
+good card name;
+convulted wr932jtfmnjr93tmj name; //valid
+sdfasfd]sdaga; // error due to ]
+}
+
+scenarios:
+{
+ Invalid name> = {} //very wrong
+ Good Name Without Display =
+                            {
+                             scenario =
+                             {
+                              [First Card]
+                             };
+                            }
+}
+/* 
+Other:
+Line Comment, yes
+Block Comment, yes
+Block Comment error, no
+
+Deck List properties:
+Duplicate Card, yes
+Invalid Card, yes
+No Deck Error, no
+
+Scenario List Properties:
+No Scenario Defined Error, no
+Invalid Name, yes
+Repeated Name Error, no
+Binary Operator, no
+Binary Operand Missing, no
+Reference Scenario, no
+Undefined Referenced Scenario Error, no
+Empty scenario, no
+Has Display, no
+Invalid Display, no
+Unary Operator, no
+Multiple Unary, no
+Nesting of Expressions, no
+*/
