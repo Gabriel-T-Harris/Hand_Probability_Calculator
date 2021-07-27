@@ -54,10 +54,10 @@ scenarios:
  Kings = {scenario = {[King Clubs] OR [King Diamonds] OR [King Hearts] OR [King Spades]};display = false;}
 
  //by suit
- Clubs =  = {scenario = {[Ace Clubs] OR [Two Clubs] OR [Three Clubs] OR [Four Clubs] OR [Five Clubs] OR [Six Clubs] OR [Seven Clubs] OR [Eight Clubs] OR [Nine Clubs] OR [Ten Clubs] OR [Jack Clubs] OR [Queen Clubs] OR [King Clubs]};display = false;}
- Diamonds =  = {scenario = {[Ace Diamonds] OR [Two Diamonds] OR [Three Diamonds] OR [Four Diamonds] OR [Five Diamonds] OR [Six Diamonds] OR [Seven Diamonds] OR [Eight Diamonds] OR [Nine Diamonds] OR [Ten Diamonds] OR [Jack Diamonds] OR [Queen Diamonds] OR [King Diamonds]};display = false;}
- Hearts =  = {scenario = {[Ace Hearts] OR [Two Hearts] OR [Three Hearts] OR [Four Hearts] OR [Five Hearts] OR [Six Hearts] OR [Seven Hearts] OR [Eight Hearts] OR [Nine Hearts] OR [Ten Hearts] OR [Jack Hearts] OR [Queen Hearts] OR [King Hearts]};display = false;}
- Spades =  = {scenario = {[Ace Spades] OR [Two Spades] OR [Three Spades] OR [Four Spades] OR [Five Spades] OR [Six Spades] OR [Seven Spades] OR [Eight Spades] OR [Nine Spades] OR [Ten Spades] OR [Jack Spades] OR [Queen Spades] OR [King Spades]};display = false;}
+ Clubs = {scenario = {[Ace Clubs] OR [Two Clubs] OR [Three Clubs] OR [Four Clubs] OR [Five Clubs] OR [Six Clubs] OR [Seven Clubs] OR [Eight Clubs] OR [Nine Clubs] OR [Ten Clubs] OR [Jack Clubs] OR [Queen Clubs] OR [King Clubs]};display = false;}
+ Diamonds = {scenario = {[Ace Diamonds] OR [Two Diamonds] OR [Three Diamonds] OR [Four Diamonds] OR [Five Diamonds] OR [Six Diamonds] OR [Seven Diamonds] OR [Eight Diamonds] OR [Nine Diamonds] OR [Ten Diamonds] OR [Jack Diamonds] OR [Queen Diamonds] OR [King Diamonds]};display = false;}
+ Hearts = {scenario = {[Ace Hearts] OR [Two Hearts] OR [Three Hearts] OR [Four Hearts] OR [Five Hearts] OR [Six Hearts] OR [Seven Hearts] OR [Eight Hearts] OR [Nine Hearts] OR [Ten Hearts] OR [Jack Hearts] OR [Queen Hearts] OR [King Hearts]};display = false;}
+ Spades = {scenario = {[Ace Spades] OR [Two Spades] OR [Three Spades] OR [Four Spades] OR [Five Spades] OR [Six Spades] OR [Seven Spades] OR [Eight Spades] OR [Nine Spades] OR [Ten Spades] OR [Jack Spades] OR [Queen Spades] OR [King Spades]};display = false;}
 
  //Not necessarily the most effective in terms of set up, but should be correct.
  Single Pair       = {scenario = {
