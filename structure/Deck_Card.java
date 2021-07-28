@@ -38,6 +38,6 @@ public class Deck_Card extends Base_Card
      */
     public <T extends Base_Card> boolean convenience_comparison(final T CARD)
     {
-        return this.used = this.equals(CARD);
+        return this.used = super.equals(CARD);
     }
 }

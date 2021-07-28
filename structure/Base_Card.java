@@ -48,7 +48,7 @@ public class Base_Card
     public boolean equals(final Object INPUT)
     {
         if (INPUT instanceof Base_Card)
-            return this.equals(INPUT);
+            return this.equals((Base_Card) INPUT);
         else
             return false;
     }
