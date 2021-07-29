@@ -3,5 +3,9 @@
 .project
 .classpath
 
+#JetBrains
+.idea/
+*.iml
+
 #Java
 *.class

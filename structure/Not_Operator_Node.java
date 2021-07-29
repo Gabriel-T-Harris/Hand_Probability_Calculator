@@ -46,4 +46,9 @@ public class Not_Operator_Node<T> extends Base_Node<T>
         super.reset();
         this.CHILD.reset();
     }
+
+    @Override
+    public boolean rollbackEvaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
+        return CHILD.rollbackEvaluate(hand, fallback, next);
+    }
 }

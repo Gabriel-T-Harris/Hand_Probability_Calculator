@@ -31,4 +31,13 @@ public class And_Operator_Node<T> extends Binary_Operator_Node<T>
 
         return super.result;
     }
+
+    @Override
+    public boolean rollbackEvaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
+        return LEFT_CHILD.rollbackEvaluate(
+                hand,
+                () -> RIGHT_CHILD.rollbackEvaluate(hand, next, fallback),
+                fallback
+        );
+    }
 }

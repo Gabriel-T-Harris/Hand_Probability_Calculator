@@ -10,7 +10,7 @@ Date: 2021-07-25
 </b>
 */
 
-public class Base_Card
+public class Base_Card implements Reservable
 {
     /**
      * Represents the name of this card.
@@ -21,6 +21,8 @@ public class Base_Card
      * Value should be {@link Name#hashCode()}.
      */
     protected final int HASH_CODE;
+
+    protected boolean reserved;
 
     /**
      * Constructor.
@@ -78,5 +80,20 @@ public class Base_Card
     public String toString()
     {
         return "Card name: " + this.NAME;
+    }
+
+    @Override
+    public void reserve() {
+        reserved = true;
+    }
+
+    @Override
+    public void release() {
+        reserved = false;
+    }
+
+    @Override
+    public boolean isReserved() {
+        return reserved;
     }
 }

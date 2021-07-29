@@ -1,6 +1,7 @@
 package structure;
 
 import java.util.Collection;
+import java.util.concurrent.Callable;
 
 /**
 <b>
@@ -60,5 +61,9 @@ public class Scenario<T> implements Evaluatable<T>
     {
         this.TREE_CONDITION.reset();
     }
-    
+
+    @Override
+    public boolean rollbackEvaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
+        return TREE_CONDITION.rollbackEvaluate(hand, next, fallback);
+    }
 }
