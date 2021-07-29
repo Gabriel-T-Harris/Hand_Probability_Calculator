@@ -53,7 +53,6 @@ public class Leaf_Node<T extends Base_Card, U extends T> extends Base_Node<T>
                 }
                 card.release();
             }
-            fallback.call();
         }
         return fallback.call();
     }
