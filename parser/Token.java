@@ -4,7 +4,7 @@ package parser;
 <b>
 Purpose: Types of Tokens to be created by Lexical Analyzer.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-26
+Date: 2021-07-26, 2021-7-30
 </b>
 */
 
@@ -45,13 +45,13 @@ public class Token
      * 
      * @param TYPE of LEXEME
      * @param LINE_NUMBER location in source file
-     * @param LEXEME content of LEXEME
+     * @param LEXEME content of lexeme which is then trimmed by {@link String#trim()}
      */
     public Token(final Token.Lexeme_Types TYPE, final long LINE_NUMBER, final String LEXEME)
     {
         this.TYPE = TYPE;
         this.LINE_NUMBER = LINE_NUMBER;
-        this.LEXEME = LEXEME;
+        this.LEXEME = LEXEME.trim();
     }
 
     //getters
