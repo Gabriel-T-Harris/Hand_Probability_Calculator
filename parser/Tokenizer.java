@@ -145,7 +145,7 @@ public class Tokenizer
     /**
      * Definition of valid char that an the ID lexeme can have.
      */
-    public final static Pattern ID_CHAR_SET = Pattern.compile("[^" + RESTRICTED_CHARS + "]");
+    public final static Pattern ID_CHAR_SET = Pattern.compile("[^" + RESTRICTED_CHARS.replace("{", "\\{").replace("}", "\\}").replace("[", "\\[").replace("]", "\\]") + "]");
 
     /**
      * Performs tokenization, after which other functions are called internally.

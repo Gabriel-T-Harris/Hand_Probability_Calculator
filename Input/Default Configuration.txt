@@ -1,0 +1,90 @@
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+ Contains "First" Card =
+                        {
+                         scenario = 
+                         {
+                          [First]
+                         };
+                        }
+ Contains "Second" Card =
+                         {
+                          scenario = 
+                          {
+                           [Second]
+                          };
+                          display = false;
+                         }
+ Contains Ash Blossom & Joyous Spring =
+                                       {
+                                        scenario = 
+                                        {
+                                         [Ash Blossom & Joyous Spring]
+                                        };
+                                       }
+
+ //should be the highest
+ First | Ash =
+              {
+               scenario =
+               {
+                <Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>
+               };
+              }
+
+ //should be the lowest
+ First & Ash =
+              {
+               scenario =
+               {
+                <Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>
+               };
+              }
+ //should be the same as First & Ash
+ First AND Ash =//legal name
+              {
+               scenario =
+               {
+                ([First]) AND NOT NOT [Ash Blossom & Joyous Spring]
+               };
+              }
+}
+/*
+Other:
+Line Comment, yes
+Block Comment, yes
+Block Comment error, no
+
+Deck List properties:
+Duplicate Card, yes
+Invalid Card, no
+No Deck Error, no
+
+Scenario List Properties:
+No Scenario Defined Error, no
+Invalid Name, no
+Repeated Name Error, no
+Binary Operator, yes
+Binary Operand Missing, no
+Reference Scenario, yes
+Undefined Referenced Scenario Error, no
+Empty scenario, no
+Has Display, yes
+Invalid Display, no
+Unary Operator, yes
+Multiple Unary, yes
+Nesting of Expressions, yes
+*/
