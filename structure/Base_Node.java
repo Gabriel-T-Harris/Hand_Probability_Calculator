@@ -15,7 +15,7 @@ public abstract class Base_Node<T> implements Evaluatable<T>
     /**
      * Unique identifier for this node.
      */
-    public final int UNIQUE_IDENTIFER;
+    public final int UNIQUE_IDENTIFIER;
 
     /**
      * The name of this node.
@@ -33,7 +33,7 @@ public abstract class Base_Node<T> implements Evaluatable<T>
     protected boolean result;
 
     /**
-     * Used to set {@link #UNIQUE_IDENTIFER}
+     * Used to set {@link #UNIQUE_IDENTIFIER}
      */
     private static int CREATED_NODES_COUNT = 0;
 
@@ -44,12 +44,6 @@ public abstract class Base_Node<T> implements Evaluatable<T>
     public Base_Node(final String NAME)
     {
         this.NAME = NAME;
-        this.UNIQUE_IDENTIFER = ++CREATED_NODES_COUNT;
-    }
-
-    @Override
-    public void reset()
-    {
-        this.evaluated = false;
+        this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
     }
 }

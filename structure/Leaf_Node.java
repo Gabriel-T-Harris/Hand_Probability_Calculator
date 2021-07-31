@@ -6,12 +6,12 @@ import java.util.Iterator;
 /**
 <b>
 Purpose: Also will be used as the leaf node of the tree structure.<br>
-Programmer: Gabriel Toban Harris <br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 Date: 2021-07-23
 </b>
 */
 
-public class Leaf_Node<T extends Base_Card, U extends T> extends Base_Node<T>
+public class Leaf_Node<T extends Reservable, U extends T> extends Base_Node<T>
 {
     /**
      * Card to be matched.
@@ -19,7 +19,7 @@ public class Leaf_Node<T extends Base_Card, U extends T> extends Base_Node<T>
     public final U CARD;
 
     /**
-     * Constructor for {@link #Leaf_Node(String, Base_Card)}
+     * Constructor for Reservable
      * 
      * @param NAME of the node
      * @param CARD to be matched
@@ -31,19 +31,7 @@ public class Leaf_Node<T extends Base_Card, U extends T> extends Base_Node<T>
     }
 
     @Override
-    public <E extends Collection<T>> boolean evaluate(E hand)
-    {
-        if (!super.evaluated)
-        {
-            super.result = hand.contains(this.CARD);
-            super.evaluated = true;
-        }
-
-        return super.result;
-    }
-
-    @Override
-    public boolean rollbackEvaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
+    public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
         for (T card : hand) {
             if (!card.isReserved() && card.equals(CARD)) {
                 card.reserve();

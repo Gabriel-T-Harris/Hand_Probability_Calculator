@@ -10,7 +10,7 @@ Date: 2021-07-25
 </b>
 */
 
-public class Base_Card implements Reservable
+public class Base_Card
 {
     /**
      * Represents the name of this card.
@@ -80,20 +80,5 @@ public class Base_Card implements Reservable
     public String toString()
     {
         return "Card name: " + this.NAME;
-    }
-
-    @Override
-    public void reserve() {
-        reserved = true;
-    }
-
-    @Override
-    public void release() {
-        reserved = false;
-    }
-
-    @Override
-    public boolean isReserved() {
-        return reserved;
     }
 }

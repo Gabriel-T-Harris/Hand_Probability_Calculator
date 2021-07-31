@@ -1,12 +1,11 @@
 package structure;
 
 import java.util.Collection;
-import java.util.concurrent.Callable;
 
 /**
 <b>
 Purpose: Contain entire tree structure of {@link Base_Node} in a named reusable manner.<br>
-Programmer: Gabriel Toban Harris <br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 Date: 2021-07-24
 </b>
 */
@@ -51,19 +50,8 @@ public class Scenario<T> implements Evaluatable<T>
     }
 
     @Override
-    public <E extends Collection<T>> boolean evaluate(E hand)
-    {
-        return this.TREE_CONDITION.evaluate(hand);
-    }
-
-    @Override
-    public void reset()
-    {
-        this.TREE_CONDITION.reset();
-    }
-
-    @Override
-    public boolean rollbackEvaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
-        return TREE_CONDITION.rollbackEvaluate(hand, next, fallback);
+    public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
+        // Forward arguments to TREE_CONDITION
+        return TREE_CONDITION.evaluate(hand, next, fallback);
     }
 }

@@ -34,15 +34,4 @@ public abstract class Binary_Operator_Node<T> extends Base_Node<T>
         this.LEFT_CHILD = LEFT_CHILD;
         this.RIGHT_CHILD = RIGHT_CHILD;
     }
-
-    /**
-     * Resets self and children for next hand.
-     */
-    @Override
-    public void reset()
-    {
-        super.reset();
-        this.LEFT_CHILD.reset();
-        this.RIGHT_CHILD.reset();
-    }
 }

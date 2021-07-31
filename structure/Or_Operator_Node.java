@@ -5,7 +5,7 @@ import java.util.Collection;
 /**
 <b>
 Purpose: Or operator<br>
-Programmer: Gabriel Toban Harris <br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 Date: 2021-07-24
 </b>
 */
@@ -21,23 +21,13 @@ public class Or_Operator_Node<T> extends Binary_Operator_Node<T>
     }
 
     @Override
-    public <E extends Collection<T>> boolean evaluate(E hand)
-    {
-        if (!super.evaluated)
-        {
-            super.result = super.LEFT_CHILD.evaluate(hand) || super.RIGHT_CHILD.evaluate(hand);
-            super.evaluated = true;
-        }
-
-        return super.result;
-    }
-
-    @Override
-    public boolean rollbackEvaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
-        return LEFT_CHILD.rollbackEvaluate(
+    public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
+        // If LEFT_CHILD can take card(s), then continue evaluation
+        // If LEFT_CHILD can't take card(s), then make sure the RIGHT CHILD can take card(s)
+        return LEFT_CHILD.evaluate(
                 hand,
                 next,
-                () -> RIGHT_CHILD.rollbackEvaluate(hand, next, fallback)
+                () -> RIGHT_CHILD.evaluate(hand, next, fallback)
         );
     }
 }

@@ -5,8 +5,8 @@ import java.util.Collection;
 /**
 <b>
 Purpose: Requirement to be a node for evaluation purposes.<br>
-Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-24
+Programmer: Alexander Herman Oxorn <br>
+Date: 2021-07-29
 </b>
 */
 
