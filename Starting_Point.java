@@ -106,8 +106,8 @@ public class Starting_Point
                 parent_output_path.mkdirs();
         }
 
-        int file_count = source_files.length;
-        for (int i = 0; i < file_count; ++i)
+        final int FILE_COUNT = source_files.length;
+        for (int i = 0; i < FILE_COUNT; ++i)
             if (source_files[i].exists() && source_files[i].getName().endsWith(SOURCE_FILE_EXTENSION))
             {
                 File lexical_error_output_file;
@@ -193,7 +193,20 @@ public class Starting_Point
                             //write to normal lexical file
                             else
                             {
-                                lexical_correct_output.print(current_token.FULLY_FORMED_PART.toString());
+                                if (placeholder.equals(Token.Lexeme_Types.LINE_COMMENT))
+                                {
+                                    //line comments were accidently eating the new line characters, so this is a pseudo counter balance
+                                    lexical_correct_output.println(current_token.FULLY_FORMED_PART.toString());
+                                    ++line_number;
+                                }
+                                else
+                                {
+                                    final String TOKEN_STRING_FORM = current_token.FULLY_FORMED_PART.toString();
+                                    if (placeholder.equals(Token.Lexeme_Types.BLOCK_COMMENT))
+                                        line_number += TOKEN_STRING_FORM.length() - TOKEN_STRING_FORM.replace("\n", "").length();
+
+                                    lexical_correct_output.print(TOKEN_STRING_FORM);
+                                }
                                 /*if (placeholder != Token.Lexeme_Types.BLOCK_COMMENT && placeholder != Token.Lexeme_Types.LINE_COMMENT)
                                 {
                                     try

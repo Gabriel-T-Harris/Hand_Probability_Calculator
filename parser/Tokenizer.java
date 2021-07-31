@@ -94,7 +94,7 @@ public class Tokenizer
     /**
      * Simple concatenation of chars which are not allowed to be a part of any keyword, ID, or special marker of a part.
      */
-    public final static String RESTRICTED_CHARS = ";=" + SENTINEL_START + SENTINEL_END + CONDITION_CARD_START + CONDITION_CARD_END + CONDITION_SCENARIO_START +
+    public final static String RESTRICTED_CHARS = ";=\n" + SENTINEL_START + SENTINEL_END + CONDITION_CARD_START + CONDITION_CARD_END + CONDITION_SCENARIO_START +
                                                   CONDITION_SCENARIO_END + CONDITION_EXPR_START + CONDITION_EXPR_END;
 
     /**
