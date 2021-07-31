@@ -13,9 +13,9 @@ Date: 2021-07-24
 public class Or_Operator_Node<T> extends Binary_Operator_Node<T>
 {
     /**
-     * Constructor, refer to {@link Binary_Operator_Node#Binary_Operator_Node(String, Evaluatable, Evaluatable)}.
+     * Constructor, refer to {@link Binary_Operator_Node#Binary_Operator_Node(String, Evaluable, Evaluable)}.
      */
-    public Or_Operator_Node(final Evaluatable<T> LEFT_CHILD, final Evaluatable<T> RIGHT_CHILD)
+    public Or_Operator_Node(final Evaluable<T> LEFT_CHILD, final Evaluable<T> RIGHT_CHILD)
     {
         super("OR", LEFT_CHILD, RIGHT_CHILD);
     }

@@ -44,6 +44,7 @@ public class Base_Card
     {
         this.NAME = CARD.NAME;
         this.HASH_CODE = CARD.HASH_CODE;
+        this.reserved = false;
     }
 
     @Override

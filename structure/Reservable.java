@@ -1,7 +1,5 @@
 package structure;
 
-import java.util.Collection;
-
 /**
 <b>
 Purpose: Requirement to be a node for evaluation purposes.<br>

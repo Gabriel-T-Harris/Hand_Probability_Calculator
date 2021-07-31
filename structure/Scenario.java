@@ -10,12 +10,12 @@ Date: 2021-07-24
 </b>
 */
 //TODO: finish.
-public class Scenario<T> implements Evaluatable<T>
+public class Scenario<T> implements Evaluable<T>
 {
     /**
      * Controls whether this should be displayed in final results.
      */
-    public boolean display = true;
+    public final boolean display;
     
     /**
      * Name of scenario being tested.
@@ -25,12 +25,12 @@ public class Scenario<T> implements Evaluatable<T>
     /**
      * Stores the tree representation of this scenario.
      */
-    public final Evaluatable<T> TREE_CONDITION;
+    public final Evaluable<T> TREE_CONDITION;
 
     /**
-     * See {@link #Scenario(boolean, String, Evaluatable)}.
+     * See {@link #Scenario(boolean, String, Evaluable)}.
      */
-    public Scenario(final String NAME, final Evaluatable<T> TREE_CONDITION)
+    public Scenario(final String NAME, final Evaluable<T> TREE_CONDITION)
     {
         this(true, NAME, TREE_CONDITION);
     }
@@ -42,7 +42,7 @@ public class Scenario<T> implements Evaluatable<T>
      * @param NAME {@link #NAME}
      * @param TREE_CONDITION {@link #TREE_CONDITION}
      */
-    public Scenario(final boolean display, final String NAME, final Evaluatable<T> TREE_CONDITION)
+    public Scenario(final boolean display, final String NAME, final Evaluable<T> TREE_CONDITION)
     {
         this.display = display;
         this.NAME = NAME;

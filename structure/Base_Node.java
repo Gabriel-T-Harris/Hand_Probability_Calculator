@@ -10,7 +10,7 @@ Date: 2021-07-23
 
 //TODO: add toString() methods with some reference to outputting as dot file format.
 //TODO: figure out edge cases in evaluation for both duplication (maybe paint) and overlap (maybe attempt condition evaluation in different combinations).
-public abstract class Base_Node<T> implements Evaluatable<T>
+public abstract class Base_Node<T> implements Evaluable<T>
 {
     /**
      * Unique identifier for this node.

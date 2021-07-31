@@ -15,9 +15,9 @@ public class Not_Operator_Node<T> extends Base_Node<T>
     /**
      * Child which is negated.
      */
-    public final Evaluatable<T> CHILD;
+    public final Evaluable<T> CHILD;
 
-    public Not_Operator_Node(final Evaluatable<T> CHILD)
+    public Not_Operator_Node(final Evaluable<T> CHILD)
     {
         super("NOT");
         this.CHILD = CHILD;
