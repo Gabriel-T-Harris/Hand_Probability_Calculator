@@ -49,9 +49,9 @@ public class Scenario<T> implements Evaluatable<T>
         this.TREE_CONDITION = TREE_CONDITION;
     }
 
+    // Forward arguments to TREE_CONDITION
     @Override
     public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
-        // Forward arguments to TREE_CONDITION
         return TREE_CONDITION.evaluate(hand, next, fallback);
     }
 }

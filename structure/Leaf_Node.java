@@ -30,6 +30,12 @@ public class Leaf_Node<T extends Reservable, U extends T> extends Base_Node<T>
         this.CARD = CARD;
     }
 
+    /*
+      For each card that matches, reserve it, and try to evaluate the rest of the condition
+      If the rest of the condition evaluation fails, look for the next valid card to take and repeat
+      If the rest of the condition evaluation is successful, then return true
+      If there is no more valid cards, call the fallback evaluation
+     */
     @Override
     public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
         for (T card : hand) {

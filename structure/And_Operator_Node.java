@@ -20,10 +20,10 @@ public class And_Operator_Node<T> extends Binary_Operator_Node<T>
         super("AND", LEFT_CHILD, RIGHT_CHILD);
     }
 
+    // If LEFT_CHILD can take card(s), then make sure the RIGHT CHILD can also take card(s)
+    // If LEFT_CHILD can't take card(s), then fallback
     @Override
     public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
-        // If LEFT_CHILD can take card(s), then make sure the RIGHT CHILD can also take card(s)
-        // If LEFT_CHILD can't take card(s), then fallback
         return LEFT_CHILD.evaluate(
                 hand,
                 () -> RIGHT_CHILD.evaluate(hand, next, fallback),
