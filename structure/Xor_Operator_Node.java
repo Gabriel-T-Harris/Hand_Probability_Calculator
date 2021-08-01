@@ -29,13 +29,10 @@ public class Xor_Operator_Node<T> extends Binary_Operator_Node<T>
                 hand,
                 () -> RIGHT_CHILD.evaluate(hand, () -> TestResult.NotSuccess)
         );
-        switch (result) {
-            case NotSuccess:
-                return TestResult.Rollback;
-            case Rollback:
-                return RIGHT_CHILD.evaluate(hand, next);
-            default:
-                return TestResult.Panic;
+        if (result == TestResult.NotSuccess) {
+            return TestResult.Rollback;
         }
+        // Result should only ever be TestResult.Rollback here
+        return RIGHT_CHILD.evaluate(hand, next);
     }
 }

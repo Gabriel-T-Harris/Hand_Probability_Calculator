@@ -18,7 +18,18 @@ public interface Evaluable<T>
     boolean debugMode = false;
 
     enum TestResult {
-        Success, NotSuccess, Rollback, Panic
+        /**
+         * The evaluation succeeded
+         */
+        Success,
+        /**
+         * The evaluation of the child of NOT succeeded
+         */
+        NotSuccess,
+        /**
+         * Evaluation failed given reserved cards
+         */
+        Rollback
     }
 
     interface RollbackCallback {
@@ -31,7 +42,7 @@ public interface Evaluable<T>
      *
      * @param hand to be checked {@link Collection}
      * @param next function to call when a leaf node takes a card from the hand
-     * @return If the hand meets a condition
+     * @return a {@link TestResult} used as a signal on what action to preform next
      */
     <E extends Reservable> TestResult evaluate(final Collection<E> hand, final RollbackCallback next);
 

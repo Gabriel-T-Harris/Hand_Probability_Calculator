@@ -27,13 +27,10 @@ public class Not_Operator_Node<T> extends Base_Node<T>
     public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         TestResult result = CHILD.evaluate(hand, () -> TestResult.NotSuccess);
-        switch (result) {
-            case NotSuccess:
-                return TestResult.Rollback;
-            case Rollback:
-                return next.call();
-            default:
-                return TestResult.Panic;
+        if (result == TestResult.NotSuccess) {
+            return TestResult.Rollback;
         }
+        // result should only ever be TestResult.Rollback here
+        return next.call();
     }
 }
