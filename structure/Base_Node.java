@@ -10,12 +10,12 @@ Date: 2021-07-23
 
 //TODO: add toString() methods with some reference to outputting as dot file format.
 //TODO: figure out edge cases in evaluation for both duplication (maybe paint) and overlap (maybe attempt condition evaluation in different combinations).
-public abstract class Base_Node<T> implements Evaluatable<T>
+public abstract class Base_Node<T> implements Evaluable<T>
 {
     /**
      * Unique identifier for this node.
      */
-    public final int UNIQUE_IDENTIFER;
+    public final int UNIQUE_IDENTIFIER;
 
     /**
      * The name of this node.
@@ -23,17 +23,7 @@ public abstract class Base_Node<T> implements Evaluatable<T>
     public final String NAME;
 
     /**
-     * Used to prevent repeated evaluations.
-     */
-    protected boolean evaluated = false;
-
-    /**
-     * Used to store result.
-     */
-    protected boolean result;
-
-    /**
-     * Used to set {@link #UNIQUE_IDENTIFER}
+     * Used to set {@link #UNIQUE_IDENTIFIER}
      */
     private static int CREATED_NODES_COUNT = 0;
 
@@ -44,12 +34,6 @@ public abstract class Base_Node<T> implements Evaluatable<T>
     public Base_Node(final String NAME)
     {
         this.NAME = NAME;
-        this.UNIQUE_IDENTIFER = ++CREATED_NODES_COUNT;
-    }
-
-    @Override
-    public void reset()
-    {
-        this.evaluated = false;
+        this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
     }
 }

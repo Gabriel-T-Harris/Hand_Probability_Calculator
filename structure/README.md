@@ -1,5 +1,5 @@
 
-# Stucture Package
+# Structure Package
 
 This section is for files relating to the data structures used for evaluation.
 
