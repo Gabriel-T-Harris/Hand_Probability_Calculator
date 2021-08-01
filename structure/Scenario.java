@@ -49,9 +49,9 @@ public class Scenario<T> implements Evaluable<T>
         this.TREE_CONDITION = TREE_CONDITION;
     }
 
-    // Forward arguments to TREE_CONDITION
     @Override
-    public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
-        return TREE_CONDITION.evaluate(hand, next, fallback);
+    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+        printDebugStep(hand);
+        return TREE_CONDITION.evaluate(hand, next);
     }
 }

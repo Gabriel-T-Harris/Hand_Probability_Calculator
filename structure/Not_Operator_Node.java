@@ -23,10 +23,17 @@ public class Not_Operator_Node<T> extends Base_Node<T>
         this.CHILD = CHILD;
     }
 
-    // If the CHILD can take card(s) then fallback
-    // If the CHILD can't take card(s), continue evaluation
     @Override
-    public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
-        return CHILD.evaluate(hand, fallback, next);
+    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+        printDebugStep(hand);
+        TestResult result = CHILD.evaluate(hand, () -> TestResult.NotSuccess);
+        switch (result) {
+            case NotSuccess:
+                return TestResult.Rollback;
+            case Rollback:
+                return next.call();
+            default:
+                return TestResult.Panic;
+        }
     }
 }

@@ -51,14 +51,14 @@ public class Base_Card
     public boolean equals(final Object INPUT)
     {
         if (INPUT instanceof Base_Card)
-            return this.equals(INPUT);
+            return this.equals((Base_Card) INPUT);
         else
             return false;
     }
 
     /**
      * Function to check card equality.
-     * 
+     *
      * @param <T> anything which either is or extends, {@link Base_Card}.
      * @param CARD to be compared
      * @return true for equivalent, otherwise false

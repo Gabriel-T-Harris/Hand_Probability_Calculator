@@ -21,13 +21,13 @@ public class Or_Operator_Node<T> extends Binary_Operator_Node<T>
     }
 
     // If LEFT_CHILD can take card(s), then continue evaluation
-    // If LEFT_CHILD can't take card(s), then make sure the RIGHT CHILD can take card(s)
+    // If LEFT_CHILD rolls back, then evaluate the RIGHT CHILD
     @Override
-    public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
-        return LEFT_CHILD.evaluate(
-                hand,
-                next,
-                () -> RIGHT_CHILD.evaluate(hand, next, fallback)
-        );
+    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+        printDebugStep(hand);
+        TestResult result = LEFT_CHILD.evaluate(hand, next);
+        if (result == TestResult.Rollback)
+            return RIGHT_CHILD.evaluate(hand, next);
+        return result;
     }
 }

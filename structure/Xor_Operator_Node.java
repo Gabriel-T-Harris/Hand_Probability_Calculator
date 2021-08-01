@@ -23,11 +23,19 @@ public class Xor_Operator_Node<T> extends Binary_Operator_Node<T>
     // If LEFT_CHILD can take card(s), then make sure the RIGHT CHILD can't take card(s)
     // If LEFT_CHILD can't take card(s), then make sure the RIGHT CHILD can take card(s)
     @Override
-    public boolean evaluate(Collection<T> hand, RollbackCallback next, RollbackCallback fallback) {
-        return LEFT_CHILD.evaluate(
+    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+        printDebugStep(hand);
+        TestResult result = LEFT_CHILD.evaluate(
                 hand,
-                () -> RIGHT_CHILD.evaluate(hand, fallback, next),
-                () -> RIGHT_CHILD.evaluate(hand, next, fallback)
+                () -> RIGHT_CHILD.evaluate(hand, () -> TestResult.NotSuccess)
         );
+        switch (result) {
+            case NotSuccess:
+                return TestResult.Rollback;
+            case Rollback:
+                return RIGHT_CHILD.evaluate(hand, next);
+            default:
+                return TestResult.Panic;
+        }
     }
 }

@@ -26,6 +26,7 @@ public class Deck_Card extends Base_Card implements Reservable
     public Deck_Card(final Deck_Card INPUT)
     {
         super(INPUT);
+        this.reserved = false;
     }
 
     @Override

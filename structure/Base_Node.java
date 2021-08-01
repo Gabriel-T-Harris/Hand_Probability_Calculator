@@ -23,16 +23,6 @@ public abstract class Base_Node<T> implements Evaluable<T>
     public final String NAME;
 
     /**
-     * Used to prevent repeated evaluations.
-     */
-    protected boolean evaluated = false;
-
-    /**
-     * Used to store result.
-     */
-    protected boolean result;
-
-    /**
      * Used to set {@link #UNIQUE_IDENTIFIER}
      */
     private static int CREATED_NODES_COUNT = 0;
