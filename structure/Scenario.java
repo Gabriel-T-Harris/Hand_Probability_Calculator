@@ -5,17 +5,17 @@ import java.util.Collection;
 /**
 <b>
 Purpose: Contain entire tree structure of {@link Base_Node} in a named reusable manner.<br>
-Programmer: Gabriel Toban Harris <br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 Date: 2021-07-24
 </b>
 */
 //TODO: finish.
-public class Scenario<T> implements Evaluatable<T>
+public class Scenario<T> implements Evaluable<T>
 {
     /**
      * Controls whether this should be displayed in final results.
      */
-    public boolean display = true;
+    public final boolean display;
     
     /**
      * Name of scenario being tested.
@@ -25,12 +25,12 @@ public class Scenario<T> implements Evaluatable<T>
     /**
      * Stores the tree representation of this scenario.
      */
-    public final Evaluatable<T> TREE_CONDITION;
+    public final Evaluable<T> TREE_CONDITION;
 
     /**
-     * See {@link #Scenario(boolean, String, Evaluatable)}.
+     * See {@link #Scenario(boolean, String, Evaluable)}.
      */
-    public Scenario(final String NAME, final Evaluatable<T> TREE_CONDITION)
+    public Scenario(final String NAME, final Evaluable<T> TREE_CONDITION)
     {
         this(true, NAME, TREE_CONDITION);
     }
@@ -42,7 +42,7 @@ public class Scenario<T> implements Evaluatable<T>
      * @param NAME {@link #NAME}
      * @param TREE_CONDITION {@link #TREE_CONDITION}
      */
-    public Scenario(final boolean display, final String NAME, final Evaluatable<T> TREE_CONDITION)
+    public Scenario(final boolean display, final String NAME, final Evaluable<T> TREE_CONDITION)
     {
         this.display = display;
         this.NAME = NAME;
@@ -50,15 +50,8 @@ public class Scenario<T> implements Evaluatable<T>
     }
 
     @Override
-    public <E extends Collection<T>> boolean evaluate(E hand)
-    {
-        return this.TREE_CONDITION.evaluate(hand);
+    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+        printDebugStep(hand);
+        return TREE_CONDITION.evaluate(hand, next);
     }
-
-    @Override
-    public void reset()
-    {
-        this.TREE_CONDITION.reset();
-    }
-    
 }

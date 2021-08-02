@@ -22,6 +22,8 @@ public class Base_Card
      */
     protected final int HASH_CODE;
 
+    protected boolean reserved;
+
     /**
      * Constructor.
      * 
@@ -42,6 +44,7 @@ public class Base_Card
     {
         this.NAME = CARD.NAME;
         this.HASH_CODE = CARD.HASH_CODE;
+        this.reserved = false;
     }
 
     @Override
@@ -55,7 +58,7 @@ public class Base_Card
 
     /**
      * Function to check card equality.
-     * 
+     *
      * @param <T> anything which either is or extends, {@link Base_Card}.
      * @param CARD to be compared
      * @return true for equivalent, otherwise false
