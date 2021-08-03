@@ -8,7 +8,6 @@ Date: 2021-07-24
 </b>
 */
 
-//TODO: consider converting to at least 2
 public abstract class Binary_Operator_Node<T> extends Base_Node<T>
 {
     /**

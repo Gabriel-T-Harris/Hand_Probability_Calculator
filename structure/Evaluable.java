@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 <b>
 Purpose: Requirement to be a node for evaluation purposes.<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
-Date: 2021-07-24
 </b>
 */
 

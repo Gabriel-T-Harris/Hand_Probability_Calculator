@@ -6,10 +6,9 @@ import java.util.Collection;
 <b>
 Purpose: Contain entire tree structure of {@link Base_Node} in a named reusable manner.<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
-Date: 2021-07-24
 </b>
 */
-//TODO: finish.
+
 public class Scenario<T> implements Evaluable<T>
 {
     /**
