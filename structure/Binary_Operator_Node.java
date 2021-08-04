@@ -7,7 +7,7 @@ import java.util.Collection;
 <b>
 Purpose: Base of the binary operators.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-24
+Date: 2021-07-24/2021-8-3
 </b>
 */
 
