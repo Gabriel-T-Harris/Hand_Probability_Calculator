@@ -9,7 +9,7 @@ Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 </b>
 */
 
-public class Scenario<T> implements Evaluable<T>
+public class Scenario<T> extends Evaluable<T>
 {
     /**
      * Controls whether this should be displayed in final results.
@@ -52,5 +52,32 @@ public class Scenario<T> implements Evaluable<T>
     public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         return TREE_CONDITION.evaluate(hand, next);
+    }
+
+    /**
+     * for dot format
+     */
+    public String toString()
+    {
+        StringBuilder output = new StringBuilder(128);
+
+        output.append(this.UNIQUE_IDENTIFIER);
+        output.append("[label=\"");
+        output.append(this.NAME.replace(">", "\\>").replace("<", "\\<").replace("\"", "\\\""));//escape certain characters
+        output.append("\"];\n");
+
+        //child
+        output.append(this.UNIQUE_IDENTIFIER);
+        output.append("->");
+        output.append(this.TREE_CONDITION.UNIQUE_IDENTIFIER);
+        output.append(";\n");
+
+        return output.toString();
+    }
+
+    @Override
+    protected Collection<? extends Evaluable<T>> continue_breath_search()
+    {
+        return null;//TODO: consider changing to adding TREE_CONDITION.
     }
 }
