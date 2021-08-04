@@ -316,17 +316,6 @@ public class Starting_Point
 
                                         lexical_correct_output.print(TOKEN_STRING_FORM);
                                     }
-                                    /*if (placeholder != Token.Lexeme_Types.BLOCK_COMMENT && placeholder != Token.Lexeme_Types.LINE_COMMENT)
-                                    {
-                                        try
-                                        {
-                                            abstract_syntax_tree_maker.parse(current_token.fully_formed_part);
-                                        }
-                                        catch (EmptySemanticStackException | TerminalMatchException ex)
-                                        {
-                                            syntactical_error_output.println(ex.getMessage());
-                                        }
-                                    }*/
                                 }
                             }
                         } while (true);
@@ -416,17 +405,6 @@ public class Starting_Point
                                         if (placeholder.equals(Token.Lexeme_Types.BLOCK_COMMENT))
                                             line_number += TOKEN_STRING_FORM.length() - TOKEN_STRING_FORM.replace("\n", "").length();
                                     }
-                                    /*if (placeholder != Token.Lexeme_Types.BLOCK_COMMENT && placeholder != Token.Lexeme_Types.LINE_COMMENT)
-                                    {
-                                        try
-                                        {
-                                            abstract_syntax_tree_maker.parse(current_token.fully_formed_part);
-                                        }
-                                        catch (EmptySemanticStackException | TerminalMatchException ex)
-                                        {
-                                            syntactical_error_output.println(ex.getMessage());
-                                        }
-                                    }*/
                                 }
                             }
                         } while (true);
