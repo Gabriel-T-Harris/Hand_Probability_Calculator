@@ -2,7 +2,7 @@ package parser;
 
 /**
 <b>
-Purpose: Types of Tokens to be created by Lexical Analyzer.<br>
+Purpose: Types of Tokens to be created by {@link Tokenizer}.<br>
 Programmer: Gabriel Toban Harris <br>
 Date: 2021-07-26, 2021-7-30
 </b>
