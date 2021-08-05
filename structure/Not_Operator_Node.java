@@ -1,12 +1,12 @@
 package structure;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
 <b>
 Purpose: Not Operator<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
-Date: 2021-07-24
 </b>
 */
 
@@ -32,5 +32,19 @@ public class Not_Operator_Node<T> extends Base_Node<T>
         }
         // result should only ever be TestResult.Rollback here
         return next.call();
+    }
+
+    /**
+     * for dot format
+     */
+    public String toString()
+    {
+        return super.toString() + this.UNIQUE_IDENTIFIER + "->" + this.CHILD.UNIQUE_IDENTIFIER + ";\n";
+    }
+
+    @Override
+    protected Collection<? extends Evaluable<T>> continue_breath_search()
+    {
+        return List.of(this.CHILD);
     }
 }

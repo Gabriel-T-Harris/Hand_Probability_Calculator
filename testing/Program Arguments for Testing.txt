@@ -1,0 +1,1 @@
+--verbose --error_log --input "testing/Test Input/" --output "testing/Test Output/"

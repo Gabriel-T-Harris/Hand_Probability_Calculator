@@ -1,14 +1,16 @@
 package structure;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
 <b>
 Purpose: Base of the binary operators.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-24
+Date: 2021-07-24/2021-8-3
 </b>
 */
 
-//TODO: consider converting to at least 2
 public abstract class Binary_Operator_Node<T> extends Base_Node<T>
 {
     /**
@@ -33,5 +35,20 @@ public abstract class Binary_Operator_Node<T> extends Base_Node<T>
         super(NAME);
         this.LEFT_CHILD = LEFT_CHILD;
         this.RIGHT_CHILD = RIGHT_CHILD;
+    }
+
+    /**
+     * for dot format
+     */
+    public String toString()
+    {
+        return super.toString() + this.UNIQUE_IDENTIFIER + "->" + this.LEFT_CHILD.UNIQUE_IDENTIFIER + ";\n" + this.UNIQUE_IDENTIFIER + "->" + this.RIGHT_CHILD.UNIQUE_IDENTIFIER +
+               ";\n";
+    }
+
+    @Override
+    protected Collection<? extends Evaluable<T>> continue_breath_search()
+    {
+        return List.of(this.LEFT_CHILD, this.RIGHT_CHILD);
     }
 }

@@ -10,8 +10,20 @@ Date: 2021-07-29
 
 public interface Reservable
 {
-    void reserve();
-    void release();
 
+    /**
+     * States the reservedness of a card.
+     * @return true for reserved and false for not reserved.
+     */
     boolean isReserved();
+
+    /**
+     * Reserves a card.
+     */
+    void reserve();
+
+    /**
+     * Unreserves a card.
+     */
+    void release();
 }
