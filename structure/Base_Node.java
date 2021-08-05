@@ -1,31 +1,21 @@
 package structure;
 
+import java.util.Collection;
+
 /**
 <b>
 Purpose: To be the base node which others will extend.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-23
+Date: 2021-07-23/2021-8-3
 </b>
 */
 
-//TODO: add toString() methods with some reference to outputting as dot file format.
-//TODO: figure out edge cases in evaluation for both duplication (maybe paint) and overlap (maybe attempt condition evaluation in different combinations).
-public abstract class Base_Node<T> implements Evaluable<T>
+public abstract class Base_Node<T> extends Evaluable<T>
 {
-    /**
-     * Unique identifier for this node.
-     */
-    public final int UNIQUE_IDENTIFIER;
-
     /**
      * The name of this node.
      */
     public final String NAME;
-
-    /**
-     * Used to set {@link #UNIQUE_IDENTIFIER}
-     */
-    private static int CREATED_NODES_COUNT = 0;
 
     /**
      * Constructor of {@link #Base_Node}.
@@ -34,6 +24,19 @@ public abstract class Base_Node<T> implements Evaluable<T>
     public Base_Node(final String NAME)
     {
         this.NAME = NAME;
-        this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
+    }
+
+    /**
+     * for dot format
+     */
+    public String toString()
+    {
+        return this.UNIQUE_IDENTIFIER + "[label=\"" + this.NAME.replace(">", "\\>").replace("<", "\\<").replace("\"", "\\\"") + "\"];\n";
+    }
+
+    @Override
+    protected Collection<? extends Evaluable<T>> continue_breath_search()
+    {
+        return null;
     }
 }

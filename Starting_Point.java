@@ -12,7 +12,7 @@ import parser.Tokenizer.Returned_Data;
 <b>
 Purpose: To be the central part which calls and runs the other parts. With the goal of calculating probility of a given hand.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-30/2021-8-1
+Date: 2021-07-30/2021-8-1/2021-8-4
 </b>
 */
 
@@ -79,6 +79,7 @@ public class Starting_Point
         boolean verbose = false; //for outputting of progress
         boolean error_log = false; //for system errors
         int hand_size = DEFAULT_HAND_SIZE;
+        final int FILE_COUNT;
         long test_hands = DEFAULT_TEST_HAND_COUNT;
         String output_location = DEFAULT_OUTPUT_FILE_LOCATION;
         final File[] SOURCE_FILES;
@@ -86,7 +87,7 @@ public class Starting_Point
         if (args.length > 0)
         {
             final String ERROR_LOG_FLAG = "--error_log", HELP_FLAG = "--help", VERBOSE_FLAG = "--verbose", INPUT_PARAMETER = "--input", OUTPUT_PARAMETER = "--output",
-                    HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
+                         HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
 
             for (int i = 0; i < args.length; ++i)
                 if (args[i].equals(ERROR_LOG_FLAG))
@@ -115,6 +116,13 @@ public class Starting_Point
             }
             else
             {
+                verbose = PARSED_ARGUMENTS.flag_seen(VERBOSE_FLAG);
+                final File COMMAND_ARGUMENT;
+                {
+                    final String INPUT_PATH = PARSED_ARGUMENTS.parameter_value(INPUT_PARAMETER);
+                    COMMAND_ARGUMENT = new File(INPUT_PATH != null ? INPUT_PATH : DEFAULT_SOURCE_FILE_LOCATION + DEFAULT_FILE);
+                }
+
                 //parse arguments
                 {
                     String read_argument = PARSED_ARGUMENTS.parameter_value(OUTPUT_PARAMETER);
@@ -179,9 +187,7 @@ public class Starting_Point
                         }
                     }
                 }
-                verbose = PARSED_ARGUMENTS.flag_seen(VERBOSE_FLAG);
-                final String INPUT_PATH = PARSED_ARGUMENTS.parameter_value(INPUT_PARAMETER);
-                final File COMMAND_ARGUMENT = new File(INPUT_PATH != null ? INPUT_PATH : DEFAULT_SOURCE_FILE_LOCATION + DEFAULT_FILE);
+
                 if (!COMMAND_ARGUMENT.exists())
                 {
                     if (error_log)
@@ -205,14 +211,9 @@ public class Starting_Point
         else
             SOURCE_FILES = new File[]{new File(DEFAULT_SOURCE_FILE_LOCATION, DEFAULT_FILE)};
 
-        //make output directory
-        {
-            File parent_output_path = new File(output_location);
-            if (!parent_output_path.exists())
-                parent_output_path.mkdirs();
-        }
+        FILE_COUNT = SOURCE_FILES.length;
 
-        final int FILE_COUNT = SOURCE_FILES.length;
+        create_theoretical_directories(output_location);
 
         if (verbose)
         {
@@ -418,5 +419,16 @@ public class Starting_Point
                 else if (error_log)
                     System.err.println("Chosen file: " + SOURCE_FILES[i].getCanonicalPath() + ", either does not exist or has improper extension.");
         }
+    }
+
+    /**
+     * Makes output directories for subdirectories which do not exist.
+     * @param INPUT representing directory path to create
+     */
+    public static void create_theoretical_directories(final String INPUT)
+    {
+        File parent_output_path = new File(INPUT);
+        if (!parent_output_path.exists())
+            parent_output_path.mkdirs();
     }
 }
