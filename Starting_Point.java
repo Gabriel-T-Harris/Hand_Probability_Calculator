@@ -213,7 +213,7 @@ public class Starting_Point
 
         FILE_COUNT = SOURCE_FILES.length;
 
-        create_therorical_directories(output_location);
+        create_theoretical_directories(output_location);
 
         if (verbose)
         {
@@ -447,7 +447,7 @@ public class Starting_Point
      * Makes output directories for subdirectories which do not exist.
      * @param INPUT representing directory path to create
      */
-    public static void create_therorical_directories(final String INPUT)
+    public static void create_theoretical_directories(final String INPUT)
     {
         File parent_output_path = new File(INPUT);
         if (!parent_output_path.exists())

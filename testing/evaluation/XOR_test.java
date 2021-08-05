@@ -19,13 +19,28 @@ public class XOR_test
 {
     public static void main(String[] args)
     {
-        ArrayList<Deck_Card> hand = new ArrayList<Deck_Card>();
-        hand.add(new Deck_Card("A"));
-        hand.add(new Deck_Card("A"));
+        ArrayList<Deck_Card> hand_A_A = new ArrayList<Deck_Card>();
+        hand_A_A.add(new Deck_Card("A"));
+        hand_A_A.add(new Deck_Card("A"));
+
+        ArrayList<Deck_Card> hand_A_B = new ArrayList<Deck_Card>();
+        hand_A_A.add(new Deck_Card("A"));
+        hand_A_A.add(new Deck_Card("B"));
+
+        ArrayList<Deck_Card> hand_B_A = new ArrayList<Deck_Card>();
+        hand_A_A.add(new Deck_Card("B"));
+        hand_A_A.add(new Deck_Card("A"));
+
+        ArrayList<Deck_Card> hand_B_B = new ArrayList<Deck_Card>();
+        hand_A_A.add(new Deck_Card("B"));
+        hand_A_A.add(new Deck_Card("B"));
 
         Scenario<Base_Card> xor_test = new Scenario<Base_Card>("xor test", new Xor_Operator_Node<Base_Card>(new Leaf_Node<Base_Card>("A", new Base_Card("A")),
                                                                                                             new Leaf_Node<Base_Card>("A", new Base_Card("A"))));
 
-        System.out.println("xor test has " + (xor_test.evaluate(hand) ? "failed." : "succeed."));
+        System.out.println("xor test (A, A) has " + (xor_test.evaluate(hand_A_A) ? "failed." : "succeed."));
+        System.out.println("xor test (A, B) has " + (xor_test.evaluate(hand_A_B) ? "succeed." : "failed."));
+        System.out.println("xor test (B, A) has " + (xor_test.evaluate(hand_B_A) ? "succeed." : "failed."));
+        System.out.println("xor test (B, B) has " + (xor_test.evaluate(hand_B_B) ? "failed." : "succeed."));
     }
 }
