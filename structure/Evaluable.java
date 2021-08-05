@@ -41,6 +41,7 @@ public abstract class Evaluable<T>
     //TODO: add javadoc
     public final static boolean debugMode = false;
 
+
     /**
      * Unique identifier for this node.
      */

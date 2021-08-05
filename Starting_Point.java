@@ -89,6 +89,7 @@ public class Starting_Point
             final String ERROR_LOG_FLAG = "--error_log", HELP_FLAG = "--help", VERBOSE_FLAG = "--verbose", INPUT_PARAMETER = "--input", OUTPUT_PARAMETER = "--output",
                          HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
 
+
             for (int i = 0; i < args.length; ++i)
                 if (args[i].equals(ERROR_LOG_FLAG))
                 {
