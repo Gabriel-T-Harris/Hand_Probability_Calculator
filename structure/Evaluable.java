@@ -1,9 +1,10 @@
 package structure;
 
-import java.util.ArrayList;
+import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.stream.Collectors;
 
 /**
@@ -15,7 +16,6 @@ Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 
 public abstract class Evaluable<T>
 {
-    //TODO: add javadoc
     enum TestResult {
         /**
          * The evaluation succeeded
@@ -39,7 +39,8 @@ public abstract class Evaluable<T>
     }
 
     //TODO: add javadoc
-    static boolean debugMode = false;
+    public final static boolean debugMode = false;
+
 
     /**
      * Unique identifier for this node.
@@ -51,6 +52,9 @@ public abstract class Evaluable<T>
      */
     private static int CREATED_NODES_COUNT = 0;
 
+    /**
+     * Constructor to force unified id among all subclasses.
+     */
     public Evaluable()
     {
         this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
@@ -64,7 +68,7 @@ public abstract class Evaluable<T>
      * @param next function to call when a leaf node takes a card from the hand
      * @return a {@link TestResult} used as a signal on what action to preform next
      */
-    abstract <E extends Reservable> TestResult evaluate(final Collection<E> hand, final RollbackCallback next);
+    protected abstract <E extends Reservable> TestResult evaluate(final Collection<E> hand, final RollbackCallback next);
 
     /**
      * Function used to deprecated_evaluate a node's condition using a rollback evaluation implementation.
@@ -88,26 +92,20 @@ public abstract class Evaluable<T>
      */
     public static String print_whole_subtree(final Evaluable<?> START)
     {
-        StringBuilder output = new StringBuilder();
-        Evaluable<?> placeholder;
-        Collection<? extends Evaluable<?>> children;
-        ArrayList<Evaluable<?>> traverse_nodes = new ArrayList<Evaluable<?>>();
-        traverse_nodes.add(START);
+        StringBuilder output = new StringBuilder(2048); //large output
+        Queue<Evaluable<?>> traverse_nodes = new ArrayDeque<Evaluable<?>>();
 
         output.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
 
         //children
-        do
+        for (Evaluable<?> placeholder = START; placeholder != null; placeholder = traverse_nodes.poll())
         {
-            placeholder = traverse_nodes.get(0);
-            output.append(placeholder.toString()); // print out top node
+            output.append(placeholder); // print out top node
 
-            children = placeholder.continue_breath_search();
+            Collection<? extends Evaluable<?>> children = placeholder.continue_breath_search();
             if (children != null)
                 traverse_nodes.addAll(children); // add children
-
-            traverse_nodes.remove(0); // remove first
-        } while (!traverse_nodes.isEmpty());
+        }
 
         output.append('}');
 
@@ -119,7 +117,7 @@ public abstract class Evaluable<T>
      * 
      * @return null or children
      */
-    abstract protected Collection<? extends Evaluable<T>> continue_breath_search();
+    protected abstract Collection<? extends Evaluable<T>> continue_breath_search();
 
     /**
      * If debugMode is set, print current debug details about the currently executing node

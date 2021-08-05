@@ -2,6 +2,7 @@ package structure;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
 <b>
@@ -39,24 +40,12 @@ public class Not_Operator_Node<T> extends Base_Node<T>
      */
     public String toString()
     {
-        StringBuilder output = new StringBuilder(128);
-
-        output.append(super.toString()); //call standard part
-
-        //child
-        output.append(this.UNIQUE_IDENTIFIER);
-        output.append("->");
-        output.append(this.CHILD.UNIQUE_IDENTIFIER);
-        output.append(";\n");
-
-        return output.toString();
+        return super.toString() + this.UNIQUE_IDENTIFIER + "->" + this.CHILD.UNIQUE_IDENTIFIER + ";\n";
     }
 
     @Override
     protected Collection<? extends Evaluable<T>> continue_breath_search()
     {
-        Collection<Evaluable<T>> to_return = new ArrayList<Evaluable<T>>();
-        to_return.add(this.CHILD);
-        return to_return;
+        return List.of(this.CHILD);
     }
 }

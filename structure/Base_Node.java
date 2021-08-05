@@ -31,14 +31,7 @@ public abstract class Base_Node<T> extends Evaluable<T>
      */
     public String toString()
     {
-        StringBuilder output = new StringBuilder(64);
-
-        output.append(this.UNIQUE_IDENTIFIER);
-        output.append("[label=\"");
-        output.append(this.NAME.replace(">", "\\>").replace("<", "\\<").replace("\"", "\\\""));//escape certain characters
-        output.append("\"];\n");
-
-        return output.toString();
+        return this.UNIQUE_IDENTIFIER + "[label=\"" + this.NAME.replace(">", "\\>").replace("<", "\\<").replace("\"", "\\\"") + "\"];\n";
     }
 
     @Override

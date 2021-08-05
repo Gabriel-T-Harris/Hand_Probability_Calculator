@@ -9,7 +9,7 @@ Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 </b>
 */
 
-public class Leaf_Node<T extends Reservable> extends Base_Node<T>
+public class Leaf_Node<T> extends Base_Node<T>
 {
     /**
      * Card to be matched.
