@@ -3,6 +3,7 @@ package parser;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import com.gth.function_bank.Function_Bank;
 import structure.Evaluable;
 import structure.Scenario;
 
@@ -10,7 +11,7 @@ import structure.Scenario;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-04
+Date: 2021-08-04/2021-8-5
 </b>
 */
 
@@ -104,9 +105,44 @@ public class Tree_Assembler<T, U>
      * @throws EmptySemanticStackException when internal semantic_stack is empty yet there is another token to parse.
      * @throws TerminalMatchException {@link #match_subroutine}
      */
-    public void parse(final Token INPUT) //throws EmptySemanticStackException, TerminalMatchException
+    public void parse(final Token INPUT) throws EmptySemanticStackException, TerminalMatchException
     {
-        //TODO: write
+        boolean no_match = true;
+        int semantic_stack_end_index;
+
+        do
+        {
+            semantic_stack_end_index = this.semantic_stack.size() - 1;
+
+            if (semantic_stack_end_index == -1)
+                throw new EmptySemanticStackException("Error: semantic stack is empty yet received the following Token: " + INPUT);
+
+            Semantic_Actions switch_value = this.semantic_stack.get(semantic_stack_end_index);
+
+            switch (switch_value)
+            {
+                case START:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case DECK_START:
+                        {
+                            //START -> DECK PROBABILITY
+                            if (this.VERBOSE)
+                            {
+                                Function_Bank.stringbuilder_replace_string_with_string(Semantic_Actions.START.name(), "DECK PROBABILITY", this.derivation);
+                            }
+                        }
+                    }
+                    break;
+                }
+                //TODO:finish
+                default:
+                {
+                    throw new IllegalStateException("Exception; unsupported Semantic_Actions found: " + switch_value.name());
+                }
+            }
+        } while (no_match);
     }
     
     /**
