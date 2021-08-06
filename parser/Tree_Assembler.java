@@ -24,6 +24,11 @@ public class Tree_Assembler<T, U>
     public final boolean VERBOSE;
 
     /**
+     * Special sequence meant to surround the production rules such that they are less likely to accidently appear as a token.
+     */
+    private static final String SPECIAL_UNLIKELY_SENTINEL = "_&GTH&_";
+
+    /**
      * Derivation of the input.
      */
     private StringBuilder derivation;
@@ -82,7 +87,7 @@ public class Tree_Assembler<T, U>
         this.VERBOSE = true;
         this.DECK = new ArrayList<T>(EXPECTED_DECK_SIZE);
         this.FOREST = new HashMap<String, Scenario<U>>(EXPECTED_SCENARIO_COUNT);
-        this.derivation = new StringBuilder(Semantic_Actions.START.name());
+        this.derivation = new StringBuilder(SPECIAL_UNLIKELY_SENTINEL + Semantic_Actions.START.name() + SPECIAL_UNLIKELY_SENTINEL);
         this.syntactical_error_output = SYNTACTICAL_ERROR_OUTPUT;
         this.syntactical_derivation_output = SYNTACTICAL_DERIVATION_OUTPUT;
         this.finish_construction();
@@ -128,10 +133,20 @@ public class Tree_Assembler<T, U>
                         case DECK_START:
                         {
                             //START -> DECK PROBABILITY
-                            if (this.VERBOSE)
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.START.name(), Semantic_Actions.DECK, Semantic_Actions.PROBABILITY);
+                            /*if (this.VERBOSE)
                             {
+                                // work on derivation
                                 Function_Bank.stringbuilder_replace_string_with_string(Semantic_Actions.START.name(), "DECK PROBABILITY", this.derivation);
+                                this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
                             }
+                            // work on semantic stack
+                            this.semantic_stack.set(semantic_stack_end_index, Semantic_Actions.PROBABILITY);
+                            this.semantic_stack.add(Semantic_Actions.DECK);*/
+                        }
+                        default:
+                        {
+                            //TODO:finish
                         }
                     }
                     break;
@@ -153,5 +168,41 @@ public class Tree_Assembler<T, U>
         this.semantic_stack = new ArrayList<Semantic_Actions>();
         this.semantic_stack.add(Semantic_Actions.START); // starting symbol
         this.syntactical_stack = new ArrayList<Evaluable<U>>();
+    }
+
+    /**
+     * Simple subroutine meant to reduce overall code size by reuse.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX local variable representing the last index of {@link #semantic_stack}
+     * @param TARGET current symbol being replaced
+     * @param L_H_S_ expected to be at least length 1, represents the result of the production rule in terms of grammar
+     */
+    private void handle_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Semantic_Actions... L_H_S_)
+    {
+        final int L_H_S_LENGTH = L_H_S_.length;
+
+        //TODO: improve
+        if (this.VERBOSE)
+        {
+            // work on derivation
+            StringBuilder result = new StringBuilder();
+            result.append(SPECIAL_UNLIKELY_SENTINEL);
+            result.append(L_H_S_[0].name());
+            result.append(SPECIAL_UNLIKELY_SENTINEL);
+            for (int i = 1; i < L_H_S_LENGTH; ++i)
+            {
+                result.append(" " + SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
+                result.append(L_H_S_[i].name());
+                result.append(SPECIAL_UNLIKELY_SENTINEL);
+            }
+            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, result.toString(), this.derivation);
+            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
+        }
+
+        // work on semantic stack
+        this.semantic_stack.set(SEMANTIC_STACK_END_INDEX, L_H_S_[L_H_S_LENGTH - 1]);
+
+        for (int i = L_H_S_LENGTH - 2; i > -1; --i)
+            this.semantic_stack.add(L_H_S_[i]);
     }
 }
