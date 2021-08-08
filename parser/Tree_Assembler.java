@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import com.gth.function_bank.Function_Bank;
 import simulation.Simulation;
-import structure.Evaluable;
+import structure.Concrete_Parent;
 import structure.Scenario;
 
 /**
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-7
+Date: 2021-08-[4, 5]/2021-8-[7, 8]
 </b>
 */
 
@@ -42,7 +42,7 @@ public class Tree_Assembler<T, U>
     /**
      * Represents stack like structure for building the {@link Scenario} and deck list, used by {@link Tree_Assembler#parse(Token)}
      */
-    private ArrayList<Evaluable<U>> syntactical_stack;
+    private ArrayList<Concrete_Parent> syntactical_stack;
 
     /**
      * Main deck which the hand will be generated from.
@@ -92,6 +92,39 @@ public class Tree_Assembler<T, U>
         this.syntactical_error_output = SYNTACTICAL_ERROR_OUTPUT;
         this.syntactical_derivation_output = SYNTACTICAL_DERIVATION_OUTPUT;
         this.finish_construction();
+    }
+
+    /**
+     * Convenience method for handling errors. Also reports them using {@link #syntactical_error_output}
+     * 
+     * @param CURRENT_ACTION section that this is called from
+     * @param CURRENT_TOKEN {@link #skiperror}
+     * @param FOLLOW_SET {@link #skiperror}
+     * @return {@link #skiperror(parser.Token.Lexeme_Types, parser.Token.Lexeme_Types...)}
+     */
+    public boolean convenience_error_handling(final Semantic_Actions CURRENT_ACTION, final Token CURRENT_TOKEN, final Token.Lexeme_Types... FOLLOW_SET)
+    {
+        if (this.VERBOSE)
+            this.syntactical_error_output.println("Error: while top of stack is " + CURRENT_ACTION.name() + " and current Token is " + CURRENT_TOKEN);
+        return skiperror(CURRENT_TOKEN.get_type(), FOLLOW_SET);
+    }
+
+    /**
+     * Implementation of error handling for table driven parser.
+     * 
+     * @param CURRENT {@link Token} being looked at
+     * @param FOLLOW_SET follow set of top of semantic stack being checked
+     * @return is current in follow set, answer is result
+     */
+    public static boolean skiperror(final Token.Lexeme_Types CURRENT, final Token.Lexeme_Types... FOLLOW_SET)
+    {
+        // pop case, check follow set
+        for (int i = 0; i < FOLLOW_SET.length; ++i)
+            if (FOLLOW_SET[i] == CURRENT)
+                return true;
+
+        // scan case
+        return false;
     }
 
     /**
@@ -205,7 +238,7 @@ public class Tree_Assembler<T, U>
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.DECK, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.DECK_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
                             {
                                 // remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -213,6 +246,48 @@ public class Tree_Assembler<T, U>
                             }
                             else
                                 return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case MORE_CARDS:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case SENTINEL_END:
+                        {
+                            //MORE_CARDS -> &epsilon
+                            this.epsilon_discard_case_subroutine(semantic_stack_end_index, Semantic_Actions.MORE_CARDS.name());
+                            break;
+                        }
+                        case ID:
+                        {
+                            //MORE_CARDS -> CARD MORE_CARDS
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.MORE_CARDS.name(), Semantic_Actions.CARD, Semantic_Actions.MORE_CARDS);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.MORE_CARDS, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case CARD:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case ID:
+                        {
+                            //CARD -> CARD_NAME ;
+                            //DECK_CARD_POP
                         }
                     }
                     break;
@@ -237,39 +312,6 @@ public class Tree_Assembler<T, U>
             }
         } while (no_match);
     }
-    
-    /**
-     * Convenience method for handling errors. Also reports them using {@link #syntactical_error_output}
-     * 
-     * @param CURRENT_ACTION section that this is called from
-     * @param CURRENT_TOKEN {@link #skiperror}
-     * @param FOLLOW_SET {@link #skiperror}
-     * @return {@link #skiperror(parser.Token.Lexeme_Types, parser.Token.Lexeme_Types...)}
-     */
-    public boolean convenience_error_handling(final Semantic_Actions CURRENT_ACTION, final Token CURRENT_TOKEN, final Token.Lexeme_Types... FOLLOW_SET)
-    {
-        if (this.VERBOSE)
-            this.syntactical_error_output.println("Error: while top of stack is " + CURRENT_ACTION.name() + " and current Token is " + CURRENT_TOKEN);
-        return skiperror(CURRENT_TOKEN.get_type(), FOLLOW_SET);
-    }
-
-    /**
-     * Implementation of error handling for table driven parser.
-     * 
-     * @param CURRENT {@link Token} being looked at
-     * @param FOLLOW_SET follow set of top of semantic stack being checked
-     * @return is current in follow set, answer is result
-     */
-    public static boolean skiperror(final Token.Lexeme_Types CURRENT, final Token.Lexeme_Types... FOLLOW_SET)
-    {
-        // pop case, check follow set
-        for (int i = 0; i < FOLLOW_SET.length; ++i)
-            if (FOLLOW_SET[i] == CURRENT)
-                return true;
-
-        // scan case
-        return false;
-    }
 
     /**
      * Centralize shared constructor code. Should only be called once by the constructor and never again.
@@ -278,7 +320,24 @@ public class Tree_Assembler<T, U>
     {
         this.semantic_stack = new ArrayList<Semantic_Actions>();
         this.semantic_stack.add(Semantic_Actions.START); // starting symbol
-        this.syntactical_stack = new ArrayList<Evaluable<U>>();
+        this.syntactical_stack = new ArrayList<Concrete_Parent>();
+    }
+
+    /**
+     * Simple subroutine meant to reduce overall code size by reuse. For the case that a production rule results in an epsilon to be discarded.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX local variable representing the last index of {@link #semantic_stack}
+     * @param TARGET current symbol being replaced
+     */
+    private void epsilon_discard_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET)
+    {
+        // stack maintenance
+        this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
+        if (this.VERBOSE)
+        {
+            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, "", this.derivation);
+            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
+        }
     }
 
     /**
@@ -332,8 +391,11 @@ public class Tree_Assembler<T, U>
             // stack maintenance
             this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
             if (this.VERBOSE)
+            {
                 Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TYPE_CHECK.name() + SPECIAL_UNLIKELY_SENTINEL, CURRENT_NODE.get_lexeme(),
                                                                        this.derivation);
+                this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
+            }
         }
         else
             throw new TerminalMatchException("Error: expected to match " + TYPE_CHECK.name() + ", failed to do so. Token is: " + CURRENT_NODE + ".");

@@ -14,7 +14,7 @@ Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 </b>
 */
 
-public abstract class Evaluable<T>
+public abstract class Evaluable<T> extends Concrete_Parent
 {
     enum TestResult {
         /**
@@ -41,7 +41,6 @@ public abstract class Evaluable<T>
     //TODO: add javadoc
     public final static boolean debugMode = false;
 
-
     /**
      * Unique identifier for this node.
      */
@@ -54,24 +53,16 @@ public abstract class Evaluable<T>
 
     /**
      * Constructor to force unified id among all subclasses.
+     * @param NAME {@link Concrete_Parent#NAME}
      */
-    public Evaluable()
+    public Evaluable(final String NAME)
     {
+        super(NAME);
         this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
     }
 
     /**
      * Function used to evaluate a node's condition using a rollback evaluation implementation.
-     * Allows for hand to be in an arbitrary order
-     *
-     * @param hand to be checked {@link Collection}
-     * @param next function to call when a leaf node takes a card from the hand
-     * @return a {@link TestResult} used as a signal on what action to preform next
-     */
-    protected abstract <E extends Reservable> TestResult evaluate(final Collection<E> hand, final RollbackCallback next);
-
-    /**
-     * Function used to deprecated_evaluate a node's condition using a rollback evaluation implementation.
      * Allows for hand to be in an arbitrary order
      *
      * Default entry point where the success callback returns true and the failure callback returns false
@@ -84,6 +75,16 @@ public abstract class Evaluable<T>
         TestResult result = evaluate(hand, () -> TestResult.Success);
         return result == TestResult.Success;
     }
+
+    /**
+     * Function used to evaluate a node's condition using a rollback evaluation implementation.
+     * Allows for hand to be in an arbitrary order
+     *
+     * @param HAND to be checked {@link Collection}
+     * @param NEXT function to call when a leaf node takes a card from the hand
+     * @return a {@link TestResult} used as a signal on what action to preform next
+     */
+    protected abstract <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT);
 
     /**
      * Output whole tree in dot file format.

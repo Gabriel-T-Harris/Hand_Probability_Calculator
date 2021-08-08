@@ -6,24 +6,19 @@ import java.util.Collection;
 <b>
 Purpose: To be the base node which others will extend.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-23/2021-8-3
+Date: 2021-07-23/2021-8-3/2021-8-8
 </b>
 */
 
 public abstract class Base_Node<T> extends Evaluable<T>
 {
     /**
-     * The name of this node.
-     */
-    public final String NAME;
-
-    /**
      * Constructor of {@link #Base_Node}.
      * @param NAME the name to be given to this {@link #Base_Node}
      */
     public Base_Node(final String NAME)
     {
-        this.NAME = NAME;
+        super(NAME);
     }
 
     /**

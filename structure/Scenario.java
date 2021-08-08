@@ -15,11 +15,6 @@ public class Scenario<T> extends Evaluable<T>
      * Controls whether this should be displayed in final results.
      */
     public final boolean display;
-    
-    /**
-     * Name of scenario being tested.
-     */
-    public final String NAME;
 
     /**
      * Stores the tree representation of this scenario.
@@ -38,13 +33,13 @@ public class Scenario<T> extends Evaluable<T>
      * Fully parameterized constructor.
      * 
      * @param display {@link #display}
-     * @param NAME {@link #NAME}
+     * @param NAME of scenario being tested
      * @param TREE_CONDITION {@link #TREE_CONDITION}
      */
     public Scenario(final boolean display, final String NAME, final Evaluable<T> TREE_CONDITION)
     {
+        super(NAME);
         this.display = display;
-        this.NAME = NAME;
         this.TREE_CONDITION = TREE_CONDITION;
     }
 
