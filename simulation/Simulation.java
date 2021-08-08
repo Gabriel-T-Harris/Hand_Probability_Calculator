@@ -1,4 +1,4 @@
-package parser;
+package simulation;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ Date: 2021-08-04
 </b>
 */
 
-public class Simulatation<T, U>
+public class Simulation<T, U>
 {
     /**
      * Main deck which the hand will be generated from.
@@ -30,7 +30,7 @@ public class Simulatation<T, U>
      * @param DECK which hands will be created from
      * @param FOREST the {@link Scenario} objects which will be tested.
      */
-    public Simulatation(final ArrayList<T> DECK, final HashMap<String, Scenario<U>> FOREST)
+    public Simulation(final ArrayList<T> DECK, final HashMap<String, Scenario<U>> FOREST)
     {
         //shallow copy do to intended internal use.
         this.DECK = DECK;

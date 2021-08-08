@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import com.gth.function_bank.Function_Bank;
+import simulation.Simulation;
 import structure.Evaluable;
 import structure.Scenario;
 
@@ -98,9 +99,9 @@ public class Tree_Assembler<T, U>
      * 
      * @return culmination of this class, destroy the object afterwards
      */
-    public Simulatation<T, U> creat_result()
+    public Simulation<T, U> creat_result()
     {
-        return new Simulatation<T, U>(this.DECK, this.FOREST);
+        return new Simulation<T, U>(this.DECK, this.FOREST);
     }
 
     /**
@@ -143,6 +144,7 @@ public class Tree_Assembler<T, U>
                             // work on semantic stack
                             this.semantic_stack.set(semantic_stack_end_index, Semantic_Actions.PROBABILITY);
                             this.semantic_stack.add(Semantic_Actions.DECK);*/
+                            break;
                         }
                         default:
                         {
@@ -160,6 +162,38 @@ public class Tree_Assembler<T, U>
         } while (no_match);
     }
     
+    /**
+     * Convenience method for handling errors. Also reports them using {@link #syntactical_error_output}
+     * 
+     * @param CURRENT_ACTION section that this is called from
+     * @param CURRENT_TOKEN {@link #skiperror}
+     * @param FOLLOW_SET {@link #skiperror}
+     * @return {@link #skiperror(parser.Token.Lexeme_Types, parser.Token.Lexeme_Types...)}
+     */
+    public boolean convenience_error_handling(final Semantic_Actions CURRENT_ACTION, final Token CURRENT_TOKEN, final Token.Lexeme_Types... FOLLOW_SET)
+    {
+        this.syntactical_error_output.println("Error: while top of stack is " + CURRENT_ACTION.name() + " and current Token is " + CURRENT_TOKEN);
+        return skiperror(CURRENT_TOKEN.get_type(), FOLLOW_SET);
+    }
+
+    /**
+     * Implementation of error handling for table driven parser.
+     * 
+     * @param CURRENT {@link Token} being looked at
+     * @param FOLLOW_SET follow set of top of semantic stack being checked
+     * @return is current in follow set, answer is result
+     */
+    public static boolean skiperror(final Token.Lexeme_Types CURRENT, final Token.Lexeme_Types... FOLLOW_SET)
+    {
+        // pop case, check follow set
+        for (int i = 0; i < FOLLOW_SET.length; ++i)
+            if (FOLLOW_SET[i] == CURRENT)
+                return true;
+
+        // scan case
+        return false;
+    }
+
     /**
      * Centralize shared constructor code. Should only be called once by the constructor and never again.
      */
