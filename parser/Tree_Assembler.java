@@ -12,7 +12,7 @@ import structure.Scenario;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-04/2021-8-5
+Date: 2021-08-[4, 5]/2021-8-7
 </b>
 */
 
@@ -105,6 +105,7 @@ public class Tree_Assembler<T, U>
     }
 
     /**
+     * TODO:rewrite
      * Method for parsing tokens into an abstract syntax tree. Uses all data members.
      * Make sure to call {@link #finish_semantic_stack} once all the {@link Token} are are parsed.
      * @param INPUT current top token being looked at
@@ -135,6 +136,7 @@ public class Tree_Assembler<T, U>
                         {
                             //START -> DECK PROBABILITY
                             this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.START.name(), Semantic_Actions.DECK, Semantic_Actions.PROBABILITY);
+                            //TODO: remove comment
                             /*if (this.VERBOSE)
                             {
                                 // work on derivation
@@ -148,15 +150,89 @@ public class Tree_Assembler<T, U>
                         }
                         default:
                         {
-                            //TODO:finish
+                            if (this.convenience_error_handling(Semantic_Actions.START, INPUT))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case DECK:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case DECK_START:
+                        {
+                            //DECK -> DECK_START SENTINEL_START DECK_LIST SENTINEL_END
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.DECK_START.name(), Semantic_Actions.DECK_START, Semantic_Actions.SENTINEL_START,
+                                                        Semantic_Actions.DECK_LIST, Semantic_Actions.SENTINEL_END);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.DECK, INPUT, Token.Lexeme_Types.PROBABILITY_START))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case DECK_START:
+                {
+                    no_match = false;
+                    this.match_terminal_derivation_discard(semantic_stack_end_index, Token.Lexeme_Types.DECK_START, INPUT);
+                    break;
+                }
+                case DECK_LIST:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case ID:
+                        {
+                            //DECK_LIST -> CARD MORE_CARDS
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.DECK_LIST.name(), Semantic_Actions.CARD, Semantic_Actions.MORE_CARDS);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.DECK, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
                         }
                     }
                     break;
                 }
                 //TODO:finish
+                case SENTINEL_START:
+                {
+                    no_match = false;
+                    this.match_terminal_derivation_discard(semantic_stack_end_index, Token.Lexeme_Types.SENTINEL_START, INPUT);
+                    break;
+                }
+                case SENTINEL_END:
+                {
+                    no_match = false;
+                    this.match_terminal_derivation_discard(semantic_stack_end_index, Token.Lexeme_Types.SENTINEL_END, INPUT);
+                    break;
+                }
                 default:
                 {
-                    throw new IllegalStateException("Exception; unsupported Semantic_Actions found: " + switch_value.name());
+                    throw new IllegalStateException("Exception, unsupported Semantic_Actions found: " + switch_value.name());
                 }
             }
         } while (no_match);
@@ -172,7 +248,8 @@ public class Tree_Assembler<T, U>
      */
     public boolean convenience_error_handling(final Semantic_Actions CURRENT_ACTION, final Token CURRENT_TOKEN, final Token.Lexeme_Types... FOLLOW_SET)
     {
-        this.syntactical_error_output.println("Error: while top of stack is " + CURRENT_ACTION.name() + " and current Token is " + CURRENT_TOKEN);
+        if (this.VERBOSE)
+            this.syntactical_error_output.println("Error: while top of stack is " + CURRENT_ACTION.name() + " and current Token is " + CURRENT_TOKEN);
         return skiperror(CURRENT_TOKEN.get_type(), FOLLOW_SET);
     }
 
@@ -238,5 +315,27 @@ public class Tree_Assembler<T, U>
 
         for (int i = L_H_S_LENGTH - 2; i > -1; --i)
             this.semantic_stack.add(L_H_S_[i]);
+    }
+
+    /**
+     * Subroutine for matching terminals.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX last index of {@link Tree_Assembler#semantic_stack}
+     * @param TYPE_CHECK {@link Token.Lexeme_Types} to check
+     * @param CURRENT_NODE values pertaining to node to be created
+     * @throws TerminalMatchException thrown when a match which should always succeed, fails.
+     */
+    private void match_terminal_derivation_discard(final int SEMANTIC_STACK_END_INDEX, final Token.Lexeme_Types TYPE_CHECK, final Token CURRENT_NODE) throws TerminalMatchException
+    {
+        if (CURRENT_NODE.get_type() == TYPE_CHECK)
+        {
+            // stack maintenance
+            this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
+            if (this.VERBOSE)
+                Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TYPE_CHECK.name() + SPECIAL_UNLIKELY_SENTINEL, CURRENT_NODE.get_lexeme(),
+                                                                       this.derivation);
+        }
+        else
+            throw new TerminalMatchException("Error: expected to match " + TYPE_CHECK.name() + ", failed to do so. Token is: " + CURRENT_NODE + ".");
     }
 }

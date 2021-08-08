@@ -28,7 +28,7 @@ Later Versions:
     -draw, example Pot of Greed
     -excavate, Pot of Duality
     -draw then discard, Graceful Charity
-    -other such as Pot of Desires
+    -other such as Pot of Desires, Reasoning, Chaos Ruler, the Chaotic Magical Dragon
 
 -provide more options for writing configuration file?
     -allow some regex for stating cards?

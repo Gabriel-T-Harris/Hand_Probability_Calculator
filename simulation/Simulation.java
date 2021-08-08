@@ -47,6 +47,7 @@ public class Simulation<T, U>
     public String simulate(final int HAND_SIZE, final int TEST_HAND_COUNT)
     {
         //TODO: finish
+        //TODO: parallelize at 2 points, 1) at forest level (duplicate decks), 2) scenario level (duplicate decks.)
         throw new UnsupportedOperationException("Not finished.");
     }
 }
