@@ -143,9 +143,8 @@ public class Tree_Assembler<T, U>
      * Make sure to call {@link #finish_semantic_stack} once all the {@link Token} are are parsed.
      * @param INPUT current top token being looked at
      * @throws EmptySemanticStackException when internal semantic_stack is empty yet there is another token to parse.
-     * @throws TerminalMatchException {@link #match_subroutine}
      */
-    public void parse(final Token INPUT) throws EmptySemanticStackException, TerminalMatchException
+    public void parse(final Token INPUT) throws EmptySemanticStackException
     {
         boolean no_match = true;
         int semantic_stack_end_index;
@@ -222,8 +221,27 @@ public class Tree_Assembler<T, U>
                 }
                 case DECK_START:
                 {
-                    no_match = false;
-                    this.match_terminal_derivation_discard(semantic_stack_end_index, Token.Lexeme_Types.DECK_START, INPUT);
+                    switch (INPUT.get_type())
+                    {
+                        case DECK_START:
+                        {
+                            //DECK_START -> deck list:
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.DECK_START.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.DECK_START, INPUT, Token.Lexeme_Types.SENTINEL_START))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
                     break;
                 }
                 case DECK_LIST:
@@ -287,7 +305,177 @@ public class Tree_Assembler<T, U>
                         case ID:
                         {
                             //CARD -> CARD_NAME ;
-                            //DECK_CARD_POP
+                            this.handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.DECK_CARD_POP, Semantic_Actions.CARD.name(), Semantic_Actions.CARD,
+                                                            Semantic_Actions.SEMI_COLON);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.CARD, INPUT, Token.Lexeme_Types.ID, Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case CARD_NAME:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case ID:
+                        {
+                            //CARD_NAME -> id
+                            this.match_litteral_add_subroutine(semantic_stack_end_index, Semantic_Actions.CARD_NAME.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.CARD_NAME, INPUT, Token.Lexeme_Types.SEMI_COLON, Token.Lexeme_Types.CONDITION_CARD_END))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case PROBABILITY:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case PROBABILITY_START:
+                        {
+                            //PROBABILITY -> PROBABILITY_START SENTINEL_START SCENARIO_LIST SENTINEL_END
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.PROBABILITY.name(), Semantic_Actions.PROBABILITY_START,
+                                                        Semantic_Actions.SENTINEL_START, Semantic_Actions.SCENARIO_LIST, Semantic_Actions.SENTINEL_END);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.PROBABILITY, INPUT))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case PROBABILITY_START:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case PROBABILITY_START:
+                        {
+                            //PROBABILITY_START -> scenarios:
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.PROBABILITY_START.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.PROBABILITY_START, INPUT, Token.Lexeme_Types.SENTINEL_START))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case SCENARIO_LIST:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case ID:
+                        {
+                            //SCENARIO_LIST -> SCENARIO MORE_SCENARIOS
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.SCENARIO_LIST.name(), Semantic_Actions.SCENARIO,
+                                                        Semantic_Actions.MORE_SCENARIOS);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case MORE_SCENARIOS:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case SENTINEL_END:
+                        {
+                            //MORE_SCENARIOS -> &epsilon
+                            this.epsilon_discard_case_subroutine(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS.name());
+                            break;
+                        }
+                        case ID:
+                        {
+                            //MORE_SCENARIOS -> SCENARIO MORE_SCENARIOS
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS.name(), Semantic_Actions.SCENARIO,
+                                                        Semantic_Actions.MORE_SCENARIOS);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case SCENARIO:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case ID:
+                        {
+                            //SCENARIO -> SCENARIO_NAME assign SENTINEL_START TREE DISPLAY SENTINEL_END
+                            this.handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.SCENARIO_POP, Semantic_Actions.SCENARIO.name(),
+                                                            Semantic_Actions.SCENARIO_NAME, Semantic_Actions.ASSIGN, Semantic_Actions.SENTINEL_START, Semantic_Actions.TREE,
+                                                            Semantic_Actions.DISPLAY, Semantic_Actions.SENTINEL_END);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO, INPUT, Token.Lexeme_Types.ID, Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
                         }
                     }
                     break;
@@ -295,16 +483,85 @@ public class Tree_Assembler<T, U>
                 //TODO:finish
                 case SENTINEL_START:
                 {
-                    no_match = false;
-                    this.match_terminal_derivation_discard(semantic_stack_end_index, Token.Lexeme_Types.SENTINEL_START, INPUT);
+                    switch (INPUT.get_type())
+                    {
+                        case SENTINEL_START:
+                        {
+                            //SENTINEL_START -> open_brace
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.SENTINEL_START.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.SENTINEL_START, INPUT, Token.Lexeme_Types.ID, Token.Lexeme_Types.TREE_START,
+                                                                Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START, Token.Lexeme_Types.CONDITION_SCENARIO_START,
+                                                                Token.Lexeme_Types.CONDITION_EXPR_START))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
                     break;
                 }
                 case SENTINEL_END:
                 {
-                    no_match = false;
-                    this.match_terminal_derivation_discard(semantic_stack_end_index, Token.Lexeme_Types.SENTINEL_END, INPUT);
+                    switch (INPUT.get_type())
+                    {
+                        case SENTINEL_START:
+                        {
+                            //SENTINEL_END -> close_brace
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.SENTINEL_END.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.SENTINEL_END, INPUT, Token.Lexeme_Types.SEMI_COLON, Token.Lexeme_Types.ID,
+                                                                Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.PROBABILITY_START))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
                     break;
                 }
+                case SCENARIO_NAME:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case ID:
+                        {
+                            //SCENARIO_NAME -> id
+                            this.match_litteral_add_subroutine(semantic_stack_end_index, Semantic_Actions.SCENARIO_NAME.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_NAME, INPUT, Token.Lexeme_Types.ASSIGN, Token.Lexeme_Types.CONDITION_SCENARIO_END))
+                            {
+                                // remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; // effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                //TODO:finish
+                //DECK_CARD_POP
+                //SCENARIO_POP
                 default:
                 {
                     throw new IllegalStateException("Exception, unsupported Semantic_Actions found: " + switch_value.name());
@@ -341,16 +598,13 @@ public class Tree_Assembler<T, U>
     }
 
     /**
-     * Simple subroutine meant to reduce overall code size by reuse.
+     * Subroutine to handle derivation part.
      * 
-     * @param SEMANTIC_STACK_END_INDEX local variable representing the last index of {@link #semantic_stack}
      * @param TARGET current symbol being replaced
      * @param L_H_S_ expected to be at least length 1, represents the result of the production rule in terms of grammar
      */
-    private void handle_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Semantic_Actions... L_H_S_)
+    private void derivation_subroutine(final String TARGET, final Semantic_Actions... L_H_S_)
     {
-        final int L_H_S_LENGTH = L_H_S_.length;
-
         //TODO: improve
         if (this.VERBOSE)
         {
@@ -359,7 +613,7 @@ public class Tree_Assembler<T, U>
             result.append(SPECIAL_UNLIKELY_SENTINEL);
             result.append(L_H_S_[0].name());
             result.append(SPECIAL_UNLIKELY_SENTINEL);
-            for (int i = 1; i < L_H_S_LENGTH; ++i)
+            for (int i = 1; i < L_H_S_.length; ++i)
             {
                 result.append(" " + SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
                 result.append(L_H_S_[i].name());
@@ -368,36 +622,82 @@ public class Tree_Assembler<T, U>
             Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, result.toString(), this.derivation);
             this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
         }
+    }
+
+    /**
+     * Subroutine for matching terminals and then discarding them.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX last index of {@link Tree_Assembler#semantic_stack}
+     * @param TARGET {@link Token.Lexeme_Types} to replace
+     * @param CURRENT_NODE values pertaining to node to be created
+     */
+    private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
+    {
+        // stack maintenance
+        this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
+        if (this.VERBOSE)
+        {
+            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, CURRENT_NODE.get_lexeme(), this.derivation);
+            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
+        }
+    }
+
+    /**
+     * Subroutine for matching terminals and then adds them to {@link #syntactical_stack}.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX last index of {@link #semantic_stack}
+     * @param TARGET {@link Token.Lexeme_Types} to replace
+     * @param CURRENT_NODE values pertaining to node to be created
+     */
+    private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
+    {
+        // stack maintenance
+        this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
+        this.syntactical_stack.add(new Concrete_Parent(CURRENT_NODE.get_lexeme()));
+        if (this.VERBOSE)
+        {
+            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, CURRENT_NODE.get_lexeme(),
+                                                                   this.derivation);
+            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
+        }
+    }
+
+    /**
+     * Simple subroutine meant to reduce overall code size by reuse.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX local variable representing the last index of {@link #semantic_stack}
+     * @param TARGET current symbol being replaced
+     * @param L_H_S_ expected to be at least length 1, represents the result of the production rule in terms of grammar
+     */
+    private void handle_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Semantic_Actions... L_H_S_)
+    {
+        //TODO: improve
+        this.derivation_subroutine(TARGET, L_H_S_);
 
         // work on semantic stack
-        this.semantic_stack.set(SEMANTIC_STACK_END_INDEX, L_H_S_[L_H_S_LENGTH - 1]);
+        this.semantic_stack.set(SEMANTIC_STACK_END_INDEX, L_H_S_[L_H_S_.length - 1]);
 
-        for (int i = L_H_S_LENGTH - 2; i > -1; --i)
+        for (int i = L_H_S_.length - 2; i > -1; --i)
             this.semantic_stack.add(L_H_S_[i]);
     }
 
     /**
-     * Subroutine for matching terminals.
+     * Similar to {@link #handle_case_subroutine(int, String, Semantic_Actions...)}, except that it adds a {@link Semantic_Actions} to {@link #semantic_stack} without affecting {@link #derivation}.
      * 
-     * @param SEMANTIC_STACK_END_INDEX last index of {@link Tree_Assembler#semantic_stack}
-     * @param TYPE_CHECK {@link Token.Lexeme_Types} to check
-     * @param CURRENT_NODE values pertaining to node to be created
-     * @throws TerminalMatchException thrown when a match which should always succeed, fails.
+     * @param SEMANTIC_STACK_END_INDEX local variable representing the last index of {@link #semantic_stack}
+     * @param POP {@link Semantic_Actions} relating to stack popping
+     * @param TARGET current symbol being replaced
+     * @param L_H_S_ expected to be at least length 1, represents the result of the production rule in terms of grammar
      */
-    private void match_terminal_derivation_discard(final int SEMANTIC_STACK_END_INDEX, final Token.Lexeme_Types TYPE_CHECK, final Token CURRENT_NODE) throws TerminalMatchException
+    private void handle_pop_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final Semantic_Actions POP, final String TARGET, final Semantic_Actions... L_H_S_)
     {
-        if (CURRENT_NODE.get_type() == TYPE_CHECK)
-        {
-            // stack maintenance
-            this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
-            if (this.VERBOSE)
-            {
-                Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TYPE_CHECK.name() + SPECIAL_UNLIKELY_SENTINEL, CURRENT_NODE.get_lexeme(),
-                                                                       this.derivation);
-                this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
-            }
-        }
-        else
-            throw new TerminalMatchException("Error: expected to match " + TYPE_CHECK.name() + ", failed to do so. Token is: " + CURRENT_NODE + ".");
+        //TODO: improve
+        this.derivation_subroutine(TARGET, L_H_S_);
+
+        // work on semantic stack
+        this.semantic_stack.set(SEMANTIC_STACK_END_INDEX, POP);
+
+        for (int i = L_H_S_.length - 1; i > -1; --i)
+            this.semantic_stack.add(L_H_S_[i]);
     }
 }
