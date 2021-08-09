@@ -8,7 +8,7 @@ import parser.Token.Lexeme_Types;
 <b>
 Purpose: Perform tokenization on input files, such that later stages may read a stream of tokens one by one.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-[27, 28], 2021-7-30
+Date: 2021-07-[27, 28], 2021-7-30/2021-8-9
 </b>
 */
 
@@ -143,6 +143,16 @@ public class Tokenizer
     public final static Pattern DISPLAY_START = Pattern.compile("\\s*display\\s*");
 
     /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#TRUE} {@link Token}.
+     */
+    public final static Pattern TRUE = Pattern.compile("\\s*true\\s*");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#FALSE} {@link Token}.
+     */
+    public final static Pattern FALSE = Pattern.compile("\\s*false\\s*");
+
+    /**
      * Definition of valid char that an the ID lexeme can have.
      */
     public final static Pattern ID_CHAR_SET = Pattern.compile("[^" + RESTRICTED_CHARS.replace("{", "\\{").replace("}", "\\}").replace("[", "\\[").replace("]", "\\]") + "]");
@@ -250,44 +260,64 @@ public class Tokenizer
         while (INPUT.hasNext())
         {
             placeholder = INPUT.next();
-            
+
             //check for keyword end
             if (WHITE_SPACE_CHAR.matcher(placeholder).matches())
             {
-                final String LEXEM = LEXEME_START.toString();
-                
-                if (AND.matcher(LEXEM).matches())
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.AND, LINE_NUMBER, LEXEM));
-                else if (OR.matcher(LEXEM).matches())
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.OR, LINE_NUMBER, LEXEM));
-                else if (NOT.matcher(LEXEM).matches())
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.NOT, LINE_NUMBER, LEXEM));
-                else if (XOR.matcher(LEXEM).matches())
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.XOR, LINE_NUMBER, LEXEM));
+                final String LEXEME = LEXEME_START.toString();
+
+                if (AND.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.AND, LINE_NUMBER, LEXEME));
+                else if (OR.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.OR, LINE_NUMBER, LEXEME));
+                else if (NOT.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.NOT, LINE_NUMBER, LEXEME));
+                else if (XOR.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.XOR, LINE_NUMBER, LEXEME));
+                else if (PROBABILITY_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.PROBABILITY_START, LINE_NUMBER, LEXEME));
+                else if (TREE_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.TREE_START, LINE_NUMBER, LEXEME));
+                else if (DISPLAY_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.DISPLAY_START, LINE_NUMBER, LEXEME));
+                else if (FALSE.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.FALSE, LINE_NUMBER, LEXEME));
+                else if (TRUE.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.TRUE, LINE_NUMBER, LEXEME));
                 else
                     return gather_ID_chars(LINE_NUMBER, LEXEME_START.append(placeholder), INPUT);
             }
             //check for restricted char
             else if (RESTRICTED_CHARS.contains(placeholder))
             {
-                final String LEXEM = LEXEME_START.toString();
-                
-                if (AND.matcher(LEXEM).matches())
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.AND, LINE_NUMBER, LEXEM));
-                else if (OR.matcher(LEXEM).matches())
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.OR, LINE_NUMBER, LEXEM));
-                else if (NOT.matcher(LEXEM).matches())
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.NOT, LINE_NUMBER, LEXEM));
-                else if (XOR.matcher(LEXEM).matches())
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.XOR, LINE_NUMBER, LEXEM));
+                final String LEXEME = LEXEME_START.toString();
+
+                if (AND.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.AND, LINE_NUMBER, LEXEME));
+                else if (OR.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.OR, LINE_NUMBER, LEXEME));
+                else if (NOT.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.NOT, LINE_NUMBER, LEXEME));
+                else if (XOR.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.XOR, LINE_NUMBER, LEXEME));
+                else if (PROBABILITY_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.PROBABILITY_START, LINE_NUMBER, LEXEME));
+                else if (TREE_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.TREE_START, LINE_NUMBER, LEXEME));
+                else if (DISPLAY_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.DISPLAY_START, LINE_NUMBER, LEXEME));
+                else if (FALSE.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.FALSE, LINE_NUMBER, LEXEME));
+                else if (TRUE.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.TRUE, LINE_NUMBER, LEXEME));
                 else
-                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.ID, LINE_NUMBER, LEXEM));
+                    return new Returned_Data(placeholder, new Token(Token.Lexeme_Types.ID, LINE_NUMBER, LEXEME));
             }
             //keep building
             else
                 LEXEME_START.append(placeholder);
         }
-        
+
         return new Returned_Data(new Token(Token.Lexeme_Types.ID, LINE_NUMBER, LEXEME_START.toString()));
     }
 
@@ -327,13 +357,7 @@ public class Tokenizer
     private static Returned_Data parse_potentional_ID(final long LINE_NUMBER, final String REMAINDER, final String COMPLETE_LEXEME)
     {
         //Test lexeme for special sequences, if all fail then is in fact ID.
-        if (TREE_START.matcher(COMPLETE_LEXEME).matches())
-            return new Returned_Data(REMAINDER, new Token(Token.Lexeme_Types.TREE_START, LINE_NUMBER, COMPLETE_LEXEME));
-        else if (DISPLAY_START.matcher(COMPLETE_LEXEME).matches())
-            return new Returned_Data(REMAINDER, new Token(Token.Lexeme_Types.DISPLAY_START, LINE_NUMBER, COMPLETE_LEXEME));
-        else if (PROBABILITY_START.matcher(COMPLETE_LEXEME).matches())
-            return new Returned_Data(REMAINDER, new Token(Token.Lexeme_Types.PROBABILITY_START, LINE_NUMBER, COMPLETE_LEXEME));
-        else if (DECK_START.matcher(COMPLETE_LEXEME).matches())
+        if (DECK_START.matcher(COMPLETE_LEXEME).matches())
             return new Returned_Data(REMAINDER, new Token(Token.Lexeme_Types.DECK_START, LINE_NUMBER, COMPLETE_LEXEME));
         else
             return new Returned_Data(REMAINDER, new Token(Token.Lexeme_Types.ID, LINE_NUMBER, COMPLETE_LEXEME));
