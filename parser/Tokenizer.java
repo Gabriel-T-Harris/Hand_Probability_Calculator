@@ -92,6 +92,16 @@ public class Tokenizer
     public final static String CONDITION_EXPR_END = ")";
 
     /**
+     * Special marker used in combination with others to identify parts.
+     */
+    public final static String ASSIGN = "=";
+
+    /**
+     * Special marker of the end of various parts.
+     */
+    public final static String SEMI_COLON = ";";
+
+    /**
      * Simple concatenation of chars which are not allowed to be a part of any keyword, ID, or special marker of a part.
      */
     public final static String RESTRICTED_CHARS = ";=\n" + SENTINEL_START + SENTINEL_END + CONDITION_CARD_START + CONDITION_CARD_END + CONDITION_SCENARIO_START +
@@ -190,10 +200,10 @@ public class Tokenizer
                 return new Returned_Data(new Token(Token.Lexeme_Types.CONDITION_EXPR_START, LINE_NUMBER, START));
             case CONDITION_EXPR_END:
                 return new Returned_Data(new Token(Token.Lexeme_Types.CONDITION_EXPR_END, LINE_NUMBER, START));
-            case ";":
-                return new Returned_Data(new Token(Token.Lexeme_Types.SEMI_COLON, LINE_NUMBER, START));
-            case "=":
+            case ASSIGN:
                 return new Returned_Data(new Token(Token.Lexeme_Types.ASSIGN, LINE_NUMBER, START));
+            case SEMI_COLON:
+                return new Returned_Data(new Token(Token.Lexeme_Types.SEMI_COLON, LINE_NUMBER, START));
             //comments
             case "/":
             {

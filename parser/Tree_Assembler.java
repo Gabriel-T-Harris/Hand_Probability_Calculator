@@ -12,11 +12,13 @@ import structure.Scenario;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-[7, 8]
+Date: 2021-08-[4, 5]/2021-8-[7, 9]
 </b>
 */
 
 //TODO: figure out how to effectively handle VERBOSE, as would like to not recheck it, maybe just use lambda as function pointer.
+//https://smlweb.cpsc.ucalgary.ca/vital-stats.php?grammar=START+-%3E+DECK+PROBABILITY+.%0D%0A%0D%0ADECK+-%3E+DECK_START+SENTINEL_START+DECK_LIST+SENTINEL_END.%0D%0ADECK_START+-%3E+deck+list%3A+.%0D%0ADECK_LIST+-%3E+CARD+MORE_CARDS+.%0D%0AMORE_CARDS+-%3E+CARD+MORE_CARDS+%7C+.%0D%0ACARD+-%3E+CARD_NAME+SEMI_COLON+.%0D%0ACARD_NAME+-%3E+id+.%0D%0A%0D%0APROBABILITY+-%3E+PROBABILITY_START+SENTINEL_START+SCENARIO_LIST+SENTINEL_END+.%0D%0APROBABILITY_START+-%3E+scenarios%3A+.%0D%0A%0D%0ASCENARIO_LIST+-%3E+SCENARIO+MORE_SCENARIOS+.%0D%0AMORE_SCENARIOS+-%3E+SCENARIO+MORE_SCENARIOS+%7C+.%0D%0A%0D%0ASCENARIO+-%3E+SCENARIO_NAME+ASSIGN+SENTINEL_START+TREE+DISPLAY+SENTINEL_END+.%0D%0ASCENARIO_NAME+-%3E+id+.%0D%0A%0D%0ATREE+-%3E+TREE_START+ASSIGN+SENTINEL_START+EXPR+SENTINEL_END+SEMI_COLON+.%0D%0ATREE_START+-%3E+scenario+.%0D%0A%0D%0AEXPR+-%3E+UNARY_EXPR+BINARY_EXPR+.%0D%0A%0D%0AUNARY_EXPR+-%3E+UNARY_OPERATOR+UNARY_EXPR+%7C+PRIMARY_EXPR+.%0D%0AUNARY_OPERATOR+-%3E+not+.%0D%0A%0D%0APRIMARY_EXPR+-%3E+CONDITION_CARD_START+CARD_NAME+CONDITION_CARD_END+%7C+CONDITION_SCENARIO_START+SCENARIO_NAME+CONDITION_SCENARIO_END+%7C+CONDITION_EXPR_START+EXPR+CONDITION_EXPR_END+.%0D%0A%0D%0ACONDITION_CARD_START+-%3E+open_bracket+.%0D%0ACONDITION_CARD_END+-%3E+close_bracket+.%0D%0ACONDITION_SCENARIO_START+-%3E+less_then+.%0D%0ACONDITION_SCENARIO_END+-%3E+greater_then+.%0D%0ACONDITION_EXPR_START+-%3E+open_parenthesis+.%0D%0ACONDITION_EXPR_END+-%3E+close_parenthesis+.%0D%0A%0D%0ABINARY_EXPR+-%3E+BINARY_OPERATOR+UNARY_EXPR+BINARY_EXPR+%7C+.%0D%0ABINARY_OPERATOR+-%3E+and+%7C+or+%7C+xor+.%0D%0A%0D%0ADISPLAY+-%3E+DISPLAY_START+ASSIGN+DISPLAY_VALUE+SEMI_COLON+%7C+.%0D%0ADISPLAY_START+-%3E+display+.%0D%0ADISPLAY_VALUE+-%3E+true+%7C+false+.%0D%0A%0D%0ASENTINEL_START+-%3E+open_brace+.%0D%0ASENTINEL_END+-%3E+close_brace+.%0D%0AASSIGN+-%3E+assign+.%0D%0ASEMI_COLON+-%3E+%3B.
+//https://smlweb.cpsc.ucalgary.ca/ll1-table.php?grammar=START+-%3E+DECK+PROBABILITY+.%0A%0ADECK+-%3E+DECK_START+SENTINEL_START+DECK_LIST+SENTINEL_END.%0ADECK_START+-%3E+deck+list%3A+.%0ADECK_LIST+-%3E+CARD+MORE_CARDS+.%0AMORE_CARDS+-%3E+CARD+MORE_CARDS+%7C+.%0ACARD+-%3E+CARD_NAME+SEMI_COLON+.%0ACARD_NAME+-%3E+id+.%0A%0APROBABILITY+-%3E+PROBABILITY_START+SENTINEL_START+SCENARIO_LIST+SENTINEL_END+.%0APROBABILITY_START+-%3E+scenarios%3A+.%0A%0ASCENARIO_LIST+-%3E+SCENARIO+MORE_SCENARIOS+.%0AMORE_SCENARIOS+-%3E+SCENARIO+MORE_SCENARIOS+%7C+.%0A%0ASCENARIO+-%3E+SCENARIO_NAME+ASSIGN+SENTINEL_START+TREE+DISPLAY+SENTINEL_END+.%0ASCENARIO_NAME+-%3E+id+.%0A%0ATREE+-%3E+TREE_START+ASSIGN+SENTINEL_START+EXPR+SENTINEL_END+SEMI_COLON+.%0ATREE_START+-%3E+scenario+.%0A%0AEXPR+-%3E+UNARY_EXPR+BINARY_EXPR+.%0A%0AUNARY_EXPR+-%3E+UNARY_OPERATOR+UNARY_EXPR+%7C+PRIMARY_EXPR+.%0AUNARY_OPERATOR+-%3E+not+.%0A%0APRIMARY_EXPR+-%3E+CONDITION_CARD_START+CARD_NAME+CONDITION_CARD_END+%7C+CONDITION_SCENARIO_START+SCENARIO_NAME+CONDITION_SCENARIO_END+%7C+CONDITION_EXPR_START+EXPR+CONDITION_EXPR_END+.%0A%0ACONDITION_CARD_START+-%3E+open_bracket+.%0ACONDITION_CARD_END+-%3E+close_bracket+.%0ACONDITION_SCENARIO_START+-%3E+less_then+.%0ACONDITION_SCENARIO_END+-%3E+greater_then+.%0ACONDITION_EXPR_START+-%3E+open_parenthesis+.%0ACONDITION_EXPR_END+-%3E+close_parenthesis+.%0A%0ABINARY_EXPR+-%3E+BINARY_OPERATOR+UNARY_EXPR+BINARY_EXPR+%7C+.%0ABINARY_OPERATOR+-%3E+and+%7C+or+%7C+xor+.%0A%0ADISPLAY+-%3E+DISPLAY_START+ASSIGN+DISPLAY_VALUE+SEMI_COLON+%7C+.%0ADISPLAY_START+-%3E+display+.%0ADISPLAY_VALUE+-%3E+true+%7C+false+.%0A%0ASENTINEL_START+-%3E+open_brace+.%0ASENTINEL_END+-%3E+close_brace+.%0AASSIGN+-%3E+assign+.%0ASEMI_COLON+-%3E+%3B.&substs=
 public class Tree_Assembler<T, U>
 {
     /**
@@ -118,12 +120,12 @@ public class Tree_Assembler<T, U>
      */
     public static boolean skiperror(final Token.Lexeme_Types CURRENT, final Token.Lexeme_Types... FOLLOW_SET)
     {
-        // pop case, check follow set
+        //pop case, check follow set
         for (int i = 0; i < FOLLOW_SET.length; ++i)
             if (FOLLOW_SET[i] == CURRENT)
                 return true;
 
-        // scan case
+        //scan case
         return false;
     }
 
@@ -168,28 +170,18 @@ public class Tree_Assembler<T, U>
                         {
                             //START -> DECK PROBABILITY
                             this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.START.name(), Semantic_Actions.DECK, Semantic_Actions.PROBABILITY);
-                            //TODO: remove comment
-                            /*if (this.VERBOSE)
-                            {
-                                // work on derivation
-                                Function_Bank.stringbuilder_replace_string_with_string(Semantic_Actions.START.name(), "DECK PROBABILITY", this.derivation);
-                                this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
-                            }
-                            // work on semantic stack
-                            this.semantic_stack.set(semantic_stack_end_index, Semantic_Actions.PROBABILITY);
-                            this.semantic_stack.add(Semantic_Actions.DECK);*/
                             break;
                         }
                         default:
                         {
                             if (this.convenience_error_handling(Semantic_Actions.START, INPUT))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -209,12 +201,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.DECK, INPUT, Token.Lexeme_Types.PROBABILITY_START))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -234,12 +226,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.DECK_START, INPUT, Token.Lexeme_Types.SENTINEL_START))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -258,12 +250,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.DECK_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -288,12 +280,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.MORE_CARDS, INPUT, Token.Lexeme_Types.SENTINEL_END))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -313,12 +305,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.CARD, INPUT, Token.Lexeme_Types.ID, Token.Lexeme_Types.SENTINEL_END))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -338,12 +330,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.CARD_NAME, INPUT, Token.Lexeme_Types.SEMI_COLON, Token.Lexeme_Types.CONDITION_CARD_END))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -363,12 +355,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.PROBABILITY, INPUT))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -388,12 +380,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.PROBABILITY_START, INPUT, Token.Lexeme_Types.SENTINEL_START))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -413,12 +405,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.SCENARIO_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -444,12 +436,12 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.SCENARIO_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -470,17 +462,391 @@ public class Tree_Assembler<T, U>
                         {
                             if (this.convenience_error_handling(Semantic_Actions.SCENARIO, INPUT, Token.Lexeme_Types.ID, Token.Lexeme_Types.SENTINEL_END))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
                 }
-                //TODO:finish
+                case SCENARIO_NAME:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case ID:
+                        {
+                            //SCENARIO_NAME -> id
+                            this.match_litteral_add_subroutine(semantic_stack_end_index, Semantic_Actions.SCENARIO_NAME.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_NAME, INPUT, Token.Lexeme_Types.ASSIGN, Token.Lexeme_Types.CONDITION_SCENARIO_END))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case TREE:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case TREE_START:
+                        {
+                            //TREE -> TREE_START assign SENTINEL_START EXPR SENTINEL_END ;
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.TREE.name(), Semantic_Actions.TREE_START, Semantic_Actions.ASSIGN,
+                                                        Semantic_Actions.SENTINEL_START, Semantic_Actions.EXPR, Semantic_Actions.SENTINEL_END, Semantic_Actions.SEMI_COLON);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.TREE, INPUT, Token.Lexeme_Types.DISPLAY_START, Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case TREE_START:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case TREE_START:
+                        {
+                            //TREE_START -> scenario
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.TREE_START.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.TREE_START, INPUT, Token.Lexeme_Types.ASSIGN))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                //TODO: finish
+                //EXPR
+                //UNARY_EXPR
+                case UNARY_OPERATOR:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case NOT:
+                        {
+                            //UNARY_OPERATOR -> not
+                            this.match_litteral_add_subroutine(semantic_stack_end_index, Semantic_Actions.UNARY_OPERATOR.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.UNARY_OPERATOR, INPUT, Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START,
+                                                                Token.Lexeme_Types.CONDITION_SCENARIO_START, Token.Lexeme_Types.CONDITION_EXPR_START))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                //TODO: finish
+                //PRIMARY_EXPR
+                case CONDITION_CARD_START:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case CONDITION_CARD_START:
+                        {
+                            //CONDITION_CARD_START -> [
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_CARD_START.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_CARD_START, INPUT, Token.Lexeme_Types.ID))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case CONDITION_CARD_END:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case CONDITION_CARD_END:
+                        {
+                            //CONDITION_CARD_START -> ]
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_CARD_END.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_CARD_END, INPUT, Token.Lexeme_Types.AND, Token.Lexeme_Types.OR, Token.Lexeme_Types.XOR,
+                                                                Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case CONDITION_SCENARIO_START:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case CONDITION_SCENARIO_START:
+                        {
+                            //CONDITION_SCENARIO_START -> <
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_SCENARIO_START.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_SCENARIO_START, INPUT, Token.Lexeme_Types.ID))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case CONDITION_SCENARIO_END:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case CONDITION_SCENARIO_END:
+                        {
+                            //CONDITION_SCENARIO_END -> >
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_SCENARIO_END.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_SCENARIO_END, INPUT, Token.Lexeme_Types.AND, Token.Lexeme_Types.OR,
+                                                                Token.Lexeme_Types.XOR, Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case CONDITION_EXPR_START:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case CONDITION_EXPR_START:
+                        {
+                            //CONDITION_EXPR_START -> (
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_EXPR_START.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_EXPR_START, INPUT, Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START,
+                                                                Token.Lexeme_Types.CONDITION_SCENARIO_START, Token.Lexeme_Types.CONDITION_EXPR_START))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case CONDITION_EXPR_END:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case CONDITION_EXPR_END:
+                        {
+                            //CONDITION_CARD_START -> )
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_EXPR_END.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_EXPR_END, INPUT, Token.Lexeme_Types.AND, Token.Lexeme_Types.OR, Token.Lexeme_Types.XOR,
+                                                                Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                //TODO: finish
+                //BINARY_EXPR
+                case BINARY_OPERATOR:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case XOR:
+                        case OR:
+                        case AND:
+                        {
+                            //BINARY_OPERATOR -> xor
+                            //BINARY_OPERATOR -> or
+                            //BINARY_OPERATOR -> and
+                            this.match_litteral_add_subroutine(semantic_stack_end_index, Semantic_Actions.BINARY_OPERATOR.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.BINARY_OPERATOR, INPUT, Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START,
+                                                                Token.Lexeme_Types.CONDITION_SCENARIO_START, Token.Lexeme_Types.CONDITION_EXPR_START))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case DISPLAY:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case SENTINEL_END:
+                        {
+                            //DISPLAY -> &epsilon
+                            this.epsilon_add_case_subroutine(semantic_stack_end_index, Semantic_Actions.DISPLAY.name());
+                            break;
+                        }
+                        case DISPLAY_START:
+                        {
+                            //DISPLAY -> DISPLAY_START assign DISPLAY_VALUE ;
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.DISPLAY.name(), Semantic_Actions.DISPLAY_START, Semantic_Actions.ASSIGN,
+                                                        Semantic_Actions.ASSIGN, Semantic_Actions.DISPLAY_VALUE, Semantic_Actions.SEMI_COLON);
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case DISPLAY_START:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case DISPLAY_START:
+                        {
+                            //DISPLAY_START -> display
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.DISPLAY_START.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY_START, INPUT, Token.Lexeme_Types.ASSIGN))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case DISPLAY_VALUE:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case FALSE:
+                        case TRUE:
+                        {
+                            //DISPLAY_VALUE -> false
+                            //DISPLAY_VALUE -> true
+                            this.match_litteral_add_subroutine(semantic_stack_end_index, Semantic_Actions.DISPLAY_VALUE.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY_VALUE, INPUT, Token.Lexeme_Types.SEMI_COLON))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
                 case SENTINEL_START:
                 {
                     switch (INPUT.get_type())
@@ -498,12 +864,12 @@ public class Tree_Assembler<T, U>
                                                                 Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START, Token.Lexeme_Types.CONDITION_SCENARIO_START,
                                                                 Token.Lexeme_Types.CONDITION_EXPR_START))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -524,37 +890,64 @@ public class Tree_Assembler<T, U>
                             if (this.convenience_error_handling(Semantic_Actions.SENTINEL_END, INPUT, Token.Lexeme_Types.SEMI_COLON, Token.Lexeme_Types.ID,
                                                                 Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.PROBABILITY_START))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
                         }
                     }
                     break;
                 }
-                case SCENARIO_NAME:
+                case ASSIGN:
                 {
                     switch (INPUT.get_type())
                     {
-                        case ID:
+                        case ASSIGN:
                         {
-                            //SCENARIO_NAME -> id
-                            this.match_litteral_add_subroutine(semantic_stack_end_index, Semantic_Actions.SCENARIO_NAME.name(), INPUT);
+                            //ASSIGN -> =
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.ASSIGN.name(), INPUT);
                             no_match = false;
                             break;
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_NAME, INPUT, Token.Lexeme_Types.ASSIGN, Token.Lexeme_Types.CONDITION_SCENARIO_END))
+                            if (this.convenience_error_handling(Semantic_Actions.ASSIGN, INPUT, Token.Lexeme_Types.SENTINEL_START, Token.Lexeme_Types.TRUE,
+                                                                Token.Lexeme_Types.FALSE))
                             {
-                                // remove semantic_stack top
+                                //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
                                 continue;
                             }
                             else
-                                return; // effectively discards current token
+                                return; //effectively discards current token
+                        }
+                    }
+                    break;
+                }
+                case SEMI_COLON:
+                {
+                    switch (INPUT.get_type())
+                    {
+                        case SEMI_COLON:
+                        {
+                            //SEMI_COLON -> ;
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.SEMI_COLON.name(), INPUT);
+                            no_match = false;
+                            break;
+                        }
+                        default:
+                        {
+                            if (this.convenience_error_handling(Semantic_Actions.SEMI_COLON, INPUT, Token.Lexeme_Types.DISPLAY_START, Token.Lexeme_Types.ID,
+                                                                Token.Lexeme_Types.SENTINEL_END))
+                            {
+                                //remove semantic_stack top
+                                this.semantic_stack.remove(semantic_stack_end_index);
+                                continue;
+                            }
+                            else
+                                return; //effectively discards current token
                         }
                     }
                     break;
@@ -576,7 +969,7 @@ public class Tree_Assembler<T, U>
     private void finish_construction()
     {
         this.semantic_stack = new ArrayList<Semantic_Actions>();
-        this.semantic_stack.add(Semantic_Actions.START); // starting symbol
+        this.semantic_stack.add(Semantic_Actions.START); //starting symbol
         this.syntactical_stack = new ArrayList<Concrete_Parent>();
     }
 
@@ -588,13 +981,20 @@ public class Tree_Assembler<T, U>
      */
     private void epsilon_discard_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET)
     {
-        // stack maintenance
-        this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
-        if (this.VERBOSE)
-        {
-            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, "", this.derivation);
-            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
-        }
+        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, "");
+    }
+
+    /**
+     * Simple subroutine meant to reduce overall code size by reuse. For the case that a production rule results in an epsilon to be discarded.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX local variable representing the last index of {@link #semantic_stack}
+     * @param TARGET current symbol being replaced
+     */
+    private void epsilon_add_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET)
+    {
+        //stack maintenance
+        this.syntactical_stack.add(new Concrete_Parent("NULL"));
+        this.epsilon_discard_case_subroutine(SEMANTIC_STACK_END_INDEX, TARGET);
     }
 
     /**
@@ -608,7 +1008,7 @@ public class Tree_Assembler<T, U>
         //TODO: improve
         if (this.VERBOSE)
         {
-            // work on derivation
+            //work on derivation
             StringBuilder result = new StringBuilder();
             result.append(SPECIAL_UNLIKELY_SENTINEL);
             result.append(L_H_S_[0].name());
@@ -629,17 +1029,43 @@ public class Tree_Assembler<T, U>
      * 
      * @param SEMANTIC_STACK_END_INDEX last index of {@link Tree_Assembler#semantic_stack}
      * @param TARGET {@link Token.Lexeme_Types} to replace
+     * @param CURRENT_LEXEME of the {@Link Token} to be discarded
+     */
+    private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEME)
+    {
+        //stack maintenance
+        this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
+        if (this.VERBOSE)
+        {
+            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, CURRENT_LEXEME, this.derivation);
+            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
+        }
+    }
+
+    /**
+     * Subroutine for matching terminals and then discarding them.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX last index of {@link Tree_Assembler#semantic_stack}
+     * @param TARGET {@link Token.Lexeme_Types} to replace
      * @param CURRENT_NODE values pertaining to node to be created
      */
     private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
     {
-        // stack maintenance
-        this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
-        if (this.VERBOSE)
-        {
-            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, CURRENT_NODE.get_lexeme(), this.derivation);
-            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
-        }
+        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexeme());
+    }
+
+    /**
+     * Subroutine for matching terminals and then adds them to {@link #syntactical_stack}.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX last index of {@link #semantic_stack}
+     * @param TARGET {@link Token.Lexeme_Types} to replace
+     * @param CURRENT_LEXEME of the {@Link Token} to be created
+     */
+    private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEME)
+    {
+        //stack maintenance
+        this.syntactical_stack.add(new Concrete_Parent(CURRENT_LEXEME));
+        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_LEXEME);
     }
 
     /**
@@ -651,15 +1077,7 @@ public class Tree_Assembler<T, U>
      */
     private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
     {
-        // stack maintenance
-        this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
-        this.syntactical_stack.add(new Concrete_Parent(CURRENT_NODE.get_lexeme()));
-        if (this.VERBOSE)
-        {
-            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, CURRENT_NODE.get_lexeme(),
-                                                                   this.derivation);
-            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
-        }
+        this.match_litteral_add_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexeme());
     }
 
     /**
@@ -674,7 +1092,7 @@ public class Tree_Assembler<T, U>
         //TODO: improve
         this.derivation_subroutine(TARGET, L_H_S_);
 
-        // work on semantic stack
+        //work on semantic stack
         this.semantic_stack.set(SEMANTIC_STACK_END_INDEX, L_H_S_[L_H_S_.length - 1]);
 
         for (int i = L_H_S_.length - 2; i > -1; --i)
@@ -694,7 +1112,7 @@ public class Tree_Assembler<T, U>
         //TODO: improve
         this.derivation_subroutine(TARGET, L_H_S_);
 
-        // work on semantic stack
+        //work on semantic stack
         this.semantic_stack.set(SEMANTIC_STACK_END_INDEX, POP);
 
         for (int i = L_H_S_.length - 1; i > -1; --i)
