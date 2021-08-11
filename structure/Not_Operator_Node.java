@@ -17,6 +17,11 @@ public class Not_Operator_Node<T> extends Base_Node<T>
      */
     public final Evaluable<T> CHILD;
 
+    /**
+     * Constructor. Meaning of operator is the lack of something. Thus looking for NOT A would only be true if A was not unreserved in remaining hand.
+     * 
+     * @param CHILD to be negated.
+     */
     public Not_Operator_Node(final Evaluable<T> CHILD)
     {
         super("NOT");
@@ -43,7 +48,7 @@ public class Not_Operator_Node<T> extends Base_Node<T>
     }
 
     @Override
-    protected Collection<? extends Evaluable<T>> continue_breath_search()
+    protected Collection<? extends Evaluable<?>> continue_breath_search()
     {
         return Arrays.asList(this.CHILD);
     }

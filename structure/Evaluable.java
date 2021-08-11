@@ -14,7 +14,7 @@ Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 </b>
 */
 
-public abstract class Evaluable<T> extends Concrete_Parent
+public class Evaluable<T>
 {
     enum TestResult {
         /**
@@ -42,6 +42,11 @@ public abstract class Evaluable<T> extends Concrete_Parent
     public final static boolean debugMode = false;
 
     /**
+     * Name of this object.
+     */
+    public final String NAME;
+
+    /**
      * Unique identifier for this node.
      */
     public final int UNIQUE_IDENTIFIER;
@@ -57,7 +62,7 @@ public abstract class Evaluable<T> extends Concrete_Parent
      */
     public Evaluable(final String NAME)
     {
-        super(NAME);
+        this.NAME = NAME;
         this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
     }
 
@@ -84,7 +89,10 @@ public abstract class Evaluable<T> extends Concrete_Parent
      * @param NEXT function to call when a leaf node takes a card from the hand
      * @return a {@link TestResult} used as a signal on what action to preform next
      */
-    protected abstract <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT);
+    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
+    {
+        throw new UnsupportedOperationException("Child failed to overide me.");
+    }
 
     /**
      * Output whole tree in dot file format.
@@ -118,7 +126,10 @@ public abstract class Evaluable<T> extends Concrete_Parent
      * 
      * @return null or children
      */
-    protected abstract Collection<? extends Evaluable<T>> continue_breath_search();
+    protected Collection<? extends Evaluable<?>> continue_breath_search()
+    {
+        throw new UnsupportedOperationException("Child failed to overide me.");
+    }
 
     /**
      * If debugMode is set, print current debug details about the currently executing node

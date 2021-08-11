@@ -7,7 +7,7 @@ import java.util.Collection;
 <b>
 Purpose: Base of the binary operators.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-24/2021-8-3
+Date: 2021-07-24/2021-8-3/2021-8-10
 </b>
 */
 
@@ -47,7 +47,7 @@ public abstract class Binary_Operator_Node<T> extends Base_Node<T>
     }
 
     @Override
-    protected Collection<? extends Evaluable<T>> continue_breath_search()
+    protected Collection<? extends Evaluable<?>> continue_breath_search()
     {
         return Arrays.asList(this.LEFT_CHILD, this.RIGHT_CHILD);
     }

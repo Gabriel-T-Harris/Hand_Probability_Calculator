@@ -59,7 +59,7 @@ public class Scenario<T> extends Evaluable<T>
     }
 
     @Override
-    protected Collection<? extends Evaluable<T>> continue_breath_search()
+    protected Collection<? extends Evaluable<?>> continue_breath_search()
     {
         return null;//TODO: consider changing to adding TREE_CONDITION.
     }
