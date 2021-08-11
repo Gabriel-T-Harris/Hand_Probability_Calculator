@@ -67,9 +67,6 @@ public class Evaluable<T>
     }
 
     /**
-     * Function used to evaluate a node's condition using a rollback evaluation implementation.
-     * Allows for hand to be in an arbitrary order
-     *
      * Default entry point where the success callback returns true and the failure callback returns false
      *
      * @param hand to be checked {@link Collection}
