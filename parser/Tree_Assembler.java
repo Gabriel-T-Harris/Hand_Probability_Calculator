@@ -918,7 +918,7 @@ public class Tree_Assembler
                         {
                             //DISPLAY -> DISPLAY_START assign DISPLAY_VALUE ;
                             this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.DISPLAY.name(), Semantic_Actions.DISPLAY_START, Semantic_Actions.ASSIGN,
-                                                        Semantic_Actions.ASSIGN, Semantic_Actions.DISPLAY_VALUE, Semantic_Actions.SEMI_COLON);
+                                                        Semantic_Actions.DISPLAY_VALUE, Semantic_Actions.SEMI_COLON);
                             break;
                         }
                         default:
@@ -1101,18 +1101,19 @@ public class Tree_Assembler
                 }
                 case SCENARIO_POP:
                 {
-                    final int CACHE_SYNTACTICAL_STACK_SIZE = this.syntactical_stack.size();
-                    final int SCEANRION_NAME_INDEX = CACHE_SYNTACTICAL_STACK_SIZE - 2;
-                    assert (SCEANRION_NAME_INDEX == 0);
-                    final String SCEANRIO_NAME = this.syntactical_stack.remove(SCEANRION_NAME_INDEX).NAME;
+                    //create scenario
+                    assert (this.syntactical_stack.size() == 3); //[scenario name, tree, display]
+                    final String SCEANRIO_NAME = this.syntactical_stack.remove(0).NAME;
 
-                    this.FOREST.put(SCEANRIO_NAME, new Scenario<Base_Card>(SCEANRIO_NAME, null));
+                    this.FOREST.put(SCEANRIO_NAME,
+                                    new Scenario<Base_Card>(Boolean.valueOf(this.syntactical_stack.remove(1).NAME), SCEANRIO_NAME, this.syntactical_stack.remove(0)));
 
                     this.semantic_stack.remove(semantic_stack_end_index);
                     break;
                 }
                 case UNARY_POP:
                 {
+                    //handle unary operator
                     final int SYNTACTICAL_TARGET_INDEX = this.syntactical_stack.size() - 1;
                     final int RESULT_LOCATION = SYNTACTICAL_TARGET_INDEX - 1;
                     final String UNARY_OPERATOR = this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX).NAME;
@@ -1127,6 +1128,7 @@ public class Tree_Assembler
                 }
                 case CONDITION_CARD_POP:
                 {
+                    //card condition in scenario
                     final int SYNTACTICAL_STACK_LAST_INDEX = this.syntactical_stack.size() - 1;
                     final String CARD_NAME = this.syntactical_stack.get(SYNTACTICAL_STACK_LAST_INDEX).NAME;
                     this.syntactical_stack.set(SYNTACTICAL_STACK_LAST_INDEX, new Leaf_Node<Base_Card>(CARD_NAME, new Base_Card(CARD_NAME)));
@@ -1135,6 +1137,7 @@ public class Tree_Assembler
                 }
                 case CONDITION_SCENARIO_POP:
                 {
+                    //scenario condition in scenario
                     int syntactical_stack_last_index = this.syntactical_stack.size() - 1;
                     final Scenario<Base_Card> POTENTIONAL_SCENARIO = this.FOREST.get(this.syntactical_stack.get(syntactical_stack_last_index).NAME);
                     
