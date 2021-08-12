@@ -53,7 +53,7 @@ public class Leaf_Node<T> extends Base_Node<T>
                     }
                     card.release();
                 }
-                if (result == TestResult.Success || result == TestResult.NotSuccess) {
+                if (result == TestResult.NotSuccess || result == TestResult.Success) {
                     return result;
                 }
             }

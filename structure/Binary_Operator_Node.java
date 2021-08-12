@@ -1,7 +1,7 @@
 package structure;
 
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 /**
 <b>
@@ -49,6 +49,6 @@ public abstract class Binary_Operator_Node<T> extends Base_Node<T>
     @Override
     protected Collection<? extends Evaluable<T>> continue_breath_search()
     {
-        return List.of(this.LEFT_CHILD, this.RIGHT_CHILD);
+        return Arrays.asList(this.LEFT_CHILD, this.RIGHT_CHILD);
     }
 }

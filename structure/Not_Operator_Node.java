@@ -1,8 +1,7 @@
 package structure;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
 
 /**
 <b>
@@ -46,6 +45,6 @@ public class Not_Operator_Node<T> extends Base_Node<T>
     @Override
     protected Collection<? extends Evaluable<T>> continue_breath_search()
     {
-        return List.of(this.CHILD);
+        return Collections.singletonList(this.CHILD);
     }
 }

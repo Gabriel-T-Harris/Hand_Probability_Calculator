@@ -93,7 +93,7 @@ public abstract class Evaluable<T>
     public static String print_whole_subtree(final Evaluable<?> START)
     {
         StringBuilder output = new StringBuilder(2048); //large output
-        Queue<Evaluable<?>> traverse_nodes = new ArrayDeque<Evaluable<?>>();
+        Queue<Evaluable<?>> traverse_nodes = new ArrayDeque<>();
 
         output.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
 
@@ -127,7 +127,7 @@ public abstract class Evaluable<T>
     <E extends Reservable> void printDebugStep(final Collection<E> hand)
     {
         if (debugMode) {
-            System.out.printf("%s ", this);
+            System.out.print(this + " ");
             Map<Boolean, List<E>> hand_partition = hand.stream().collect(Collectors.partitioningBy(Reservable::isReserved));
             System.out.printf("Used Cards: [%s] ", hand_partition.get(true).stream().map(Object::toString).collect(Collectors.joining(",")));
             System.out.printf("Unused Cards: [%s]\n", hand_partition.get(false).stream().map(Object::toString).collect(Collectors.joining(",")));

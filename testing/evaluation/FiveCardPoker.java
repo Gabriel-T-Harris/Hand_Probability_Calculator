@@ -1,7 +1,9 @@
 package testing.evaluation;
 
 import structure.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -213,7 +215,7 @@ public class FiveCardPoker {
             )
     );
 
-    final static List<Scenario<Deck_Card>> scenarios_to_test = List.of(one_pair, two_pair, three_of_a_kind, straight, flush, full_house, four_of_a_kind);
+    final static List<Scenario<Deck_Card>> scenarios_to_test = Arrays.asList(one_pair, two_pair, three_of_a_kind, straight, flush, full_house, four_of_a_kind);
     final static Map<String, PlayingCard[]> hands = Stream.of(new Object[][] {
             { "Two Pair", new PlayingCard[] { new PlayingCard(Suit.Spades, Value.Ace), new PlayingCard(Suit.Hearts, Value.Two), new PlayingCard(Suit.Clubs, Value.Jack), new PlayingCard(Suit.Clubs, Value.Ace), new PlayingCard(Suit.Spades, Value.Jack) }},
             { "Full House", new PlayingCard[] { new PlayingCard(Suit.Spades, Value.Ace), new PlayingCard(Suit.Hearts, Value.Ace), new PlayingCard(Suit.Spades, Value.Two), new PlayingCard(Suit.Clubs, Value.Ace), new PlayingCard(Suit.Hearts, Value.Two) }},
