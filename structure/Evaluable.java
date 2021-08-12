@@ -5,7 +5,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.StringJoiner;
+import java.util.Arrays;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
 <b>
@@ -128,9 +132,14 @@ public abstract class Evaluable<T>
     {
         if (debugMode) {
             System.out.print(this + " ");
-            Map<Boolean, List<E>> hand_partition = hand.stream().collect(Collectors.partitioningBy(Reservable::isReserved));
-            System.out.printf("Used Cards: [%s] ", hand_partition.get(true).stream().map(Object::toString).collect(Collectors.joining(",")));
-            System.out.printf("Unused Cards: [%s]\n", hand_partition.get(false).stream().map(Object::toString).collect(Collectors.joining(",")));
+            List<String> usedAndUnusedCards = hand.stream().collect(Collector.of(
+                    () -> Arrays.asList(new StringJoiner(", ", "[", "]"), new StringJoiner(", ", "[", "]")),
+                    (List<StringJoiner> a, E b) -> a.get(b.isReserved() ? 0 : 1).add(b.toString()),
+                    (List<StringJoiner> a, List<StringJoiner> b) -> IntStream.range(0, 2).mapToObj((int i) -> a.get(i).merge(b.get(i))).collect(Collectors.toList()),
+                    (List<StringJoiner> a) -> a.stream().map(StringJoiner::toString).collect(Collectors.toList())
+            ));
+            System.out.printf("Used Cards: %s ", usedAndUnusedCards.get(0));
+            System.out.printf("Unused Cards: %s\n", usedAndUnusedCards.get(1));
         }
     }
 }
