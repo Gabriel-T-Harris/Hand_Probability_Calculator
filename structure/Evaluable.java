@@ -3,7 +3,6 @@ package structure;
 import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import java.util.StringJoiner;
 import java.util.Arrays;
@@ -123,6 +122,51 @@ public abstract class Evaluable<T>
      */
     protected abstract Collection<? extends Evaluable<T>> continue_breath_search();
 
+
+    /**
+     * @return a {@link List} of two {@link StringJoiner}s with ", " delimiter and [ ] prefix and suffix
+     */
+    private static List<StringJoiner> StringJoinerListGenerator() {
+        return Arrays.asList(
+                new StringJoiner(", ", "[", "]"),
+                new StringJoiner(", ", "[", "]")
+        );
+    }
+
+    /**
+     * Takes a {@link Reservable} and adds it to the first {@link StringJoiner} if its reserved and the second
+     * otherwise
+     *
+     * @param partialSum the current state of the two StringJoiners
+     * @param nextElement the next Reservable to add to the StringJoiner
+     */
+    private static void StringJoinerListPartialAdder(List<StringJoiner> partialSum, Reservable nextElement) {
+        partialSum.get(nextElement.isReserved() ? 0 : 1).add(nextElement.toString());
+    }
+
+    /**
+     * Takes two {@link List}s of {@link StringJoiner}s and merges them together index wise
+     *
+     * @param partialSum1 List of StringJoiner to be merged to
+     * @param partialSum2 List of StringJoiner to be merged with
+     * @return partialSum1 after having their elements be merged with partialSum2's
+     */
+    private static List<StringJoiner> StringJoinerListJoiner(List<StringJoiner> partialSum1, List<StringJoiner> partialSum2) {
+        partialSum1.get(0).merge(partialSum2.get(0));
+        partialSum1.get(1).merge(partialSum2.get(1));
+        return partialSum1;
+    }
+
+    /**
+     * Takes a {@link List} of {@link StringJoiner}s returns a {@link List} of their final {@link String}
+     *
+     * @param finalSum StringJoiner after all of the elements have been added
+     * @return The {@link String} representing the joined elements
+     */
+    private static List<String> StringJoinerToStringList(List<StringJoiner> finalSum) {
+        return finalSum.stream().map(StringJoiner::toString).collect(Collectors.toList());
+    }
+
     /**
      * If debugMode is set, print current debug details about the currently executing node
      *
@@ -133,10 +177,10 @@ public abstract class Evaluable<T>
         if (debugMode) {
             System.out.print(this + " ");
             List<String> usedAndUnusedCards = hand.stream().collect(Collector.of(
-                    () -> Arrays.asList(new StringJoiner(", ", "[", "]"), new StringJoiner(", ", "[", "]")),
-                    (List<StringJoiner> a, E b) -> a.get(b.isReserved() ? 0 : 1).add(b.toString()),
-                    (List<StringJoiner> a, List<StringJoiner> b) -> IntStream.range(0, 2).mapToObj((int i) -> a.get(i).merge(b.get(i))).collect(Collectors.toList()),
-                    (List<StringJoiner> a) -> a.stream().map(StringJoiner::toString).collect(Collectors.toList())
+                    Evaluable::StringJoinerListGenerator,
+                    Evaluable::StringJoinerListPartialAdder,
+                    Evaluable::StringJoinerListJoiner,
+                    Evaluable::StringJoinerToStringList
             ));
             System.out.printf("Used Cards: %s ", usedAndUnusedCards.get(0));
             System.out.printf("Unused Cards: %s\n", usedAndUnusedCards.get(1));
