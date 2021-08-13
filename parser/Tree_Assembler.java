@@ -1236,7 +1236,8 @@ public class Tree_Assembler
             OUTPUT_FILE.createNewFile();
             try (final PrintWriter DECKLIST_OUTPUT = new PrintWriter(OUTPUT_FILE))
             {
-                DECKLIST_OUTPUT.println(this.DECK);
+                for (Deck_Card card : this.DECK)
+                    DECKLIST_OUTPUT.println(card);
             }
             catch (FileNotFoundException ex)
             {
