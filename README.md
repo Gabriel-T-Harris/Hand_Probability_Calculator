@@ -5,4 +5,6 @@ Application to calculate the chance of drawing a hand from an arbitrary finite d
 
 Pull requests welcome.
 
+Examples of input and output can be found in Input and Output folders respectively. Those are just examples as one can pick both of those locations.
+
 TODO: expand when application done to include example of use.
