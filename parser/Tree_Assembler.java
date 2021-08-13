@@ -1,10 +1,14 @@
 package parser;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import com.gth.function_bank.Function_Bank;
 import simulation.Simulation;
+import starting_point.Starting_Point;
 import structure.And_Operator_Node;
 import structure.Base_Card;
 import structure.Deck_Card;
@@ -19,11 +23,10 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-[7, 10]
+Date: 2021-08-[4, 5]/2021-8-[7, 12]
 </b>
 */
 
-//TODO: figure out how to effectively handle VERBOSE, as would like to not recheck it, maybe just use lambda as function pointer.
 //https://smlweb.cpsc.ucalgary.ca/vital-stats.php?grammar=START+-%3E+DECK+PROBABILITY+.%0D%0A%0D%0ADECK+-%3E+DECK_START+SENTINEL_START+DECK_LIST+SENTINEL_END.%0D%0ADECK_START+-%3E+deck+list%3A+.%0D%0ADECK_LIST+-%3E+CARD+MORE_CARDS+.%0D%0AMORE_CARDS+-%3E+CARD+MORE_CARDS+%7C+.%0D%0ACARD+-%3E+CARD_NAME+SEMI_COLON+.%0D%0ACARD_NAME+-%3E+id+.%0D%0A%0D%0APROBABILITY+-%3E+PROBABILITY_START+SENTINEL_START+SCENARIO_LIST+SENTINEL_END+.%0D%0APROBABILITY_START+-%3E+scenarios%3A+.%0D%0A%0D%0ASCENARIO_LIST+-%3E+SCENARIO+MORE_SCENARIOS+.%0D%0AMORE_SCENARIOS+-%3E+SCENARIO+MORE_SCENARIOS+%7C+.%0D%0A%0D%0ASCENARIO+-%3E+SCENARIO_NAME+ASSIGN+SENTINEL_START+TREE+DISPLAY+SENTINEL_END+.%0D%0ASCENARIO_NAME+-%3E+id+.%0D%0A%0D%0ATREE+-%3E+TREE_START+ASSIGN+SENTINEL_START+EXPR+SENTINEL_END+SEMI_COLON+.%0D%0ATREE_START+-%3E+scenario+.%0D%0A%0D%0AEXPR+-%3E+UNARY_EXPR+BINARY_EXPR+.%0D%0A%0D%0AUNARY_EXPR+-%3E+UNARY_OPERATOR+UNARY_EXPR+%7C+PRIMARY_EXPR+.%0D%0AUNARY_OPERATOR+-%3E+not+.%0D%0A%0D%0APRIMARY_EXPR+-%3E+CONDITION_CARD_START+CARD_NAME+CONDITION_CARD_END+%7C+CONDITION_SCENARIO_START+SCENARIO_NAME+CONDITION_SCENARIO_END+%7C+CONDITION_EXPR_START+EXPR+CONDITION_EXPR_END+.%0D%0A%0D%0ACONDITION_CARD_START+-%3E+open_bracket+.%0D%0ACONDITION_CARD_END+-%3E+close_bracket+.%0D%0ACONDITION_SCENARIO_START+-%3E+less_then+.%0D%0ACONDITION_SCENARIO_END+-%3E+greater_then+.%0D%0ACONDITION_EXPR_START+-%3E+open_parenthesis+.%0D%0ACONDITION_EXPR_END+-%3E+close_parenthesis+.%0D%0A%0D%0ABINARY_EXPR+-%3E+BINARY_OPERATOR+UNARY_EXPR+BINARY_EXPR+%7C+.%0D%0ABINARY_OPERATOR+-%3E+and+%7C+or+%7C+xor+.%0D%0A%0D%0ADISPLAY+-%3E+DISPLAY_START+ASSIGN+DISPLAY_VALUE+SEMI_COLON+%7C+.%0D%0ADISPLAY_START+-%3E+display+.%0D%0ADISPLAY_VALUE+-%3E+true+%7C+false+.%0D%0A%0D%0ASENTINEL_START+-%3E+open_brace+.%0D%0ASENTINEL_END+-%3E+close_brace+.%0D%0AASSIGN+-%3E+assign+.%0D%0ASEMI_COLON+-%3E+%3B.
 //https://smlweb.cpsc.ucalgary.ca/ll1-table.php?grammar=START+-%3E+DECK+PROBABILITY+.%0A%0ADECK+-%3E+DECK_START+SENTINEL_START+DECK_LIST+SENTINEL_END.%0ADECK_START+-%3E+deck+list%3A+.%0ADECK_LIST+-%3E+CARD+MORE_CARDS+.%0AMORE_CARDS+-%3E+CARD+MORE_CARDS+%7C+.%0ACARD+-%3E+CARD_NAME+SEMI_COLON+.%0ACARD_NAME+-%3E+id+.%0A%0APROBABILITY+-%3E+PROBABILITY_START+SENTINEL_START+SCENARIO_LIST+SENTINEL_END+.%0APROBABILITY_START+-%3E+scenarios%3A+.%0A%0ASCENARIO_LIST+-%3E+SCENARIO+MORE_SCENARIOS+.%0AMORE_SCENARIOS+-%3E+SCENARIO+MORE_SCENARIOS+%7C+.%0A%0ASCENARIO+-%3E+SCENARIO_NAME+ASSIGN+SENTINEL_START+TREE+DISPLAY+SENTINEL_END+.%0ASCENARIO_NAME+-%3E+id+.%0A%0ATREE+-%3E+TREE_START+ASSIGN+SENTINEL_START+EXPR+SENTINEL_END+SEMI_COLON+.%0ATREE_START+-%3E+scenario+.%0A%0AEXPR+-%3E+UNARY_EXPR+BINARY_EXPR+.%0A%0AUNARY_EXPR+-%3E+UNARY_OPERATOR+UNARY_EXPR+%7C+PRIMARY_EXPR+.%0AUNARY_OPERATOR+-%3E+not+.%0A%0APRIMARY_EXPR+-%3E+CONDITION_CARD_START+CARD_NAME+CONDITION_CARD_END+%7C+CONDITION_SCENARIO_START+SCENARIO_NAME+CONDITION_SCENARIO_END+%7C+CONDITION_EXPR_START+EXPR+CONDITION_EXPR_END+.%0A%0ACONDITION_CARD_START+-%3E+open_bracket+.%0ACONDITION_CARD_END+-%3E+close_bracket+.%0ACONDITION_SCENARIO_START+-%3E+less_then+.%0ACONDITION_SCENARIO_END+-%3E+greater_then+.%0ACONDITION_EXPR_START+-%3E+open_parenthesis+.%0ACONDITION_EXPR_END+-%3E+close_parenthesis+.%0A%0ABINARY_EXPR+-%3E+BINARY_OPERATOR+UNARY_EXPR+BINARY_EXPR+%7C+.%0ABINARY_OPERATOR+-%3E+and+%7C+or+%7C+xor+.%0A%0ADISPLAY+-%3E+DISPLAY_START+ASSIGN+DISPLAY_VALUE+SEMI_COLON+%7C+.%0ADISPLAY_START+-%3E+display+.%0ADISPLAY_VALUE+-%3E+true+%7C+false+.%0A%0ASENTINEL_START+-%3E+open_brace+.%0ASENTINEL_END+-%3E+close_brace+.%0AASSIGN+-%3E+assign+.%0ASEMI_COLON+-%3E+%3B.&substs=
 public class Tree_Assembler
@@ -104,6 +107,16 @@ public class Tree_Assembler
     }
 
     /**
+     * To be called once there are no more tokens to parse. Meant to check that all operations have been completed. As it is expected that once no more tokens are coming in (and no errors have occurred), that this function return true.
+     * 
+     * @return true for expected state, false for undetected critical error or parsing is incomplete.
+     */
+    public boolean check_stacks_are_empty()
+    {
+        return this.semantic_stack.isEmpty() && this.syntactical_stack.isEmpty();
+    }
+
+    /**
      * Convenience method for handling errors. Also reports them using {@link #syntactical_error_output}
      * 
      * @param CURRENT_ACTION section that this is called from
@@ -139,7 +152,7 @@ public class Tree_Assembler
     /**
      * True output of this object.
      * 
-     * @return culmination of this class, destroy the object afterwards
+     * @return culmination of this class, destroy this object afterwards (as it has served its function)
      */
     public Simulation<Deck_Card, Base_Card> create_result()
     {
@@ -148,15 +161,17 @@ public class Tree_Assembler
 
     /**
      * Method for parsing tokens into a boolean like postfix notation tree. Uses all data members.
-     * Make sure to call {@link #finish_semantic_stack} once all the {@link Token} are are parsed.
+     * Make sure to call {@link #check_stacks_are_empty()} once all the {@link Token} are are parsed to check the state of things.
      * 
      * @param INPUT current top token being looked at
-     * @throws EmptySemanticStackException when internal {@link #semantic_stack} is empty yet there is another token to parse.
+     * @throws EmptySemanticStackException when internal {@link #semantic_stack} is empty yet there is another token to parse. Fatal error.
+     * @throws IllegalStateException unexpected non-recoverable error has occurred
      */
-    public void parse(final Token INPUT) throws EmptySemanticStackException
+    public void parse(final Token INPUT) throws EmptySemanticStackException, IllegalStateException
     {
         boolean no_match = true;
         int semantic_stack_end_index;
+        Semantic_Actions switch_value;
 
         do
         {
@@ -165,7 +180,7 @@ public class Tree_Assembler
             if (semantic_stack_end_index == -1)
                 throw new EmptySemanticStackException("Error: semantic stack is empty yet received the following Token: " + INPUT);
 
-            Semantic_Actions switch_value = this.semantic_stack.get(semantic_stack_end_index);
+            switch_value = this.semantic_stack.get(semantic_stack_end_index);
 
             switch (switch_value)
             {
@@ -200,7 +215,7 @@ public class Tree_Assembler
                         case DECK_START:
                         {
                             //DECK -> DECK_START SENTINEL_START DECK_LIST SENTINEL_END
-                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.DECK_START.name(), Semantic_Actions.DECK_START, Semantic_Actions.SENTINEL_START,
+                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.DECK.name(), Semantic_Actions.DECK_START, Semantic_Actions.SENTINEL_START,
                                                         Semantic_Actions.DECK_LIST, Semantic_Actions.SENTINEL_END);
                             break;
                         }
@@ -280,7 +295,7 @@ public class Tree_Assembler
                         case ID:
                         {
                             //MORE_CARDS -> CARD MORE_CARDS
-                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.MORE_CARDS.name(), Semantic_Actions.CARD, Semantic_Actions.MORE_CARDS);
+                            this.handle_recursive_case_subroutine(semantic_stack_end_index, Semantic_Actions.MORE_CARDS.name(), Semantic_Actions.CARD, Semantic_Actions.MORE_CARDS);
                             break;
                         }
                         default:
@@ -304,7 +319,7 @@ public class Tree_Assembler
                         case ID:
                         {
                             //CARD -> CARD_NAME ;
-                            this.handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.DECK_CARD_POP, Semantic_Actions.CARD.name(), Semantic_Actions.CARD,
+                            this.handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.DECK_CARD_POP, Semantic_Actions.CARD.name(), Semantic_Actions.CARD_NAME,
                                                             Semantic_Actions.SEMI_COLON);
                             break;
                         }
@@ -435,13 +450,13 @@ public class Tree_Assembler
                         case ID:
                         {
                             //MORE_SCENARIOS -> SCENARIO MORE_SCENARIOS
-                            this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS.name(), Semantic_Actions.SCENARIO,
-                                                        Semantic_Actions.MORE_SCENARIOS);
+                            this.handle_recursive_case_subroutine(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS.name(), Semantic_Actions.SCENARIO,
+                                                                  Semantic_Actions.MORE_SCENARIOS);
                             break;
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.MORE_SCENARIOS, INPUT, Token.Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -854,7 +869,7 @@ public class Tree_Assembler
                             //BINARY_EXPR -> BINARY_OPERATOR UNARY_EXPR BINARY_EXPR
                             this.derivation_subroutine(Semantic_Actions.BINARY_EXPR.name(), Semantic_Actions.BINARY_OPERATOR, Semantic_Actions.UNARY_EXPR,
                                                        Semantic_Actions.BINARY_EXPR);
-                            this.semantic_stack.set(semantic_stack_end_index, Semantic_Actions.BINARY_EXPR);
+                            //Not setting current semantic_stack_end_index to Semantic_Actions.BINARY_EXPR, due to already being that value.
                             this.semantic_stack.add(Semantic_Actions.BINARY_POP_3);
                             this.semantic_stack.add(Semantic_Actions.UNARY_EXPR);
                             this.semantic_stack.add(Semantic_Actions.BINARY_OPERATOR);
@@ -1018,7 +1033,7 @@ public class Tree_Assembler
                 {
                     switch (INPUT.get_type())
                     {
-                        case SENTINEL_START:
+                        case SENTINEL_END:
                         {
                             //SENTINEL_END -> close_brace
                             this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.SENTINEL_END.name(), INPUT);
@@ -1102,11 +1117,30 @@ public class Tree_Assembler
                 case SCENARIO_POP:
                 {
                     //create scenario
-                    assert (this.syntactical_stack.size() == 3); //[scenario name, tree, display]
+                    //expected form: [scenario name, tree, display]
                     final String SCEANRIO_NAME = this.syntactical_stack.remove(0).NAME;
 
-                    this.FOREST.put(SCEANRIO_NAME,
-                                    new Scenario<Base_Card>(Boolean.valueOf(this.syntactical_stack.remove(1).NAME), SCEANRIO_NAME, this.syntactical_stack.remove(0)));
+                    if (this.syntactical_stack.size() == 2)
+                    {
+                        if (!this.FOREST.containsKey(SCEANRIO_NAME))
+                            this.FOREST.put(SCEANRIO_NAME, new Scenario<Base_Card>(!Tokenizer.FALSE.matcher(this.syntactical_stack.remove(1).NAME).matches(), SCEANRIO_NAME,
+                                                                                   this.syntactical_stack.remove(0)));
+                        else
+                        {
+                            //clear remaining stack stuff
+                            this.syntactical_stack.clear();
+                            this.syntactical_error_output.println("Error, repeated scenario name \"" + SCEANRIO_NAME +
+                                                                  "\", discarding this scenario. Detected not before line number " + INPUT.get_line_number());
+                        }
+                    }
+                    else
+                    {
+                        //panic
+                        if (this.VERBOSE)
+                            this.syntactical_error_output.println("Current scenario \"" + SCEANRIO_NAME + "\" found around line " + INPUT.get_line_number() +
+                                                                  " is malformed. Discarding this scenario.");
+                        this.syntactical_stack.clear();
+                    }
 
                     this.semantic_stack.remove(semantic_stack_end_index);
                     break;
@@ -1114,9 +1148,8 @@ public class Tree_Assembler
                 case UNARY_POP:
                 {
                     //handle unary operator
-                    final int SYNTACTICAL_TARGET_INDEX = this.syntactical_stack.size() - 1;
-                    final int RESULT_LOCATION = SYNTACTICAL_TARGET_INDEX - 1;
-                    final String UNARY_OPERATOR = this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX).NAME;
+                    final int RESULT_LOCATION = this.syntactical_stack.size() - 2;
+                    final String UNARY_OPERATOR = this.syntactical_stack.remove(RESULT_LOCATION).NAME;
 
                     if (Tokenizer.NOT.matcher(UNARY_OPERATOR).matches())
                         this.syntactical_stack.set(RESULT_LOCATION, new Not_Operator_Node<Base_Card>(this.syntactical_stack.get(RESULT_LOCATION)));
@@ -1139,7 +1172,8 @@ public class Tree_Assembler
                 {
                     //scenario condition in scenario
                     int syntactical_stack_last_index = this.syntactical_stack.size() - 1;
-                    final Scenario<Base_Card> POTENTIONAL_SCENARIO = this.FOREST.get(this.syntactical_stack.get(syntactical_stack_last_index).NAME);
+                    final String REFERENCED_SCEANRIO_NAME = this.syntactical_stack.get(syntactical_stack_last_index).NAME;
+                    final Scenario<Base_Card> POTENTIONAL_SCENARIO = this.FOREST.get(REFERENCED_SCEANRIO_NAME);
                     
                     if (POTENTIONAL_SCENARIO != null)
                     {
@@ -1147,28 +1181,16 @@ public class Tree_Assembler
                         this.semantic_stack.remove(semantic_stack_end_index);
                     }
                     else
-                    {
-                        //panic
-                        if (this.VERBOSE)
-                            this.syntactical_error_output.println("Undefined Referenced Scenario Error at line " + INPUT.get_line_number() + ", discarding whole scenario.");
-                        
-                        //remove current secnario's semantic actions
-                        do
-                        {
-                            this.semantic_stack.remove(semantic_stack_end_index);
-                            --semantic_stack_end_index;
-                        } while (this.semantic_stack.get(semantic_stack_end_index) != Semantic_Actions.MORE_SCENARIOS);
-                        
-                        //remove traces of incomplete scenario
-                        this.syntactical_stack.clear(); //Deck cards are popped and scenarios are popped when done, thus only stuff in stack is current scenario.
-                    }
+                        this.handle_scenario_error(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS, INPUT.get_line_number(),
+                                                   "Error: undefined referenced, " + REFERENCED_SCEANRIO_NAME + ", at line ");
                     break;
                 }
                 case BINARY_POP_3:
                 {
                     //create binary expression out of 3 parts from syntactical_stack
+                    assert (this.syntactical_stack.size() >= 4); //Well expected to be 4, {scenario name, left operand, binary operator, right operand}.
                     final int SYNTACTICAL_TARGET_INDEX = this.syntactical_stack.size() - 2; //First time will be the operator, second time will be right operand due to the operator's removal.
-                    final int RESULT_LOCATION = SYNTACTICAL_TARGET_INDEX - 3;
+                    final int RESULT_LOCATION = SYNTACTICAL_TARGET_INDEX - 1;
                     final String BINARY_OPERATOR = this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX).NAME;
 
                     if (Tokenizer.AND.matcher(BINARY_OPERATOR).matches())
@@ -1184,7 +1206,11 @@ public class Tree_Assembler
                                                    new Xor_Operator_Node<Base_Card>(this.syntactical_stack.get(RESULT_LOCATION),
                                                                                     this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else
-                        throw new IllegalStateException("Error: should be impossible, \"" + BINARY_OPERATOR + "\" did not match any expected value. Should be a binary operator.");
+                    {
+                        this.handle_scenario_error(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS, INPUT.get_line_number(),
+                                                   "Error: \"" + BINARY_OPERATOR + "\" did not match any expected value. Should be a binary operator. Possibly caused by a missing operand. Error found at ");
+                        break;
+                    }
 
                     this.semantic_stack.remove(semantic_stack_end_index);
                     break;
@@ -1195,6 +1221,72 @@ public class Tree_Assembler
                 }
             }
         } while (no_match);
+    }
+
+    /**
+     * Out puts decklist that was read.
+     * 
+     * @param PARTIAL_OUTPUT_DIRECTORY that is basis for new file. Expected to already have extension extracted, as rest is concatenated on to it
+     */
+    public void print_out_decklist(final String PARTIAL_OUTPUT_DIRECTORY)
+    {
+        final File OUTPUT_FILE = Starting_Point.add_file_extension(true, Starting_Point.DECKLIST_EXTENSION, PARTIAL_OUTPUT_DIRECTORY);
+        try
+        {
+            OUTPUT_FILE.createNewFile();
+            try (final PrintWriter DECKLIST_OUTPUT = new PrintWriter(OUTPUT_FILE))
+            {
+                DECKLIST_OUTPUT.println(this.DECK);
+            }
+            catch (FileNotFoundException ex)
+            {
+                System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its decklist.");
+            }
+        }
+        catch (IOException ex)
+        {
+            System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its decklist.");
+        }
+
+    }
+
+    /**
+     * Out puts created scenarios, each to their own file in dot format.
+     * 
+     * @param PARTIAL_OUTPUT_DIRECTORY that is basis for new file. Expected to already have extension extracted, as rest is concatenated on to it
+     */
+    public void print_out_scenarios(final String PARTIAL_OUTPUT_DIRECTORY)
+    {
+        this.FOREST.values().parallelStream().forEach(schema -> {
+                                                      final File OUTPUT_FILE = Starting_Point.add_file_extension(true, Starting_Point.SYNTACTICAL_OUT_SCENARIO_FILE_EXTENSION, PARTIAL_OUTPUT_DIRECTORY + " " + Starting_Point.remove_illegal_char_file_name(schema.NAME));
+                                                      try
+                                                      {
+                                                          OUTPUT_FILE.createNewFile();
+                                                          try (final PrintWriter TEMP_WRITER = new PrintWriter(OUTPUT_FILE))
+                                                          {
+                                                              TEMP_WRITER.println(Evaluable.print_whole_subtree(schema.TREE_CONDITION));
+                                                          }
+                                                          catch (FileNotFoundException ex)
+                                                          {
+                                                              System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its corresponding scenario as a dot file.");
+                                                          }
+                                                      }
+                                                      catch (IOException ex)
+                                                      {
+                                                          System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its corresponding scenario as a dot file.");
+                                                      }
+        });
+    }
+
+    /**
+     * Convenience method which effectively calls {@link #print_out_decklist} and then {@link #print_out_scenarios}
+     * 
+     * @param PARTIAL_OUTPUT_DIRECTORY that is basis for new file. Expected to already have extension extracted, as rest is concatenated on to it.ocation to output files to, expected to be ready to have extensions
+     */
+    public void print_out_results(final String PARTIAL_OUTPUT_DIRECTORY)
+    {
+        this.print_out_decklist(PARTIAL_OUTPUT_DIRECTORY);
+        this.print_out_scenarios(PARTIAL_OUTPUT_DIRECTORY);
     }
 
     /**
@@ -1254,7 +1346,7 @@ public class Tree_Assembler
                 result.append(SPECIAL_UNLIKELY_SENTINEL);
             }
             Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, result.toString(), this.derivation);
-            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
+            this.syntactical_derivation_output.println(this.derivation.toString() + "\n");//output derivation
         }
     }
 
@@ -1272,7 +1364,7 @@ public class Tree_Assembler
         if (this.VERBOSE)
         {
             Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, CURRENT_LEXEME, this.derivation);
-            this.syntactical_derivation_output.println(this.derivation.toString());//output derivation
+            this.syntactical_derivation_output.println(this.derivation.toString() + "\n");//output derivation
         }
     }
 
@@ -1283,6 +1375,7 @@ public class Tree_Assembler
      * @param TARGET {@link Token.Lexeme_Types} to replace
      * @param CURRENT_NODE values pertaining to node to be created
      */
+
     private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
     {
         this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexeme());
@@ -1315,6 +1408,24 @@ public class Tree_Assembler
     }
 
     /**
+     * Simple subroutine meant to reduce overall code size by reuse. Essentially the same as {@link #handle_case_subroutine(int, String, Semantic_Actions...)}, except that 
+     * {@code this.semantic_stack.set(SEMANTIC_STACK_END_INDEX, L_H_S_[L_H_S_.length - 1]);} is omitted as that would do nothing.
+     * 
+     * @param SEMANTIC_STACK_END_INDEX local variable representing the last index of {@link #semantic_stack}
+     * @param TARGET current symbol being replaced
+     * @param L_H_S_ expected to be at least length 1, represents the result of the production rule in terms of grammar
+     */
+    private void handle_recursive_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Semantic_Actions... L_H_S_)
+    {
+        //TODO: improve
+        this.derivation_subroutine(TARGET, L_H_S_);
+
+        //work on semantic stack
+        for (int i = L_H_S_.length - 2; i > -1; --i)
+            this.semantic_stack.add(L_H_S_[i]);
+    }
+
+    /**
      * Simple subroutine meant to reduce overall code size by reuse.
      * 
      * @param SEMANTIC_STACK_END_INDEX local variable representing the last index of {@link #semantic_stack}
@@ -1331,6 +1442,36 @@ public class Tree_Assembler
 
         for (int i = L_H_S_.length - 2; i > -1; --i)
             this.semantic_stack.add(L_H_S_[i]);
+    }
+
+    /**
+     * Handles critical syntax errors relating to scenarios. Removes {@link #semantic_stack} values until STOPPING_POINT is reached (none inclusive). Also {@link #syntactical_stack} is cleared.
+     * 
+     * @param semantic_stack_end_index the last {@link #semantic_stack}
+     * @param STOPPING_POINT is the {@link Semantic_Actions} to remove up to
+     * @param LINE_NUMBER of where the error occurs
+     * @param ERROR_MESSAGE to output
+     */
+    private void handle_scenario_error(int semantic_stack_end_index, final Semantic_Actions STOPPING_POINT, final long LINE_NUMBER, final String ERROR_MESSAGE)
+    {
+        //panic
+        if (this.VERBOSE)
+            this.syntactical_error_output.println(ERROR_MESSAGE + LINE_NUMBER + ", discarding whole scenario.");
+
+        //remove current secnario's semantic actions
+        do
+        {
+            this.semantic_stack.remove(semantic_stack_end_index);
+            --semantic_stack_end_index;
+        } while (this.semantic_stack.get(semantic_stack_end_index) != STOPPING_POINT && semantic_stack_end_index > -1);
+
+        //add finishing scenario stuff to not have issues
+        this.semantic_stack.add(Semantic_Actions.SENTINEL_END);
+        this.semantic_stack.add(Semantic_Actions.SEMI_COLON);
+        this.semantic_stack.add(Semantic_Actions.SENTINEL_END);
+
+        //remove traces of incomplete scenario
+        this.syntactical_stack.clear(); //Deck cards are popped and scenarios are popped when done, thus only stuff in stack is current scenario.
     }
 
     /**

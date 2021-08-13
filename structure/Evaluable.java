@@ -2,6 +2,7 @@ package structure;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
@@ -10,7 +11,7 @@ import java.util.stream.Collectors;
 /**
 <b>
 Purpose: Requirement to be a node for evaluation purposes.<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
 </b>
 */
 
@@ -58,7 +59,7 @@ public class Evaluable<T>
 
     /**
      * Constructor to force unified id among all subclasses.
-     * @param NAME {@link Concrete_Parent#NAME}
+     * @param NAME {@link #NAME}
      */
     public Evaluable(final String NAME)
     {
@@ -67,6 +68,8 @@ public class Evaluable<T>
     }
 
     /**
+     * Allows for hand to be in an arbitrary order  
+     *
      * Default entry point where the success callback returns true and the failure callback returns false
      *
      * @param hand to be checked {@link Collection}
@@ -88,7 +91,7 @@ public class Evaluable<T>
      */
     protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
     {
-        throw new UnsupportedOperationException("Child failed to overide me.");
+        throw new UnsupportedOperationException("Child failed to override me.");
     }
 
     /**
@@ -98,34 +101,39 @@ public class Evaluable<T>
      */
     public static String print_whole_subtree(final Evaluable<?> START)
     {
-        StringBuilder output = new StringBuilder(2048); //large output
-        Queue<Evaluable<?>> traverse_nodes = new ArrayDeque<Evaluable<?>>();
+        final StringBuilder OUTPUT = new StringBuilder(2048); //large output
+        final HashSet<Integer> SEEN_NODES = new HashSet<Integer>(); //prevent nodes from being dealt with multiple times, mainly only affects Scenarios
+        final Queue<Evaluable<?>> TRAVERSE_NODES = new ArrayDeque<Evaluable<?>>();
 
-        output.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
+        OUTPUT.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
 
         //children
-        for (Evaluable<?> placeholder = START; placeholder != null; placeholder = traverse_nodes.poll())
+        for (Evaluable<?> placeholder = START; placeholder != null; placeholder = TRAVERSE_NODES.poll())
         {
-            output.append(placeholder); // print out top node
+            if (!SEEN_NODES.contains(placeholder.UNIQUE_IDENTIFIER))
+            {
+                SEEN_NODES.add(placeholder.UNIQUE_IDENTIFIER);
+                OUTPUT.append(placeholder); // print out top node
 
-            Collection<? extends Evaluable<?>> children = placeholder.continue_breath_search();
-            if (children != null)
-                traverse_nodes.addAll(children); // add children
+                Collection<? extends Evaluable<?>> children = placeholder.continue_breath_search();
+                if (children != null)
+                    TRAVERSE_NODES.addAll(children); // add children
+            }
         }
 
-        output.append('}');
+        OUTPUT.append('}');
 
-        return output.toString();
+        return OUTPUT.toString();
     }
 
     /**
      * Expected to be defined to pass along children for {@link #print_whole_subtree}.
      * 
-     * @return null or children
+     * @return null (for skip this one) or children
      */
     protected Collection<? extends Evaluable<?>> continue_breath_search()
     {
-        throw new UnsupportedOperationException("Child failed to overide me.");
+        throw new UnsupportedOperationException("Child failed to override me.");
     }
 
     /**

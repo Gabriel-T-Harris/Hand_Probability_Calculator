@@ -1,0 +1,9 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+36[label="AND"];
+36->14;
+36->24;
+14[label="Contains \"First\" Card"];
+24[label="Contains Ash Blossom & Joyous Spring"];
+}

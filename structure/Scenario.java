@@ -39,7 +39,7 @@ public class Scenario<T> extends Evaluable<T>
     public Scenario(final boolean DISPLAY, final String NAME, final Evaluable<T> TREE_CONDITION)
     {
         super(NAME);
-        this.display = DISPLAY;
+        this.DISPLAY = DISPLAY;
         this.TREE_CONDITION = TREE_CONDITION;
     }
 
@@ -54,8 +54,7 @@ public class Scenario<T> extends Evaluable<T>
      */
     public String toString()
     {
-        return this.UNIQUE_IDENTIFIER + "[label=\"" + this.NAME.replace(">", "\\>").replace("<", "\\<").replace("\"", "\\\"") + "\"];\n" + this.UNIQUE_IDENTIFIER + "->" +
-               this.TREE_CONDITION.UNIQUE_IDENTIFIER + ";\n";
+        return this.UNIQUE_IDENTIFIER + "[label=\"" + this.NAME.replace(">", "\\>").replace("<", "\\<").replace("\"", "\\\"") + "\"];\n";
     }
 
     @Override

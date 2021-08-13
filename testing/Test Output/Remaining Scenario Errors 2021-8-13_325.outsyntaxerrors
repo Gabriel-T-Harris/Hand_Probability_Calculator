@@ -1,0 +1,24 @@
+Error, repeated scenario name "Duplicate", discarding this scenario. Detected not before line number 22
+Error: while top of stack is UNARY_EXPR and current Token is [Lexeme TYPE: SENTINEL_END, LEXEME: }, line number: 22]
+Error: "A" did not match any expected value. Should be a binary operator. Possibly caused by a missing operand. Error found at 22, discarding whole scenario.
+Error: undefined referenced, Does Not Exist, at line 24, discarding whole scenario.
+Error: while top of stack is EXPR and current Token is [Lexeme TYPE: SENTINEL_END, LEXEME: }, line number: 26]
+Current scenario "Empty Scenario Error" found around line 28 is malformed. Discarding this scenario.
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: SENTINEL_END, LEXEME: }, line number: 28]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: ID, LEXEME: Display Error 2, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: ASSIGN, LEXEME: =, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: SENTINEL_START, LEXEME: {, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: TREE_START, LEXEME: scenario, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: ASSIGN, LEXEME: =, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: SENTINEL_START, LEXEME: {, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: CONDITION_SCENARIO_START, LEXEME: <, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: ID, LEXEME: Duplicate, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: CONDITION_SCENARIO_END, LEXEME: >, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: SENTINEL_END, LEXEME: }, line number: 30]
+Error: while top of stack is DISPLAY_VALUE and current Token is [Lexeme TYPE: SEMI_COLON, LEXEME: ;, line number: 30]
+Error: while top of stack is SENTINEL_END and current Token is [Lexeme TYPE: DISPLAY_START, LEXEME: display, line number: 30]
+Error: while top of stack is SENTINEL_END and current Token is [Lexeme TYPE: ASSIGN, LEXEME: =, line number: 30]
+Error: while top of stack is SENTINEL_END and current Token is [Lexeme TYPE: ID, LEXEME: invalid_value, line number: 30]
+Current scenario "Display Error 1" found around line 30 is malformed. Discarding this scenario.
+Error: while top of stack is ASSIGN and current Token is [Lexeme TYPE: SENTINEL_END, LEXEME: }, line number: 30]
+Error: while top of stack is ASSIGN and current Token is [Lexeme TYPE: SENTINEL_END, LEXEME: }, line number: 31]

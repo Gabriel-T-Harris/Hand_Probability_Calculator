@@ -10,6 +10,8 @@ Date: 2021-8-5
 
 public class EmptySemanticStackException extends Exception
 {
+    private static final long serialVersionUID = 7302965196829903702L;
+
     public EmptySemanticStackException(String error_message)
     {
         super(error_message);

@@ -1,0 +1,130 @@
+_&GTH&_DECK_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+_&GTH&_DECK_START_&GTH&_ _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_DECK_LIST_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_DECK_LIST_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { _&GTH&_DECK_LIST_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { _&GTH&_CARD_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { _&GTH&_CARD_NAME_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; _&GTH&_CARD_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; _&GTH&_CARD_NAME_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; _&GTH&_CARD_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; _&GTH&_CARD_NAME_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; _&GTH&_CARD_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; _&GTH&_CARD_NAME_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; _&GTH&_CARD_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; _&GTH&_CARD_NAME_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; _&GTH&_CARD_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; _&GTH&_CARD_NAME_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_CARD_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_CARD_NAME_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd _&GTH&_SEMI_COLON_&GTH&_ sdaga _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_ _&GTH&_MORE_CARDS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } _&GTH&_PROBABILITY_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } _&GTH&_PROBABILITY_START_&GTH&_ _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_SCENARIO_LIST_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_SCENARIO_LIST_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { _&GTH&_SCENARIO_LIST_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { _&GTH&_SCENARIO_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { _&GTH&_SCENARIO_NAME_&GTH&_ _&GTH&_ASSIGN_&GTH&_ _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name _&GTH&_ASSIGN_&GTH&_ _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_&GTH&_  _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_&GTH&_  } _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_&GTH&_  } _&GTH&_SCENARIO_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_&GTH&_  } _&GTH&_SCENARIO_NAME_&GTH&_ _&GTH&_ASSIGN_&GTH&_ _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_&GTH&_  } Good Name Without Display _&GTH&_ASSIGN_&GTH&_ _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_&GTH&_  } Good Name Without Display = _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { _&GTH&_TREE_START_&GTH&_ _&GTH&_ASSIGN_&GTH&_ _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario _&GTH&_ASSIGN_&GTH&_ _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = _&GTH&_SENTINEL_START_&GTH&_ _&GTH&_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { _&GTH&_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { _&GTH&_UNARY_EXPR_&GTH&_ _&GTH&_BINARY_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { _&GTH&_PRIMARY_EXPR_&GTH&_ _&GTH&_BINARY_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { _&GTH&_CONDITION_CARD_START_&GTH&_ _&GTH&_CARD_NAME_&GTH&_ _&GTH&_CONDITION_CARD_END_&GTH&_ _&GTH&_BINARY_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { [ _&GTH&_CARD_NAME_&GTH&_ _&GTH&_CONDITION_CARD_END_&GTH&_ _&GTH&_BINARY_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { [ First Card _&GTH&_CONDITION_CARD_END_&GTH&_ _&GTH&_BINARY_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { [ First Card ] _&GTH&_BINARY_EXPR_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { [ First Card ]  _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga _&GTH&_SEMI_COLON_&GTH&_  } scenarios: { Invalid name = { scenario = { [ First Card ]  } _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga ;  } scenarios: { Invalid name = { scenario = { [ First Card ]  } _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_ _&GTH&_DISPLAY_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga ;  } scenarios: { Invalid name = { scenario = { [ First Card ]  } _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_  _&GTH&_SENTINEL_END_&GTH&_ _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga ;  } scenarios: { Invalid name = { scenario = { [ First Card ]  } _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_  } _&GTH&_MORE_SCENARIOS_&GTH&_ _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga ;  } scenarios: { Invalid name = { scenario = { [ First Card ]  } _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_  }  _&GTH&_SENTINEL_END_&GTH&_
+
+deck list: { First Card ; Second Card ; First Card ; good card name ; convulted wr932jtfmnjr93tmj name ; sdfasfd ; sdaga ;  } scenarios: { Invalid name = { scenario = { [ First Card ]  } _&GTH&_SEMI_COLON_&GTH&_  } Good Name Without Display = { _&GTH&_TREE_&GTH&_  }  }
+

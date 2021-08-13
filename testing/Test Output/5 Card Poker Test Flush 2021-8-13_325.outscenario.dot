@@ -1,0 +1,11 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+1831[label="AND"];
+1831->1828;
+1831->1815;
+1828[label="NOT"];
+1828->1754;
+1815[label="Ignorant Flush"];
+1754[label="Ignorant Straight"];
+}
