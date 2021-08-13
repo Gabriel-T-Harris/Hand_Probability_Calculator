@@ -23,7 +23,7 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-[7, 12]
+Date: 2021-08-[4, 5]/2021-8-[7, 13]
 </b>
 */
 

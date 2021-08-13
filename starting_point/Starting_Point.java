@@ -22,7 +22,7 @@ import structure.Deck_Card;
 <b>
 Purpose: To be the central part which calls and runs the other parts. With the goal of calculating probility of a given hand.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-30/2021-8-1/2021-8-4/2021-8-[11, 12]
+Date: 2021-07-30/2021-8-1/2021-8-4/2021-8-[11, 13]
 </b>
 */
 
@@ -96,7 +96,7 @@ public class Starting_Point
     public static void main(String[] args) throws IOException
     {
         boolean verbose = false; //for outputting of progress
-        boolean error_log = false; //for system errors
+        boolean error_reporting = false; //for system errors
         boolean scenario_output = false; //for output decklist and scenarios
         int hand_size = DEFAULT_HAND_SIZE;
         long test_hands = DEFAULT_TEST_HAND_COUNT;
@@ -105,20 +105,20 @@ public class Starting_Point
 
         if (args.length > 0)
         {
-            final String ERROR_LOG_FLAG = "--error_log", HELP_FLAG = "--help", VERBOSE_FLAG = "--verbose", SCENARIO_OUTPUT_FLAG = "--scenario_output_flag",
+            final String ERROR_REPORTING_FLAG = "--error_reporting", HELP_FLAG = "--help", VERBOSE_FLAG = "--verbose", SCENARIO_OUTPUT_FLAG = "--scenario_output_flag",
                          INPUT_PARAMETER = "--input", OUTPUT_PARAMETER = "--output", HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
 
 
             for (int i = 0; i < args.length; ++i)
-                if (args[i].equals(ERROR_LOG_FLAG))
+                if (args[i].equals(ERROR_REPORTING_FLAG))
                 {
-                    error_log = true;
+                    error_reporting = true;
                     break;
                 }
 
-            final Command_Line_Argument_Parser PARSED_ARGUMENTS = new Command_Line_Argument_Parser(error_log);
+            final Command_Line_Argument_Parser PARSED_ARGUMENTS = new Command_Line_Argument_Parser(error_reporting);
 
-            PARSED_ARGUMENTS.add_flags(ERROR_LOG_FLAG, HELP_FLAG, VERBOSE_FLAG, SCENARIO_OUTPUT_FLAG);
+            PARSED_ARGUMENTS.add_flags(ERROR_REPORTING_FLAG, HELP_FLAG, VERBOSE_FLAG, SCENARIO_OUTPUT_FLAG);
             PARSED_ARGUMENTS.add_parameters(INPUT_PARAMETER, OUTPUT_PARAMETER, HAND_SIZE_PARAMETER, TEST_HANDS_PARAMETER);
             PARSED_ARGUMENTS.parse(args);
 
@@ -126,11 +126,11 @@ public class Starting_Point
             {
                 System.out.println("Program is calculate the probability of a given scenario for all scenarios which have display set to true. Configuration files are expected to have the following extension: " +
                                    SOURCE_FILE_EXTENSION + "\n\nCommand line options are none for default file that should be located at: " + DEFAULT_SOURCE_FILE_LOCATION +
-                                   DEFAULT_FILE + ".\n" + HELP_FLAG + ": for this message.\n" + ERROR_LOG_FLAG + ": to show error messages, does not include error files.\n" +
+                                   DEFAULT_FILE + ".\n" + HELP_FLAG + ": for this message.\n" + ERROR_REPORTING_FLAG + ": to show error messages, does not include error files.\n" +
                                    VERBOSE_FLAG + ": for creation of files showing progress, does include error files.\n" + SCENARIO_OUTPUT_FLAG +
                                    ": to output read decklist and sceanrios in dot file format.\n" + OUTPUT_PARAMETER + ": is where created files will go.\n" + INPUT_PARAMETER +
                                    ": is where to look for configuration file. If the value is a file will read only that one, else if is directory, then will read all files in that directory." +
-                                   HAND_SIZE_PARAMETER + ": is starting hand size\n" + TEST_HANDS_PARAMETER + ": is the number hands to simulate.");
+                                   HAND_SIZE_PARAMETER + ": is starting hand size.\n" + TEST_HANDS_PARAMETER + ": is the number hands to simulate.");
                 return;
             }
             else
@@ -152,7 +152,7 @@ public class Starting_Point
                     {
                         if (new File(read_argument).isDirectory())
                             output_location = read_argument;
-                        else if (error_log)
+                        else if (error_reporting)
                             System.err.println("Requested output path \"" + read_argument + "\" either does not exist or is not a directory. Using default output location: \"" +
                                                output_location + "\".");
                     }
@@ -167,7 +167,7 @@ public class Starting_Point
 
                             if (hand_size < 1)
                             {
-                                if (error_log)
+                                if (error_reporting)
                                     System.err.println("hand_size was erroneously set to " + hand_size + " which is less then 1. Setting hand_size to proper default value: " +
                                                        DEFAULT_HAND_SIZE + ".");
 
@@ -176,7 +176,7 @@ public class Starting_Point
                         }
                         catch (NumberFormatException ex)
                         {
-                            if (error_log)
+                            if (error_reporting)
                                 System.err.println("Requested hand size could not be parsed to an integer \"" + read_argument + "\". Using default hand size: " + hand_size +
                                                    ".");
                         }
@@ -192,7 +192,7 @@ public class Starting_Point
 
                             if (test_hands < 1)
                             {
-                                if (error_log)
+                                if (error_reporting)
                                     System.err.println("test_hands was erroneously set to " + test_hands + " which is less then 1. Setting test_hands to proper default value: " +
                                                        DEFAULT_TEST_HAND_COUNT + ".");
 
@@ -201,7 +201,7 @@ public class Starting_Point
                         }
                         catch (NumberFormatException ex)
                         {
-                            if (error_log)
+                            if (error_reporting)
                                 System.err.println("Requested hand size could not be parsed to an integer \"" + read_argument + "\". Using default hand size of " + hand_size +
                                                    ".");
                         }
@@ -210,7 +210,7 @@ public class Starting_Point
 
                 if (!COMMAND_ARGUMENT.exists())
                 {
-                    if (error_log)
+                    if (error_reporting)
                         System.err.println("Requested file with path \"" + COMMAND_ARGUMENT.getAbsolutePath() + "\" does not exist.");
                     SOURCE_FILES = new File[]{new File(DEFAULT_SOURCE_FILE_LOCATION, DEFAULT_FILE)};
                 }
@@ -221,7 +221,7 @@ public class Starting_Point
                 //should never happen
                 else
                 {
-                    if (error_log)
+                    if (error_reporting)
                         System.err.println("Error: requested path exists but is neither a file nor a directory. Should be impossible. Requested path \"" +
                                            COMMAND_ARGUMENT.getAbsolutePath() + "\". Defaulting to default input path and default file.");
                     SOURCE_FILES = new File[]{new File(DEFAULT_SOURCE_FILE_LOCATION, DEFAULT_FILE)};
@@ -407,7 +407,7 @@ public class Starting_Point
 
                 //TODO: perform simulation
             }
-            else if (error_log)
+            else if (error_reporting)
                 System.err.println("Chosen file: " + SOURCE_FILES[i].getCanonicalPath() + ", either does not exist or has improper extension.");
     }
 
