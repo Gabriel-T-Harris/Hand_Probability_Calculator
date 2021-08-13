@@ -1,1 +1,1 @@
---verbose --error_log --scenario_output_flag --input "testing/Test Input/" --output "testing/Test Output/"
+--verbose --error_reporting --scenario_output_flag --input "testing/Test Input/" --output "testing/Test Output/"
