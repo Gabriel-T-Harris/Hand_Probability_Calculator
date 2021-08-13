@@ -31,7 +31,7 @@ The lack of any of the following will result in their corresponding deafult valu
 
 ## How To Write Configuration File
 
-The formal specification can be found at [Grammar notes]("parser/Grammar%20notes.txt"). What follows is simply an explanation of it for those who do not understand context free grammar.
+The formal specification can be found at [Grammar notes](parser/Grammar%20notes.txt). What follows is simply an explanation of it for those who do not understand context free grammar.
 
 Line comments are written with `//`. While block comments are written as `/* */`.
 
