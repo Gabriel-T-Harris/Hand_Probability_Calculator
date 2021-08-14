@@ -32,7 +32,7 @@ public class Simulation<T, U>
      */
     public Simulation(final ArrayList<T> DECK, final HashMap<String, Scenario<U>> FOREST)
     {
-        //shallow copy do to intended internal use.
+        //shallow copy due to intended internal use.
         this.DECK = DECK;
         this.FOREST = FOREST;
     }
