@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Application to calculate the chance of drawing an arbitrary hand from an arbitrary finite deck. All of which is defined at runtime. Obviously without replacement. The calculation is performed through simulation (unfortuantlely due to the mathematics being a bit too complicated for the complicatated expresseions that a user may define).
+This application calculates the chance of drawing a particular hand from a given finite deck. Both are defined at runtime. Obviously, hands are drawn without replacement. The calculation is performed through simulation (unfortuantlely due to the mathematics being a bit too complex for the complicated expressions that a user may define).
 
 Pull requests welcome.
 
@@ -13,7 +13,7 @@ Pull requests welcome.
 
 ## Command Line Arguments
 
-The lack of any of the following will result in their corresponding deafult value being used.
+The lack of any of the following will result in their corresponding default value being used.
 
 ### Flags
 
