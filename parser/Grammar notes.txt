@@ -1,7 +1,9 @@
 Configuration file grammar:
 //regex which replace literal values used are represented by the following:
 deck_list: deck list:
+card_name: [^;\]]+ //include CONDITION_CARD_END
 scenarios: scenarios:
+scenario_name: [^=>]+ //include CONDITION_SCENARIO_END
 display: display
 Upper case: not, and, or, xor
 Lower case: true, false
@@ -10,6 +12,7 @@ id: "[^;=\n" + SENTINEL_START + SENTINEL_END + CONDITION_CARD_START + CONDITION_
     CONDITION_SCENARIO_START + CONDITION_SCENARIO_END + CONDITION_EXPR_START + CONDITION_EXPR_END + "]+"
 
 //lower case for literal, capital for production rule.
+//Note grammar does not have the unification resulting in ID, though is coded with that change.
 START -> DECK PROBABILITY .
 
 DECK -> DECK_START SENTINEL_START DECK_LIST SENTINEL_END.
@@ -36,14 +39,15 @@ EXPR -> UNARY_EXPR BINARY_EXPR .
 UNARY_EXPR -> UNARY_OPERATOR UNARY_EXPR | PRIMARY_EXPR .
 UNARY_OPERATOR -> not .
 
-PRIMARY_EXPR -> CONDITION_CARD_START CARD_NAME CONDITION_CARD_END | CONDITION_SCENARIO_START SCENARIO_NAME CONDITION_SCENARIO_END | CONDITION_EXPR_START EXPR CONDITION_EXPR_END .
-
-CONDITION_CARD_START -> open_bracket .
-CONDITION_CARD_END -> close_bracket .
-CONDITION_SCENARIO_START -> less_then .
-CONDITION_SCENARIO_END -> greater_then .
-CONDITION_EXPR_START -> open_parenthesis .
-CONDITION_EXPR_END -> close_parenthesis .
+PRIMARY_EXPR -> CONDITION_CARD_START CARD_NAME CONDITION_CARD_END 
+               |CONDITION_SCENARIO_START SCENARIO_NAME CONDITION_SCENARIO_END 
+               |CONDITION_EXPR_START EXPR CONDITION_EXPR_END .
+CONDITION_CARD_START -> [ .
+CONDITION_CARD_END -> ] .
+CONDITION_SCENARIO_START -> < .
+CONDITION_SCENARIO_END -> > .
+CONDITION_EXPR_START -> ( .
+CONDITION_EXPR_END -> ) .
 
 BINARY_EXPR -> BINARY_OPERATOR UNARY_EXPR BINARY_EXPR | .
 BINARY_OPERATOR -> and | or | xor .

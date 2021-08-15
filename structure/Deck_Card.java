@@ -4,6 +4,7 @@ package structure;
 <b>
 Purpose: To be used as the representation of cards in a deck.<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
+Date: 2021-07-25
 </b>
 */
 

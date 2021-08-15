@@ -6,6 +6,7 @@ import java.util.Collection;
 <b>
 Purpose: And operator<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
+Date: 2021-07-24
 </b>
 */
 
