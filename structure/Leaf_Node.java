@@ -6,6 +6,7 @@ import java.util.Collection;
 <b>
 Purpose: Also will be used as the leaf node of the tree structure.<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
+Date: 2021-07-23
 </b>
 */
 
