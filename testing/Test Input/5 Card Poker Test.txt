@@ -59,21 +59,28 @@ scenarios:
  Hearts = {scenario = {[Ace Hearts] OR [Two Hearts] OR [Three Hearts] OR [Four Hearts] OR [Five Hearts] OR [Six Hearts] OR [Seven Hearts] OR [Eight Hearts] OR [Nine Hearts] OR [Ten Hearts] OR [Jack Hearts] OR [Queen Hearts] OR [King Hearts]};display = false;}
  Spades = {scenario = {[Ace Spades] OR [Two Spades] OR [Three Spades] OR [Four Spades] OR [Five Spades] OR [Six Spades] OR [Seven Spades] OR [Eight Spades] OR [Nine Spades] OR [Ten Spades] OR [Jack Spades] OR [Queen Spades] OR [King Spades]};display = false;}
 
+ //for Triple, Two Pair, Full House, and None of the Above
+ Ignorant Pair     = {scenario = {
+                                  (<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR
+                                  (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR
+                                  (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)
+                                 };display = false;}
+
  //Not necessarily the most effective in terms of set up, but should be correct.
  Single Pair       = {scenario = {
-                                  (<Aces> AND <Aces> AND NOT <Aces> AND NOT ((<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Twos> AND <Twos> AND NOT <Twos> AND NOT ((<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Threes> AND <Threes> AND NOT <Threes> AND NOT ((<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Fours> AND <Fours> AND NOT <Fours> AND NOT ((<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Fives> AND <Fives> AND NOT <Fives> AND NOT ((<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Sixes> AND <Sixes> AND NOT <Sixes> AND NOT ((<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Sevens> AND <Sevens> AND NOT <Sevens> AND NOT ((<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Eights> AND <Eights> AND NOT <Eights> AND NOT ((<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Nines> AND <Nines> AND NOT <Nines> AND NOT ((<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Tens> AND <Tens> AND NOT <Tens> AND NOT ((<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Jacks> AND <Jacks> AND NOT <Jacks> AND NOT ((<Queens> AND <Queens>) OR (<Kings> AND <Kings>)) OR
-                                  (<Queens> AND <Queens> AND NOT <Queens> AND NOT ((<Kings> AND <Kings>)) OR
-                                  (<Kings> AND <Kings> AND NOT <Kings>)
+                                  (<Aces> AND <Aces> AND NOT <Aces> AND NOT ((<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Twos> AND <Twos> AND NOT <Twos> AND NOT ((<Aces> AND <Aces>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Threes> AND <Threes> AND NOT <Threes> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Fours> AND <Fours> AND NOT <Fours> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Fives> AND <Fives> AND NOT <Fives> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Sixes> AND <Sixes> AND NOT <Sixes> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Sevens> AND <Sevens> AND NOT <Sevens> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Eights> AND <Eights> AND NOT <Eights> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Nines> AND <Nines> AND NOT <Nines> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Tens> AND <Tens> AND NOT <Tens> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Jacks> AND <Jacks> AND NOT <Jacks> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Queens> AND <Queens>) OR (<Kings> AND <Kings>))) OR
+                                  (<Queens> AND <Queens> AND NOT <Queens> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Kings> AND <Kings>))) OR
+                                  (<Kings> AND <Kings> AND NOT <Kings> AND NOT ((<Aces> AND <Aces>) OR (<Twos> AND <Twos>) OR (<Threes> AND <Threes>) OR (<Fours> AND <Fours>) OR (<Fives> AND <Fives>) OR (<Sixes> AND <Sixes>) OR (<Sevens> AND <Sevens>) OR (<Eights> AND <Eights>) OR (<Nines> AND <Nines>) OR (<Tens> AND <Tens>) OR (<Jacks> AND <Jacks>) OR (<Queens> AND <Queens>)))
                                  };}
 
  //for Full House and Two Pair
@@ -108,12 +115,12 @@ scenarios:
                                    (<Jacks> AND <Jacks> AND <Jacks> AND NOT <Jacks>) OR 
                                    (<Queens> AND <Queens> AND <Queens> AND NOT <Queens>) OR 
                                    (<Kings> AND <Kings> AND <Kings> AND NOT <Kings>)
-                                  ) AND NOT <Single Pair>
+                                  ) AND NOT <Ignorant Pair>
                                  };}
 
- Two Pair          = {scenario = {NOT <Ignorant Triple> AND <Single Pair> AND <Single Pair>};} //Not Ignorant Triple prevents pairs from being same rank and prevents Full House.
+ Two Pair          = {scenario = {NOT <Ignorant Triple> AND <Ignorant Pair> AND <Ignorant Pair>};} //Not Ignorant Triple prevents pairs from being same rank and prevents Full House.
 
- Full House        = {scenario = {<Ignorant Triple> AND <Single Pair>};}
+ Full House        = {scenario = {<Ignorant Triple> AND <Ignorant Pair>};}
 
  Four of a Kind    = {scenario = {
                                   (<Aces> AND <Aces> AND <Aces> AND <Aces>) OR 
@@ -171,7 +178,7 @@ scenarios:
                                   ([Ten Spades] AND [Jack Spades] AND [Queen Spades] AND [King Spades] AND [Ace Spades])
                                  };}
 
- None of the Above = {scenario = {NOT (<Single Pair> OR <Ignorant Straight> OR <Ignorant Flush>)};} //Single Pair part covers Two Pairs, Full House, Four of a Kind, and Triple. Ignorant Straight covers Straight, Straight Flush, and Royal Flush.
+ None of the Above = {scenario = {NOT (<Ignorant Pair> OR <Ignorant Straight> OR <Ignorant Flush>)};} //Ignorant Pair part covers Two Pairs, Full House, Four of a Kind, and Triple. Ignorant Straight covers Straight, Straight Flush, and Royal Flush.
 }
 
 /*
