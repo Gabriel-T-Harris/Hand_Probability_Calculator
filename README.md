@@ -20,6 +20,7 @@ The lack of any of the following will result in their corresponding default valu
 - --error_reporting: to show various error messages not relating to created files about errors, for example, reporting issues with the command line arguments and other errors that do not fall under other groups.
 - --verbose: is for all files relating to error logs to be created. As well as for files that shows the progress of the program.
 - --scenario_output_flag: outputs all scenarios in dot file format. Be careful with using this, as it creates a lot of files, about equal to all the other output files that the other flags would create, combined.
+- --simulation_results_console: to have the simulation results be output to console instead of in a created file.
 
 ### Parameters
 
