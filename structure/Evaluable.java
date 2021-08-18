@@ -68,33 +68,6 @@ public class Evaluable<T>
     }
 
     /**
-     * Allows for hand to be in an arbitrary order  
-     *
-     * Default entry point where the success callback returns true and the failure callback returns false
-     *
-     * @param hand to be checked {@link Collection}
-     * @return If the hand meets a condition
-     */
-    public <E extends Reservable> boolean evaluate(final Collection<E> hand)
-    {
-        TestResult result = evaluate(hand, () -> TestResult.Success);
-        return result == TestResult.Success;
-    }
-
-    /**
-     * Function used to evaluate a node's condition using a rollback evaluation implementation.
-     * Allows for hand to be in an arbitrary order
-     *
-     * @param HAND to be checked {@link Collection}
-     * @param NEXT function to call when a leaf node takes a card from the hand
-     * @return a {@link TestResult} used as a signal on what action to preform next
-     */
-    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
-    {
-        throw new UnsupportedOperationException("Child failed to override me.");
-    }
-
-    /**
      * Output whole tree in dot file format.
      * 
      * @param START of breath first search
@@ -124,6 +97,33 @@ public class Evaluable<T>
         OUTPUT.append('}');
 
         return OUTPUT.toString();
+    }
+
+    /**
+     * Allows for hand to be in an arbitrary order  
+     *
+     * Default entry point where the success callback returns true and the failure callback returns false
+     *
+     * @param hand to be checked {@link Collection}
+     * @return If the hand meets a condition
+     */
+    public <E extends Reservable> boolean evaluate(final Collection<E> hand)
+    {
+        TestResult result = evaluate(hand, () -> TestResult.Success);
+        return result == TestResult.Success;
+    }
+
+    /**
+     * Function used to evaluate a node's condition using a rollback evaluation implementation.
+     * Allows for hand to be in an arbitrary order
+     *
+     * @param HAND to be checked {@link Collection}
+     * @param NEXT function to call when a leaf node takes a card from the hand
+     * @return a {@link TestResult} used as a signal on what action to preform next
+     */
+    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
+    {
+        throw new UnsupportedOperationException("Child failed to override me.");
     }
 
     /**
