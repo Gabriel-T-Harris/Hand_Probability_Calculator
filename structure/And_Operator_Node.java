@@ -5,17 +5,16 @@ import java.util.Collection;
 /**
 <b>
 Purpose: And operator<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
-Date: 2021-07-24
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
 </b>
 */
 
-public class And_Operator_Node<T> extends Binary_Operator_Node<T>
+public class And_Operator_Node extends Binary_Operator_Node
 {
     /**
      * Constructor, refer to {@link Binary_Operator_Node#Binary_Operator_Node(String, Evaluable, Evaluable)}.
      */
-    public And_Operator_Node(final Evaluable<T> LEFT_CHILD, final Evaluable<T> RIGHT_CHILD)
+    public And_Operator_Node(final Evaluable LEFT_CHILD, final Evaluable RIGHT_CHILD)
     {
         super("AND", LEFT_CHILD, RIGHT_CHILD);
     }

@@ -5,11 +5,11 @@ import java.util.Collection;
 /**
 <b>
 Purpose: Contain entire tree structure of {@link Base_Node} in a named reusable manner.<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
 </b>
 */
 
-public class Scenario<T> extends Evaluable<T>
+public class Scenario extends Evaluable
 {
     /**
      * Controls whether this should be displayed in final results.
@@ -19,12 +19,12 @@ public class Scenario<T> extends Evaluable<T>
     /**
      * Stores the tree representation of this scenario.
      */
-    public final Evaluable<T> TREE_CONDITION;
+    public final Evaluable TREE_CONDITION;
 
     /**
      * See {@link #Scenario(boolean, String, Evaluable)}.
      */
-    public Scenario(final String NAME, final Evaluable<T> TREE_CONDITION)
+    public Scenario(final String NAME, final Evaluable TREE_CONDITION)
     {
         this(true, NAME, TREE_CONDITION);
     }
@@ -36,7 +36,7 @@ public class Scenario<T> extends Evaluable<T>
      * @param NAME of scenario being tested
      * @param TREE_CONDITION {@link #TREE_CONDITION}
      */
-    public Scenario(final boolean DISPLAY, final String NAME, final Evaluable<T> TREE_CONDITION)
+    public Scenario(final boolean DISPLAY, final String NAME, final Evaluable TREE_CONDITION)
     {
         super(NAME);
         this.DISPLAY = DISPLAY;
@@ -58,7 +58,7 @@ public class Scenario<T> extends Evaluable<T>
     }
 
     @Override
-    protected Collection<? extends Evaluable<?>> continue_breath_search()
+    protected Collection<? extends Evaluable> continue_breath_search()
     {
         return null;
     }

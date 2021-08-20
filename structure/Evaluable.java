@@ -15,7 +15,7 @@ Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
 </b>
 */
 
-public class Evaluable<T>
+public class Evaluable
 {
     enum TestResult {
         /**
@@ -72,23 +72,23 @@ public class Evaluable<T>
      * 
      * @param START of breath first search
      */
-    public static String print_whole_subtree(final Evaluable<?> START)
+    public static String print_whole_subtree(final Evaluable START)
     {
         final StringBuilder OUTPUT = new StringBuilder(2048); //large output
         final HashSet<Integer> SEEN_NODES = new HashSet<Integer>(); //prevent nodes from being dealt with multiple times, mainly only affects Scenarios
-        final Queue<Evaluable<?>> TRAVERSE_NODES = new ArrayDeque<Evaluable<?>>();
+        final Queue<Evaluable> TRAVERSE_NODES = new ArrayDeque<Evaluable>();
 
         OUTPUT.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
 
         //children
-        for (Evaluable<?> placeholder = START; placeholder != null; placeholder = TRAVERSE_NODES.poll())
+        for (Evaluable placeholder = START; placeholder != null; placeholder = TRAVERSE_NODES.poll())
         {
             if (!SEEN_NODES.contains(placeholder.UNIQUE_IDENTIFIER))
             {
                 SEEN_NODES.add(placeholder.UNIQUE_IDENTIFIER);
                 OUTPUT.append(placeholder); // print out top node
 
-                Collection<? extends Evaluable<?>> children = placeholder.continue_breath_search();
+                Collection<? extends Evaluable> children = placeholder.continue_breath_search();
                 if (children != null)
                     TRAVERSE_NODES.addAll(children); // add children
             }
@@ -131,7 +131,7 @@ public class Evaluable<T>
      * 
      * @return null (for skip this one) or children
      */
-    protected Collection<? extends Evaluable<?>> continue_breath_search()
+    protected Collection<? extends Evaluable> continue_breath_search()
     {
         throw new UnsupportedOperationException("Child failed to override me.");
     }

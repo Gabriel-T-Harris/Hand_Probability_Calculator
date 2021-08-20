@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 import com.gth.function_bank.Function_Bank;
 import simulation.Simulation;
 import starting_point.Starting_Point;
@@ -23,7 +24,7 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-[7, 13]
+Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19
 </b>
 */
 
@@ -37,9 +38,9 @@ public class Tree_Assembler
     public final boolean VERBOSE;
 
     /**
-     * Special sequence meant to surround the production rules such that they are less likely to accidently appear as a token.
+     * Special sequence meant to surround the production rules such that they are less likely to accidently appear as a token. Though the use guarantees that they will never be mistaken for a token.
      */
-    private static final String SPECIAL_UNLIKELY_SENTINEL = "_&GTH&_";
+    private static final String SPECIAL_UNLIKELY_SENTINEL = "&GTH&";
 
     /**
      * Derivation of the input.
@@ -54,7 +55,7 @@ public class Tree_Assembler
     /**
      * Represents stack like structure for building the {@link Scenario} and deck list, used by {@link Tree_Assembler#parse(Token)}
      */
-    private ArrayList<Evaluable<Base_Card>> syntactical_stack;
+    private ArrayList<Evaluable> syntactical_stack;
 
     /**
      * Main deck which the hand will be generated from.
@@ -64,7 +65,7 @@ public class Tree_Assembler
     /**
      * Stores the generated scenarios.
      */
-    private final HashMap<String, Scenario<Base_Card>> FOREST;
+    private final HashMap<String, Scenario> FOREST;
 
     /**
      * file to output syntactical errors to.
@@ -83,7 +84,7 @@ public class Tree_Assembler
     {
         this.VERBOSE = false;
         this.DECK = new ArrayList<Deck_Card>(40); //predicted average deck size
-        this.FOREST = new HashMap<String, Scenario<Base_Card>>(10); //predicted average number of scenarios
+        this.FOREST = new HashMap<String, Scenario>(10); //predicted average number of scenarios
         this.finish_construction();
     }
     
@@ -99,7 +100,7 @@ public class Tree_Assembler
     {
         this.VERBOSE = true;
         this.DECK = new ArrayList<Deck_Card>(EXPECTED_DECK_SIZE);
-        this.FOREST = new HashMap<String, Scenario<Base_Card>>(EXPECTED_SCENARIO_COUNT);
+        this.FOREST = new HashMap<String, Scenario>(EXPECTED_SCENARIO_COUNT);
         this.derivation = new StringBuilder(SPECIAL_UNLIKELY_SENTINEL + Semantic_Actions.START.name() + SPECIAL_UNLIKELY_SENTINEL);
         this.syntactical_error_output = SYNTACTICAL_ERROR_OUTPUT;
         this.syntactical_derivation_output = SYNTACTICAL_DERIVATION_OUTPUT;
@@ -154,9 +155,13 @@ public class Tree_Assembler
      * 
      * @return culmination of this class, destroy this object afterwards (as it has served its function)
      */
-    public Simulation<Deck_Card, Base_Card> create_result()
+    public Simulation<Base_Card> create_result()
     {
-        return new Simulation<Deck_Card, Base_Card>(this.DECK, this.FOREST);
+        this.DECK.trimToSize();
+        ArrayList<Scenario> filtered_trees = new ArrayList<Scenario>(this.FOREST.values().parallelStream().filter(tree -> tree.DISPLAY)
+                                                                                                      .collect(Collectors.toList()));
+        filtered_trees.trimToSize();
+        return new Simulation<Base_Card>(this.DECK, filtered_trees);
     }
 
     /**
@@ -1123,7 +1128,7 @@ public class Tree_Assembler
                     if (this.syntactical_stack.size() == 2)
                     {
                         if (!this.FOREST.containsKey(SCEANRIO_NAME))
-                            this.FOREST.put(SCEANRIO_NAME, new Scenario<Base_Card>(!Tokenizer.FALSE.matcher(this.syntactical_stack.remove(1).NAME).matches(), SCEANRIO_NAME,
+                            this.FOREST.put(SCEANRIO_NAME, new Scenario(!Tokenizer.FALSE.matcher(this.syntactical_stack.remove(1).NAME).matches(), SCEANRIO_NAME,
                                                                                    this.syntactical_stack.remove(0)));
                         else
                         {
@@ -1152,7 +1157,7 @@ public class Tree_Assembler
                     final String UNARY_OPERATOR = this.syntactical_stack.remove(RESULT_LOCATION).NAME;
 
                     if (Tokenizer.NOT.matcher(UNARY_OPERATOR).matches())
-                        this.syntactical_stack.set(RESULT_LOCATION, new Not_Operator_Node<Base_Card>(this.syntactical_stack.get(RESULT_LOCATION)));
+                        this.syntactical_stack.set(RESULT_LOCATION, new Not_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION)));
                     else
                         throw new IllegalStateException("Error: should be impossible, \"" + UNARY_OPERATOR + "\" did not match any expected value. Should be a unary operator.");
 
@@ -1173,7 +1178,7 @@ public class Tree_Assembler
                     //scenario condition in scenario
                     int syntactical_stack_last_index = this.syntactical_stack.size() - 1;
                     final String REFERENCED_SCEANRIO_NAME = this.syntactical_stack.get(syntactical_stack_last_index).NAME;
-                    final Scenario<Base_Card> POTENTIONAL_SCENARIO = this.FOREST.get(REFERENCED_SCEANRIO_NAME);
+                    final Scenario POTENTIONAL_SCENARIO = this.FOREST.get(REFERENCED_SCEANRIO_NAME);
                     
                     if (POTENTIONAL_SCENARIO != null)
                     {
@@ -1195,20 +1200,20 @@ public class Tree_Assembler
 
                     if (Tokenizer.AND.matcher(BINARY_OPERATOR).matches())
                         this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new And_Operator_Node<Base_Card>(this.syntactical_stack.get(RESULT_LOCATION),
+                                                   new And_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION),
                                                                                     this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else if (Tokenizer.OR.matcher(BINARY_OPERATOR).matches())
                         this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new Or_Operator_Node<Base_Card>(this.syntactical_stack.get(RESULT_LOCATION),
+                                                   new Or_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION),
                                                                                    this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else if (Tokenizer.XOR.matcher(BINARY_OPERATOR).matches())
                         this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new Xor_Operator_Node<Base_Card>(this.syntactical_stack.get(RESULT_LOCATION),
+                                                   new Xor_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION),
                                                                                     this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else
                     {
                         this.handle_scenario_error(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS, INPUT.get_line_number(),
-                                                   "Error: \"" + BINARY_OPERATOR + "\" did not match any expected value. Should be a binary operator. Possibly caused by a missing operand. Error found at ");
+                                                   "Error: \"" + BINARY_OPERATOR + "\" did not match any expected value. Should be a binary operator. Possibly caused by a missing operand. Error found at line ");
                         break;
                     }
 
@@ -1248,7 +1253,6 @@ public class Tree_Assembler
         {
             System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its decklist.");
         }
-
     }
 
     /**
@@ -1297,7 +1301,7 @@ public class Tree_Assembler
     {
         this.semantic_stack = new ArrayList<Semantic_Actions>();
         this.semantic_stack.add(Semantic_Actions.START); //starting symbol
-        this.syntactical_stack = new ArrayList<Evaluable<Base_Card>>();
+        this.syntactical_stack = new ArrayList<Evaluable>();
     }
 
     /**
@@ -1320,7 +1324,7 @@ public class Tree_Assembler
     private void epsilon_add_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET)
     {
         //stack maintenance
-        this.syntactical_stack.add(new Evaluable<Base_Card>("NULL"));
+        this.syntactical_stack.add(new Evaluable("NULL"));
         this.epsilon_discard_case_subroutine(SEMANTIC_STACK_END_INDEX, TARGET);
     }
 
@@ -1392,7 +1396,7 @@ public class Tree_Assembler
     private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEME)
     {
         //stack maintenance
-        this.syntactical_stack.add(new Evaluable<Base_Card>(CURRENT_LEXEME));
+        this.syntactical_stack.add(new Evaluable(CURRENT_LEXEME));
         this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_LEXEME);
     }
 

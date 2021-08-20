@@ -4,18 +4,17 @@ import java.util.Collection;
 
 /**
 <b>
-Purpose: <br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
-Date: 2021-07-24
+Purpose: Xor Operator<br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
 </b>
 */
 
-public class Xor_Operator_Node<T> extends Binary_Operator_Node<T>
+public class Xor_Operator_Node extends Binary_Operator_Node
 {
     /**
      * Constructor, refer to {@link Binary_Operator_Node#Binary_Operator_Node(String, Evaluable, Evaluable)}.
      */
-    public Xor_Operator_Node(final Evaluable<T> LEFT_CHILD, final Evaluable<T> RIGHT_CHILD)
+    public Xor_Operator_Node(final Evaluable LEFT_CHILD, final Evaluable RIGHT_CHILD)
     {
         super("XOR", LEFT_CHILD, RIGHT_CHILD);
     }

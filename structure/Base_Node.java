@@ -6,11 +6,11 @@ import java.util.Collection;
 <b>
 Purpose: To be the base node which others will extend.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-23/2021-8-3/2021-8-8/2021-8-10
+Date: 2021-07-23/2021-8-3/2021-8-8/2021-8-10/2021-8-19
 </b>
 */
 
-public abstract class Base_Node<T> extends Evaluable<T>
+public abstract class Base_Node extends Evaluable
 {
     /**
      * Constructor of {@link #Base_Node}.
@@ -30,7 +30,7 @@ public abstract class Base_Node<T> extends Evaluable<T>
     }
 
     @Override
-    protected Collection<? extends Evaluable<?>> continue_breath_search()
+    protected Collection<? extends Evaluable> continue_breath_search()
     {
         return null;
     }

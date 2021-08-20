@@ -7,21 +7,21 @@ import java.util.Collection;
 <b>
 Purpose: Base of the binary operators.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-24/2021-8-3/2021-8-10
+Date: 2021-07-24/2021-8-3/2021-8-10/2021-8-19
 </b>
 */
 
-public abstract class Binary_Operator_Node<T> extends Base_Node<T>
+public abstract class Binary_Operator_Node extends Base_Node
 {
     /**
      * Left operand.
      */
-    public final Evaluable<T> LEFT_CHILD;
+    public final Evaluable LEFT_CHILD;
 
     /**
      * Right operand.
      */
-    public final Evaluable<T> RIGHT_CHILD;
+    public final Evaluable RIGHT_CHILD;
 
     /**
      * Constructor.
@@ -30,7 +30,7 @@ public abstract class Binary_Operator_Node<T> extends Base_Node<T>
      * @param LEFT_CHILD is the left operand of the operator
      * @param RIGHT_CHILD is the right operand of the operator
      */
-    public Binary_Operator_Node(String NAME, final Evaluable<T> LEFT_CHILD, final Evaluable<T> RIGHT_CHILD)
+    public Binary_Operator_Node(String NAME, final Evaluable LEFT_CHILD, final Evaluable RIGHT_CHILD)
     {
         super(NAME);
         this.LEFT_CHILD = LEFT_CHILD;
@@ -47,7 +47,7 @@ public abstract class Binary_Operator_Node<T> extends Base_Node<T>
     }
 
     @Override
-    protected Collection<? extends Evaluable<?>> continue_breath_search()
+    protected Collection<? extends Evaluable> continue_breath_search()
     {
         return Arrays.asList(this.LEFT_CHILD, this.RIGHT_CHILD);
     }
