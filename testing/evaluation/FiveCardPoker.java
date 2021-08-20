@@ -104,199 +104,76 @@ public class FiveCardPoker {
     final static Leaf_Node<Deck_Card> queen = new Leaf_Node<Deck_Card>("Queen", new PlayingValue(Value.Queen));
     final static Leaf_Node<Deck_Card> king = new Leaf_Node<Deck_Card>("King", new PlayingValue(Value.King));
 
-    final static Scenario pair_exists =
-                                      new Scenario("PAIR EXISTS",
-                                                   new Or_Operator_Node(new And_Operator_Node(ace, ace),
-                                                                        new Or_Operator_Node(new And_Operator_Node(two, two),
-                                                                                             new Or_Operator_Node(new And_Operator_Node(three, three),
-                                                                                                                  new Or_Operator_Node(new And_Operator_Node(four, four),
-                                                                                                                                       new Or_Operator_Node(new And_Operator_Node(five,
-                                                                                                                                                                                  five),
-                                                                                                                                                            new Or_Operator_Node(new And_Operator_Node(six,
-                                                                                                                                                                                                       six),
-                                                                                                                                                                                 new Or_Operator_Node(new And_Operator_Node(seven,
-                                                                                                                                                                                                                            seven),
-                                                                                                                                                                                                      new Or_Operator_Node(new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                 eight),
-                                                                                                                                                                                                                           new Or_Operator_Node(new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                      nine),
-                                                                                                                                                                                                                                                new Or_Operator_Node(new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                           ten),
-                                                                                                                                                                                                                                                                     new Or_Operator_Node(new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                                jack),
-                                                                                                                                                                                                                                                                                          new Or_Operator_Node(new And_Operator_Node(queen,
-                                                                                                                                                                                                                                                                                                                                     queen),
-                                                                                                                                                                                                                                                                                                               new And_Operator_Node(king,
-                                                                                                                                                                                                                                                                                                                                     king)
+    final static Scenario pair_exists = new Scenario("PAIR EXISTS", new Or_Operator_Node(
+        new And_Operator_Node(ace, ace), new Or_Operator_Node(
+        new And_Operator_Node(two, two), new Or_Operator_Node(
+        new And_Operator_Node(three, three), new Or_Operator_Node(
+        new And_Operator_Node(four, four), new Or_Operator_Node(
+        new And_Operator_Node(five, five), new Or_Operator_Node(
+        new And_Operator_Node(six, six), new Or_Operator_Node(
+        new And_Operator_Node(seven, seven), new Or_Operator_Node(
+        new And_Operator_Node(eight, eight), new Or_Operator_Node(
+        new And_Operator_Node(nine, nine), new Or_Operator_Node(
+        new And_Operator_Node(ten, ten), new Or_Operator_Node(
+        new And_Operator_Node(jack, jack), new Or_Operator_Node(
+        new And_Operator_Node(queen, queen),
+        new And_Operator_Node(king, king)
         ))))))))))))
     );
 
-    final static Scenario triple_exists =
-                                        new Scenario("TRIPLE EXISTS",
-                                                     new Or_Operator_Node(new And_Operator_Node(ace, new And_Operator_Node(ace, ace)),
-                                                                          new Or_Operator_Node(new And_Operator_Node(two, new And_Operator_Node(two, two)),
-                                                                                               new Or_Operator_Node(new And_Operator_Node(three,
-                                                                                                                                          new And_Operator_Node(three, three)),
-                                                                                                                    new Or_Operator_Node(new And_Operator_Node(four,
-                                                                                                                                                               new And_Operator_Node(four,
-                                                                                                                                                                                     four)),
-                                                                                                                                         new Or_Operator_Node(new And_Operator_Node(five,
-                                                                                                                                                                                    new And_Operator_Node(five,
-                                                                                                                                                                                                          five)),
-                                                                                                                                                              new Or_Operator_Node(new And_Operator_Node(six,
-                                                                                                                                                                                                         new And_Operator_Node(six,
-                                                                                                                                                                                                                               six)),
-                                                                                                                                                                                   new Or_Operator_Node(new And_Operator_Node(seven,
-                                                                                                                                                                                                                              new And_Operator_Node(seven,
-                                                                                                                                                                                                                                                    seven)),
-                                                                                                                                                                                                        new Or_Operator_Node(new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                   new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                                         eight)),
-                                                                                                                                                                                                                             new Or_Operator_Node(new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                        new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                                              nine)),
-                                                                                                                                                                                                                                                  new Or_Operator_Node(new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                             new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                                                   ten)),
-                                                                                                                                                                                                                                                                       new Or_Operator_Node(new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                                  new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                                                        jack)),
-                                                                                                                                                                                                                                                                                            new Or_Operator_Node(new And_Operator_Node(queen,
-                                                                                                                                                                                                                                                                                                                                       new And_Operator_Node(queen,
-                                                                                                                                                                                                                                                                                                                                                             queen)),
-                                                                                                                                                                                                                                                                                                                 new And_Operator_Node(king,
-                                                                                                                                                                                                                                                                                                                                       new And_Operator_Node(king,
-                                                                                                                                                                                                                                                                                                                                                             king))
+    final static Scenario triple_exists = new Scenario("TRIPLE EXISTS", new Or_Operator_Node(
+            new And_Operator_Node(ace, new And_Operator_Node(ace, ace)), new Or_Operator_Node(
+            new And_Operator_Node(two, new And_Operator_Node(two, two)), new Or_Operator_Node(
+            new And_Operator_Node(three, new And_Operator_Node(three, three)), new Or_Operator_Node(
+            new And_Operator_Node(four, new And_Operator_Node(four, four)), new Or_Operator_Node(
+            new And_Operator_Node(five, new And_Operator_Node(five, five)), new Or_Operator_Node(
+            new And_Operator_Node(six, new And_Operator_Node(six, six)), new Or_Operator_Node(
+            new And_Operator_Node(seven, new And_Operator_Node(seven, seven)), new Or_Operator_Node(
+            new And_Operator_Node(eight, new And_Operator_Node(eight, eight)), new Or_Operator_Node(
+            new And_Operator_Node(nine, new And_Operator_Node(nine, nine)), new Or_Operator_Node(
+            new And_Operator_Node(ten, new And_Operator_Node(ten, ten)), new Or_Operator_Node(
+            new And_Operator_Node(jack, new And_Operator_Node(jack, jack)), new Or_Operator_Node(
+            new And_Operator_Node(queen, new And_Operator_Node(queen, queen)),
+            new And_Operator_Node(king, new And_Operator_Node(king, king))
     ))))))))))))
     );
 
-    final static Scenario quad_exists =
-                                      new Scenario("QUAD EXISTS",
-                                                   new Or_Operator_Node(new And_Operator_Node(ace, new And_Operator_Node(ace, new And_Operator_Node(ace, ace))),
-                                                                        new Or_Operator_Node(new And_Operator_Node(two,
-                                                                                                                   new And_Operator_Node(two, new And_Operator_Node(two, two))),
-                                                                                             new Or_Operator_Node(new And_Operator_Node(three,
-                                                                                                                                        new And_Operator_Node(three,
-                                                                                                                                                              new And_Operator_Node(three,
-                                                                                                                                                                                    three))),
-                                                                                                                  new Or_Operator_Node(new And_Operator_Node(four,
-                                                                                                                                                             new And_Operator_Node(four,
-                                                                                                                                                                                   new And_Operator_Node(four,
-                                                                                                                                                                                                         four))),
-                                                                                                                                       new Or_Operator_Node(new And_Operator_Node(five,
-                                                                                                                                                                                  new And_Operator_Node(five,
-                                                                                                                                                                                                        new And_Operator_Node(five,
-                                                                                                                                                                                                                              five))),
-                                                                                                                                                            new Or_Operator_Node(new And_Operator_Node(six,
-                                                                                                                                                                                                       new And_Operator_Node(six,
-                                                                                                                                                                                                                             new And_Operator_Node(six,
-                                                                                                                                                                                                                                                   six))),
-                                                                                                                                                                                 new Or_Operator_Node(new And_Operator_Node(seven,
-                                                                                                                                                                                                                            new And_Operator_Node(seven,
-                                                                                                                                                                                                                                                  new And_Operator_Node(seven,
-                                                                                                                                                                                                                                                                        seven))),
-                                                                                                                                                                                                      new Or_Operator_Node(new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                 new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                                       new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                                                             eight))),
-                                                                                                                                                                                                                           new Or_Operator_Node(new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                      new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                                            new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                                                                  nine))),
-                                                                                                                                                                                                                                                new Or_Operator_Node(new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                           new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                                                 new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                                                                       ten))),
-                                                                                                                                                                                                                                                                     new Or_Operator_Node(new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                                new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                                                      new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                                                                            jack))),
-                                                                                                                                                                                                                                                                                          new Or_Operator_Node(new And_Operator_Node(queen,
-                                                                                                                                                                                                                                                                                                                                     new And_Operator_Node(queen,
-                                                                                                                                                                                                                                                                                                                                                           new And_Operator_Node(queen,
-                                                                                                                                                                                                                                                                                                                                                                                 queen))),
-                                                                                                                                                                                                                                                                                                               new And_Operator_Node(king,
-                                                                                                                                                                                                                                                                                                                                     new And_Operator_Node(king,
-                                                                                                                                                                                                                                                                                                                                                           new And_Operator_Node(king,
-                                                                                                                                                                                                                                                                                                                                                                                 king)))
+    final static Scenario quad_exists = new Scenario("QUAD EXISTS", new Or_Operator_Node(
+            new And_Operator_Node(ace, new And_Operator_Node(ace, new And_Operator_Node(ace, ace))), new Or_Operator_Node(
+            new And_Operator_Node(two, new And_Operator_Node(two, new And_Operator_Node(two, two))), new Or_Operator_Node(
+            new And_Operator_Node(three, new And_Operator_Node(three, new And_Operator_Node(three, three))), new Or_Operator_Node(
+            new And_Operator_Node(four, new And_Operator_Node(four, new And_Operator_Node(four, four))), new Or_Operator_Node(
+            new And_Operator_Node(five, new And_Operator_Node(five, new And_Operator_Node(five, five))), new Or_Operator_Node(
+            new And_Operator_Node(six, new And_Operator_Node(six, new And_Operator_Node(six, six))), new Or_Operator_Node(
+            new And_Operator_Node(seven, new And_Operator_Node(seven, new And_Operator_Node(seven, seven))), new Or_Operator_Node(
+            new And_Operator_Node(eight, new And_Operator_Node(eight, new And_Operator_Node(eight, eight))), new Or_Operator_Node(
+            new And_Operator_Node(nine, new And_Operator_Node(nine, new And_Operator_Node(nine, nine))), new Or_Operator_Node(
+            new And_Operator_Node(ten, new And_Operator_Node(ten, new And_Operator_Node(ten, ten))), new Or_Operator_Node(
+            new And_Operator_Node(jack, new And_Operator_Node(jack, new And_Operator_Node(jack, jack))), new Or_Operator_Node(
+            new And_Operator_Node(queen, new And_Operator_Node(queen, new And_Operator_Node(queen, queen))),
+            new And_Operator_Node(king, new And_Operator_Node(king, new And_Operator_Node(king, king)))
     ))))))))))))
     );
 
-    final static Scenario flush_exists =
-                                       new Scenario("FLUSH EXISTS",
-                                                    new Or_Operator_Node(new And_Operator_Node(spades,
-                                                                                               new And_Operator_Node(spades,
-                                                                                                                     new And_Operator_Node(spades,
-                                                                                                                                           new And_Operator_Node(spades, spades)))),
-                                                                         new Or_Operator_Node(new And_Operator_Node(hearts,
-                                                                                                                    new And_Operator_Node(hearts,
-                                                                                                                                          new And_Operator_Node(hearts,
-                                                                                                                                                                new And_Operator_Node(hearts,
-                                                                                                                                                                                      hearts)))),
-                                                                                              new Or_Operator_Node(new And_Operator_Node(diamonds,
-                                                                                                                                         new And_Operator_Node(diamonds,
-                                                                                                                                                               new And_Operator_Node(diamonds,
-                                                                                                                                                                                     new And_Operator_Node(diamonds,
-                                                                                                                                                                                                           diamonds)))),
-                                                                                                                   new And_Operator_Node(clubs,
-                                                                                                                                         new And_Operator_Node(clubs,
-                                                                                                                                                               new And_Operator_Node(clubs,
-                                                                                                                                                                                     new And_Operator_Node(clubs,
-                                                                                                                                                                                                           clubs))))
+    final static Scenario flush_exists = new Scenario("FLUSH EXISTS", new Or_Operator_Node(
+            new And_Operator_Node(spades, new And_Operator_Node(spades, new And_Operator_Node(spades, new And_Operator_Node(spades, spades)))), new Or_Operator_Node(
+            new And_Operator_Node(hearts, new And_Operator_Node(hearts, new And_Operator_Node(hearts, new And_Operator_Node(hearts, hearts)))), new Or_Operator_Node(
+            new And_Operator_Node(diamonds, new And_Operator_Node(diamonds, new And_Operator_Node(diamonds, new And_Operator_Node(diamonds, diamonds)))),
+            new And_Operator_Node(clubs, new And_Operator_Node(clubs, new And_Operator_Node(clubs, new And_Operator_Node(clubs, clubs))))
     )))
     );
 
-    final static Scenario straight_exists =
-                                          new Scenario("STRAIGHT EXISTS",
-                                                       new Or_Operator_Node(new And_Operator_Node(ace,
-                                                                                                  new And_Operator_Node(two,
-                                                                                                                        new And_Operator_Node(three,
-                                                                                                                                              new And_Operator_Node(four, five)))),
-                                                                            new Or_Operator_Node(new And_Operator_Node(two,
-                                                                                                                       new And_Operator_Node(three,
-                                                                                                                                             new And_Operator_Node(four,
-                                                                                                                                                                   new And_Operator_Node(five,
-                                                                                                                                                                                         six)))),
-                                                                                                 new Or_Operator_Node(new And_Operator_Node(three,
-                                                                                                                                            new And_Operator_Node(four,
-                                                                                                                                                                  new And_Operator_Node(five,
-                                                                                                                                                                                        new And_Operator_Node(six,
-                                                                                                                                                                                                              seven)))),
-                                                                                                                      new Or_Operator_Node(new And_Operator_Node(four,
-                                                                                                                                                                 new And_Operator_Node(five,
-                                                                                                                                                                                       new And_Operator_Node(six,
-                                                                                                                                                                                                             new And_Operator_Node(seven,
-                                                                                                                                                                                                                                   eight)))),
-                                                                                                                                           new Or_Operator_Node(new And_Operator_Node(five,
-                                                                                                                                                                                      new And_Operator_Node(six,
-                                                                                                                                                                                                            new And_Operator_Node(seven,
-                                                                                                                                                                                                                                  new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                        nine)))),
-                                                                                                                                                                new Or_Operator_Node(new And_Operator_Node(six,
-                                                                                                                                                                                                           new And_Operator_Node(seven,
-                                                                                                                                                                                                                                 new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                       new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                             ten)))),
-                                                                                                                                                                                     new Or_Operator_Node(new And_Operator_Node(seven,
-                                                                                                                                                                                                                                new And_Operator_Node(eight,
-                                                                                                                                                                                                                                                      new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                            new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                                  jack)))),
-                                                                                                                                                                                                          new Or_Operator_Node(new And_Operator_Node(seven,
-                                                                                                                                                                                                                                                     new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                           new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                                 new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                                       queen)))),
-                                                                                                                                                                                                                               new Or_Operator_Node(new And_Operator_Node(nine,
-                                                                                                                                                                                                                                                                          new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                                                new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                                      new And_Operator_Node(queen,
-                                                                                                                                                                                                                                                                                                                                            king)))),
-                                                                                                                                                                                                                                                    new And_Operator_Node(ten,
-                                                                                                                                                                                                                                                                          new And_Operator_Node(jack,
-                                                                                                                                                                                                                                                                                                new And_Operator_Node(queen,
-                                                                                                                                                                                                                                                                                                                      new And_Operator_Node(king,
-                                                                                                                                                                                                                                                                                                                                            ace))))
+    final static Scenario straight_exists = new Scenario("STRAIGHT EXISTS", new Or_Operator_Node(
+            new And_Operator_Node(ace, new And_Operator_Node(two, new And_Operator_Node(three, new And_Operator_Node(four, five)))), new Or_Operator_Node(
+            new And_Operator_Node(two, new And_Operator_Node(three, new And_Operator_Node(four, new And_Operator_Node(five, six)))), new Or_Operator_Node(
+            new And_Operator_Node(three, new And_Operator_Node(four, new And_Operator_Node(five, new And_Operator_Node(six, seven)))), new Or_Operator_Node(
+            new And_Operator_Node(four, new And_Operator_Node(five, new And_Operator_Node(six, new And_Operator_Node(seven, eight)))), new Or_Operator_Node(
+            new And_Operator_Node(five, new And_Operator_Node(six, new And_Operator_Node(seven, new And_Operator_Node(eight, nine)))), new Or_Operator_Node(
+            new And_Operator_Node(six, new And_Operator_Node(seven, new And_Operator_Node(eight, new And_Operator_Node(nine, ten)))), new Or_Operator_Node(
+            new And_Operator_Node(seven, new And_Operator_Node(eight, new And_Operator_Node(nine, new And_Operator_Node(ten, jack)))), new Or_Operator_Node(
+            new And_Operator_Node(seven, new And_Operator_Node(nine, new And_Operator_Node(ten, new And_Operator_Node(jack, queen)))), new Or_Operator_Node(
+            new And_Operator_Node(nine, new And_Operator_Node(ten, new And_Operator_Node(jack, new And_Operator_Node(queen, king)))),
+            new And_Operator_Node(ten, new And_Operator_Node(jack, new And_Operator_Node(queen, new And_Operator_Node(king, ace))))
     )))))))))
     );
 
@@ -318,18 +195,23 @@ public class FiveCardPoker {
 
     final static Scenario straight = new Scenario("STRAIGHT", straight_exists);
 
-    final static Scenario three_of_a_kind = new Scenario("THREE OF A KIND", new And_Operator_Node(new Not_Operator_Node(new Or_Operator_Node(full_house, quad_exists)),
+    final static Scenario three_of_a_kind = new Scenario("THREE OF A KIND",
+            new And_Operator_Node(new Not_Operator_Node(new Or_Operator_Node(full_house, quad_exists)),
                     triple_exists
             )
     );
 
-    final static Scenario two_pair = new Scenario("TWO PAIR", new And_Operator_Node(new Not_Operator_Node(new Or_Operator_Node(triple_exists, quad_exists)),
+    final static Scenario two_pair = new Scenario("TWO PAIR",
+            new And_Operator_Node(new Not_Operator_Node(new Or_Operator_Node(triple_exists, quad_exists)),
                     two_pairs_exists
             )
     );
 
     final static Scenario one_pair = new Scenario("ONE PAIR",
-                                                  new And_Operator_Node(new Not_Operator_Node(new Or_Operator_Node(triple_exists, new Or_Operator_Node(two_pair, quad_exists)
+            new And_Operator_Node(
+                     new Not_Operator_Node(
+                             new Or_Operator_Node(triple_exists,
+                                    new Or_Operator_Node(two_pair, quad_exists)
                             )
                     ),
                     pair_exists

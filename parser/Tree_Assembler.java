@@ -158,8 +158,7 @@ public class Tree_Assembler
     public Simulation<Base_Card> create_result()
     {
         this.DECK.trimToSize();
-        ArrayList<Scenario> filtered_trees = new ArrayList<Scenario>(this.FOREST.values().parallelStream().filter(tree -> tree.DISPLAY)
-                                                                                                      .collect(Collectors.toList()));
+        ArrayList<Scenario> filtered_trees = new ArrayList<Scenario>(this.FOREST.values().parallelStream().filter(tree -> tree.DISPLAY).collect(Collectors.toList()));
         filtered_trees.trimToSize();
         return new Simulation<Base_Card>(this.DECK, filtered_trees);
     }
@@ -1129,7 +1128,7 @@ public class Tree_Assembler
                     {
                         if (!this.FOREST.containsKey(SCEANRIO_NAME))
                             this.FOREST.put(SCEANRIO_NAME, new Scenario(!Tokenizer.FALSE.matcher(this.syntactical_stack.remove(1).NAME).matches(), SCEANRIO_NAME,
-                                                                                   this.syntactical_stack.remove(0)));
+                                                                        this.syntactical_stack.remove(0)));
                         else
                         {
                             //clear remaining stack stuff
@@ -1200,16 +1199,13 @@ public class Tree_Assembler
 
                     if (Tokenizer.AND.matcher(BINARY_OPERATOR).matches())
                         this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new And_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION),
-                                                                                    this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
+                                                   new And_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else if (Tokenizer.OR.matcher(BINARY_OPERATOR).matches())
                         this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new Or_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION),
-                                                                                   this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
+                                                   new Or_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else if (Tokenizer.XOR.matcher(BINARY_OPERATOR).matches())
                         this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new Xor_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION),
-                                                                                    this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
+                                                   new Xor_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else
                     {
                         this.handle_scenario_error(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS, INPUT.get_line_number(),
