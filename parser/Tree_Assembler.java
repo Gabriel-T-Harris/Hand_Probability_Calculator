@@ -155,12 +155,12 @@ public class Tree_Assembler
      * 
      * @return culmination of this class, destroy this object afterwards (as it has served its function)
      */
-    public Simulation<Base_Card> create_result()
+    public Simulation create_result()
     {
         this.DECK.trimToSize();
         ArrayList<Scenario> filtered_trees = new ArrayList<Scenario>(this.FOREST.values().parallelStream().filter(tree -> tree.DISPLAY).collect(Collectors.toList()));
         filtered_trees.trimToSize();
-        return new Simulation<Base_Card>(this.DECK, filtered_trees);
+        return new Simulation(this.DECK, filtered_trees);
     }
 
     /**
