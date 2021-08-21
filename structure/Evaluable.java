@@ -71,6 +71,7 @@ public class Evaluable
      * Output whole tree in dot file format.
      * 
      * @param START of breath first search
+     * @return representation of whole structure in dot file format
      */
     public static String print_whole_subtree(final Evaluable START)
     {
@@ -103,6 +104,7 @@ public class Evaluable
      * Allows for hand to be in an arbitrary order  
      *
      * Default entry point where the success callback returns true and the failure callback returns false
+     * @param <E> anything that is {@link Reservable} will do
      *
      * @param hand to be checked {@link Collection}
      * @return If the hand meets a condition

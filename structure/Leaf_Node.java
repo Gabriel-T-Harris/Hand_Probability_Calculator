@@ -7,6 +7,7 @@ import java.util.Collection;
 Purpose: Also will be used as the leaf node of the tree structure.<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
 </b>
+* @param <T> is the type of card to hold, suggestion of {@link Base_Card}.
 */
 
 public class Leaf_Node<T> extends Base_Node

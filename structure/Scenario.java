@@ -23,6 +23,8 @@ public class Scenario extends Evaluable
 
     /**
      * See {@link #Scenario(boolean, String, Evaluable)}.
+     * @param NAME to be called
+     * @param TREE_CONDITION to be {@link Evaluable#evaluate(Collection)}
      */
     public Scenario(final String NAME, final Evaluable TREE_CONDITION)
     {

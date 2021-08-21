@@ -13,6 +13,8 @@ public class And_Operator_Node extends Binary_Operator_Node
 {
     /**
      * Constructor, refer to {@link Binary_Operator_Node#Binary_Operator_Node(String, Evaluable, Evaluable)}.
+     * @param LEFT_CHILD is the left operand
+     * @param RIGHT_CHILD is the right operand
      */
     public And_Operator_Node(final Evaluable LEFT_CHILD, final Evaluable RIGHT_CHILD)
     {
