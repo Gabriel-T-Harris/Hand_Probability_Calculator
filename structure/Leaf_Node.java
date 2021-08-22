@@ -39,8 +39,8 @@ public class Leaf_Node<T> extends Base_Node
     public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         if (Evaluable.debugMode) {
             System.out.printf("Trying to match %s\n", CARD);
+            printDebugStep(hand);
         }
-        printDebugStep(hand);
         for (E card : hand) {
             if (!card.isReserved() && card.equals(CARD)) {
                 if (Evaluable.debugMode) {
