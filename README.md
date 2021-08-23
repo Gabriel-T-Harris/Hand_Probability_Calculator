@@ -114,7 +114,7 @@ only want one starter*/
 display xor example          = {scenario = {[starter 1] XOR [starter 2]}; display = false;}
 ```
 
-Note that scenario names must be unique per file and referenced ones must exist.
+Note that scenario names must be unique per file and referenced ones must be defined before use.
 
 ## Examples Of Use
 
