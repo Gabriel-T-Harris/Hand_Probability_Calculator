@@ -64,7 +64,7 @@ public class Evaluable
     public Evaluable(final String NAME)
     {
         this.NAME = NAME;
-        this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
+        this.UNIQUE_IDENTIFIER = ++Evaluable.CREATED_NODES_COUNT;
     }
 
     /**
