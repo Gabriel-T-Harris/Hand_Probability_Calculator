@@ -13,8 +13,9 @@ Date: 2021-07-23/2021-8-3/2021-8-8/2021-8-10/2021-8-19
 public abstract class Base_Node extends Evaluable
 {
     /**
-     * Constructor of {@link #Base_Node}.
-     * @param NAME the name to be given to this {@link #Base_Node}
+     * Constructor of {@link Base_Node}.
+     * 
+     * @param NAME the name to be given to this {@link Base_Node}
      */
     public Base_Node(final String NAME)
     {

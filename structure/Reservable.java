@@ -12,6 +12,7 @@ public interface Reservable
 {
     /**
      * Checks reservedness of this card.
+     * 
      * @return current reservedness
      */
     boolean isReserved();
