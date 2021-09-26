@@ -80,7 +80,7 @@ public class Starting_Point
     /**
      * Extension of files representing outputted decklist.
      */
-    public final static String DECKLIST_EXTENSION = ".decklist.txt";
+    public final static String DECKLIST_EXTENSION = ".decklist";
 
     /**
      * Extension of file for scenarios.
