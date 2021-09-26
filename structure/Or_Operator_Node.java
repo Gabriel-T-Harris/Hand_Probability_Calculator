@@ -5,17 +5,19 @@ import java.util.Collection;
 /**
 <b>
 Purpose: Or operator<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
-Date: 2021-07-24
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
 </b>
 */
 
-public class Or_Operator_Node<T> extends Binary_Operator_Node<T>
+public class Or_Operator_Node extends Binary_Operator_Node
 {
     /**
      * Constructor, refer to {@link Binary_Operator_Node#Binary_Operator_Node(String, Evaluable, Evaluable)}.
+     * 
+     * @param LEFT_CHILD is the left operand
+     * @param RIGHT_CHILD is the right operand 
      */
-    public Or_Operator_Node(final Evaluable<T> LEFT_CHILD, final Evaluable<T> RIGHT_CHILD)
+    public Or_Operator_Node(final Evaluable LEFT_CHILD, final Evaluable RIGHT_CHILD)
     {
         super("OR", LEFT_CHILD, RIGHT_CHILD);
     }

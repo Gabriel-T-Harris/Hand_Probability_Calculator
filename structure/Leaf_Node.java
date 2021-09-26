@@ -6,11 +6,11 @@ import java.util.Collection;
 <b>
 Purpose: Also will be used as the leaf node of the tree structure.<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
-Date: 2021-07-23
 </b>
+* @param <T> is the type of card to hold, suggestion of {@link Base_Card}.
 */
 
-public class Leaf_Node<T> extends Base_Node<T>
+public class Leaf_Node<T> extends Base_Node
 {
     /**
      * Card to be matched.
@@ -39,8 +39,8 @@ public class Leaf_Node<T> extends Base_Node<T>
     public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         if (Evaluable.debugMode) {
             System.out.printf("Trying to match %s\n", CARD);
+            printDebugStep(hand);
         }
-        printDebugStep(hand);
         for (E card : hand) {
             if (!card.isReserved() && card.equals(CARD)) {
                 if (Evaluable.debugMode) {

@@ -11,7 +11,7 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: Test that {@link Xor_Operator_Node} works properly<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-04
+Date: 2021-08-04/2021-8-19
 </b>
 */
 
@@ -35,8 +35,7 @@ public class XOR_test
         hand_A_A.add(new Deck_Card("B"));
         hand_A_A.add(new Deck_Card("B"));
 
-        Scenario<Base_Card> xor_test = new Scenario<Base_Card>("xor test", new Xor_Operator_Node<Base_Card>(new Leaf_Node<Base_Card>("A", new Base_Card("A")),
-                                                                                                            new Leaf_Node<Base_Card>("A", new Base_Card("A"))));
+        Scenario xor_test = new Scenario("xor test", new Xor_Operator_Node(new Leaf_Node<Base_Card>("A", new Base_Card("A")), new Leaf_Node<Base_Card>("A", new Base_Card("A"))));
 
         System.out.println("xor test (A, A) has " + (xor_test.evaluate(hand_A_A) ? "failed." : "succeed."));
         System.out.println("xor test (A, B) has " + (xor_test.evaluate(hand_A_B) ? "succeed." : "failed."));

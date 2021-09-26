@@ -1,7 +1,5 @@
 package structure;
 
-import java.util.jar.Attributes.Name;
-
 /**
 <b>
 Purpose: Representation of a card, to be extended when stored in decks.<br>

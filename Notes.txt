@@ -25,6 +25,10 @@ Later Versions:
 
 -add special ability to cards
     -example, when a hand includes a draw card, apply draw to look at more cards for evaluations
+    -draw, example Pot of Greed
+    -excavate, Pot of Duality
+    -draw then discard, Graceful Charity
+    -other such as Pot of Desires, Reasoning, "Chaos Ruler, the Chaotic Magical Dragon"
 
 -provide more options for writing configuration file?
     -allow some regex for stating cards?

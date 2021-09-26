@@ -1,9 +1,16 @@
 package testing.evaluation;
 
-import structure.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import structure.And_Operator_Node;
+import structure.Deck_Card;
+import structure.Leaf_Node;
+import structure.Not_Operator_Node;
+import structure.Or_Operator_Node;
+import structure.Scenario;
 
 public class FiveCardPoker {
     enum Suit {
@@ -78,142 +85,140 @@ public class FiveCardPoker {
         }
     }
 
-    final static Leaf_Node<Deck_Card> hearts = new Leaf_Node<>("Hearts", new PlayingSuit(Suit.Hearts));
-    final static Leaf_Node<Deck_Card> spades = new Leaf_Node<>("Spades", new PlayingSuit(Suit.Spades));
-    final static Leaf_Node<Deck_Card> diamonds = new Leaf_Node<>("Diamonds", new PlayingSuit(Suit.Diamonds));
-    final static Leaf_Node<Deck_Card> clubs = new Leaf_Node<>("Clubs", new PlayingSuit(Suit.Clubs));
+    final static Leaf_Node<Deck_Card> hearts = new Leaf_Node<Deck_Card>("Hearts", new PlayingSuit(Suit.Hearts));
+    final static Leaf_Node<Deck_Card> spades = new Leaf_Node<Deck_Card>("Spades", new PlayingSuit(Suit.Spades));
+    final static Leaf_Node<Deck_Card> diamonds = new Leaf_Node<Deck_Card>("Diamonds", new PlayingSuit(Suit.Diamonds));
+    final static Leaf_Node<Deck_Card> clubs = new Leaf_Node<Deck_Card>("Clubs", new PlayingSuit(Suit.Clubs));
 
-    final static Leaf_Node<Deck_Card> ace = new Leaf_Node<>("Ace", new PlayingValue(Value.Ace));
-    final static Leaf_Node<Deck_Card> two = new Leaf_Node<>("Two", new PlayingValue(Value.Two));
-    final static Leaf_Node<Deck_Card> three = new Leaf_Node<>("Three", new PlayingValue(Value.Three));
-    final static Leaf_Node<Deck_Card> four = new Leaf_Node<>("Four", new PlayingValue(Value.Four));
-    final static Leaf_Node<Deck_Card> five = new Leaf_Node<>("Five", new PlayingValue(Value.Five));
-    final static Leaf_Node<Deck_Card> six = new Leaf_Node<>("Six", new PlayingValue(Value.Six));
-    final static Leaf_Node<Deck_Card> seven = new Leaf_Node<>("Seven", new PlayingValue(Value.Seven));
-    final static Leaf_Node<Deck_Card> eight = new Leaf_Node<>("Eight", new PlayingValue(Value.Eight));
-    final static Leaf_Node<Deck_Card> nine = new Leaf_Node<>("Nine", new PlayingValue(Value.Nine));
-    final static Leaf_Node<Deck_Card> ten =  new Leaf_Node<>("Ten", new PlayingValue(Value.Ten));
-    final static Leaf_Node<Deck_Card> jack = new Leaf_Node<>("Jack", new PlayingValue(Value.Jack));
-    final static Leaf_Node<Deck_Card> queen = new Leaf_Node<>("Queen", new PlayingValue(Value.Queen));
-    final static Leaf_Node<Deck_Card> king = new Leaf_Node<>("King", new PlayingValue(Value.King));
+    final static Leaf_Node<Deck_Card> ace = new Leaf_Node<Deck_Card>("Ace", new PlayingValue(Value.Ace));
+    final static Leaf_Node<Deck_Card> two = new Leaf_Node<Deck_Card>("Two", new PlayingValue(Value.Two));
+    final static Leaf_Node<Deck_Card> three = new Leaf_Node<Deck_Card>("Three", new PlayingValue(Value.Three));
+    final static Leaf_Node<Deck_Card> four = new Leaf_Node<Deck_Card>("Four", new PlayingValue(Value.Four));
+    final static Leaf_Node<Deck_Card> five = new Leaf_Node<Deck_Card>("Five", new PlayingValue(Value.Five));
+    final static Leaf_Node<Deck_Card> six = new Leaf_Node<Deck_Card>("Six", new PlayingValue(Value.Six));
+    final static Leaf_Node<Deck_Card> seven = new Leaf_Node<Deck_Card>("Seven", new PlayingValue(Value.Seven));
+    final static Leaf_Node<Deck_Card> eight = new Leaf_Node<Deck_Card>("Eight", new PlayingValue(Value.Eight));
+    final static Leaf_Node<Deck_Card> nine = new Leaf_Node<Deck_Card>("Nine", new PlayingValue(Value.Nine));
+    final static Leaf_Node<Deck_Card> ten = new Leaf_Node<Deck_Card>("Ten", new PlayingValue(Value.Ten));
+    final static Leaf_Node<Deck_Card> jack = new Leaf_Node<Deck_Card>("Jack", new PlayingValue(Value.Jack));
+    final static Leaf_Node<Deck_Card> queen = new Leaf_Node<Deck_Card>("Queen", new PlayingValue(Value.Queen));
+    final static Leaf_Node<Deck_Card> king = new Leaf_Node<Deck_Card>("King", new PlayingValue(Value.King));
 
-    final static Scenario<Deck_Card> pair_exists = new Scenario<>("PAIR EXISTS", new Or_Operator_Node<>(
-        new And_Operator_Node<>(ace, ace), new Or_Operator_Node<>(
-        new And_Operator_Node<>(two, two), new Or_Operator_Node<>(
-        new And_Operator_Node<>(three, three), new Or_Operator_Node<>(
-        new And_Operator_Node<>(four, four), new Or_Operator_Node<>(
-        new And_Operator_Node<>(five, five), new Or_Operator_Node<>(
-        new And_Operator_Node<>(six, six), new Or_Operator_Node<>(
-        new And_Operator_Node<>(seven, seven), new Or_Operator_Node<>(
-        new And_Operator_Node<>(eight, eight), new Or_Operator_Node<>(
-        new And_Operator_Node<>(nine, nine), new Or_Operator_Node<>(
-        new And_Operator_Node<>(ten, ten), new Or_Operator_Node<>(
-        new And_Operator_Node<>(jack, jack), new Or_Operator_Node<>(
-        new And_Operator_Node<>(queen, queen),
-        new And_Operator_Node<>(king, king)
+    final static Scenario pair_exists = new Scenario("PAIR EXISTS", new Or_Operator_Node(
+        new And_Operator_Node(ace, ace), new Or_Operator_Node(
+        new And_Operator_Node(two, two), new Or_Operator_Node(
+        new And_Operator_Node(three, three), new Or_Operator_Node(
+        new And_Operator_Node(four, four), new Or_Operator_Node(
+        new And_Operator_Node(five, five), new Or_Operator_Node(
+        new And_Operator_Node(six, six), new Or_Operator_Node(
+        new And_Operator_Node(seven, seven), new Or_Operator_Node(
+        new And_Operator_Node(eight, eight), new Or_Operator_Node(
+        new And_Operator_Node(nine, nine), new Or_Operator_Node(
+        new And_Operator_Node(ten, ten), new Or_Operator_Node(
+        new And_Operator_Node(jack, jack), new Or_Operator_Node(
+        new And_Operator_Node(queen, queen),
+        new And_Operator_Node(king, king)
         ))))))))))))
     );
 
-    final static Scenario<Deck_Card> triple_exists = new Scenario<>("TRIPLE EXISTS", new Or_Operator_Node<>(
-            new And_Operator_Node<>(ace, new And_Operator_Node<>(ace, ace)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(two, new And_Operator_Node<>(two, two)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(three, new And_Operator_Node<>(three, three)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(four, new And_Operator_Node<>(four, four)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(five, new And_Operator_Node<>(five, five)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(six, new And_Operator_Node<>(six, six)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(seven, new And_Operator_Node<>(seven, seven)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(eight, new And_Operator_Node<>(eight, eight)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(nine, new And_Operator_Node<>(nine, nine)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(ten, new And_Operator_Node<>(ten, ten)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(jack, new And_Operator_Node<>(jack, jack)), new Or_Operator_Node<>(
-            new And_Operator_Node<>(queen, new And_Operator_Node<>(queen, queen)),
-            new And_Operator_Node<>(king, new And_Operator_Node<>(king, king))
+    final static Scenario triple_exists = new Scenario("TRIPLE EXISTS", new Or_Operator_Node(
+            new And_Operator_Node(ace, new And_Operator_Node(ace, ace)), new Or_Operator_Node(
+            new And_Operator_Node(two, new And_Operator_Node(two, two)), new Or_Operator_Node(
+            new And_Operator_Node(three, new And_Operator_Node(three, three)), new Or_Operator_Node(
+            new And_Operator_Node(four, new And_Operator_Node(four, four)), new Or_Operator_Node(
+            new And_Operator_Node(five, new And_Operator_Node(five, five)), new Or_Operator_Node(
+            new And_Operator_Node(six, new And_Operator_Node(six, six)), new Or_Operator_Node(
+            new And_Operator_Node(seven, new And_Operator_Node(seven, seven)), new Or_Operator_Node(
+            new And_Operator_Node(eight, new And_Operator_Node(eight, eight)), new Or_Operator_Node(
+            new And_Operator_Node(nine, new And_Operator_Node(nine, nine)), new Or_Operator_Node(
+            new And_Operator_Node(ten, new And_Operator_Node(ten, ten)), new Or_Operator_Node(
+            new And_Operator_Node(jack, new And_Operator_Node(jack, jack)), new Or_Operator_Node(
+            new And_Operator_Node(queen, new And_Operator_Node(queen, queen)),
+            new And_Operator_Node(king, new And_Operator_Node(king, king))
     ))))))))))))
     );
 
-    final static Scenario<Deck_Card> quad_exists = new Scenario<>("QUAD EXISTS", new Or_Operator_Node<>(
-            new And_Operator_Node<>(ace, new And_Operator_Node<>(ace, new And_Operator_Node<>(ace, ace))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(two, new And_Operator_Node<>(two, new And_Operator_Node<>(two, two))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(three, new And_Operator_Node<>(three, new And_Operator_Node<>(three, three))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(four, new And_Operator_Node<>(four, new And_Operator_Node<>(four, four))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(five, new And_Operator_Node<>(five, new And_Operator_Node<>(five, five))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(six, new And_Operator_Node<>(six, new And_Operator_Node<>(six, six))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(seven, new And_Operator_Node<>(seven, new And_Operator_Node<>(seven, seven))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(eight, new And_Operator_Node<>(eight, new And_Operator_Node<>(eight, eight))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(nine, new And_Operator_Node<>(nine, new And_Operator_Node<>(nine, nine))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(ten, new And_Operator_Node<>(ten, new And_Operator_Node<>(ten, ten))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(jack, new And_Operator_Node<>(jack, new And_Operator_Node<>(jack, jack))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(queen, new And_Operator_Node<>(queen, new And_Operator_Node<>(queen, queen))),
-            new And_Operator_Node<>(king, new And_Operator_Node<>(king, new And_Operator_Node<>(king, king)))
+    final static Scenario quad_exists = new Scenario("QUAD EXISTS", new Or_Operator_Node(
+            new And_Operator_Node(ace, new And_Operator_Node(ace, new And_Operator_Node(ace, ace))), new Or_Operator_Node(
+            new And_Operator_Node(two, new And_Operator_Node(two, new And_Operator_Node(two, two))), new Or_Operator_Node(
+            new And_Operator_Node(three, new And_Operator_Node(three, new And_Operator_Node(three, three))), new Or_Operator_Node(
+            new And_Operator_Node(four, new And_Operator_Node(four, new And_Operator_Node(four, four))), new Or_Operator_Node(
+            new And_Operator_Node(five, new And_Operator_Node(five, new And_Operator_Node(five, five))), new Or_Operator_Node(
+            new And_Operator_Node(six, new And_Operator_Node(six, new And_Operator_Node(six, six))), new Or_Operator_Node(
+            new And_Operator_Node(seven, new And_Operator_Node(seven, new And_Operator_Node(seven, seven))), new Or_Operator_Node(
+            new And_Operator_Node(eight, new And_Operator_Node(eight, new And_Operator_Node(eight, eight))), new Or_Operator_Node(
+            new And_Operator_Node(nine, new And_Operator_Node(nine, new And_Operator_Node(nine, nine))), new Or_Operator_Node(
+            new And_Operator_Node(ten, new And_Operator_Node(ten, new And_Operator_Node(ten, ten))), new Or_Operator_Node(
+            new And_Operator_Node(jack, new And_Operator_Node(jack, new And_Operator_Node(jack, jack))), new Or_Operator_Node(
+            new And_Operator_Node(queen, new And_Operator_Node(queen, new And_Operator_Node(queen, queen))),
+            new And_Operator_Node(king, new And_Operator_Node(king, new And_Operator_Node(king, king)))
     ))))))))))))
     );
 
-    final static Scenario<Deck_Card> flush_exists = new Scenario<>("FLUSH EXISTS", new Or_Operator_Node<>(
-            new And_Operator_Node<>(spades, new And_Operator_Node<>(spades, new And_Operator_Node<>(spades, new And_Operator_Node<>(spades, spades)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(hearts, new And_Operator_Node<>(hearts, new And_Operator_Node<>(hearts, new And_Operator_Node<>(hearts, hearts)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(diamonds, new And_Operator_Node<>(diamonds, new And_Operator_Node<>(diamonds, new And_Operator_Node<>(diamonds, diamonds)))),
-            new And_Operator_Node<>(clubs, new And_Operator_Node<>(clubs, new And_Operator_Node<>(clubs, new And_Operator_Node<>(clubs, clubs))))
+    final static Scenario flush_exists = new Scenario("FLUSH EXISTS", new Or_Operator_Node(
+            new And_Operator_Node(spades, new And_Operator_Node(spades, new And_Operator_Node(spades, new And_Operator_Node(spades, spades)))), new Or_Operator_Node(
+            new And_Operator_Node(hearts, new And_Operator_Node(hearts, new And_Operator_Node(hearts, new And_Operator_Node(hearts, hearts)))), new Or_Operator_Node(
+            new And_Operator_Node(diamonds, new And_Operator_Node(diamonds, new And_Operator_Node(diamonds, new And_Operator_Node(diamonds, diamonds)))),
+            new And_Operator_Node(clubs, new And_Operator_Node(clubs, new And_Operator_Node(clubs, new And_Operator_Node(clubs, clubs))))
     )))
     );
 
-    final static Scenario<Deck_Card> straight_exists = new Scenario<>("STRAIGHT EXISTS", new Or_Operator_Node<>(
-            new And_Operator_Node<>(ace, new And_Operator_Node<>(two, new And_Operator_Node<>(three, new And_Operator_Node<>(four, five)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(two, new And_Operator_Node<>(three, new And_Operator_Node<>(four, new And_Operator_Node<>(five, six)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(three, new And_Operator_Node<>(four, new And_Operator_Node<>(five, new And_Operator_Node<>(six, seven)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(four, new And_Operator_Node<>(five, new And_Operator_Node<>(six, new And_Operator_Node<>(seven, eight)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(five, new And_Operator_Node<>(six, new And_Operator_Node<>(seven, new And_Operator_Node<>(eight, nine)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(six, new And_Operator_Node<>(seven, new And_Operator_Node<>(eight, new And_Operator_Node<>(nine, ten)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(seven, new And_Operator_Node<>(eight, new And_Operator_Node<>(nine, new And_Operator_Node<>(ten, jack)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(seven, new And_Operator_Node<>(nine, new And_Operator_Node<>(ten, new And_Operator_Node<>(jack, queen)))), new Or_Operator_Node<>(
-            new And_Operator_Node<>(nine, new And_Operator_Node<>(ten, new And_Operator_Node<>(jack, new And_Operator_Node<>(queen, king)))),
-            new And_Operator_Node<>(ten, new And_Operator_Node<>(jack, new And_Operator_Node<>(queen, new And_Operator_Node<>(king, ace))))
+    final static Scenario straight_exists = new Scenario("STRAIGHT EXISTS", new Or_Operator_Node(
+            new And_Operator_Node(ace, new And_Operator_Node(two, new And_Operator_Node(three, new And_Operator_Node(four, five)))), new Or_Operator_Node(
+            new And_Operator_Node(two, new And_Operator_Node(three, new And_Operator_Node(four, new And_Operator_Node(five, six)))), new Or_Operator_Node(
+            new And_Operator_Node(three, new And_Operator_Node(four, new And_Operator_Node(five, new And_Operator_Node(six, seven)))), new Or_Operator_Node(
+            new And_Operator_Node(four, new And_Operator_Node(five, new And_Operator_Node(six, new And_Operator_Node(seven, eight)))), new Or_Operator_Node(
+            new And_Operator_Node(five, new And_Operator_Node(six, new And_Operator_Node(seven, new And_Operator_Node(eight, nine)))), new Or_Operator_Node(
+            new And_Operator_Node(six, new And_Operator_Node(seven, new And_Operator_Node(eight, new And_Operator_Node(nine, ten)))), new Or_Operator_Node(
+            new And_Operator_Node(seven, new And_Operator_Node(eight, new And_Operator_Node(nine, new And_Operator_Node(ten, jack)))), new Or_Operator_Node(
+            new And_Operator_Node(seven, new And_Operator_Node(nine, new And_Operator_Node(ten, new And_Operator_Node(jack, queen)))), new Or_Operator_Node(
+            new And_Operator_Node(nine, new And_Operator_Node(ten, new And_Operator_Node(jack, new And_Operator_Node(queen, king)))),
+            new And_Operator_Node(ten, new And_Operator_Node(jack, new And_Operator_Node(queen, new And_Operator_Node(king, ace))))
     )))))))))
     );
 
-    final static And_Operator_Node<Deck_Card> full_house_exists = new And_Operator_Node<>(
+    final static And_Operator_Node full_house_exists = new And_Operator_Node(
             pair_exists,
             triple_exists
     );
 
-    final static And_Operator_Node<Deck_Card> two_pairs_exists = new And_Operator_Node<>(
+    final static And_Operator_Node two_pairs_exists = new And_Operator_Node(
             pair_exists,
             pair_exists
     );
 
-    final static Scenario<Deck_Card> four_of_a_kind = new Scenario<>("FOURS OF A KIND", quad_exists);
+    final static Scenario four_of_a_kind = new Scenario("FOURS OF A KIND", quad_exists);
 
-    final static Scenario<Deck_Card> full_house = new Scenario<>("FULL HOUSE", full_house_exists);
+    final static Scenario full_house = new Scenario("FULL HOUSE", full_house_exists);
 
-    final static Scenario<Deck_Card> flush = new Scenario<>("FLUSH", flush_exists);
+    final static Scenario flush = new Scenario("FLUSH", flush_exists);
 
-    final static Scenario<Deck_Card> straight = new Scenario<>("STRAIGHT", straight_exists);
+    final static Scenario straight = new Scenario("STRAIGHT", straight_exists);
 
-    final static Scenario<Deck_Card> three_of_a_kind = new Scenario<>("THREE OF A KIND",
-            new And_Operator_Node<>(
-                    new Not_Operator_Node<>(new Or_Operator_Node<>(full_house, quad_exists)),
+    final static Scenario three_of_a_kind = new Scenario("THREE OF A KIND",
+            new And_Operator_Node(new Not_Operator_Node(new Or_Operator_Node(full_house, quad_exists)),
                     triple_exists
             )
     );
 
-    final static Scenario<Deck_Card> two_pair = new Scenario<>("TWO PAIR",
-            new And_Operator_Node<>(
-                    new Not_Operator_Node<>(new Or_Operator_Node<>(triple_exists, quad_exists)),
+    final static Scenario two_pair = new Scenario("TWO PAIR",
+            new And_Operator_Node(new Not_Operator_Node(new Or_Operator_Node(triple_exists, quad_exists)),
                     two_pairs_exists
             )
     );
 
-    final static Scenario<Deck_Card> one_pair = new Scenario<>("ONE PAIR",
-            new And_Operator_Node<>(
-                    new Not_Operator_Node<>(
-                            new Or_Operator_Node<>(triple_exists,
-                                    new Or_Operator_Node<>(two_pair, quad_exists)
+    final static Scenario one_pair = new Scenario("ONE PAIR",
+            new And_Operator_Node(
+                     new Not_Operator_Node(
+                             new Or_Operator_Node(triple_exists,
+                                    new Or_Operator_Node(two_pair, quad_exists)
                             )
                     ),
                     pair_exists
             )
     );
 
-    final static List<Scenario<Deck_Card>> scenarios_to_test = List.of(one_pair, two_pair, three_of_a_kind, straight, flush, full_house, four_of_a_kind);
+    final static List<Scenario> scenarios_to_test = Arrays.asList(one_pair, two_pair, three_of_a_kind, straight, flush, full_house, four_of_a_kind);
     final static Map<String, PlayingCard[]> hands = Stream.of(new Object[][] {
             { "Two Pair", new PlayingCard[] { new PlayingCard(Suit.Spades, Value.Ace), new PlayingCard(Suit.Hearts, Value.Two), new PlayingCard(Suit.Clubs, Value.Jack), new PlayingCard(Suit.Clubs, Value.Ace), new PlayingCard(Suit.Spades, Value.Jack) }},
             { "Full House", new PlayingCard[] { new PlayingCard(Suit.Spades, Value.Ace), new PlayingCard(Suit.Hearts, Value.Ace), new PlayingCard(Suit.Spades, Value.Two), new PlayingCard(Suit.Clubs, Value.Ace), new PlayingCard(Suit.Hearts, Value.Two) }},
@@ -228,7 +233,8 @@ public class FiveCardPoker {
         for (Map.Entry<String, PlayingCard[]> entry : hands.entrySet()) {
             System.out.println(entry.getKey());
             PlayingCard[] hand = entry.getValue();
-            for (Scenario<Deck_Card> test : scenarios_to_test) {
+            for (Scenario test : scenarios_to_test)
+            {
                 List<Deck_Card> temp = Stream.of(hand).map(PlayingCard::new).collect(Collectors.toList());
                 boolean result = test.evaluate(temp);
                 if (result) {
