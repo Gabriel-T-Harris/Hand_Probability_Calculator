@@ -1,0 +1,4134 @@
+&GTH&DECK&GTH&&GTH&PROBABILITY&GTH&
+
+&GTH&DECK_START&GTH&
+&GTH&SENTINEL_START&GTH&&GTH&DECK_LIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+&GTH&SENTINEL_START&GTH&&GTH&DECK_LIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{&GTH&DECK_LIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}&GTH&PROBABILITY&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+&GTH&PROBABILITY_START&GTH&
+&GTH&SENTINEL_START&GTH&&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+&GTH&SENTINEL_START&GTH&&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {&GTH&CONDITION_CARD_START&GTH&&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]}&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {&GTH&CONDITION_CARD_START&GTH&&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]}&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};&GTH&DISPLAY_START&GTH& &GTH&ASSIGN&GTH& &GTH&DISPLAY_VALUE&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display &GTH&ASSIGN&GTH& &GTH&DISPLAY_VALUE&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = &GTH&DISPLAY_VALUE&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {&GTH&CONDITION_CARD_START&GTH&&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]}&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {&GTH&CONDITION_SCENARIO_START&GTH&&GTH&SCENARIO_NAME&GTH&&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<&GTH&SCENARIO_NAME&GTH&&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card>&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> &GTH&BINARY_OPERATOR&GTH& &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR &GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR &GTH&CONDITION_SCENARIO_START&GTH&&GTH&SCENARIO_NAME&GTH&&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <&GTH&SCENARIO_NAME&GTH&&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>}&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {&GTH&CONDITION_SCENARIO_START&GTH&&GTH&SCENARIO_NAME&GTH&&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<&GTH&SCENARIO_NAME&GTH&&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card>&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> &GTH&BINARY_OPERATOR&GTH& &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND &GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND &GTH&CONDITION_SCENARIO_START&GTH&&GTH&SCENARIO_NAME&GTH&&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <&GTH&SCENARIO_NAME&GTH&&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring&GTH&CONDITION_SCENARIO_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>}&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {&GTH&CONDITION_EXPR_START&GTH&&GTH&EXPR&GTH&&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {(&GTH&EXPR&GTH&&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {(&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {(&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {(&GTH&CONDITION_CARD_START&GTH&&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]&GTH&BINARY_EXPR&GTH&&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]&GTH&CONDITION_EXPR_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First])&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) &GTH&BINARY_OPERATOR&GTH& &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND &GTH&UNARY_OPERATOR&GTH& &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT &GTH&UNARY_OPERATOR&GTH& &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT &GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT &GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT &GTH&CONDITION_CARD_START&GTH&&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [&GTH&CARD_NAME&GTH&&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring&GTH&CONDITION_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring]&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring]}&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring]};&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring]};&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring]};}
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring]};}
+&GTH&SENTINEL_END&GTH&
+
+deck list:
+{
+First;
+Second;
+Third;
+Forth;
+Fifth;
+6th;
+7th;
+Ash Blossom & Joyous Spring;
+First;
+}
+
+scenarios:
+{
+Contains "First" Card = {scenario = {[First]};}
+
+Contains "Second" Card = {scenario = {[Second]};display = false;}
+
+Contains Ash Blossom & Joyous Spring = {scenario = {[Ash Blossom & Joyous Spring]};}
+
+First | Ash = {scenario = {<Contains "First" Card> OR <Contains Ash Blossom & Joyous Spring>};}
+
+First & Ash = {scenario = {<Contains "First" Card> AND <Contains Ash Blossom & Joyous Spring>};}
+
+First AND Ash = {scenario = {([First]) AND NOT NOT [Ash Blossom & Joyous Spring]};}
+}
+

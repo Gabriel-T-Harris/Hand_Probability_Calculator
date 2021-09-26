@@ -1,5 +1,0 @@
-digraph {
-node [shape=record];
-node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
-12[label="First"];
-}

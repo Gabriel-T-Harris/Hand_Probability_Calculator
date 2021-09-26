@@ -1,6 +1,0 @@
-[Lexeme TYPE: DECK_START, LEXEME: deck list:, line number: 1][Lexeme TYPE: SENTINEL_START, LEXEME: {, line number: 1][Lexeme TYPE: SENTINEL_END, LEXEME: }, line number: 1] [Lexeme TYPE: LINE_COMMENT, LEXEME: // no deck error, line number: 1]
-
-[Lexeme TYPE: PROBABILITY_START, LEXEME: scenarios:, line number: 3][Lexeme TYPE: SENTINEL_START, LEXEME: {, line number: 3][Lexeme TYPE: SENTINEL_END, LEXEME: }, line number: 3] [Lexeme TYPE: LINE_COMMENT, LEXEME: // no scenarios error, line number: 3]
-
-[Lexeme TYPE: LINE_COMMENT, LEXEME: //ending block comment without start, line number: 5]
-

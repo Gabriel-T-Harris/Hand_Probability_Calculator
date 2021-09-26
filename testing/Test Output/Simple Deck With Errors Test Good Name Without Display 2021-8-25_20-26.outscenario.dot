@@ -1,0 +1,5 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+52[label="First Card"];
+}

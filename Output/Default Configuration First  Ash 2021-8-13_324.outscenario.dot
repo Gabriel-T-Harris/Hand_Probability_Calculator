@@ -1,9 +1,0 @@
-digraph {
-node [shape=record];
-node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
-29[label="OR"];
-29->14;
-29->24;
-14[label="Contains \"First\" Card"];
-24[label="Contains Ash Blossom & Joyous Spring"];
-}

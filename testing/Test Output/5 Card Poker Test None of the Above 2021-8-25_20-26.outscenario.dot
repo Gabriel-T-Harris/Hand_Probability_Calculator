@@ -1,0 +1,15 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+3289[label="NOT"];
+3289->3288;
+3288[label="OR"];
+3288->3285;
+3288->2459;
+3285[label="OR"];
+3285->659;
+3285->2398;
+2459[label="Ignorant Flush"];
+659[label="Ignorant Pair"];
+2398[label="Ignorant Straight"];
+}

@@ -1,0 +1,17 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+349[label="OR"];
+349->345;
+349->348;
+345[label="OR"];
+345->341;
+345->344;
+348[label="Queen Spades"];
+341[label="OR"];
+341->337;
+341->340;
+344[label="Queen Hearts"];
+337[label="Queen Clubs"];
+340[label="Queen Diamonds"];
+}

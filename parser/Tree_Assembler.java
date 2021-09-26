@@ -1,12 +1,10 @@
 package parser;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.stream.Collectors;
 import com.gth.function_bank.Function_Bank;
 import simulation.Simulation;
 import starting_point.Starting_Point;
@@ -24,7 +22,7 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19
+Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19/2021-8-[22, 23]
 </b>
 */
 
@@ -40,7 +38,7 @@ public class Tree_Assembler
     /**
      * Special sequence meant to surround the production rules such that they are less likely to accidently appear as a token. Though the use guarantees that they will never be mistaken for a token.
      */
-    private static final String SPECIAL_UNLIKELY_SENTINEL = "&GTH&";
+    public static final String SPECIAL_UNLIKELY_SENTINEL = "&GTH&";
 
     /**
      * Derivation of the input.
@@ -48,7 +46,7 @@ public class Tree_Assembler
     private StringBuilder derivation;
 
     /**
-     * stack like structure used by {@link Tree_Assembler#parse(Token)}
+     * stack like structure used by {@link #parse(Token)}
      */
     private ArrayList<Semantic_Actions> semantic_stack;
 
@@ -101,7 +99,7 @@ public class Tree_Assembler
         this.VERBOSE = true;
         this.DECK = new ArrayList<Deck_Card>(EXPECTED_DECK_SIZE);
         this.FOREST = new HashMap<String, Scenario>(EXPECTED_SCENARIO_COUNT);
-        this.derivation = new StringBuilder(SPECIAL_UNLIKELY_SENTINEL + Semantic_Actions.START.name() + SPECIAL_UNLIKELY_SENTINEL);
+        this.derivation = new StringBuilder(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + Semantic_Actions.START.name() + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL);
         this.syntactical_error_output = SYNTACTICAL_ERROR_OUTPUT;
         this.syntactical_derivation_output = SYNTACTICAL_DERIVATION_OUTPUT;
         this.finish_construction();
@@ -121,15 +119,16 @@ public class Tree_Assembler
      * Convenience method for handling errors. Also reports them using {@link #syntactical_error_output}
      * 
      * @param CURRENT_ACTION section that this is called from
-     * @param CURRENT_TOKEN {@link #skiperror(parser.Token.Lexeme_Types, parser.Token.Lexeme_Types...)}
-     * @param FOLLOW_SET {@link #skiperror(parser.Token.Lexeme_Types, parser.Token.Lexeme_Types...)}
-     * @return {@link #skiperror(parser.Token.Lexeme_Types, parser.Token.Lexeme_Types...)}
+     * @param CURRENT_TOKEN {@link #skiperror(parser.Lexeme_Types, parser.Lexeme_Types...)}
+     * @param FOLLOW_SET {@link #skiperror(parser.Lexeme_Types, parser.Lexeme_Types...)}
+     * 
+     * @return {@link #skiperror(parser.Lexeme_Types, parser.Lexeme_Types...)}
      */
-    public boolean convenience_error_handling(final Semantic_Actions CURRENT_ACTION, final Token CURRENT_TOKEN, final Token.Lexeme_Types... FOLLOW_SET)
+    public boolean convenience_error_handling(final Semantic_Actions CURRENT_ACTION, final Token CURRENT_TOKEN, final Lexeme_Types... FOLLOW_SET)
     {
         if (this.VERBOSE)
             this.syntactical_error_output.println("Error: while top of stack is " + CURRENT_ACTION.name() + " and current Token is " + CURRENT_TOKEN);
-        return skiperror(CURRENT_TOKEN.get_type(), FOLLOW_SET);
+        return Tree_Assembler.skiperror(CURRENT_TOKEN.get_type(), FOLLOW_SET);
     }
 
     /**
@@ -137,9 +136,10 @@ public class Tree_Assembler
      * 
      * @param CURRENT {@link Token} being looked at
      * @param FOLLOW_SET follow set of top of semantic stack being checked
+     * 
      * @return is current in follow set, answer is result
      */
-    public static boolean skiperror(final Token.Lexeme_Types CURRENT, final Token.Lexeme_Types... FOLLOW_SET)
+    public static boolean skiperror(final Lexeme_Types CURRENT, final Lexeme_Types... FOLLOW_SET)
     {
         //pop case, check follow set
         for (int i = 0; i < FOLLOW_SET.length; ++i)
@@ -157,17 +157,15 @@ public class Tree_Assembler
      */
     public Simulation create_result()
     {
-        this.DECK.trimToSize();
-        ArrayList<Scenario> filtered_trees = new ArrayList<Scenario>(this.FOREST.values().parallelStream().filter(tree -> tree.DISPLAY).collect(Collectors.toList()));
-        filtered_trees.trimToSize();
-        return new Simulation(this.DECK, filtered_trees);
+        return new Simulation(this.DECK, this.FOREST.values());
     }
 
     /**
-     * Method for parsing tokens into a boolean like postfix notation tree. Uses all data members.
+     * Method for parsing tokens into a boolean like postfix notation tree.
      * Make sure to call {@link #check_stacks_are_empty()} once all the {@link Token} are are parsed to check the state of things.
      * 
      * @param INPUT current top token being looked at
+     * 
      * @throws EmptySemanticStackException when internal {@link #semantic_stack} is empty yet there is another token to parse. Fatal error.
      * @throws IllegalStateException unexpected non-recoverable error has occurred
      */
@@ -225,7 +223,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.DECK, INPUT, Token.Lexeme_Types.PROBABILITY_START))
+                            if (this.convenience_error_handling(Semantic_Actions.DECK, INPUT, Lexeme_Types.PROBABILITY_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -250,7 +248,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.DECK_START, INPUT, Token.Lexeme_Types.SENTINEL_START))
+                            if (this.convenience_error_handling(Semantic_Actions.DECK_START, INPUT, Lexeme_Types.SENTINEL_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -274,7 +272,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.DECK_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.DECK_LIST, INPUT, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -304,7 +302,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.MORE_CARDS, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.MORE_CARDS, INPUT, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -329,7 +327,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CARD, INPUT, Token.Lexeme_Types.ID, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.CARD, INPUT, Lexeme_Types.ID, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -354,7 +352,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CARD_NAME, INPUT, Token.Lexeme_Types.SEMI_COLON, Token.Lexeme_Types.CONDITION_CARD_END))
+                            if (this.convenience_error_handling(Semantic_Actions.CARD_NAME, INPUT, Lexeme_Types.SEMI_COLON, Lexeme_Types.CONDITION_CARD_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -404,7 +402,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.PROBABILITY_START, INPUT, Token.Lexeme_Types.SENTINEL_START))
+                            if (this.convenience_error_handling(Semantic_Actions.PROBABILITY_START, INPUT, Lexeme_Types.SENTINEL_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -429,7 +427,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_LIST, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_LIST, INPUT, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -460,7 +458,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.MORE_SCENARIOS, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.MORE_SCENARIOS, INPUT, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -486,7 +484,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO, INPUT, Token.Lexeme_Types.ID, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO, INPUT, Lexeme_Types.ID, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -511,7 +509,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_NAME, INPUT, Token.Lexeme_Types.ASSIGN, Token.Lexeme_Types.CONDITION_SCENARIO_END))
+                            if (this.convenience_error_handling(Semantic_Actions.SCENARIO_NAME, INPUT, Lexeme_Types.ASSIGN, Lexeme_Types.CONDITION_SCENARIO_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -536,7 +534,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.TREE, INPUT, Token.Lexeme_Types.DISPLAY_START, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.TREE, INPUT, Lexeme_Types.DISPLAY_START, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -561,7 +559,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.TREE_START, INPUT, Token.Lexeme_Types.ASSIGN))
+                            if (this.convenience_error_handling(Semantic_Actions.TREE_START, INPUT, Lexeme_Types.ASSIGN))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -589,7 +587,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.EXPR, INPUT, Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            if (this.convenience_error_handling(Semantic_Actions.EXPR, INPUT, Lexeme_Types.SENTINEL_END, Lexeme_Types.CONDITION_EXPR_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -622,8 +620,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.UNARY_EXPR, INPUT, Token.Lexeme_Types.AND, Token.Lexeme_Types.OR, Token.Lexeme_Types.XOR,
-                                                                Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            if (this.convenience_error_handling(Semantic_Actions.UNARY_EXPR, INPUT, Lexeme_Types.AND, Lexeme_Types.OR, Lexeme_Types.XOR, Lexeme_Types.SENTINEL_END,
+                                                                Lexeme_Types.CONDITION_EXPR_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -648,8 +646,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.UNARY_OPERATOR, INPUT, Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START,
-                                                                Token.Lexeme_Types.CONDITION_SCENARIO_START, Token.Lexeme_Types.CONDITION_EXPR_START))
+                            if (this.convenience_error_handling(Semantic_Actions.UNARY_OPERATOR, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_CARD_START,
+                                                                Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -688,8 +686,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.PRIMARY_EXPR, INPUT, Token.Lexeme_Types.AND, Token.Lexeme_Types.OR, Token.Lexeme_Types.XOR,
-                                                                Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            if (this.convenience_error_handling(Semantic_Actions.PRIMARY_EXPR, INPUT, Lexeme_Types.AND, Lexeme_Types.OR, Lexeme_Types.XOR,
+                                                                Lexeme_Types.SENTINEL_END, Lexeme_Types.CONDITION_EXPR_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -714,7 +712,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_CARD_START, INPUT, Token.Lexeme_Types.ID))
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_CARD_START, INPUT, Lexeme_Types.ID))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -739,8 +737,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_CARD_END, INPUT, Token.Lexeme_Types.AND, Token.Lexeme_Types.OR, Token.Lexeme_Types.XOR,
-                                                                Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_CARD_END, INPUT, Lexeme_Types.AND, Lexeme_Types.OR, Lexeme_Types.XOR,
+                                                                Lexeme_Types.SENTINEL_END, Lexeme_Types.CONDITION_EXPR_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -765,7 +763,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_SCENARIO_START, INPUT, Token.Lexeme_Types.ID))
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_SCENARIO_START, INPUT, Lexeme_Types.ID))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -790,8 +788,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_SCENARIO_END, INPUT, Token.Lexeme_Types.AND, Token.Lexeme_Types.OR,
-                                                                Token.Lexeme_Types.XOR, Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_SCENARIO_END, INPUT, Lexeme_Types.AND, Lexeme_Types.OR, Lexeme_Types.XOR,
+                                                                Lexeme_Types.SENTINEL_END, Lexeme_Types.CONDITION_EXPR_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -816,8 +814,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_EXPR_START, INPUT, Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START,
-                                                                Token.Lexeme_Types.CONDITION_SCENARIO_START, Token.Lexeme_Types.CONDITION_EXPR_START))
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_EXPR_START, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_CARD_START,
+                                                                Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -842,8 +840,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_EXPR_END, INPUT, Token.Lexeme_Types.AND, Token.Lexeme_Types.OR, Token.Lexeme_Types.XOR,
-                                                                Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_EXPR_END, INPUT, Lexeme_Types.AND, Lexeme_Types.OR, Lexeme_Types.XOR,
+                                                                Lexeme_Types.SENTINEL_END, Lexeme_Types.CONDITION_EXPR_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -881,7 +879,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.BINARY_EXPR, INPUT, Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.CONDITION_EXPR_END))
+                            if (this.convenience_error_handling(Semantic_Actions.BINARY_EXPR, INPUT, Lexeme_Types.SENTINEL_END, Lexeme_Types.CONDITION_EXPR_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -910,8 +908,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.BINARY_OPERATOR, INPUT, Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START,
-                                                                Token.Lexeme_Types.CONDITION_SCENARIO_START, Token.Lexeme_Types.CONDITION_EXPR_START))
+                            if (this.convenience_error_handling(Semantic_Actions.BINARY_OPERATOR, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_CARD_START,
+                                                                Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -942,7 +940,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY, INPUT, Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY, INPUT, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -967,7 +965,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY_START, INPUT, Token.Lexeme_Types.ASSIGN))
+                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY_START, INPUT, Lexeme_Types.ASSIGN))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -994,7 +992,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY_VALUE, INPUT, Token.Lexeme_Types.SEMI_COLON))
+                            if (this.convenience_error_handling(Semantic_Actions.DISPLAY_VALUE, INPUT, Lexeme_Types.SEMI_COLON))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -1019,9 +1017,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.SENTINEL_START, INPUT, Token.Lexeme_Types.ID, Token.Lexeme_Types.TREE_START,
-                                                                Token.Lexeme_Types.NOT, Token.Lexeme_Types.CONDITION_CARD_START, Token.Lexeme_Types.CONDITION_SCENARIO_START,
-                                                                Token.Lexeme_Types.CONDITION_EXPR_START))
+                            if (this.convenience_error_handling(Semantic_Actions.SENTINEL_START, INPUT, Lexeme_Types.ID, Lexeme_Types.TREE_START, Lexeme_Types.NOT,
+                                                                Lexeme_Types.CONDITION_CARD_START, Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -1046,8 +1043,8 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.SENTINEL_END, INPUT, Token.Lexeme_Types.SEMI_COLON, Token.Lexeme_Types.ID,
-                                                                Token.Lexeme_Types.SENTINEL_END, Token.Lexeme_Types.PROBABILITY_START))
+                            if (this.convenience_error_handling(Semantic_Actions.SENTINEL_END, INPUT, Lexeme_Types.SEMI_COLON, Lexeme_Types.ID, Lexeme_Types.SENTINEL_END,
+                                                                Lexeme_Types.PROBABILITY_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -1072,8 +1069,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.ASSIGN, INPUT, Token.Lexeme_Types.SENTINEL_START, Token.Lexeme_Types.TRUE,
-                                                                Token.Lexeme_Types.FALSE))
+                            if (this.convenience_error_handling(Semantic_Actions.ASSIGN, INPUT, Lexeme_Types.SENTINEL_START, Lexeme_Types.TRUE, Lexeme_Types.FALSE))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -1098,8 +1094,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.SEMI_COLON, INPUT, Token.Lexeme_Types.DISPLAY_START, Token.Lexeme_Types.ID,
-                                                                Token.Lexeme_Types.SENTINEL_END))
+                            if (this.convenience_error_handling(Semantic_Actions.SEMI_COLON, INPUT, Lexeme_Types.DISPLAY_START, Lexeme_Types.ID, Lexeme_Types.SENTINEL_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -1198,14 +1193,11 @@ public class Tree_Assembler
                     final String BINARY_OPERATOR = this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX).NAME;
 
                     if (Tokenizer.AND.matcher(BINARY_OPERATOR).matches())
-                        this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new And_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
+                        this.syntactical_stack.set(RESULT_LOCATION, new And_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else if (Tokenizer.OR.matcher(BINARY_OPERATOR).matches())
-                        this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new Or_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
+                        this.syntactical_stack.set(RESULT_LOCATION, new Or_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else if (Tokenizer.XOR.matcher(BINARY_OPERATOR).matches())
-                        this.syntactical_stack.set(RESULT_LOCATION,
-                                                   new Xor_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
+                        this.syntactical_stack.set(RESULT_LOCATION, new Xor_Operator_Node(this.syntactical_stack.get(RESULT_LOCATION), this.syntactical_stack.remove(SYNTACTICAL_TARGET_INDEX)));
                     else
                     {
                         this.handle_scenario_error(semantic_stack_end_index, Semantic_Actions.MORE_SCENARIOS, INPUT.get_line_number(),
@@ -1240,10 +1232,6 @@ public class Tree_Assembler
                 for (Deck_Card card : this.DECK)
                     DECKLIST_OUTPUT.println(card);
             }
-            catch (FileNotFoundException ex)
-            {
-                System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its decklist.");
-            }
         }
         catch (IOException ex)
         {
@@ -1258,24 +1246,23 @@ public class Tree_Assembler
      */
     public void print_out_scenarios(final String PARTIAL_OUTPUT_DIRECTORY)
     {
-        this.FOREST.values().parallelStream().forEach(schema -> {
-                                                      final File OUTPUT_FILE = Starting_Point.add_file_extension(true, Starting_Point.SYNTACTICAL_OUT_SCENARIO_FILE_EXTENSION, PARTIAL_OUTPUT_DIRECTORY + " " + Starting_Point.remove_illegal_char_file_name(schema.NAME));
-                                                      try
-                                                      {
-                                                          OUTPUT_FILE.createNewFile();
-                                                          try (final PrintWriter TEMP_WRITER = new PrintWriter(OUTPUT_FILE))
-                                                          {
-                                                              TEMP_WRITER.println(Evaluable.print_whole_subtree(schema.TREE_CONDITION));
-                                                          }
-                                                          catch (FileNotFoundException ex)
-                                                          {
-                                                              System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its corresponding scenario as a dot file.");
-                                                          }
-                                                      }
-                                                      catch (IOException ex)
-                                                      {
-                                                          System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its corresponding scenario as a dot file.");
-                                                      }
+        this.FOREST.values().parallelStream().forEach(schema ->
+        {
+            final File OUTPUT_FILE = Starting_Point.add_file_extension(true, Starting_Point.SYNTACTICAL_OUT_SCENARIO_FILE_EXTENSION,
+                                                                       PARTIAL_OUTPUT_DIRECTORY + " " + Starting_Point.remove_illegal_char_file_name(schema.NAME));
+            try
+            {
+                OUTPUT_FILE.createNewFile();
+                try (final PrintWriter TEMP_WRITER = new PrintWriter(OUTPUT_FILE))
+                {
+                    TEMP_WRITER.println(Evaluable.print_whole_subtree(schema.TREE_CONDITION));
+                }
+            }
+            catch (IOException ex)
+            {
+                System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() +
+                                   ", thus could not output its corresponding scenario as a dot file.");
+            }
         });
     }
 
@@ -1332,21 +1319,68 @@ public class Tree_Assembler
      */
     private void derivation_subroutine(final String TARGET, final Semantic_Actions... L_H_S_)
     {
-        //TODO: improve
         if (this.VERBOSE)
         {
             //work on derivation
-            StringBuilder result = new StringBuilder();
-            result.append(SPECIAL_UNLIKELY_SENTINEL);
-            result.append(L_H_S_[0].name());
-            result.append(SPECIAL_UNLIKELY_SENTINEL);
-            for (int i = 1; i < L_H_S_.length; ++i)
+            StringBuilder result = new StringBuilder(32);
+            for (int i = 0; i < L_H_S_.length; ++i)
             {
-                result.append(" " + SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
-                result.append(L_H_S_[i].name());
-                result.append(SPECIAL_UNLIKELY_SENTINEL);
+                switch (L_H_S_[i])
+                {
+                    case DECK_START:
+                    case DECK_LIST:
+                    {
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL);
+                        result.append(L_H_S_[i].name());
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + "\n"); //combined at compile time
+                        break;
+                    }
+                    case CARD:
+                    {
+                        result.append("\n" + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
+                        result.append(L_H_S_[i].name());
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL);
+                        break;
+                    }
+                    case PROBABILITY_START:
+                    {
+                        result.append("\n\n" + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
+                        result.append(L_H_S_[i].name());
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + "\n"); //combined at compile time
+                        break;
+                    }
+                    case SCENARIO:
+                    {
+                        result.append("\n" + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
+                        result.append(L_H_S_[i].name());
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + "\n"); //combined at compile time
+                        break;
+                    }
+                    case UNARY_OPERATOR:
+                    {
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL);
+                        result.append(L_H_S_[i].name());
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + " "); //combined at compile time
+                        break;
+                    }
+                    case BINARY_OPERATOR:
+                    case ASSIGN:
+                    {
+                        result.append(" " + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
+                        result.append(L_H_S_[i].name());
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + " "); //combined at compile time
+                        break;
+                    }
+                    default:
+                    {
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL);
+                        result.append(L_H_S_[i].name());
+                        result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL);
+                        break;
+                    }
+                }
             }
-            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, result.toString(), this.derivation);
+            Function_Bank.stringbuilder_replace_string_with_string(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + TARGET + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL, result.toString(), this.derivation);
             this.syntactical_derivation_output.println(this.derivation.toString() + "\n");//output derivation
         }
     }
@@ -1354,17 +1388,17 @@ public class Tree_Assembler
     /**
      * Subroutine for matching terminals and then discarding them.
      * 
-     * @param SEMANTIC_STACK_END_INDEX last index of {@link Tree_Assembler#semantic_stack}
-     * @param TARGET {@link Token.Lexeme_Types} to replace
-     * @param CURRENT_LEXEME of the {@Link Token} to be discarded
+     * @param SEMANTIC_STACK_END_INDEX last index of {@link #semantic_stack}
+     * @param TARGET {@link Lexeme_Types} to replace
+     * @param CURRENT_LEXEM of the {@link Token} to be discarded
      */
-    private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEME)
+    private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEM)
     {
         //stack maintenance
         this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
         if (this.VERBOSE)
         {
-            Function_Bank.stringbuilder_replace_string_with_string(SPECIAL_UNLIKELY_SENTINEL + TARGET + SPECIAL_UNLIKELY_SENTINEL, CURRENT_LEXEME, this.derivation);
+            Function_Bank.stringbuilder_replace_string_with_string(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + TARGET + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL, CURRENT_LEXEM, this.derivation);
             this.syntactical_derivation_output.println(this.derivation.toString() + "\n");//output derivation
         }
     }
@@ -1373,39 +1407,38 @@ public class Tree_Assembler
      * Subroutine for matching terminals and then discarding them.
      * 
      * @param SEMANTIC_STACK_END_INDEX last index of {@link Tree_Assembler#semantic_stack}
-     * @param TARGET {@link Token.Lexeme_Types} to replace
+     * @param TARGET {@link Lexeme_Types} to replace
      * @param CURRENT_NODE values pertaining to node to be created
      */
-
     private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
     {
-        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexeme());
+        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexem());
     }
 
     /**
      * Subroutine for matching terminals and then adds them to {@link #syntactical_stack}.
      * 
      * @param SEMANTIC_STACK_END_INDEX last index of {@link #semantic_stack}
-     * @param TARGET {@link Token.Lexeme_Types} to replace
-     * @param CURRENT_LEXEME of the {@Link Token} to be created
+     * @param TARGET {@link Lexeme_Types} to replace
+     * @param CURRENT_LEXEM of the {@Link Token} to be created
      */
-    private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEME)
+    private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEM)
     {
         //stack maintenance
-        this.syntactical_stack.add(new Evaluable(CURRENT_LEXEME));
-        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_LEXEME);
+        this.syntactical_stack.add(new Evaluable(CURRENT_LEXEM));
+        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_LEXEM);
     }
 
     /**
      * Subroutine for matching terminals and then adds them to {@link #syntactical_stack}.
      * 
      * @param SEMANTIC_STACK_END_INDEX last index of {@link #semantic_stack}
-     * @param TARGET {@link Token.Lexeme_Types} to replace
+     * @param TARGET {@link Lexeme_Types} to replace
      * @param CURRENT_NODE values pertaining to node to be created
      */
     private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
     {
-        this.match_litteral_add_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexeme());
+        this.match_litteral_add_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexem());
     }
 
     /**
@@ -1418,7 +1451,6 @@ public class Tree_Assembler
      */
     private void handle_recursive_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Semantic_Actions... L_H_S_)
     {
-        //TODO: improve
         this.derivation_subroutine(TARGET, L_H_S_);
 
         //work on semantic stack
@@ -1435,7 +1467,6 @@ public class Tree_Assembler
      */
     private void handle_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Semantic_Actions... L_H_S_)
     {
-        //TODO: improve
         this.derivation_subroutine(TARGET, L_H_S_);
 
         //work on semantic stack
@@ -1446,7 +1477,7 @@ public class Tree_Assembler
     }
 
     /**
-     * Handles critical syntax errors relating to scenarios. Removes {@link #semantic_stack} values until STOPPING_POINT is reached (none inclusive). Also {@link #syntactical_stack} is cleared.
+     * Handles critical syntax errors relating to scenarios. Removes {@link #semantic_stack} values until STOPPING_POINT is reached (not inclusive). Also {@link #syntactical_stack} is cleared.
      * 
      * @param semantic_stack_end_index the last {@link #semantic_stack}
      * @param STOPPING_POINT is the {@link Semantic_Actions} to remove up to
@@ -1485,7 +1516,6 @@ public class Tree_Assembler
      */
     private void handle_pop_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final Semantic_Actions POP, final String TARGET, final Semantic_Actions... L_H_S_)
     {
-        //TODO: improve
         this.derivation_subroutine(TARGET, L_H_S_);
 
         //work on semantic stack

@@ -4,7 +4,7 @@ package structure;
 <b>
 Purpose: Representation of a card, to be extended when stored in decks.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-25
+Date: 2021-07-25/2021-8-20
 </b>
 */
 
@@ -16,11 +16,9 @@ public class Base_Card
     public final String NAME;
 
     /**
-     * Value should be {@link Name#hashCode()}.
+     * Value should be {@link String#hashCode()} of {@link Base_Card#NAME}.
      */
     protected final int HASH_CODE;
-
-    protected boolean reserved;
 
     /**
      * Constructor.
@@ -42,7 +40,6 @@ public class Base_Card
     {
         this.NAME = CARD.NAME;
         this.HASH_CODE = CARD.HASH_CODE;
-        this.reserved = false;
     }
 
     @Override
@@ -59,6 +56,7 @@ public class Base_Card
      *
      * @param <T> anything which either is or extends, {@link Base_Card}.
      * @param CARD to be compared
+     * 
      * @return true for equivalent, otherwise false
      */
     public <T extends Base_Card> boolean equals(final T CARD)

@@ -1,0 +1,12 @@
+Note that precision falls off around the hundredth's place. Such is deemed acceptable given that only to about the tenth's place is required.
+Created by both Gabriel Toban Harris and Alexander Herman Oxorn. Most recent releases can be found at "https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator".
+
+hand size: 5
+number of test hands: 1500000
+Simulation duration (seconds): 6.268
+
+Chance of "First | Ash" is about 95.242065%
+Chance of "Contains "First" Card" is about 83.3208%
+Chance of "Contains Ash Blossom & Joyous Spring" is about 55.546402%
+Chance of "First & Ash" is about 43.625134%
+Chance of "First AND Ash" is about 43.625134%
