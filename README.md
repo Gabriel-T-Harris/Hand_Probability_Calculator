@@ -81,7 +81,7 @@ Boolean conditions are defined as a large expression as follows (note that all l
 - while `(` and `)` are used to group a whole subexpression.
 
 The above conditions form the operands of the following operators:
-- `AND` is a simple and statement. Both operands must be true for it to be true.
+- `AND` is a simple and statement. Both operands must be true for this operator to be true.
 - `OR` is inclusive or, meaning at least one operand must be true. Thus, only the matched operand will take up cards.
 - `XOR` is exclusive or, thus only one operand may be true. Thus, both operands having the same value will result in an overall false value.
 - `NOT` is special, though `XOR` does similar things. It is the absence of something being true, thus it does not use up any cards. As conditions operate on what remains, `NOT` is very much non-associative, unlike the other operators, which are for the most part.
