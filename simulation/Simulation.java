@@ -504,7 +504,7 @@ public class Simulation
             {
                 ArrayList<Deck_Card> current_hand;
 
-                for (long i = START; i < END; ++i)
+                for (int i = START; i < END; ++i)
                 {
                     //synchronise transformation of shallow to deep
                     synchronized (this)
