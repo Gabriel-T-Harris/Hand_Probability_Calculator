@@ -23,20 +23,20 @@ public class Token
     /**
      * The value of the token.
      */
-    public final String LEXEM;
+    public final String LEXEME;
 
     /**
      * Constructor of Token.
      * 
-     * @param TYPE of LEXEM
+     * @param TYPE of LEXEME
      * @param LINE_NUMBER location in source file
-     * @param LEXEM content of lexem which is then trimmed by {@link String#trim()}
+     * @param LEXEME content of lexeme which is then trimmed by {@link String#trim()}
      */
-    public Token(final Lexeme_Types TYPE, final long LINE_NUMBER, final String LEXEM)
+    public Token(final Lexeme_Types TYPE, final long LINE_NUMBER, final String LEXEME)
     {
         this.TYPE = TYPE;
         this.LINE_NUMBER = LINE_NUMBER;
-        this.LEXEM = LEXEM.trim();
+        this.LEXEME = LEXEME.trim();
     }
 
     //getters
@@ -57,11 +57,11 @@ public class Token
     }
 
     /**
-     * @return the {@link #LEXEM}
+     * @return the {@link #LEXEME}
      */
-    public String get_lexem()
+    public String get_lexeme()
     {
-        return this.LEXEM;
+        return this.LEXEME;
     }
 
     /*
@@ -69,6 +69,6 @@ public class Token
      */
     public String toString()
     {
-        return "[Lexem type: " + this.get_type() + ", lexem: " + get_lexem() + ", line number: " + this.get_line_number() + "]";
+        return "[Lexeme type: " + this.get_type() + ", lexeme: " + get_lexeme() + ", line number: " + this.get_line_number() + "]";
     }
 }

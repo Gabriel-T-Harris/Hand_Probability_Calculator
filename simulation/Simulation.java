@@ -27,8 +27,8 @@ Date: 2021-08-04/2021-8-[17-22]
 public class Simulation
 {
     /**
-     * Object to act as a simple mutex on {@link #parallel_simuation(int, int, long)}. As 
-     * {@link #parallel_simuation(int, int, long)} attempts to use all the resources, thus only one parallel simulation should occur at a given time. 
+     * Object to act as a simple mutex on {@link #parallel_simulation(int, int, int)}. As 
+     * {@link #parallel_simulation(int, int, int)} attempts to use all the resources, thus only one parallel simulation should occur at a given time. 
      */
     private final static Object PARALLEL_SIMULATION_LOCK = new Object();
 
@@ -66,7 +66,7 @@ public class Simulation
     }
 
     /**
-     * Carries out serial simulation with negligible (if any) parallelization. The trade off off with {@link #parallel_simuation(int, int, int)} is time for resources.
+     * Carries out serial simulation with negligible (if any) parallelization. The trade off off with {@link #parallel_simulation(int, int, int)} is time for resources.
      * 
      * @param <D> type of cards being used, suggest using {@link Deck_Card}
      * @param <F> type of {@link Evaluable}, suggest using {@link Scenario}
@@ -78,7 +78,7 @@ public class Simulation
      * 
      * @return result of simulation
      */
-    public static <D extends Reservable, F extends Evaluable> String sequential_simuation(final int HAND_SIZE, final int TEST_HAND_COUNT, final ArrayList<D> DECK,
+    public static <D extends Reservable, F extends Evaluable> String sequential_simulation(final int HAND_SIZE, final int TEST_HAND_COUNT, final ArrayList<D> DECK,
                                                                                           final ArrayList<F> FOREST)
     {
         final long START_TIME = System.currentTimeMillis(); //simulation start time in milliseconds
@@ -110,7 +110,7 @@ public class Simulation
      * 
      * @return the created output
      */
-    public static String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final long START_TIME, final Comparable_Pair[] WRAPPED_VALUES)
+    public static String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final long START_TIME, final Comparable_Result_Pair[] WRAPPED_VALUES)
     {
         final StringBuilder RESULTS = new StringBuilder(1024);
 
@@ -158,15 +158,15 @@ public class Simulation
                                                                                                     final long[] MATCHES, final C EQUATIONS)
     {
         assert (MATCHES.length == EQUATIONS.size());
-        final Comparable_Pair[] WRAPPED_VALUES = new Comparable_Pair[MATCHES.length];
+        final Comparable_Result_Pair[] WRAPPED_VALUES = new Comparable_Result_Pair[MATCHES.length];
 
-        //create Comparable_Pair
+        //create Comparable_Result_Pair
         {
             final float TO_PERCENTAGE = 100f / TEST_HAND_COUNT;
             final Iterator<E> WALKER = EQUATIONS.iterator();
 
             for (int i = 0; i < WRAPPED_VALUES.length; ++i)
-                WRAPPED_VALUES[i] = new Comparable_Pair(MATCHES[i] * TO_PERCENTAGE, WALKER.next().NAME);
+                WRAPPED_VALUES[i] = new Comparable_Result_Pair(MATCHES[i] * TO_PERCENTAGE, WALKER.next().NAME);
         }
 
         return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, WRAPPED_VALUES);
@@ -192,28 +192,28 @@ public class Simulation
                                                                                                     final AtomicInteger[] MATCHES, final C EQUATIONS)
     {
         assert (MATCHES.length == EQUATIONS.size());
-        final Comparable_Pair[] WRAPPED_VALUES = new Comparable_Pair[MATCHES.length];
+        final Comparable_Result_Pair[] WRAPPED_VALUES = new Comparable_Result_Pair[MATCHES.length];
 
-        //create Comparable_Pair
+        //create Comparable_Result_Pair
         {
             final float TO_PERCENTAGE = 100f / TEST_HAND_COUNT;
             final Iterator<E> WALKER = EQUATIONS.iterator();
 
             for (int i = 0; i < WRAPPED_VALUES.length; ++i)
-                WRAPPED_VALUES[i] = new Comparable_Pair(MATCHES[i].get() * TO_PERCENTAGE, WALKER.next().NAME);
+                WRAPPED_VALUES[i] = new Comparable_Result_Pair(MATCHES[i].get() * TO_PERCENTAGE, WALKER.next().NAME);
         }
 
         return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, WRAPPED_VALUES);
     }
 
     /**
-     * Simple subroutine that initializes an {@link AtomicInteger} array.
+     * Simple subroutine that initialises an {@link AtomicInteger} array.
      * 
      * @param LENGTH of array to be created
      * 
      * @return newly created array
      */
-    public static AtomicInteger[] initalize_array(final int LENGTH)
+    public static AtomicInteger[] initialize_array(final int LENGTH)
     {
         final AtomicInteger[] TO_RETURN = new AtomicInteger[LENGTH];
 
@@ -264,13 +264,14 @@ public class Simulation
      */
     public static <R extends Reservable> void reset_hand(final ArrayList<R> HAND)
     {
-        HAND.parallelStream().forEach(card -> card.release());
+        for (final R CARD : HAND)
+            CARD.release();
     }
 
     /**
      * Performs simulation. By differing to appropriate simulation function.
      * 
-     * @param OVERRIDE when true will jump straight to calling {@link #sequential_simuation(int, int, ArrayList, ArrayList)} rather then analyzing {@link Runtime#availableProcessors()} that this program has access to and actting accordingly.
+     * @param OVERRIDE when true will jump straight to calling {@link #sequential_simulation(int, int, ArrayList, ArrayList)} rather then analyzing {@link Runtime#availableProcessors()} that this program has access to and actting accordingly.
      * @param HAND_SIZE of the hand which will be used in the simulation
      * @param TEST_HAND_COUNT number of times to run simulation
      * 
@@ -279,14 +280,14 @@ public class Simulation
     public String simulate(final boolean OVERRIDE, final int HAND_SIZE, final int TEST_HAND_COUNT)
     {
         if (OVERRIDE)
-            return Simulation.sequential_simuation(HAND_SIZE, TEST_HAND_COUNT, this.DECK, this.FOREST);
+            return Simulation.sequential_simulation(HAND_SIZE, TEST_HAND_COUNT, this.DECK, this.FOREST);
 
         final int CORE_COUNT = Runtime.getRuntime().availableProcessors();
 
         if (CORE_COUNT > 1)
-            return this.parallel_simuation(CORE_COUNT, HAND_SIZE, TEST_HAND_COUNT);
+            return this.parallel_simulation(CORE_COUNT, HAND_SIZE, TEST_HAND_COUNT);
         else if (CORE_COUNT == 1)
-            return Simulation.sequential_simuation(HAND_SIZE, TEST_HAND_COUNT, this.DECK, this.FOREST);
+            return Simulation.sequential_simulation(HAND_SIZE, TEST_HAND_COUNT, this.DECK, this.FOREST);
         else if (CORE_COUNT < 1)
             throw new UnknownError("Impossible Error: somehow value from \"Runtime.getRuntime().availableProcessors();\" resulted in \"" + CORE_COUNT + "\" which is < 1.");
         else
@@ -295,7 +296,7 @@ public class Simulation
     }
 
     /**
-     * Carries out parallel simulation. The trade off over {@link #sequential_simuation(int, long, ArrayList, ArrayList)} is resources for time.
+     * Carries out parallel simulation. The trade off over {@link #sequential_simulation(int, int, ArrayList, ArrayList)} is resources for time.
      * 
      * @param CORE_COUNT number of available cores
      * @param HAND_SIZE of the hands drawn
@@ -303,7 +304,7 @@ public class Simulation
      * 
      * @return result of simulation
      */
-    protected String parallel_simuation(final int CORE_COUNT, final int HAND_SIZE, final int TEST_HAND_COUNT)
+    protected String parallel_simulation(final int CORE_COUNT, final int HAND_SIZE, final int TEST_HAND_COUNT)
     {
         /**
          * {@link Runnable} to test a single hand.
@@ -519,7 +520,7 @@ public class Simulation
         }
 
         final long START_TIME; //simulation start time in milliseconds
-        final AtomicInteger[] HITS = Simulation.initalize_array(this.FOREST.size()); //Track the number of successful hands found per Scenario.
+        final AtomicInteger[] HITS = Simulation.initialize_array(this.FOREST.size()); //Track the number of successful hands found per Scenario.
         final ThreadPoolExecutor TASK_OVERSEER = new ThreadPoolExecutor(CORE_COUNT, CORE_COUNT << 1, 2, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
         TASK_OVERSEER.allowCoreThreadTimeOut(true);
 

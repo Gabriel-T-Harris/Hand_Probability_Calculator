@@ -36,7 +36,7 @@ public class Tree_Assembler
     public final boolean VERBOSE;
 
     /**
-     * Special sequence meant to surround the production rules such that they are less likely to accidently appear as a token. Though the use guarantees that they will never be mistaken for a token.
+     * Special sequence meant to surround the production rules such that they are less likely to accidentally appear as a token. Though the use guarantees that they will never be mistaken for a token.
      */
     public static final String SPECIAL_UNLIKELY_SENTINEL = "&GTH&";
 
@@ -1295,7 +1295,7 @@ public class Tree_Assembler
      */
     private void epsilon_discard_case_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET)
     {
-        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, "");
+        this.match_literal_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, "");
     }
 
     /**
@@ -1390,15 +1390,15 @@ public class Tree_Assembler
      * 
      * @param SEMANTIC_STACK_END_INDEX last index of {@link #semantic_stack}
      * @param TARGET {@link Lexeme_Types} to replace
-     * @param CURRENT_LEXEM of the {@link Token} to be discarded
+     * @param CURRENT_LEXEME of the {@link Token} to be discarded
      */
-    private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEM)
+    private void match_literal_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEME)
     {
         //stack maintenance
         this.semantic_stack.remove(SEMANTIC_STACK_END_INDEX);
         if (this.VERBOSE)
         {
-            Function_Bank.stringbuilder_replace_string_with_string(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + TARGET + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL, CURRENT_LEXEM, this.derivation);
+            Function_Bank.stringbuilder_replace_string_with_string(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + TARGET + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL, CURRENT_LEXEME, this.derivation);
             this.syntactical_derivation_output.println(this.derivation.toString() + "\n");//output derivation
         }
     }
@@ -1412,7 +1412,7 @@ public class Tree_Assembler
      */
     private void match_litteral_discard_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
     {
-        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexem());
+        this.match_literal_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexeme());
     }
 
     /**
@@ -1420,13 +1420,13 @@ public class Tree_Assembler
      * 
      * @param SEMANTIC_STACK_END_INDEX last index of {@link #semantic_stack}
      * @param TARGET {@link Lexeme_Types} to replace
-     * @param CURRENT_LEXEM of the {@Link Token} to be created
+     * @param CURRENT_LEXEME of the {@Link Token} to be created
      */
-    private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEM)
+    private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final String CURRENT_LEXEME)
     {
         //stack maintenance
-        this.syntactical_stack.add(new Evaluable(CURRENT_LEXEM));
-        this.match_litteral_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_LEXEM);
+        this.syntactical_stack.add(new Evaluable(CURRENT_LEXEME));
+        this.match_literal_discard_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_LEXEME);
     }
 
     /**
@@ -1438,7 +1438,7 @@ public class Tree_Assembler
      */
     private void match_litteral_add_subroutine(final int SEMANTIC_STACK_END_INDEX, final String TARGET, final Token CURRENT_NODE)
     {
-        this.match_litteral_add_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexem());
+        this.match_litteral_add_subroutine(SEMANTIC_STACK_END_INDEX, TARGET, CURRENT_NODE.get_lexeme());
     }
 
     /**

@@ -2,6 +2,7 @@ package structure;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 /**
 <b>
@@ -47,12 +48,7 @@ public class Deck_Card extends Base_Card implements Reservable
      */
     public static <E extends Collection<Deck_Card>> ArrayList<Deck_Card> deep_copy(final E INPUT)
     {
-        final ArrayList<Deck_Card> TO_RETURN = new ArrayList<Deck_Card>(INPUT);
-
-        for (int i = 0; i < INPUT.size(); ++i)
-            TO_RETURN.set(i, new Deck_Card(TO_RETURN.get(i)));
-
-        return TO_RETURN;
+        return INPUT.stream().map(Deck_Card::new).collect(Collectors.toCollection(ArrayList::new));
     }
 
     @Override

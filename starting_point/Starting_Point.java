@@ -95,7 +95,7 @@ public class Starting_Point
     /**
      * Name of the authors of this program and where it can be downloaded from
      */
-    public final static String AUTHORS = "Created by both Gabriel Toban Harris and Alexander Herman Oxorn. " +
+    public final static String AUTHORS = "Created by both Gabriel Toban Harris and Alexander Oxorn. " +
                                          "Most recent releases can be found at \"https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator\".";
 
     /**
@@ -119,7 +119,7 @@ public class Starting_Point
     private static boolean simulation_results_console = false;
 
     /**
-     * true for jumping straight to sequential simulation rather then letting the program decide
+     * true for jumping straight to sequential simulation rather than letting the program decide
      */
     private static boolean force_sequential = false;
 

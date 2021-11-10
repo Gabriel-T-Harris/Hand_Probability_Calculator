@@ -8,7 +8,7 @@ Date: 2021-08-21 (date of extraction from {@link Simulation})/2021-8-24
 </b>
  */
 
-public class Comparable_Pair implements Comparable<Comparable_Pair>
+public class Comparable_Result_Pair implements Comparable<Comparable_Result_Pair>
 {
     /**
      * Underlying value representing number of successful matches.
@@ -26,14 +26,14 @@ public class Comparable_Pair implements Comparable<Comparable_Pair>
      * @param PERCENTAGE percentage of number of times evaluation succeeded
      * @param NAME of pair
      */
-    public Comparable_Pair(final Float PERCENTAGE, final String NAME)
+    public Comparable_Result_Pair(final Float PERCENTAGE, final String NAME)
     {
         this.PERCENTAGE = PERCENTAGE;
         this.NAME = NAME;
     }
 
     @Override
-    public int compareTo(final Comparable_Pair OTHER)
+    public int compareTo(final Comparable_Result_Pair OTHER)
     {
         final int FLOAT_COMPARISON = this.PERCENTAGE.compareTo(OTHER.PERCENTAGE);
 

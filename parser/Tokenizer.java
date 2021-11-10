@@ -125,7 +125,7 @@ public class Tokenizer
     public final static Pattern FALSE = Pattern.compile("\\s*false\\s*");
 
     /**
-     * Definition of valid char that an the ID lexem can have.
+     * Definition of valid char that an ID lexeme can have.
      */
     public final static Pattern ID_CHAR_SET = Pattern.compile("[^" + RESTRICTED_CHARS.replace("{", "\\{").replace("}", "\\}").replace("[", "\\[").replace("]", "\\]") + "]");
 
@@ -140,8 +140,8 @@ public class Tokenizer
      */
     public static Returned_Data tokenize(final long LINE_NUMBER, final String START, final Scanner INPUT)
     {
-        final StringBuilder LEXEM = new StringBuilder(32); //32 feels like a good starting number, possibly go up to 256 (byte) as that should be a limit.
-        LEXEM.append(START);
+        final StringBuilder LEXEME = new StringBuilder(32); //32 feels like a good starting number, possibly go up to 256 (byte) as that should be a limit.
+        LEXEME.append(START);
 
         switch (START)
         {
@@ -172,31 +172,31 @@ public class Tokenizer
                 if (INPUT.hasNext())
                 {
                     String placeholder = INPUT.next();
-                    LEXEM.append(placeholder);
+                    LEXEME.append(placeholder);
 
                     //line comment
                     if (placeholder.equals("/"))
                     {
                         if (INPUT.hasNext())
-                            LEXEM.append(INPUT.nextLine());
+                            LEXEME.append(INPUT.nextLine());
 
-                        return new Returned_Data(new Token(Lexeme_Types.LINE_COMMENT, LINE_NUMBER, LEXEM.toString()));
+                        return new Returned_Data(new Token(Lexeme_Types.LINE_COMMENT, LINE_NUMBER, LEXEME.toString()));
                     }
                     //block comment
                     else if (placeholder.equals("*"))
                     {
                         while (INPUT.hasNext())
                         {
-                            LEXEM.append(placeholder = INPUT.next());
+                            LEXEME.append(placeholder = INPUT.next());
 
                             if (placeholder.equals("*"))
                             {
                                 if (INPUT.hasNext())
                                 {
-                                    LEXEM.append(placeholder = INPUT.next());
+                                    LEXEME.append(placeholder = INPUT.next());
 
                                     if (placeholder.equals("/"))
-                                        return new Returned_Data(new Token(Lexeme_Types.BLOCK_COMMENT, LINE_NUMBER, LEXEM.toString()));
+                                        return new Returned_Data(new Token(Lexeme_Types.BLOCK_COMMENT, LINE_NUMBER, LEXEME.toString()));
                                 }
                                 else
                                     break;
@@ -204,16 +204,16 @@ public class Tokenizer
                         }
 
                         //block comment lacking closing symbols
-                        return new Returned_Data(new Token(Lexeme_Types.BLOCK_COMMENT_ERROR, LINE_NUMBER, LEXEM.toString()));
+                        return new Returned_Data(new Token(Lexeme_Types.BLOCK_COMMENT_ERROR, LINE_NUMBER, LEXEME.toString()));
                     }
                 }
 
                 //defer to ID_CHAR_SET
-                return new Returned_Data(new Token(Lexeme_Types.ID, LINE_NUMBER, LEXEM.toString()));
+                return new Returned_Data(new Token(Lexeme_Types.ID, LINE_NUMBER, LEXEME.toString()));
             }
             //parse multichar sequences
             default:
-                return Tokenizer.gather_keyword_chars(LINE_NUMBER, LEXEM, INPUT);
+                return Tokenizer.gather_keyword_chars(LINE_NUMBER, LEXEME, INPUT);
         }
     }
 
@@ -221,12 +221,12 @@ public class Tokenizer
      * Function to attempt to find keywords, other wise defers to {@link #gather_ID_chars(long, StringBuilder, Scanner)}
      * 
      * @param LINE_NUMBER of source file being read
-     * @param LEXEM_START is the lexem formed thus far
+     * @param LEXEME_START is the lexeme formed thus far
      * @param INPUT source to be read from
      * 
      * @return the created {@link Token} wrapped in a {@link Returned_Data}
      */
-    private static Returned_Data gather_keyword_chars(final long LINE_NUMBER, final StringBuilder LEXEM_START, final Scanner INPUT)
+    private static Returned_Data gather_keyword_chars(final long LINE_NUMBER, final StringBuilder LEXEME_START, final Scanner INPUT)
     {
         boolean has_white_space_char; //to avoid having to repeat regex evaluation
         String placeholder;
@@ -238,7 +238,7 @@ public class Tokenizer
             //check for either keyword end or restricted char
             if ((has_white_space_char = Tokenizer.WHITE_SPACE_CHAR.matcher(placeholder).matches()) || Tokenizer.RESTRICTED_CHARS.contains(placeholder))
             {
-                final String LEXEME = LEXEM_START.toString();
+                final String LEXEME = LEXEME_START.toString();
 
                 if (Tokenizer.AND.matcher(LEXEME).matches())
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.AND, LINE_NUMBER, LEXEME));
@@ -259,28 +259,28 @@ public class Tokenizer
                 else if (Tokenizer.PROBABILITY_START.matcher(LEXEME).matches())
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.PROBABILITY_START, LINE_NUMBER, LEXEME));
                 else if (has_white_space_char)
-                    return Tokenizer.gather_ID_chars(LINE_NUMBER, LEXEM_START.append(placeholder), INPUT);
+                    return Tokenizer.gather_ID_chars(LINE_NUMBER, LEXEME_START.append(placeholder), INPUT);
                 else
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.ID, LINE_NUMBER, LEXEME));
             }
             //keep building
             else
-                LEXEM_START.append(placeholder);
+                LEXEME_START.append(placeholder);
         }
 
-        return new Returned_Data(new Token(Lexeme_Types.ID, LINE_NUMBER, LEXEM_START.toString()));
+        return new Returned_Data(new Token(Lexeme_Types.ID, LINE_NUMBER, LEXEME_START.toString()));
     }
 
     /**
      * Subroutine to obtain a sequence which may be an ID.
      * 
      * @param LINE_NUMBER of source file being read
-     * @param LEXEM_START is the lexem formed thus far
+     * @param LEXEME_START is the lexeme formed thus far
      * @param INPUT source to be read from
      * 
      * @return the created {@link Token} wrapped in a {@link Returned_Data}
      */
-    private static Returned_Data gather_ID_chars(final long LINE_NUMBER, final StringBuilder LEXEM_START, final Scanner INPUT)
+    private static Returned_Data gather_ID_chars(final long LINE_NUMBER, final StringBuilder LEXEME_START, final Scanner INPUT)
     {
         String placeholder;
 
@@ -289,12 +289,12 @@ public class Tokenizer
             placeholder = INPUT.next();
 
             if (Tokenizer.ID_CHAR_SET.matcher(placeholder).matches())
-                LEXEM_START.append(placeholder);
+                LEXEME_START.append(placeholder);
             else
-                return Tokenizer.parse_potentional_ID(LINE_NUMBER, placeholder, LEXEM_START.toString());
+                return Tokenizer.parse_potential_ID(LINE_NUMBER, placeholder, LEXEME_START.toString());
         }
 
-        return Tokenizer.parse_potentional_ID(LINE_NUMBER, null, LEXEM_START.toString());
+        return Tokenizer.parse_potential_ID(LINE_NUMBER, null, LEXEME_START.toString());
     }
 
     /**
@@ -302,16 +302,16 @@ public class Tokenizer
      * 
      * @param LINE_NUMBER of source file being read
      * @param REMAINDER which is the extra data that should be feed back into {@link #tokenize(long, String, Scanner)}
-     * @param COMPLETE_LEXEM which is fully formed
+     * @param COMPLETE_LEXEME which is fully formed
      * 
      * @return the created {@link Token} wrapped in a {@link Returned_Data}
      */
-    private static Returned_Data parse_potentional_ID(final long LINE_NUMBER, final String REMAINDER, final String COMPLETE_LEXEM)
+    private static Returned_Data parse_potential_ID(final long LINE_NUMBER, final String REMAINDER, final String COMPLETE_LEXEME)
     {
         //Test lexeme for special sequences, if all fail then is in fact ID.
-        if (Tokenizer.DECK_START.matcher(COMPLETE_LEXEM).matches())
-            return new Returned_Data(REMAINDER, new Token(Lexeme_Types.DECK_START, LINE_NUMBER, COMPLETE_LEXEM));
+        if (Tokenizer.DECK_START.matcher(COMPLETE_LEXEME).matches())
+            return new Returned_Data(REMAINDER, new Token(Lexeme_Types.DECK_START, LINE_NUMBER, COMPLETE_LEXEME));
         else
-            return new Returned_Data(REMAINDER, new Token(Lexeme_Types.ID, LINE_NUMBER, COMPLETE_LEXEM));
+            return new Returned_Data(REMAINDER, new Token(Lexeme_Types.ID, LINE_NUMBER, COMPLETE_LEXEME));
     }
 }
