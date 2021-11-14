@@ -1,0 +1,17 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+298[label="OR"];
+298->294;
+298->297;
+294[label="OR"];
+294->290;
+294->293;
+297[label="Nine Spades"];
+290[label="OR"];
+290->286;
+290->289;
+293[label="Nine Hearts"];
+286[label="Nine Clubs"];
+289[label="Nine Diamonds"];
+}

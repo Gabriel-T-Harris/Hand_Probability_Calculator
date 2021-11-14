@@ -1,0 +1,13 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+183[label="AND"];
+183->162;
+183->182;
+162[label="First"];
+182[label="NOT"];
+182->181;
+181[label="NOT"];
+181->174;
+174[label="Ash Blossom & Joyous Spring"];
+}

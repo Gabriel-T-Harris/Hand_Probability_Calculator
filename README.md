@@ -127,3 +127,5 @@ The program is written to attempt to salvage poorly written configuration files,
 Scenario names with none filename friendly char (/, <, >, :, ", \\, |, ?, \*) are discouraged, but allowed. In the event that they are outputted, they will be removed which may cause filename clashes between similarly named scenarios.
 
 Outputted scenarios are in dot file format, they can be viewed at the URL shortcut specified at [Dot File Viewer](https://dreampuf.github.io/GraphvizOnline). Simply copy the generated file's content into the text area of the viewer.
+
+All generated files can be viewed as plain text. As such simply open them with a txt viewer.

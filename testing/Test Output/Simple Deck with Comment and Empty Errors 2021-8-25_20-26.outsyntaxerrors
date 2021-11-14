@@ -1,0 +1,2 @@
+Error: while top of stack is DECK_LIST and current Token is [Lexem type: SENTINEL_END, lexem: }, line number: 1]
+Error: while top of stack is SCENARIO_LIST and current Token is [Lexem type: SENTINEL_END, lexem: }, line number: 3]
