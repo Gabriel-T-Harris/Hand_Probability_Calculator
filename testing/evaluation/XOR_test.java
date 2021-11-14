@@ -13,6 +13,7 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: Test that {@link Xor_Operator_Node} works properly<br>
 Programmer: Gabriel Toban Harris, Alexander Herman Oxorn<br>
+Date: 2021-08-04/2021-8-19
 </b>
 */
 

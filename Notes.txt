@@ -4,7 +4,7 @@ Configuration File:
     -throw away none main deck parts
 -maybe read a ydk file instead of in same file.
 -declare scenarios
--state which to display at the end, which also states which should be evaluated on its on
+-state which to display at the end
 
 Structure:
 
@@ -14,12 +14,12 @@ Structure:
 -short circuit operator evaluation
 -node per operator
 -node per single match as leaf
--cards are used, thereby preventing a card from being matched by multiple conditions.
+-TODO: figure out duplicates and overlap of sub-scenarios.
 
 Parser:
 
--Like a compiler going over expressions (context free grammar).
--Table driven, LL(1)
+-Like a compiler going over expressions.
+-Table driven?
 
 Later Versions:
 
@@ -28,7 +28,10 @@ Later Versions:
     -draw, example Pot of Greed
     -excavate, Pot of Duality
     -draw then discard, Graceful Charity
-    -other such as Pot of Desires
+    -other such as Pot of Desires, Reasoning, "Chaos Ruler, the Chaotic Magical Dragon"
 
 -provide more options for writing configuration file?
     -allow some regex for stating cards?
+
+-additional options for command line arguments?
+    -maybe put in the planned (yet to be written) command line argument parser

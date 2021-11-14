@@ -2,6 +2,7 @@ package structure;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Queue;
 import java.util.StringJoiner;
@@ -13,11 +14,11 @@ import java.util.stream.IntStream;
 /**
 <b>
 Purpose: Requirement to be a node for evaluation purposes.<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
 </b>
 */
 
-public abstract class Evaluable<T>
+public class Evaluable
 {
     enum TestResult {
         /**
@@ -44,6 +45,10 @@ public abstract class Evaluable<T>
     //TODO: add javadoc
     public final static boolean debugMode = false;
 
+    /**
+     * Name of this object.
+     */
+    public final String NAME;
 
     /**
      * Unique identifier for this node.
@@ -57,29 +62,54 @@ public abstract class Evaluable<T>
 
     /**
      * Constructor to force unified id among all subclasses.
+     *
+     * @param NAME {@link #NAME}
      */
-    public Evaluable()
+    public Evaluable(final String NAME)
     {
-        this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
+        this.NAME = NAME;
+        this.UNIQUE_IDENTIFIER = ++Evaluable.CREATED_NODES_COUNT;
     }
 
     /**
-     * Function used to evaluate a node's condition using a rollback evaluation implementation.
-     * Allows for hand to be in an arbitrary order
+     * Output whole tree in dot file format.
      *
-     * @param hand to be checked {@link Collection}
-     * @param next function to call when a leaf node takes a card from the hand
-     * @return a {@link TestResult} used as a signal on what action to preform next
+     * @param START of breath first search
+     *
+     * @return representation of whole structure in dot file format
      */
-    protected abstract <E extends Reservable> TestResult evaluate(final Collection<E> hand, final RollbackCallback next);
+    public static String print_whole_subtree(final Evaluable START)
+    {
+        final StringBuilder OUTPUT = new StringBuilder(2048); //large output
+        final HashSet<Integer> SEEN_NODES = new HashSet<Integer>(); //prevent nodes from being dealt with multiple times, mainly only affects Scenarios
+        final Queue<Evaluable> TRAVERSE_NODES = new ArrayDeque<Evaluable>();
+
+        OUTPUT.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
+
+        //children
+        for (Evaluable placeholder = START; placeholder != null; placeholder = TRAVERSE_NODES.poll())
+        {
+            if (!SEEN_NODES.contains(placeholder.UNIQUE_IDENTIFIER))
+            {
+                SEEN_NODES.add(placeholder.UNIQUE_IDENTIFIER);
+                OUTPUT.append(placeholder); // print out top node
+
+                Collection<? extends Evaluable> children = placeholder.continue_breath_search();
+                if (children != null)
+                    TRAVERSE_NODES.addAll(children); // add children
+            }
+        }
+
+        return OUTPUT.append('}').toString();
+    }
 
     /**
-     * Function used to deprecated_evaluate a node's condition using a rollback evaluation implementation.
-     * Allows for hand to be in an arbitrary order
+     * Allows for hand to be in an arbitrary order. Default entry point where the success callback returns true and the failure callback returns false
      *
-     * Default entry point where the success callback returns true and the failure callback returns false
+     * @param <E> anything that is {@link Reservable} will do
      *
      * @param hand to be checked {@link Collection}
+     *
      * @return If the hand meets a condition
      */
     public <E extends Reservable> boolean evaluate(final Collection<E> hand)
@@ -89,38 +119,28 @@ public abstract class Evaluable<T>
     }
 
     /**
-     * Output whole tree in dot file format.
+     * Function used to evaluate a node's condition using a rollback evaluation implementation.
+     * Allows for hand to be in an arbitrary order
+     *
+     * @param HAND to be checked {@link Collection}
+     * @param NEXT function to call when a leaf node takes a card from the hand
      * 
-     * @param START of breath first search
+     * @return a {@link TestResult} used as a signal on what action to preform next
      */
-    public static String print_whole_subtree(final Evaluable<?> START)
+    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
     {
-        StringBuilder output = new StringBuilder(2048); //large output
-        Queue<Evaluable<?>> traverse_nodes = new ArrayDeque<>();
-
-        output.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
-
-        //children
-        for (Evaluable<?> placeholder = START; placeholder != null; placeholder = traverse_nodes.poll())
-        {
-            output.append(placeholder); // print out top node
-
-            Collection<? extends Evaluable<?>> children = placeholder.continue_breath_search();
-            if (children != null)
-                traverse_nodes.addAll(children); // add children
-        }
-
-        output.append('}');
-
-        return output.toString();
+        throw new UnsupportedOperationException("Child failed to override me.");
     }
 
     /**
      * Expected to be defined to pass along children for {@link #print_whole_subtree}.
      * 
-     * @return null or children
+     * @return null (for skip this one) or children
      */
-    protected abstract Collection<? extends Evaluable<T>> continue_breath_search();
+    protected Collection<? extends Evaluable> continue_breath_search()
+    {
+        throw new UnsupportedOperationException("Child failed to override me.");
+    }
 
 
     /**

@@ -1,0 +1,17 @@
+Note that precision falls off around the hundredth's place. Such is deemed acceptable given that only to about the tenth's place is required.
+Created by both Gabriel Toban Harris and Alexander Herman Oxorn. Most recent releases can be found at "https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator".
+
+hand size: 5
+number of test hands: 1500000
+Simulation duration (seconds): 53.583
+
+Chance of "None of the Above" is about 50.0904%
+Chance of "Single Pair" is about 42.316%
+Chance of "Two Pair" is about 4.752%
+Chance of "Triple" is about 2.0973334%
+Chance of "Straight" is about 0.3826%
+Chance of "Flush" is about 0.19473334%
+Chance of "Full House" is about 0.14266667%
+Chance of "Four of a Kind" is about 0.022866666%
+Chance of "Straight Flush" is about 0.0012%
+Chance of "Royal Flush" is about 2.0000001E-4%

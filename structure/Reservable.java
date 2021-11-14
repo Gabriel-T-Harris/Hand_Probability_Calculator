@@ -3,27 +3,27 @@ package structure;
 /**
 <b>
 Purpose: Requirement to be a node for evaluation purposes.<br>
-Programmer: Alexander Herman Oxorn <br>
-Date: 2021-07-29
+Programmer: Alexander Herman Oxorn, Gabriel Toban Harris <br>
+Date: 2021-07-29/2021-8-17/2021-8-21
 </b>
 */
 
 public interface Reservable
 {
-
     /**
-     * States the reservedness of a card.
-     * @return true for reserved and false for not reserved.
+     * Checks reservedness of this card.
+     * 
+     * @return current reservedness
      */
     boolean isReserved();
 
     /**
-     * Reserves a card.
+     * Reserves this card.
      */
     void reserve();
 
     /**
-     * Unreserves a card.
+     * Frees this card.
      */
     void release();
 }

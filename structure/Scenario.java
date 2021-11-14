@@ -5,31 +5,29 @@ import java.util.Collection;
 /**
 <b>
 Purpose: Contain entire tree structure of {@link Base_Node} in a named reusable manner.<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
+Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
 </b>
 */
 
-public class Scenario<T> extends Evaluable<T>
+public class Scenario extends Evaluable
 {
     /**
      * Controls whether this should be displayed in final results.
      */
-    public final boolean display;
-    
-    /**
-     * Name of scenario being tested.
-     */
-    public final String NAME;
+    public final boolean DISPLAY;
 
     /**
      * Stores the tree representation of this scenario.
      */
-    public final Evaluable<T> TREE_CONDITION;
+    public final Evaluable TREE_CONDITION;
 
     /**
      * See {@link #Scenario(boolean, String, Evaluable)}.
+     * 
+     * @param NAME to be called
+     * @param TREE_CONDITION to be {@link Evaluable#evaluate(Collection)}
      */
-    public Scenario(final String NAME, final Evaluable<T> TREE_CONDITION)
+    public Scenario(final String NAME, final Evaluable TREE_CONDITION)
     {
         this(true, NAME, TREE_CONDITION);
     }
@@ -37,14 +35,14 @@ public class Scenario<T> extends Evaluable<T>
     /**
      * Fully parameterized constructor.
      * 
-     * @param display {@link #display}
-     * @param NAME {@link #NAME}
+     * @param DISPLAY {@link #DISPLAY}
+     * @param NAME of scenario being tested
      * @param TREE_CONDITION {@link #TREE_CONDITION}
      */
-    public Scenario(final boolean display, final String NAME, final Evaluable<T> TREE_CONDITION)
+    public Scenario(final boolean DISPLAY, final String NAME, final Evaluable TREE_CONDITION)
     {
-        this.display = display;
-        this.NAME = NAME;
+        super(NAME);
+        this.DISPLAY = DISPLAY;
         this.TREE_CONDITION = TREE_CONDITION;
     }
 
@@ -59,13 +57,12 @@ public class Scenario<T> extends Evaluable<T>
      */
     public String toString()
     {
-        return this.UNIQUE_IDENTIFIER + "[label=\"" + this.NAME.replace(">", "\\>").replace("<", "\\<").replace("\"", "\\\"") + "\"];\n" + this.UNIQUE_IDENTIFIER + "->" +
-               this.TREE_CONDITION.UNIQUE_IDENTIFIER + ";\n";
+        return this.UNIQUE_IDENTIFIER + "[label=\"" + this.NAME.replace(">", "\\>").replace("<", "\\<").replace("\"", "\\\"") + "\"];\n";
     }
 
     @Override
-    protected Collection<? extends Evaluable<T>> continue_breath_search()
+    protected Collection<? extends Evaluable> continue_breath_search()
     {
-        return null;//TODO: consider changing to adding TREE_CONDITION.
+        return null;
     }
 }
