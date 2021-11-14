@@ -397,7 +397,7 @@ public class Simulation
             private final AtomicInteger HITS[];
 
             /**
-             * Deck to to draw hands from.
+             * Deck to draw hands from.
              */
             private final ArrayList<Deck_Card> DECK;
 
@@ -480,7 +480,7 @@ public class Simulation
                     final int UPPER_THRESHOLD = 125;
                     final int LOWER_THRESHOLD = 25;
 
-                    //10 ensures that lowest possible argument will still result in a value greater then 1.
+                    //10 ensures that lowest possible argument will still result in a value greater than 1.
                     if (BLOCKING_QUEUE_SIZE > UPPER_THRESHOLD)
                     {
                         this.partition_count *= Math.log10(10 + BLOCKING_QUEUE_SIZE - UPPER_THRESHOLD);
