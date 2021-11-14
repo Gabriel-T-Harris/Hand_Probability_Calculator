@@ -14,7 +14,7 @@ import java.util.stream.IntStream;
 /**
 <b>
 Purpose: Requirement to be a node for evaluation purposes.<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
+Programmer: Gabriel Toban Harris, Alexander Oxorn
 </b>
 */
 

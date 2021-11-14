@@ -5,7 +5,7 @@ import java.util.Collection;
 /**
 <b>
 Purpose: Contain entire tree structure of {@link Base_Node} in a named reusable manner.<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
+Programmer: Gabriel Toban Harris, Alexander Oxorn
 </b>
 */
 

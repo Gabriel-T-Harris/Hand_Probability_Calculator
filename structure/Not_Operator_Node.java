@@ -6,7 +6,7 @@ import java.util.Collections;
 /**
 <b>
 Purpose: Not Operator<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
+Programmer: Gabriel Toban Harris, Alexander Oxorn
 </b>
 */
 

@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 /**
 <b>
 Purpose: To be used as the representation of cards in a deck.<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
+Programmer: Gabriel Toban Harris, Alexander Oxorn
 </b>
 */
 

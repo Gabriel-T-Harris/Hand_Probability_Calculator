@@ -12,7 +12,7 @@ import structure.Xor_Operator_Node;
 /**
 <b>
 Purpose: Test that {@link Xor_Operator_Node} works properly<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn<br>
+Programmer: Gabriel Toban Harris, Alexander Oxorn<br>
 Date: 2021-08-04/2021-8-19
 </b>
 */
@@ -26,8 +26,8 @@ public class XOR_test
         List<Deck_Card> hand_B_A = Arrays.asList(new Deck_Card("B"), new Deck_Card("A"));
         List<Deck_Card> hand_B_B = Arrays.asList(new Deck_Card("B"), new Deck_Card("B"));
 
-        Scenario<Base_Card> xor_test = new Scenario<>("xor test",
-                new Xor_Operator_Node<>(
+        Scenario xor_test = new Scenario("xor test",
+                new Xor_Operator_Node(
                         new Leaf_Node<>("A", new Base_Card("A")),
                         new Leaf_Node<>("A", new Base_Card("A"))
                 ));
