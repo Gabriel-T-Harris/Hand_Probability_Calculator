@@ -5,7 +5,7 @@ import java.util.Collection;
 /**
 <b>
 Purpose: Xor Operator<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
+Programmer: Gabriel Toban Harris, Alexander Oxorn
 </b>
 */
 

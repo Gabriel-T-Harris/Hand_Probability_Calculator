@@ -1,12 +1,12 @@
 package structure;
 
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 
 /**
 <b>
 Purpose: Not Operator<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn
+Programmer: Gabriel Toban Harris, Alexander Oxorn
 </b>
 */
 
@@ -19,7 +19,7 @@ public class Not_Operator_Node extends Base_Node
 
     /**
      * Constructor. Meaning of operator is the lack of something. Thus looking for NOT A would only be true if A was not unreserved in remaining hand.
-     * 
+     *
      * @param CHILD to be negated.
      */
     public Not_Operator_Node(final Evaluable CHILD)
@@ -50,6 +50,6 @@ public class Not_Operator_Node extends Base_Node
     @Override
     protected Collection<? extends Evaluable> continue_breath_search()
     {
-        return Arrays.asList(this.CHILD);
+        return Collections.singletonList(this.CHILD);
     }
 }

@@ -6,7 +6,9 @@
 #JetBrains
 .idea/
 *.iml
+*.eml
 out/
+bin/
 
 #Java
 *.class
