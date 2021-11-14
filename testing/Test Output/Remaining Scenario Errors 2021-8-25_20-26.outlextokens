@@ -1,0 +1,33 @@
+[Lexem type: DECK_START, lexem: deck list:, line number: 1]
+[Lexem type: SENTINEL_START, lexem: {, line number: 2]
+[Lexem type: ID, lexem: First, line number: 3][Lexem type: SEMI_COLON, lexem: ;, line number: 3]
+[Lexem type: ID, lexem: Second, line number: 4][Lexem type: SEMI_COLON, lexem: ;, line number: 4]
+[Lexem type: ID, lexem: Third, line number: 5][Lexem type: SEMI_COLON, lexem: ;, line number: 5]
+[Lexem type: ID, lexem: Forth, line number: 6][Lexem type: SEMI_COLON, lexem: ;, line number: 6]
+[Lexem type: ID, lexem: Fifth, line number: 7][Lexem type: SEMI_COLON, lexem: ;, line number: 7]
+[Lexem type: ID, lexem: 6th, line number: 8][Lexem type: SEMI_COLON, lexem: ;, line number: 8]
+[Lexem type: ID, lexem: 7th, line number: 9][Lexem type: SEMI_COLON, lexem: ;, line number: 9]
+[Lexem type: ID, lexem: Ash Blossom & Joyous Spring, line number: 10][Lexem type: SEMI_COLON, lexem: ;, line number: 10]
+[Lexem type: ID, lexem: First, line number: 11][Lexem type: SEMI_COLON, lexem: ;, line number: 11]
+[Lexem type: SENTINEL_END, lexem: }, line number: 12]
+
+[Lexem type: LINE_COMMENT, lexem: //Some other variations exist for errors, but am not specifically noting them in error files., line number: 14]
+[Lexem type: PROBABILITY_START, lexem: scenarios:, line number: 15]
+[Lexem type: SENTINEL_START, lexem: {, line number: 16]
+ [Lexem type: ID, lexem: Duplicate, line number: 17][Lexem type: ASSIGN, lexem: =, line number: 17] [Lexem type: SENTINEL_START, lexem: {, line number: 17][Lexem type: TREE_START, lexem: scenario, line number: 17] [Lexem type: ASSIGN, lexem: =, line number: 17] [Lexem type: SENTINEL_START, lexem: {, line number: 17][Lexem type: CONDITION_CARD_START, lexem: [, line number: 17][Lexem type: ID, lexem: 7th, line number: 17][Lexem type: CONDITION_CARD_END, lexem: ], line number: 17][Lexem type: SENTINEL_END, lexem: }, line number: 17][Lexem type: SEMI_COLON, lexem: ;, line number: 17][Lexem type: SENTINEL_END, lexem: }, line number: 17]
+ 
+ [Lexem type: ID, lexem: Duplicate, line number: 19][Lexem type: ASSIGN, lexem: =, line number: 19] [Lexem type: SENTINEL_START, lexem: {, line number: 19][Lexem type: TREE_START, lexem: scenario, line number: 19] [Lexem type: ASSIGN, lexem: =, line number: 19] [Lexem type: SENTINEL_START, lexem: {, line number: 19][Lexem type: CONDITION_CARD_START, lexem: [, line number: 19][Lexem type: ID, lexem: 6th, line number: 19][Lexem type: CONDITION_CARD_END, lexem: ], line number: 19][Lexem type: SENTINEL_END, lexem: }, line number: 19][Lexem type: SEMI_COLON, lexem: ;, line number: 19][Lexem type: SENTINEL_END, lexem: }, line number: 19] [Lexem type: LINE_COMMENT, lexem: //repeated name error, line number: 19]
+ 
+ [Lexem type: LINE_COMMENT, lexem: //Other variations of missing stuff with binary operators is not specifically tested for but is invalid., line number: 21]
+ [Lexem type: ID, lexem: Binary Operand Missing, line number: 22][Lexem type: ASSIGN, lexem: =, line number: 22] [Lexem type: SENTINEL_START, lexem: {, line number: 22][Lexem type: TREE_START, lexem: scenario, line number: 22] [Lexem type: ASSIGN, lexem: =, line number: 22] [Lexem type: SENTINEL_START, lexem: {, line number: 22][Lexem type: CONDITION_CARD_START, lexem: [, line number: 22][Lexem type: ID, lexem: A, line number: 22][Lexem type: CONDITION_CARD_END, lexem: ], line number: 22] [Lexem type: XOR, lexem: XOR, line number: 22][Lexem type: SENTINEL_END, lexem: }, line number: 22][Lexem type: SEMI_COLON, lexem: ;, line number: 22][Lexem type: SENTINEL_END, lexem: }, line number: 22] [Lexem type: LINE_COMMENT, lexem: //missing operand error, line number: 22]
+ 
+ [Lexem type: ID, lexem: Undefined reference, line number: 24][Lexem type: ASSIGN, lexem: =, line number: 24] [Lexem type: SENTINEL_START, lexem: {, line number: 24][Lexem type: TREE_START, lexem: scenario, line number: 24] [Lexem type: ASSIGN, lexem: =, line number: 24] [Lexem type: SENTINEL_START, lexem: {, line number: 24][Lexem type: CONDITION_SCENARIO_START, lexem: <, line number: 24][Lexem type: ID, lexem: Does Not Exist, line number: 24][Lexem type: CONDITION_SCENARIO_END, lexem: >, line number: 24][Lexem type: SENTINEL_END, lexem: }, line number: 24][Lexem type: SEMI_COLON, lexem: ;, line number: 24][Lexem type: SENTINEL_END, lexem: }, line number: 24][Lexem type: LINE_COMMENT, lexem: //undefined referenced scenario, line number: 24]
+ 
+ [Lexem type: ID, lexem: Empty Scenario Error, line number: 26][Lexem type: ASSIGN, lexem: =, line number: 26] [Lexem type: SENTINEL_START, lexem: {, line number: 26][Lexem type: TREE_START, lexem: scenario, line number: 26] [Lexem type: ASSIGN, lexem: =, line number: 26] [Lexem type: SENTINEL_START, lexem: {, line number: 26][Lexem type: SENTINEL_END, lexem: }, line number: 26][Lexem type: SEMI_COLON, lexem: ;, line number: 26][Lexem type: SENTINEL_END, lexem: }, line number: 26] [Lexem type: LINE_COMMENT, lexem: //empty scenario error, line number: 26]
+ 
+ [Lexem type: ID, lexem: Display Error 1, line number: 28][Lexem type: ASSIGN, lexem: =, line number: 28] [Lexem type: SENTINEL_START, lexem: {, line number: 28][Lexem type: TREE_START, lexem: scenario, line number: 28] [Lexem type: ASSIGN, lexem: =, line number: 28] [Lexem type: SENTINEL_START, lexem: {, line number: 28][Lexem type: CONDITION_CARD_START, lexem: [, line number: 28][Lexem type: ID, lexem: Forth, line number: 28][Lexem type: CONDITION_CARD_END, lexem: ], line number: 28][Lexem type: SENTINEL_END, lexem: }, line number: 28][Lexem type: SEMI_COLON, lexem: ;, line number: 28] [Lexem type: DISPLAY_START, lexem: display, line number: 28] [Lexem type: ASSIGN, lexem: =, line number: 28][Lexem type: SENTINEL_END, lexem: }, line number: 28][Lexem type: LINE_COMMENT, lexem: //invalid display value, line number: 28]
+ 
+ [Lexem type: ID, lexem: Display Error 2, line number: 30][Lexem type: ASSIGN, lexem: =, line number: 30] [Lexem type: SENTINEL_START, lexem: {, line number: 30][Lexem type: TREE_START, lexem: scenario, line number: 30] [Lexem type: ASSIGN, lexem: =, line number: 30] [Lexem type: SENTINEL_START, lexem: {, line number: 30][Lexem type: CONDITION_SCENARIO_START, lexem: <, line number: 30][Lexem type: ID, lexem: Duplicate, line number: 30][Lexem type: CONDITION_SCENARIO_END, lexem: >, line number: 30][Lexem type: SENTINEL_END, lexem: }, line number: 30][Lexem type: SEMI_COLON, lexem: ;, line number: 30] [Lexem type: DISPLAY_START, lexem: display, line number: 30] [Lexem type: ASSIGN, lexem: =, line number: 30] [Lexem type: ID, lexem: invalid_value, line number: 30][Lexem type: SENTINEL_END, lexem: }, line number: 30][Lexem type: LINE_COMMENT, lexem: //invalid display value, line number: 30]
+[Lexem type: SENTINEL_END, lexem: }, line number: 31]
+
+

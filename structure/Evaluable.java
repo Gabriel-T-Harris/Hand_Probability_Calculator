@@ -2,20 +2,23 @@ package structure;
 
 import java.util.ArrayDeque;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
+import java.util.StringJoiner;
+import java.util.Arrays;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
 <b>
 Purpose: Requirement to be a node for evaluation purposes.<br>
-Programmer: Gabriel Toban Harris, Alexander Herman Oxorn <br>
-Date: 2021-07-24
+Programmer: Gabriel Toban Harris, Alexander Oxorn
 </b>
 */
 
-public abstract class Evaluable<T>
+public class Evaluable
 {
     enum TestResult {
         /**
@@ -42,6 +45,10 @@ public abstract class Evaluable<T>
     //TODO: add javadoc
     public final static boolean debugMode = false;
 
+    /**
+     * Name of this object.
+     */
+    public final String NAME;
 
     /**
      * Unique identifier for this node.
@@ -55,29 +62,54 @@ public abstract class Evaluable<T>
 
     /**
      * Constructor to force unified id among all subclasses.
+     *
+     * @param NAME {@link #NAME}
      */
-    public Evaluable()
+    public Evaluable(final String NAME)
     {
-        this.UNIQUE_IDENTIFIER = ++CREATED_NODES_COUNT;
+        this.NAME = NAME;
+        this.UNIQUE_IDENTIFIER = ++Evaluable.CREATED_NODES_COUNT;
     }
 
     /**
-     * Function used to evaluate a node's condition using a rollback evaluation implementation.
-     * Allows for hand to be in an arbitrary order
+     * Output whole tree in dot file format.
      *
-     * @param hand to be checked {@link Collection}
-     * @param next function to call when a leaf node takes a card from the hand
-     * @return a {@link TestResult} used as a signal on what action to preform next
+     * @param START of breath first search
+     *
+     * @return representation of whole structure in dot file format
      */
-    protected abstract <E extends Reservable> TestResult evaluate(final Collection<E> hand, final RollbackCallback next);
+    public static String print_whole_subtree(final Evaluable START)
+    {
+        final StringBuilder OUTPUT = new StringBuilder(2048); //large output
+        final HashSet<Integer> SEEN_NODES = new HashSet<Integer>(); //prevent nodes from being dealt with multiple times, mainly only affects Scenarios
+        final Queue<Evaluable> TRAVERSE_NODES = new ArrayDeque<Evaluable>();
+
+        OUTPUT.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
+
+        //children
+        for (Evaluable placeholder = START; placeholder != null; placeholder = TRAVERSE_NODES.poll())
+        {
+            if (!SEEN_NODES.contains(placeholder.UNIQUE_IDENTIFIER))
+            {
+                SEEN_NODES.add(placeholder.UNIQUE_IDENTIFIER);
+                OUTPUT.append(placeholder); // print out top node
+
+                Collection<? extends Evaluable> children = placeholder.continue_breath_search();
+                if (children != null)
+                    TRAVERSE_NODES.addAll(children); // add children
+            }
+        }
+
+        return OUTPUT.append('}').toString();
+    }
 
     /**
-     * Function used to deprecated_evaluate a node's condition using a rollback evaluation implementation.
-     * Allows for hand to be in an arbitrary order
+     * Allows for hand to be in an arbitrary order. Default entry point where the success callback returns true and the failure callback returns false
      *
-     * Default entry point where the success callback returns true and the failure callback returns false
+     * @param <E> anything that is {@link Reservable} will do
      *
      * @param hand to be checked {@link Collection}
+     *
      * @return If the hand meets a condition
      */
     public <E extends Reservable> boolean evaluate(final Collection<E> hand)
@@ -87,38 +119,73 @@ public abstract class Evaluable<T>
     }
 
     /**
-     * Output whole tree in dot file format.
+     * Function used to evaluate a node's condition using a rollback evaluation implementation.
+     * Allows for hand to be in an arbitrary order
+     *
+     * @param HAND to be checked {@link Collection}
+     * @param NEXT function to call when a leaf node takes a card from the hand
      * 
-     * @param START of breath first search
+     * @return a {@link TestResult} used as a signal on what action to preform next
      */
-    public static String print_whole_subtree(final Evaluable<?> START)
+    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
     {
-        StringBuilder output = new StringBuilder(2048); //large output
-        Queue<Evaluable<?>> traverse_nodes = new ArrayDeque<Evaluable<?>>();
-
-        output.append("digraph {\nnode [shape=record];\nnode [fontname=Sans];charset=\"UTF-8\" splines=true splines=spline rankdir =LR\n");
-
-        //children
-        for (Evaluable<?> placeholder = START; placeholder != null; placeholder = traverse_nodes.poll())
-        {
-            output.append(placeholder); // print out top node
-
-            Collection<? extends Evaluable<?>> children = placeholder.continue_breath_search();
-            if (children != null)
-                traverse_nodes.addAll(children); // add children
-        }
-
-        output.append('}');
-
-        return output.toString();
+        throw new UnsupportedOperationException("Child failed to override me.");
     }
 
     /**
      * Expected to be defined to pass along children for {@link #print_whole_subtree}.
      * 
-     * @return null or children
+     * @return null (for skip this one) or children
      */
-    protected abstract Collection<? extends Evaluable<T>> continue_breath_search();
+    protected Collection<? extends Evaluable> continue_breath_search()
+    {
+        throw new UnsupportedOperationException("Child failed to override me.");
+    }
+
+
+    /**
+     * @return a {@link List} of two {@link StringJoiner}s with ", " delimiter and [ ] prefix and suffix
+     */
+    private static List<StringJoiner> StringJoinerListGenerator() {
+        return Arrays.asList(
+                new StringJoiner(", ", "[", "]"),
+                new StringJoiner(", ", "[", "]")
+        );
+    }
+
+    /**
+     * Takes a {@link Reservable} and adds it to the first {@link StringJoiner} if its reserved and the second
+     * otherwise
+     *
+     * @param partialSum the current state of the two StringJoiners
+     * @param nextElement the next Reservable to add to the StringJoiner
+     */
+    private static void StringJoinerListPartialAdder(List<StringJoiner> partialSum, Reservable nextElement) {
+        partialSum.get(nextElement.isReserved() ? 0 : 1).add(nextElement.toString());
+    }
+
+    /**
+     * Takes two {@link List}s of {@link StringJoiner}s and merges them together index wise
+     *
+     * @param partialSum1 List of StringJoiner to be merged to
+     * @param partialSum2 List of StringJoiner to be merged with
+     * @return partialSum1 after having their elements be merged with partialSum2's
+     */
+    private static List<StringJoiner> StringJoinerListJoiner(List<StringJoiner> partialSum1, List<StringJoiner> partialSum2) {
+        partialSum1.get(0).merge(partialSum2.get(0));
+        partialSum1.get(1).merge(partialSum2.get(1));
+        return partialSum1;
+    }
+
+    /**
+     * Takes a {@link List} of {@link StringJoiner}s returns a {@link List} of their final {@link String}
+     *
+     * @param finalSum StringJoiner after all of the elements have been added
+     * @return The {@link String} representing the joined elements
+     */
+    private static List<String> StringJoinerToStringList(List<StringJoiner> finalSum) {
+        return finalSum.stream().map(StringJoiner::toString).collect(Collectors.toList());
+    }
 
     /**
      * If debugMode is set, print current debug details about the currently executing node
@@ -128,10 +195,15 @@ public abstract class Evaluable<T>
     <E extends Reservable> void printDebugStep(final Collection<E> hand)
     {
         if (debugMode) {
-            System.out.printf("%s ", this);
-            Map<Boolean, List<E>> hand_partition = hand.stream().collect(Collectors.partitioningBy(Reservable::isReserved));
-            System.out.printf("Used Cards: [%s] ", hand_partition.get(true).stream().map(Object::toString).collect(Collectors.joining(",")));
-            System.out.printf("Unused Cards: [%s]\n", hand_partition.get(false).stream().map(Object::toString).collect(Collectors.joining(",")));
+            System.out.print(this + " ");
+            List<String> usedAndUnusedCards = hand.stream().collect(Collector.of(
+                    Evaluable::StringJoinerListGenerator,
+                    Evaluable::StringJoinerListPartialAdder,
+                    Evaluable::StringJoinerListJoiner,
+                    Evaluable::StringJoinerToStringList
+            ));
+            System.out.printf("Used Cards: %s ", usedAndUnusedCards.get(0));
+            System.out.printf("Unused Cards: %s\n", usedAndUnusedCards.get(1));
         }
     }
 }

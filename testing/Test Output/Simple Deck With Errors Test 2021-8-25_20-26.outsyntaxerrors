@@ -1,0 +1,9 @@
+Error: while top of stack is MORE_CARDS and current Token is [Lexem type: SEMI_COLON, lexem: ;, line number: 6]
+Error: while top of stack is MORE_CARDS and current Token is [Lexem type: SEMI_COLON, lexem: ;, line number: 6]
+Error: while top of stack is MORE_CARDS and current Token is [Lexem type: CONDITION_CARD_END, lexem: ], line number: 7]
+Error: while top of stack is MORE_CARDS and current Token is [Lexem type: SEMI_COLON, lexem: ;, line number: 7]
+Error: while top of stack is SEMI_COLON and current Token is [Lexem type: CONDITION_CARD_END, lexem: ], line number: 11]
+Error: while top of stack is SEMI_COLON and current Token is [Lexem type: ID, lexem: sdaga, line number: 11]
+Error: while top of stack is ASSIGN and current Token is [Lexem type: CONDITION_SCENARIO_END, lexem: >, line number: 16]
+Error: while top of stack is TREE and current Token is [Lexem type: SENTINEL_END, lexem: }, line number: 16]
+Current scenario "Invalid name" found around line 17 is malformed. Discarding this scenario.

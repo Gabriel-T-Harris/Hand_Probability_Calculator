@@ -1,0 +1,7 @@
+[Lexem type: DECK_START, lexem: deck list:, line number: 1][Lexem type: SENTINEL_START, lexem: {, line number: 1][Lexem type: SENTINEL_END, lexem: }, line number: 1] [Lexem type: LINE_COMMENT, lexem: // no deck error, line number: 1]
+
+[Lexem type: PROBABILITY_START, lexem: scenarios:, line number: 3][Lexem type: SENTINEL_START, lexem: {, line number: 3][Lexem type: SENTINEL_END, lexem: }, line number: 3] [Lexem type: LINE_COMMENT, lexem: // no scenarios error, line number: 3]
+
+[Lexem type: LINE_COMMENT, lexem: //ending block comment without start, line number: 5]
+
+[Lexem type: ID, lexem: */, line number: 7]
