@@ -22,7 +22,7 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19/2021-8-[22, 23]
+Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19/2021-8-[22, 23]/2021-11-14
 </b>
 */
 
@@ -1226,11 +1226,19 @@ public class Tree_Assembler
         final File OUTPUT_FILE = Starting_Point.add_file_extension(true, Starting_Point.DECKLIST_EXTENSION, PARTIAL_OUTPUT_DIRECTORY);
         try
         {
-            OUTPUT_FILE.createNewFile();
+            OUTPUT_FILE.createNewFile(); //Try creating file first before bothering to assemble its contents.
+
+            final StringBuilder ASSEMBLE_DECKLIST = new StringBuilder("deck list:\n{\n");
+            for (Base_Card card : this.DECK)
+            {
+                ASSEMBLE_DECKLIST.append(card.NAME);
+                ASSEMBLE_DECKLIST.append(";\n");
+            }
+            ASSEMBLE_DECKLIST.append("}\n\n");
+
             try (final PrintWriter DECKLIST_OUTPUT = new PrintWriter(OUTPUT_FILE))
             {
-                for (Deck_Card card : this.DECK)
-                    DECKLIST_OUTPUT.println(card);
+                DECKLIST_OUTPUT.print(ASSEMBLE_DECKLIST.toString());
             }
         }
         catch (IOException ex)
