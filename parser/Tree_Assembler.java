@@ -1,3 +1,19 @@
+/*
+    Copyright (C) 2021 Gabriel Toban Harris
+
+        This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+    along with this program. If not, see <https://www.gnu.org/licenses/>.
+*/
 package parser;
 
 import java.io.File;
@@ -22,7 +38,7 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19/2021-8-[22, 23]
+Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19/2021-8-[22, 23]/2021-11-14
 </b>
 */
 
@@ -1226,11 +1242,19 @@ public class Tree_Assembler
         final File OUTPUT_FILE = Starting_Point.add_file_extension(true, Starting_Point.DECKLIST_EXTENSION, PARTIAL_OUTPUT_DIRECTORY);
         try
         {
-            OUTPUT_FILE.createNewFile();
+            OUTPUT_FILE.createNewFile(); //Try creating file first before bothering to assemble its contents.
+
+            final StringBuilder ASSEMBLE_DECKLIST = new StringBuilder("deck list:\n{\n");
+            for (Base_Card card : this.DECK)
+            {
+                ASSEMBLE_DECKLIST.append(card.NAME);
+                ASSEMBLE_DECKLIST.append(";\n");
+            }
+            ASSEMBLE_DECKLIST.append("}\n\n");
+
             try (final PrintWriter DECKLIST_OUTPUT = new PrintWriter(OUTPUT_FILE))
             {
-                for (Deck_Card card : this.DECK)
-                    DECKLIST_OUTPUT.println(card);
+                DECKLIST_OUTPUT.print(ASSEMBLE_DECKLIST.toString());
             }
         }
         catch (IOException ex)
