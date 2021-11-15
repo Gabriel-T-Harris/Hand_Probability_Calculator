@@ -1,0 +1,60 @@
+//--simulation_results_console --input "Input/Salamangreat.txt"
+deck list:
+{
+Parallel eXceed;
+Parallel eXceed;
+Parallel eXceed;
+Salamangreat Jack Jaguar;
+Salamangreat Falco;
+Salamangreat Gazelle;
+Flame Bufferlo;
+Flame Bufferlo;
+Flame Bufferlo;
+Salamangreat Spinny;
+Salamangreat Spinny;
+Salamangreat Spinny;
+Salamangreat Foxy;
+Salamangreat Foxy;
+Salamangreat Foxy;
+Ash Blossom & Joyous Spring;
+Ash Blossom & Joyous Spring;
+Ash Blossom & Joyous Spring;
+Ghost Belle & Haunted Mansion;
+Ghost Belle & Haunted Mansion;
+Cynet Mining;
+Cynet Mining;
+Cynet Mining;
+Called by the Grave;
+Salamangreat Circle;
+Will of the Salamangreat;
+Will of the Salamangreat;
+Salamangreat Sanctuary;
+Infinite Impermanence;
+Infinite Impermanence;
+Infinite Impermanence;
+Salamangreat Rage;
+Salamangreat Rage;
+Ice Dragon's Prison;
+Ice Dragon's Prison;
+Solemn Strike;
+Solemn Strike;
+Solemn Strike;
+Salamangreat Roar;
+Salamangreat Roar;
+}
+
+//estimate
+scenarios:
+{
+    Effective Salamangreat Gazelle = {scenario = {[Salamangreat Gazelle] OR [Cynet Mining] OR [Salamangreat Circle]};}
+
+    //without Cynet Mining nor Salamangreat Cicle
+    Miragestallio                  = {scenario = {[Salamangreat Spinny] AND [Salamangreat Foxy]};}
+
+    Successful Flame Bufferlo      = {scenario = {[Flame Bufferlo] AND
+                                                  ([Flame Bufferlo] OR [Salamangreat Jack Jaguar] OR [Salamangreat Falco] OR
+                                                  [Flame Bufferlo] OR [Salamangreat Spinny] OR [Salamangreat Foxy] OR ([Parallel eXceed] AND [Parallel eXceed]))
+                                                 };}
+
+    Overall                        = {scenario = {<Effective Salamangreat Gazelle> OR <Miragestallio>};}
+}
