@@ -16,16 +16,17 @@
 */
 package simulation;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
+import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BiPredicate;
+import java.util.function.BooleanSupplier;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import starting_point.Starting_Point;
 import structure.Deck_Card;
 import structure.Evaluable;
@@ -301,7 +302,7 @@ public class Simulation
         final int CORE_COUNT = Runtime.getRuntime().availableProcessors();
 
         if (CORE_COUNT > 1)
-            return this.parallel_simulation(CORE_COUNT, HAND_SIZE, TEST_HAND_COUNT);
+            return this.parallel_simulation2(HAND_SIZE, TEST_HAND_COUNT);
         else if (CORE_COUNT == 1)
             return Simulation.sequential_simulation(HAND_SIZE, TEST_HAND_COUNT, this.DECK, this.FOREST);
         else if (CORE_COUNT < 1)
@@ -309,6 +310,66 @@ public class Simulation
         else
             throw new UnknownError("Impossible Error: somehow value from \"Runtime.getRuntime().availableProcessors();\" resulted in \"" + CORE_COUNT +
                                    "\" which is not < 1, == 1, nor > 1.");
+    }
+
+    protected String parallel_simulation2(final int HAND_SIZE, final int TEST_HAND_COUNT) {
+        class ScenarioCount {
+            final Scenario equation;
+            final AtomicInteger count;
+
+            ScenarioCount(Scenario equation) {
+                this.equation = equation;
+                this.count = new AtomicInteger();
+            }
+        }
+
+        class Equation implements Runnable {
+            final ScenarioCount scenario;
+            final ArrayList<Deck_Card> hand;
+
+            Equation(ScenarioCount equation, ArrayList<Deck_Card> hand) {
+                this.scenario = equation;
+                this.hand = hand;
+            }
+
+            public void run() {
+                if (this.scenario.equation.evaluate(this.hand)) {
+                    this.scenario.count.incrementAndGet();
+                }
+            }
+        }
+
+        class EquationLooper implements Supplier<Equation> {
+            Iterator<ScenarioCount> current;
+            final List<ScenarioCount> list = FOREST.stream().map(ScenarioCount::new).collect(Collectors.toList());
+            ArrayList<Deck_Card> hand;
+
+            @Override
+            public Equation get() {
+                synchronized (list) {
+                    if (current == null || !current.hasNext()) {
+                        hand = draw_hand(HAND_SIZE, DECK);
+                        current = list.iterator();
+                    }
+                    return new Equation(current.next(), Deck_Card.deep_copy(hand));
+                }
+            }
+        }
+
+        final long START_TIME; //simulation start time in milliseconds
+
+        synchronized (Simulation.PARALLEL_SIMULATION_LOCK) {
+            START_TIME = System.currentTimeMillis();
+            EquationLooper evaluator = new EquationLooper();
+            final int FOREST_SIZE = this.FOREST.size();
+
+            Stream<Equation> loopingScenario = Stream.generate(evaluator);
+            loopingScenario.parallel().limit((long) FOREST_SIZE * TEST_HAND_COUNT).forEach(Equation::run);
+
+            AtomicInteger[] HITS = evaluator.list.stream().map(a -> a.count).toArray(AtomicInteger[]::new);
+
+            return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, HITS, this.FOREST);
+        }
     }
 
     /**
