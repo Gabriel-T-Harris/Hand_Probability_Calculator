@@ -483,7 +483,7 @@ public class Simulation
                     //10 ensures that lowest possible argument will still result in a value greater than 1.
                     if (BLOCKING_QUEUE_SIZE > UPPER_THRESHOLD)
                     {
-                        this.partition_count *= Math.log10(10 + BLOCKING_QUEUE_SIZE - UPPER_THRESHOLD);
+                        this.partition_count *= Math.log10(10 - UPPER_THRESHOLD + BLOCKING_QUEUE_SIZE);
                         this.set_partition_count_related_values();
                     }
                     else if (LOWER_THRESHOLD > BLOCKING_QUEUE_SIZE)
@@ -526,12 +526,13 @@ public class Simulation
 
         synchronized (Simulation.PARALLEL_SIMULATION_LOCK)
         {
+            TASK_OVERSEER.prestartAllCoreThreads();
             START_TIME = System.currentTimeMillis();
             TASK_OVERSEER.execute(new Task_Manager(TASK_OVERSEER, HITS, this.DECK, this.FOREST));
 
             try
             {
-                final int MAX_DURATION = 15;
+                final int MAX_DURATION = 10;
                 final TimeUnit TEMPORAL_UNIT = TimeUnit.MINUTES;
                 final String TEMPORAL_UNIT_TEXT = TEMPORAL_UNIT.name().toLowerCase();
                 if (!TASK_OVERSEER.awaitTermination(MAX_DURATION, TEMPORAL_UNIT))
