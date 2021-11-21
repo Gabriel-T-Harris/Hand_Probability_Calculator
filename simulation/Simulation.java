@@ -23,6 +23,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.BiPredicate;
 import java.util.function.BooleanSupplier;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -252,24 +253,59 @@ public class Simulation
      */
     public static <C extends Collection<Scenario>> ArrayList<Scenario> purify_forest(final C RAW_FOREST)
     {
-        ArrayList<Scenario> filtered_trees = new ArrayList<Scenario>(RAW_FOREST.parallelStream().filter(tree -> tree.DISPLAY).collect(Collectors.toList()));
+        ArrayList<Scenario> filtered_trees = RAW_FOREST.parallelStream().filter(tree -> tree.DISPLAY).collect(Collectors.toCollection(ArrayList::new));
         filtered_trees.trimToSize();
         return filtered_trees;
     }
 
     /**
      * Subroutine to draw a hand. Note, returns shallow.
-     * 
+     *
      * @param <R> the type of cards in the deck
-     * 
+     *
      * @param HAND_SIZE to draw, should be >= DECK's size
      * @param DECK to draw from
-     * 
+     *
      * @return created hand, backed  ({@link ArrayList#subList(int, int)}) by the original deck
      */
     public static <R extends Reservable> ArrayList<R> draw_hand(final int HAND_SIZE, final ArrayList<R> DECK)
     {
         Collections.shuffle(DECK);
+        return new ArrayList<R>(DECK.subList(0, HAND_SIZE));
+    }
+
+    /**
+     * Subroutine to draw a hand. Note, returns shallow.
+     *
+     * @param <R> the type of cards in the deck
+     *
+     * @param HAND_SIZE to draw, should be >= DECK's size
+     * @param DECK to draw from
+     *
+     * @return created hand, backed  ({@link ArrayList#subList(int, int)}) by the original deck
+     */
+    public static <R extends Reservable> ArrayList<R> sample_hand(final int HAND_SIZE, final ArrayList<R> DECK, Random r)
+    {
+        // Based on libstdc++'s implementation of std::sample
+        ArrayList<R> toReturn = new ArrayList<>(HAND_SIZE);
+        Iterator<R> inputIterator = DECK.iterator();
+
+        int unsampled_size = DECK.size();
+        int n = Math.min(HAND_SIZE, unsampled_size);
+
+        for (R current = inputIterator.next(); n != 0; current = inputIterator.next()) {
+            if(r.nextInt(--unsampled_size) < n) {
+                toReturn.add(current);
+                --n;
+            }
+        }
+
+        return toReturn;
+    }
+
+    public static <R extends Reservable> ArrayList<R> draw_hand(final int HAND_SIZE, final ArrayList<R> DECK, Random rnd)
+    {
+        Collections.shuffle(DECK, rnd);
         return new ArrayList<R>(DECK.subList(0, HAND_SIZE));
     }
 
@@ -302,6 +338,7 @@ public class Simulation
         final int CORE_COUNT = Runtime.getRuntime().availableProcessors();
 
         if (CORE_COUNT > 1)
+//            return this.parallel_simulation(CORE_COUNT, HAND_SIZE, TEST_HAND_COUNT);
             return this.parallel_simulation2(HAND_SIZE, TEST_HAND_COUNT);
         else if (CORE_COUNT == 1)
             return Simulation.sequential_simulation(HAND_SIZE, TEST_HAND_COUNT, this.DECK, this.FOREST);
@@ -321,52 +358,49 @@ public class Simulation
                 this.equation = equation;
                 this.count = new AtomicInteger();
             }
-        }
 
-        class Equation implements Runnable {
-            final ScenarioCount scenario;
-            final ArrayList<Deck_Card> hand;
-
-            Equation(ScenarioCount equation, ArrayList<Deck_Card> hand) {
-                this.scenario = equation;
-                this.hand = hand;
-            }
-
-            public void run() {
-                if (this.scenario.equation.evaluate(this.hand)) {
-                    this.scenario.count.incrementAndGet();
+            void run_hand(ArrayList<Deck_Card> hand) {
+                if (this.equation.evaluate(hand)) {
+                    this.count.incrementAndGet();
                 }
             }
         }
 
-        class EquationLooper implements Supplier<Equation> {
-            Iterator<ScenarioCount> current;
-            final List<ScenarioCount> list = FOREST.stream().map(ScenarioCount::new).collect(Collectors.toList());
-            ArrayList<Deck_Card> hand;
+        final List<ScenarioCount> forestCount = FOREST.stream().map(ScenarioCount::new).collect(Collectors.toList());
 
+        /*
+         Minimalist Strategy
+         Only create a single thread for each drawn hand, and have each hand test all scenarios
+         */
+        class HandGenerator implements Supplier<ArrayList<Deck_Card>> {
             @Override
-            public Equation get() {
-                synchronized (list) {
-                    if (current == null || !current.hasNext()) {
-                        hand = draw_hand(HAND_SIZE, DECK);
-                        current = list.iterator();
-                    }
-                    return new Equation(current.next(), Deck_Card.deep_copy(hand));
+            public ArrayList<Deck_Card> get() {
+                synchronized (DECK) {
+                    return Deck_Card.deep_copy(draw_hand(HAND_SIZE, DECK));
                 }
             }
         }
+
+        class HandTester implements Consumer<ArrayList<Deck_Card>> {
+            @Override
+            public void accept(ArrayList<Deck_Card> hand) {
+                for(ScenarioCount sc : forestCount) {
+                    sc.run_hand(hand);
+                    reset_hand(hand);
+                }
+            }
+        }
+
 
         final long START_TIME; //simulation start time in milliseconds
 
         synchronized (Simulation.PARALLEL_SIMULATION_LOCK) {
             START_TIME = System.currentTimeMillis();
-            EquationLooper evaluator = new EquationLooper();
-            final int FOREST_SIZE = this.FOREST.size();
 
-            Stream<Equation> loopingScenario = Stream.generate(evaluator);
-            loopingScenario.parallel().limit((long) FOREST_SIZE * TEST_HAND_COUNT).forEach(Equation::run);
+            Stream<ArrayList<Deck_Card>> random_hands = Stream.generate(new HandGenerator());
+            random_hands.parallel().limit(TEST_HAND_COUNT).forEach(new HandTester());
 
-            AtomicInteger[] HITS = evaluator.list.stream().map(a -> a.count).toArray(AtomicInteger[]::new);
+            AtomicInteger[] HITS = forestCount.stream().map(a -> a.count).toArray(AtomicInteger[]::new);
 
             return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, HITS, this.FOREST);
         }
@@ -391,12 +425,12 @@ public class Simulation
             /**
              * Counts number of times this test has passed.
              */
-            private final AtomicInteger HIT_COUNTER;
+            private final AtomicInteger[] HIT_COUNTER;
 
             /**
              * How to test hand.
              */
-            private final Scenario EQUATION;
+            private final ArrayList<Scenario> EQUATION;
 
             /**
              * Hand to be tested.
@@ -410,7 +444,7 @@ public class Simulation
              * @param EQUATION to perform testing on {@link #TEST_HAND} 
              * @param TEST_HAND to be tested by {@link #EQUATION}
              */
-            public Hand_Tester(final AtomicInteger HIT_COUNTER, final Scenario EQUATION, final ArrayList<Deck_Card> TEST_HAND)
+            public Hand_Tester(final AtomicInteger[] HIT_COUNTER, final ArrayList<Scenario> EQUATION, final ArrayList<Deck_Card> TEST_HAND)
             {
                 this.HIT_COUNTER = HIT_COUNTER;
                 this.EQUATION = EQUATION;
@@ -420,8 +454,12 @@ public class Simulation
             @Override
             public void run()
             {
-                if (this.EQUATION.evaluate(this.TEST_HAND))
-                    this.HIT_COUNTER.incrementAndGet();
+                for (int i = 0; i < this.EQUATION.size(); ++i) {
+                    Scenario branch = this.EQUATION.get(i);
+                    if (branch.evaluate(this.TEST_HAND))
+                        this.HIT_COUNTER[i].incrementAndGet();
+                    reset_hand(this.TEST_HAND);
+                }
             }
         }
 
@@ -553,6 +591,8 @@ public class Simulation
                 //control partition size
                 {
                     final int BLOCKING_QUEUE_SIZE = this.TASK_OVERSEER.getQueue().size();
+                    /*System.err.printf("Blocking queue size: %d, Completed Tasks: %d, Available Processors: %d, Partition Count %d, Partition Size %d\n",
+                            BLOCKING_QUEUE_SIZE, this.TASK_OVERSEER.getTaskCount(), Runtime.getRuntime().availableProcessors(), this.partition_count, this.partition_size);*/
                     //Magic numbers have been tested to be rather good, also feels right as well.
                     final int UPPER_THRESHOLD = 125;
                     final int LOWER_THRESHOLD = 25;
@@ -589,9 +629,7 @@ public class Simulation
                         current_hand = Deck_Card.deep_copy(draw_hand(HAND_SIZE, this.DECK));
                     }
 
-                    this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS[0], this.FOREST.get(0), current_hand));
-                    for (int j = 1; j < this.FOREST.size(); ++j)
-                        this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS[j], this.FOREST.get(j), Deck_Card.deep_copy(current_hand)));
+                    this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS, this.FOREST, current_hand));
                 }
             }
         }
