@@ -2,13 +2,31 @@
 
 ## Introduction
 
-This application calculates the chance of drawing a particular hand from a given finite deck. Both are defined at runtime. Obviously, hands are drawn without replacement. The calculation is performed through simulation (due to the mathematics being a bit too complex for the complicated expressions that a user may define).
+This application calculates the chance of drawing a particular hand from a given finite deck. Both are defined at runtime. Obviously, hands are drawn without replacement. The calculation is performed through simulation (due to the mathematics requiring a dynamic exponential equation to account for overlapping scenarios).
 
 Pull requests welcome.
 
 ## How To Use
 
-//TODO: complete when application is ready for deployment
+### Prerequisites
+
+Are simply at least Java 8 and a configuration file to read. In terms of hardware, the program is written to either run in sequential mode which uses the minimum about of resources or parallel mode. Parallel mode is written to automatically adjust its resource use based on available hardware.
+
+One can simply check that they have Java installed by running the command `java -version` in one's terminal. Of it says something like 1.8... (or higher) then it is probably installed properly. Otherwise go install it, is a rather simple process. 
+
+### How to Run
+
+Simply enter into a terminal `java -jar Hand_Probability_Calculator_V1_GTH_2021.jar`. The JAR can be run from anywhere, just specify its location.
+
+Typically one will also specify some additional arguments, such as both "--input" and "--simulation_results_console". An explanation on them can be found in the Command Line Arguments section.
+
+The format for running with arguments is `java -jar Hand_Probability_Calculator_V1_GTH_2021.jar --arguments -flags`. The combination of both flags and arguments, can be placed in any order.
+
+### Advanced Run Options
+
+The following is for advanced Java users or people willing to throw 'random' commands into a terminal.
+
+//TODO: complete when figured out runtime memory allocations for J.V.M..
 
 ## Command Line Arguments
 
