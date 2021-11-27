@@ -22,12 +22,6 @@ Typically one will also specify some additional arguments, such as both "--input
 
 The format for running with arguments is `java -jar Hand_Probability_Calculator_V1_GTH_2021.jar --arguments -flags`. The combination of both flags and arguments, can be placed in any order.
 
-### Advanced Run Options
-
-The following is for advanced Java users or people willing to throw 'random' commands into a terminal.
-
-//TODO: complete when figured out runtime memory allocations for J.V.M..
-
 ## Command Line Arguments
 
 The lack of any of the following will result in their corresponding default value being used. Flags take no arguments, but parameters must be followed by an argument. 
