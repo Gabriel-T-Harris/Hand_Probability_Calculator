@@ -33,7 +33,7 @@ The lack of any of the following will result in their corresponding default valu
 - --verbose: is for all files relating to error logs to be created. As well as for files that shows the progress of the program.
 - --scenario_output_flag: outputs all scenarios in dot file format. Be careful with using this, as it creates a lot of files, about equal to all the other output files that the other flags would create, combined.
 - --simulation_results_console: to have the simulation results be output to console instead of in a created file.
-- --force_sequential: to force the program to perform the simulation sequentially rather then allowing the program to pick sequential or parallel.
+- --force_sequential: to force the program to perform the simulation sequentially rather than allowing the program to pick sequential or parallel.
 
 ### Parameters
 
