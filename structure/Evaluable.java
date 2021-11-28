@@ -57,7 +57,9 @@ public class Evaluable
         TestResult call();
     }
 
-    //TODO: add javadoc
+    /**
+     * Essentially acts like ifdef for sections of code.
+     */
     public final static boolean debugMode = false;
 
     /**

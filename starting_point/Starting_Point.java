@@ -112,7 +112,7 @@ public class Starting_Point
      * Name of the authors of this program and where it can be downloaded from
      */
     public final static String AUTHORS = "Created by both Gabriel Toban Harris and Alexander Oxorn. " +
-                                         "Most recent releases can be found at \"https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator\".";
+                                         "Most recent release can be found at \"https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator\".";
 
     /**
      * Simple pattern that matches using the predefined horizontal whitespace character. Equivalent to "[ \t\xA0\u1680\u180e\u2000-\u200a\u202f\u205f\u3000]".
