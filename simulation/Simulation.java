@@ -363,42 +363,20 @@ public class Simulation
                 if (this.equation.evaluate(hand)) {
                     this.count.incrementAndGet();
                 }
+                reset_hand(hand);
             }
         }
 
         final List<ScenarioCount> forestCount = FOREST.stream().map(ScenarioCount::new).collect(Collectors.toList());
-
-        /*
-         Minimalist Strategy
-         Only create a single thread for each drawn hand, and have each hand test all scenarios
-         */
-        class HandGenerator implements Supplier<ArrayList<Deck_Card>> {
-            @Override
-            public ArrayList<Deck_Card> get() {
-                synchronized (DECK) {
-                    return Deck_Card.deep_copy(draw_hand(HAND_SIZE, DECK));
-                }
-            }
-        }
-
-        class HandTester implements Consumer<ArrayList<Deck_Card>> {
-            @Override
-            public void accept(ArrayList<Deck_Card> hand) {
-                for(ScenarioCount sc : forestCount) {
-                    sc.run_hand(hand);
-                    reset_hand(hand);
-                }
-            }
-        }
-
-
         final long START_TIME; //simulation start time in milliseconds
 
         synchronized (Simulation.PARALLEL_SIMULATION_LOCK) {
             START_TIME = System.currentTimeMillis();
 
-            Stream<ArrayList<Deck_Card>> random_hands = Stream.generate(new HandGenerator());
-            random_hands.parallel().limit(TEST_HAND_COUNT).forEach(new HandTester());
+            Stream.generate(() -> Deck_Card.deep_copy(draw_hand(HAND_SIZE, DECK)))
+                    .parallel()
+                    .limit(TEST_HAND_COUNT)
+                    .forEach(hand -> forestCount.forEach(fc -> fc.run_hand(hand)));
 
             AtomicInteger[] HITS = forestCount.stream().map(a -> a.count).toArray(AtomicInteger[]::new);
 
