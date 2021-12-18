@@ -36,7 +36,7 @@ import structure.Scenario;
 <b>
 Purpose: final step which performs the actual simulation.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-04/2021-8-[17-22]
+Date: 2021-08-04/2021-8-[17-22]/2021-12-18
 </b>
 */
 
@@ -82,7 +82,10 @@ public class Simulation
     }
 
     /**
-     * Carries out serial simulation with negligible (if any) parallelization. The trade off off with {@link #parallel_simulation(int, int, int)} is time for resources.
+     * <p>Carries out serial simulation with negligible (if any) parallelization. The trade off off with {@link #parallel_simulation(int, int, int)} is time for resources.</p>
+     * 
+     * <p>Note: Only instance should ever be running due to calling {@link #draw_hand(int, ArrayList)}, thereby making this not synchronization safe.
+     * Such is intentional for performance reasons. As well as it is not meant to be run in parallel, unlike {@link #parallel_simulation(int, int, int)}.</p>
      * 
      * @param <D> type of cards being used, suggest using {@link Deck_Card}
      * @param <F> type of {@link Evaluable}, suggest using {@link Scenario}
@@ -94,8 +97,7 @@ public class Simulation
      * 
      * @return result of simulation
      */
-    public static <D extends Reservable, F extends Evaluable> String sequential_simulation(final int HAND_SIZE, final int TEST_HAND_COUNT, final ArrayList<D> DECK,
-                                                                                          final ArrayList<F> FOREST)
+    public static <D extends Reservable, F extends Evaluable> String sequential_simulation(final int HAND_SIZE, final int TEST_HAND_COUNT, final ArrayList<D> DECK, final ArrayList<F> FOREST)
     {
         final long START_TIME = System.currentTimeMillis(); //simulation start time in milliseconds
         final long HITS[] = new long[FOREST.size()];
@@ -113,7 +115,7 @@ public class Simulation
             }
         }
 
-        return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, HITS, FOREST);
+        return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, (System.currentTimeMillis() - START_TIME) / 1000d, HITS, FOREST);
     }
 
     /**
@@ -121,12 +123,12 @@ public class Simulation
      * 
      * @param HAND_SIZE of the hand which will be used in the simulation
      * @param TEST_HAND_COUNT number of times to run simulation
-     * @param START_TIME start time of simulation in milliseconds {@link System#currentTimeMillis()}
+     * @param SIMULATION_DURATION of simulation in seconds
      * @param WRAPPED_VALUES a simple tuple with the names of that which was tested and the percentage of tested hands that matched
      * 
      * @return the created output
      */
-    public static String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final long START_TIME, final Comparable_Result_Pair[] WRAPPED_VALUES)
+    public static String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final double SIMULATION_DURATION, final Comparable_Result_Pair[] WRAPPED_VALUES)
     {
         final StringBuilder RESULTS = new StringBuilder(1024);
 
@@ -137,7 +139,7 @@ public class Simulation
         RESULTS.append("\nnumber of test hands: ");
         RESULTS.append(TEST_HAND_COUNT);
         RESULTS.append("\nSimulation duration (seconds): ");
-        RESULTS.append((System.currentTimeMillis() - START_TIME) / 1000d);
+        RESULTS.append(SIMULATION_DURATION);
         RESULTS.append("\n\n");
 
         Arrays.parallelSort(WRAPPED_VALUES, Collections.reverseOrder()); //sort from high to low
@@ -155,23 +157,22 @@ public class Simulation
     }
 
     /**
-     * Subroutine for assembling the results of a simulation.
+     * <p>Subroutine for assembling the results of a simulation.</p>
      * 
-     * Note is expected that the length of MATCHES equals the size of EQUATIONS. As they have a one to one correspondence.
+     * <p>Note is expected that the length of MATCHES equals the size of EQUATIONS. As they have a one to one correspondence.</p>
      * 
      * @param <E> anything which extends {@link Evaluable}
      * @param <C> the type of cards in the deck
      * 
      * @param HAND_SIZE of the hand which will be used in the simulation
      * @param TEST_HAND_COUNT number of times to run simulation
-     * @param START_TIME start time of simulation in milliseconds {@link System#currentTimeMillis()}
+     * @param SIMULATION_DURATION of simulation in seconds
      * @param MATCHES number of times the corresponding equation was matched
      * @param EQUATIONS names of {@link Evaluable} that were just calculated and stored respectively in MATCHES
      * 
      * @return the created output
      */
-    public static <E extends Evaluable, C extends Collection<E>> String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final long START_TIME,
-                                                                                                    final long[] MATCHES, final C EQUATIONS)
+    public static <E extends Evaluable, C extends Collection<E>> String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final double SIMULATION_DURATION, final long[] MATCHES, final C EQUATIONS)
     {
         assert (MATCHES.length == EQUATIONS.size());
         final Comparable_Result_Pair[] WRAPPED_VALUES = new Comparable_Result_Pair[MATCHES.length];
@@ -185,27 +186,26 @@ public class Simulation
                 WRAPPED_VALUES[i] = new Comparable_Result_Pair(MATCHES[i] * TO_PERCENTAGE, WALKER.next().NAME);
         }
 
-        return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, WRAPPED_VALUES);
+        return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, SIMULATION_DURATION, WRAPPED_VALUES);
     }
 
     /**
-     * Subroutine for assembling the results of a simulation.
+     * <p>Subroutine for assembling the results of a simulation.</p>
      * 
-     * Note is expected that the length of MATCHES equals the size of EQUATIONS. As they have a one to one correspondence.
+     * <p>Note is expected that the length of MATCHES equals the size of EQUATIONS. As they have a one to one correspondence.</p>
      * 
      * @param <E> anything which extends {@link Evaluable}
      * @param <C> the type of cards in the deck
      * 
      * @param HAND_SIZE of the hand which will be used in the simulation
      * @param TEST_HAND_COUNT number of times to run simulation
-     * @param START_TIME start time of simulation in milliseconds {@link System#currentTimeMillis()}
+     * @param SIMULATION_DURATION of simulation in seconds
      * @param MATCHES number of times the corresponding equation was matched
      * @param EQUATIONS names of {@link Evaluable} that were just calculated and stored respectively in MATCHES
      * 
      * @return the created output
      */
-    public static <E extends Evaluable, C extends Collection<E>> String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final long START_TIME,
-                                                                                                    final AtomicInteger[] MATCHES, final C EQUATIONS)
+    public static <E extends Evaluable, C extends Collection<E>> String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final double SIMULATION_DURATION, final AtomicInteger[] MATCHES, final C EQUATIONS)
     {
         assert (MATCHES.length == EQUATIONS.size());
         final Comparable_Result_Pair[] WRAPPED_VALUES = new Comparable_Result_Pair[MATCHES.length];
@@ -219,7 +219,7 @@ public class Simulation
                 WRAPPED_VALUES[i] = new Comparable_Result_Pair(MATCHES[i].get() * TO_PERCENTAGE, WALKER.next().NAME);
         }
 
-        return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, WRAPPED_VALUES);
+        return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, SIMULATION_DURATION, WRAPPED_VALUES);
     }
 
     /**
@@ -257,7 +257,7 @@ public class Simulation
     }
 
     /**
-     * Subroutine to draw a hand. Note, returns shallow.
+     * Subroutine to draw a hand. Note, returns shallow references. Additionally is intentionally not synchronized for performance.
      * 
      * @param <R> the type of cards in the deck
      * 
@@ -567,6 +567,6 @@ public class Simulation
             }
         }
 
-        return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, HITS, this.FOREST);
+        return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, (System.currentTimeMillis() - START_TIME) / 1000d, HITS, this.FOREST);
     }
 }
