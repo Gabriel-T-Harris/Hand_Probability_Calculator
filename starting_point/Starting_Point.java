@@ -384,7 +384,7 @@ public class Starting_Point
         {
             String partial_output_directory = Starting_Point.output_location + Starting_Point.sanatize_file_name(INPUT_FILE.getName());
             File lexical_error_output_file = null, lexical_correct_output_file = null, syntactical_error_output_file = null, syntactical_derivation_output_file = null;
-            final Simulation simulator; //does the simulation
+            final Simulation SIMULATOR; //does the simulation
 
             //create files
             if (verbose)
@@ -536,7 +536,7 @@ public class Starting_Point
                 if (Starting_Point.scenario_output)
                     GROW_FOREST.print_out_results(partial_output_directory); //Output decklist and all scenarios in dot format.
 
-                simulator = GROW_FOREST.create_result(); //create simulation from parsed tokens
+                SIMULATOR = GROW_FOREST.create_result(); //create simulation from parsed tokens
             }
             catch (FileNotFoundException ex)
             {
@@ -552,10 +552,10 @@ public class Starting_Point
 
             //perform simulation
             {
-                String results = simulator.simulate(Starting_Point.force_sequential, Starting_Point.hand_size, Starting_Point.test_hands);
+                final String RESULTS = SIMULATOR.simulate(Starting_Point.force_sequential, Starting_Point.hand_size, Starting_Point.test_hands);
 
                 if (Starting_Point.simulation_results_console)
-                    System.out.print(results);
+                    System.out.print(RESULTS);
                 else
                 {
                     final File OUTPUT_FILE = Starting_Point.add_file_extension(true, Starting_Point.SIMULATION_RESULTS_EXTENSION, partial_output_directory);
@@ -565,14 +565,14 @@ public class Starting_Point
                         OUTPUT_FILE.createNewFile();
                         try (final PrintWriter SIMULATION_RESULTS_OUTPUT = new PrintWriter(OUTPUT_FILE))
                         {
-                            SIMULATION_RESULTS_OUTPUT.print(results);
+                            SIMULATION_RESULTS_OUTPUT.print(RESULTS);
                         }
                     }
                     catch (IOException ex)
                     {
                         System.err.println("Error caused with following path: " + OUTPUT_FILE.getAbsolutePath() +
                                            ", thus could not output its results to a file, diverting to outputting to console instead.\n" + ex.getMessage());
-                        System.out.print(results);
+                        System.out.print(RESULTS);
                     }
                 }
             }
