@@ -577,7 +577,7 @@ public class Starting_Point
                 }
             }
         }
-        else if (Starting_Point.error_reporting)
+        else
             System.err.println("Chosen file: " + INPUT_FILE.getAbsolutePath() + ", either does not exist or has improper extension.");
     }
 }
