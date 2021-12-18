@@ -1,0 +1,39 @@
+Special Abilities:
+-Dimensional expansion to both the hand being tested and the capabilities of the program.
+-Evaluate at the level in which hands are drawn.
+-Transform hand into new custom Locations object. Hashmap -> arraylist for locations. Some functions for handling internals too.
+    -Change evaluation stuff accordingly.
+    -Hashmap be scalable.
+-Alter parsing stuff to account for new Special Ability section. Place section between decklist and scenarios.
+    -Essentially all the parsing stuff. As new locations means new places to look.
+-Ensure lack of optional section does not reduce performance compared to previous version.
+-Implement some deterministic abilities.
+    -Draw
+    -send cards to a location
+        -Mill
+        -Banish
+    -Examples: Pot of Greed, Reasoning, Pot of Desires, maybe Pot of Extravagance.
+-Additionally have activation limitations, defaulting to infinite.
+
+Custom Parallelisation Algorithm:
+-Collapse parallelisation at Scenario level to reduce amount of object creation. Additionally object recreation is more expensive then reseting said objects.
+-Potentially factor out into own library, then call said library.
+-Replace magic numbers representing task backlog range with a slightly reduced calculated values.
+    -Factor in number of processors.
+    -Objective is also to reduce memory use by a bit. This will have multiplicative effect, given predicted increase memory use.
+
+Other:
+-Introduce breaking change of "deck list" to "decklist" in configuration files.
+-Write out some example usages of Special Abilities.
+-New operator like a combinator
+    -Given set of A items choose B of them (none-repeat), in which B < A.
+    -Would ease scenario writing without proving anything new in terms of computability.
+    -Example: (A AND B) OR (A AND C) OR (B AND C), would be written as new operator choose 2 of {A, B, C}.
+    -Figure out format.
+
+Next Version:
+-Expand Special Abilities to incorporate/handle ones which branch into multiple 'hands'.
+    -For example, Pot of Duality, Pot of Prosperity, and Graceful Charity.
+    -Not going to bother with something like Draco-Face Off, but is implementable in the same vein.
+    -Excavate
+    -Also will result in some grammar changes.
