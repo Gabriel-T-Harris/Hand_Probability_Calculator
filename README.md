@@ -4,7 +4,7 @@
 
 This application calculates the chance of drawing a particular hand from a given finite deck. Both are defined at runtime. Obviously, hands are drawn without replacement. The calculation is performed through simulation (due to the mathematics requiring a dynamic exponential equation to account for overlapping scenarios).
 
-Most recent releases found at https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator/releases.
+Releases found at https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator/releases.
 
 Pull requests welcome.
 
