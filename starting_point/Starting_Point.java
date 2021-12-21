@@ -167,8 +167,8 @@ public class Starting_Point
         if (args.length > 0)
         {
             final String ERROR_REPORTING_FLAG = "--error_reporting", HELP_FLAG = "--help", VERBOSE_FLAG = "--verbose", SCENARIO_OUTPUT_FLAG = "--scenario_output_flag",
-                    SIMULATION_RESULTS_CONSOLE_FLAG = "--simulation_results_console", FORCE_SEQUENTIAL_FLAG = "--force_sequential", DISPLAY_PROGRESS_FLAG = "--display_progress",
-                    INPUT_PARAMETER = "--input", OUTPUT_PARAMETER = "--output", HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
+                         SIMULATION_RESULTS_CONSOLE_FLAG = "--simulation_results_console", FORCE_SEQUENTIAL_FLAG = "--force_sequential", DISPLAY_PROGRESS_FLAG = "--display_progress",
+                         INPUT_PARAMETER = "--input", OUTPUT_PARAMETER = "--output", HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
 
 
             for (int i = 0; i < args.length; ++i)
@@ -196,8 +196,8 @@ public class Starting_Point
                                    SIMULATION_RESULTS_CONSOLE_FLAG + ": to have the simulation results be output to console instead of in a created file.\n" +
                                    FORCE_SEQUENTIAL_FLAG + ": to force the program to perform the simulation sequentially rather then allowing the program to pick sequential or parallel.\n" +
                                    DISPLAY_PROGRESS_FLAG + ": to display simulation progress, generally should not be used as results in the program taking about 2.5 times longer.\n" +
-                                   OUTPUT_PARAMETER + ": is where created files will go.\n" +
-                                   INPUT_PARAMETER + ": is where to look for configuration file. If the value is a file will read only that one, else if is directory, then will read all files in that directory." +
+                                   OUTPUT_PARAMETER + ": is where created files will go. Careful about trailing slashes, or surround it with quotation marks.\n" +
+                                   INPUT_PARAMETER + ": is where to look for configuration file. If the value is a file will read only that one, else if is directory, then will read all files in that directory. Careful about trailing slashes, or surround it with quotation marks." +
                                    HAND_SIZE_PARAMETER + ": is starting hand size.\n" +
                                    TEST_HANDS_PARAMETER + ": is the number hands to simulate.");
                 return;

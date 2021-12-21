@@ -41,8 +41,8 @@ The lack of any of the following will result in their corresponding default valu
 
 ### Parameters
 
-- --input: is where to look for configuration file. If the value is a file, then will read only that one; else if it is a directory, then will read all files in that directory.
-- --output: is where created files will go.
+- --input: is where to look for configuration file. If the value is a file, then will read only that one; else if it is a directory, then will read all files in that directory. Careful about trailing slashes, or surround it with quotation marks.
+- --output: is where created files will go. Careful about trailing slashes, or surround it with quotation marks.
 - --hand_size: is starting hand size.
 - --test_hands: is the number of hands to simulate.
 
