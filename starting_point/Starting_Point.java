@@ -37,7 +37,7 @@ import simulation.Simulation;
 <b>
 Purpose: To be the central part which calls and runs the other parts. With the goal of calculating probability of a given hand.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-30/2021-8-1/2021-8-4/2021-8-[11, 13]/2021-8-17/2021-8-19/2021-8-21/2021-8-23
+Date: 2021-07-30/2021-8-1/2021-8-4/2021-8-[11, 13]/2021-8-17/2021-8-19/2021-8-21/2021-8-23/2021-12-20
 </b>
 */
 
@@ -140,6 +140,11 @@ public class Starting_Point
     private static boolean force_sequential = false;
 
     /**
+     * True to display progress, false not to. Having it true results in the program taking 2.5 times longer.
+     */
+    private static boolean display_progress = false;
+
+    /**
      * size of hands to draw during simulation
      */
     private static int hand_size = Starting_Point.DEFAULT_HAND_SIZE;
@@ -162,8 +167,8 @@ public class Starting_Point
         if (args.length > 0)
         {
             final String ERROR_REPORTING_FLAG = "--error_reporting", HELP_FLAG = "--help", VERBOSE_FLAG = "--verbose", SCENARIO_OUTPUT_FLAG = "--scenario_output_flag",
-                         SIMULATION_RESULTS_CONSOLE_FLAG = "--simulation_results_console", FORCE_SEQUENTIAL_FLAG = "--force_sequential", INPUT_PARAMETER = "--input",
-                         OUTPUT_PARAMETER = "--output", HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
+                    SIMULATION_RESULTS_CONSOLE_FLAG = "--simulation_results_console", FORCE_SEQUENTIAL_FLAG = "--force_sequential", DISPLAY_PROGRESS_FLAG = "--display_progress",
+                    INPUT_PARAMETER = "--input", OUTPUT_PARAMETER = "--output", HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
 
 
             for (int i = 0; i < args.length; ++i)
@@ -175,7 +180,7 @@ public class Starting_Point
 
             final Command_Line_Argument_Parser PARSED_ARGUMENTS = new Command_Line_Argument_Parser(Starting_Point.error_reporting);
 
-            PARSED_ARGUMENTS.add_flags(ERROR_REPORTING_FLAG, HELP_FLAG, VERBOSE_FLAG, SCENARIO_OUTPUT_FLAG, SIMULATION_RESULTS_CONSOLE_FLAG, FORCE_SEQUENTIAL_FLAG);
+            PARSED_ARGUMENTS.add_flags(ERROR_REPORTING_FLAG, HELP_FLAG, VERBOSE_FLAG, SCENARIO_OUTPUT_FLAG, SIMULATION_RESULTS_CONSOLE_FLAG, FORCE_SEQUENTIAL_FLAG, DISPLAY_PROGRESS_FLAG);
             PARSED_ARGUMENTS.add_parameters(INPUT_PARAMETER, OUTPUT_PARAMETER, HAND_SIZE_PARAMETER, TEST_HANDS_PARAMETER);
             PARSED_ARGUMENTS.parse(args);
 
@@ -190,6 +195,7 @@ public class Starting_Point
                                    SCENARIO_OUTPUT_FLAG + ": to output read decklist and scenarios in dot file format.\n" +
                                    SIMULATION_RESULTS_CONSOLE_FLAG + ": to have the simulation results be output to console instead of in a created file.\n" +
                                    FORCE_SEQUENTIAL_FLAG + ": to force the program to perform the simulation sequentially rather then allowing the program to pick sequential or parallel.\n" +
+                                   DISPLAY_PROGRESS_FLAG + ": to display simulation progress, generally should not be used as results in the program taking about 2.5 times longer.\n" +
                                    OUTPUT_PARAMETER + ": is where created files will go.\n" +
                                    INPUT_PARAMETER + ": is where to look for configuration file. If the value is a file will read only that one, else if is directory, then will read all files in that directory." +
                                    HAND_SIZE_PARAMETER + ": is starting hand size.\n" +
@@ -202,6 +208,7 @@ public class Starting_Point
                 Starting_Point.scenario_output = PARSED_ARGUMENTS.flag_seen(SCENARIO_OUTPUT_FLAG);
                 Starting_Point.simulation_results_console = PARSED_ARGUMENTS.flag_seen(SIMULATION_RESULTS_CONSOLE_FLAG);
                 Starting_Point.force_sequential = PARSED_ARGUMENTS.flag_seen(FORCE_SEQUENTIAL_FLAG);
+                Starting_Point.display_progress = PARSED_ARGUMENTS.flag_seen(DISPLAY_PROGRESS_FLAG);
                 final File COMMAND_ARGUMENT;
                 {
                     final String INPUT_PATH = PARSED_ARGUMENTS.parameter_value(INPUT_PARAMETER);
@@ -296,7 +303,9 @@ public class Starting_Point
         else
             SOURCE_FILES = new File[]{new File(Starting_Point.DEFAULT_SOURCE_FILE_LOCATION, Starting_Point.DEFAULT_FILE)};
 
-        Starting_Point.create_theoretical_directories(Starting_Point.output_location);
+        //Only attempt to create directories when they would be used.
+        if (Starting_Point.scenario_output || !Starting_Point.simulation_results_console || verbose)
+            Starting_Point.create_theoretical_directories(Starting_Point.output_location);
 
         if (SOURCE_FILES.length == 1)
             Starting_Point.handle_file(verbose, SOURCE_FILES[0]);
@@ -409,17 +418,17 @@ public class Starting_Point
             }
 
             try (final Scanner LEXICAL_ANALYER_INPUT = new Scanner(INPUT_FILE);
-                 final PrintWriter LEXICAL_ERROR_OUTPUT = (verbose) ? new PrintWriter(lexical_error_output_file) : null;
-                 final PrintWriter LEXICAL_CORRECT_OUTPUT = (verbose) ? new PrintWriter(lexical_correct_output_file) : null;
-                 final PrintWriter SYNTACTICAL_ERROR_OUTPUT = (verbose) ? new PrintWriter(syntactical_error_output_file) : null;
-                 final PrintWriter SYNTACTICAL_DERIVATION_OUTPUT = (verbose) ? new PrintWriter(syntactical_derivation_output_file) : null;)
+                 final PrintWriter LEXICAL_ERROR_OUTPUT = verbose ? new PrintWriter(lexical_error_output_file) : null;
+                 final PrintWriter LEXICAL_CORRECT_OUTPUT = verbose ? new PrintWriter(lexical_correct_output_file) : null;
+                 final PrintWriter SYNTACTICAL_ERROR_OUTPUT = verbose ? new PrintWriter(syntactical_error_output_file) : null;
+                 final PrintWriter SYNTACTICAL_DERIVATION_OUTPUT = verbose ? new PrintWriter(syntactical_derivation_output_file) : null;)
             {
                 LEXICAL_ANALYER_INPUT.useDelimiter(""); //Change scanner to parse by character
                 long line_number = 1; //location in source file
                 String read_character; //Actually a char, current character being looked at.
                 String carry_over = null; //Part of next Token found by current Token.
                 Returned_Data current_token; //result of latest tokenization
-                final Tree_Assembler GROW_FOREST = (verbose) ? new Tree_Assembler(40, 10, SYNTACTICAL_ERROR_OUTPUT, SYNTACTICAL_DERIVATION_OUTPUT) : new Tree_Assembler(); //parses created tokens
+                final Tree_Assembler GROW_FOREST = verbose ? new Tree_Assembler(40, 10, SYNTACTICAL_ERROR_OUTPUT, SYNTACTICAL_DERIVATION_OUTPUT) : new Tree_Assembler(); //parses created tokens
 
                 //parse tokens
                 do
@@ -552,7 +561,7 @@ public class Starting_Point
 
             //perform simulation
             {
-                final String RESULTS = SIMULATOR.simulate(Starting_Point.force_sequential, Starting_Point.hand_size, Starting_Point.test_hands);
+                final String RESULTS = SIMULATOR.simulate(Starting_Point.force_sequential, Starting_Point.display_progress, Starting_Point.hand_size, Starting_Point.test_hands);
 
                 if (Starting_Point.simulation_results_console)
                     System.out.print(RESULTS);
