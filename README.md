@@ -36,7 +36,7 @@ The lack of any of the following will result in their corresponding default valu
 - --scenario_output_flag: outputs all scenarios in dot file format. Be careful with using this, as it creates a lot of files, about equal to all the other output files that the other flags would create, combined.
 - --simulation_results_console: to have the simulation results be output to console instead of in a created file.
 - --force_sequential: to force the program to perform the simulation sequentially rather than allowing the program to pick sequential or parallel.
-- --display_progress + : to display simulation progress, generally should not be used as results in the program taking about 2.5 times longer.
+- --display_progress_off: turns off displaying simulation progress, which speeds up the program.
                                    
 
 ### Parameters

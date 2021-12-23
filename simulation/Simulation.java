@@ -135,7 +135,7 @@ public class Simulation
      * 
      * @return the created output
      */
-    public static <E extends Evaluable, C extends Collection<E>> String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final double SIMULATION_DURATION, final long[] MATCHES, final C EQUATIONS)
+    public static <E extends Evaluable, C extends Collection<E>> String assemble_results_subroutine(final int HAND_SIZE, final long TEST_HAND_COUNT, final double SIMULATION_DURATION, final int[] MATCHES, final C EQUATIONS)
     {
         assert (MATCHES.length == EQUATIONS.size());
         final Comparable_Result_Pair[] WRAPPED_VALUES = new Comparable_Result_Pair[MATCHES.length];
@@ -266,7 +266,7 @@ public class Simulation
      * Performs simulation. By differing to appropriate simulation function.
      * 
      * @param OVERRIDE when true will jump straight to calling {@link #sequential_simulation(boolean, int, int)} rather then analyzing {@link Runtime#availableProcessors()} that this program has access to and acting accordingly.
-     * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option by about 2.5 times) and false for no outputs
+     * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option) and false for no outputs
      * @param HAND_SIZE of the hand which will be used in the simulation
      * @param TEST_HAND_COUNT number of times to run simulation
      * 
@@ -303,7 +303,7 @@ public class Simulation
      * <p>Note: Only instance should ever be running due to calling {@link #draw_hand(int, ArrayList)}, thereby making this not synchronization safe.
      * Such is intentional for performance reasons. As well as it is not meant to be run in parallel, unlike {@link #parallel_simulation(boolean, int, int, int)}.</p>
      * 
-     * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option by about 2.5 times) and false for no outputs
+     * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option) and false for no outputs
      * @param HAND_SIZE of the hands drawn
      * @param TEST_HAND_COUNT number of hands to test
      * @param DECK to draw from, should not be empty
@@ -314,43 +314,28 @@ public class Simulation
     protected String sequential_simulation(final boolean DISPLAY_PROGRESS, final int HAND_SIZE, final int TEST_HAND_COUNT)
     {
         final long START_TIME = System.currentTimeMillis(); //simulation start time in milliseconds
-        final long HITS[] = new long[this.FOREST.size()];
-        ArrayList<Deck_Card> current_hand;
+        final int HITS[] = new int[this.FOREST.size()];
 
         if (DISPLAY_PROGRESS)
         {
             final float PROGRESS_COEFFICIENT = 100f / TEST_HAND_COUNT;
-
-            for (float i = 0; i < TEST_HAND_COUNT;)
+            //Have separate thread output progress to not create bottle neck.
+            AtomicInteger hands_drawn = new AtomicInteger(0);
+            new Thread(() ->
             {
-                current_hand = Simulation.draw_hand(HAND_SIZE, this.DECK);
-
-                for (int j = 0; j < this.FOREST.size(); ++j)
+                do
                 {
-                    if (this.FOREST.get(j).evaluate(current_hand))
-                        ++HITS[j];
-                    Simulation.reset_hand(current_hand);
-                }
+                    System.out.printf("\r%.5f%% of hands drawn.", hands_drawn.floatValue() * PROGRESS_COEFFICIENT);
+                } while (hands_drawn.get() < TEST_HAND_COUNT);
+                System.out.println();
+            }).start();
 
-                System.out.printf("\r%3.5f%% of hands drawn.", ++i * PROGRESS_COEFFICIENT);
-            }
-
-            System.out.println();
+            for (; hands_drawn.get() < TEST_HAND_COUNT; hands_drawn.incrementAndGet())
+                this.sequential_simulation_subroutine(HAND_SIZE, HITS);
         }
         else
-        {
             for (int i = 0; i < TEST_HAND_COUNT; ++i)
-            {
-                current_hand = Simulation.draw_hand(HAND_SIZE, this.DECK);
-
-                for (int j = 0; j < this.FOREST.size(); ++j)
-                {
-                    if (this.FOREST.get(j).evaluate(current_hand))
-                        ++HITS[j];
-                    Simulation.reset_hand(current_hand);
-                }
-            }
-        }
+                this.sequential_simulation_subroutine(HAND_SIZE, HITS);
 
         return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, (System.currentTimeMillis() - START_TIME) / 1000d, HITS, this.FOREST);
     }
@@ -358,7 +343,7 @@ public class Simulation
     /**
      * Carries out parallel simulation. The trade off over {@link #sequential_simulation(boolean, int, int)} is resources for time.
      * 
-     * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option by about 2.5 times) and false for no outputs
+     * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option) and false for no outputs
      * @param CORE_COUNT number of available cores
      * @param HAND_SIZE of the hands drawn
      * @param TEST_HAND_COUNT number of hands to test
@@ -568,23 +553,40 @@ public class Simulation
              */
             protected void run_subroutine(final int START, final int END)
             {
-                ArrayList<Deck_Card> current_hand;
-
-                for (int i = START; i < END; ++i)
+                if (DISPLAY_PROGRESS)
                 {
-                    //synchronise transformation of shallow to deep
-                    synchronized (this)
+                    AtomicInteger hands_drawn = new AtomicInteger(START);
+                    new Thread(() ->
                     {
-                        current_hand = Deck_Card.deep_copy(Simulation.draw_hand(HAND_SIZE, this.DECK));
-                    }
+                        do
+                        {
+                            System.out.printf("\r%.5f%% of hands drawn.", hands_drawn.floatValue() * this.PROGRESS_COEFFICIENT);
+                        } while (hands_drawn.get() < END);
+                    }).start();
 
-                    if (DISPLAY_PROGRESS)
-                        System.out.printf("\r%3.5f%% of hands drawn.", (i + 1) * this.PROGRESS_COEFFICIENT);
-
-                    this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS[0], this.FOREST.get(0), current_hand));
-                    for (int j = 1; j < this.FOREST.size(); ++j)
-                        this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS[j], this.FOREST.get(j), Deck_Card.deep_copy(current_hand)));
+                    for (; hands_drawn.get() < END; hands_drawn.incrementAndGet())
+                        this.parallel_simulation_subroutine();
                 }
+                else
+                    for (int i = START; i < END; ++i)
+                        this.parallel_simulation_subroutine();
+            }
+
+            /**
+             * Subroutine of {@link Simulation#parallel_simulation(boolean, int, int, int)}, point is to centralize a subpart of the code.
+             */
+            private void parallel_simulation_subroutine()
+            {
+                ArrayList<Deck_Card> current_hand;
+                //synchronise transformation of shallow to deep
+                synchronized (this)
+                {
+                    current_hand = Deck_Card.deep_copy(Simulation.draw_hand(HAND_SIZE, this.DECK));
+                }
+
+                this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS[0], this.FOREST.get(0), current_hand));
+                for (int j = 1; j < this.FOREST.size(); ++j)
+                    this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS[j], this.FOREST.get(j), Deck_Card.deep_copy(current_hand)));
             }
         }
 
@@ -624,5 +626,23 @@ public class Simulation
             System.out.println();
 
         return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, (System.currentTimeMillis() - START_TIME) / 1000d, HITS, this.FOREST);
+    }
+
+    /**
+     * Subroutine of {@link Simulation#sequential_simulation(boolean, int, int)}, point is to centralize a subpart of the code.
+     * 
+     * @param HAND_SIZE is the number of cards to draw
+     * @param HITS stores the results of a hand's tests
+     */
+    private void sequential_simulation_subroutine(final int HAND_SIZE, final int[] HITS)
+    {
+        ArrayList<Deck_Card> current_hand = Simulation.draw_hand(HAND_SIZE, this.DECK);
+
+        for (int j = 0; j < this.FOREST.size(); ++j)
+        {
+            if (this.FOREST.get(j).evaluate(current_hand))
+                ++HITS[j];
+            Simulation.reset_hand(current_hand);
+        }
     }
 }

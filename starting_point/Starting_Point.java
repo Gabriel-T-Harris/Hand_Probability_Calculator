@@ -140,7 +140,7 @@ public class Starting_Point
     private static boolean force_sequential = false;
 
     /**
-     * True to display progress, false not to. Having it true results in the program taking 2.5 times longer.
+     * True to display progress, false not to. Having it true results in the program running a bit slower.
      */
     private static boolean display_progress = false;
 
@@ -167,7 +167,7 @@ public class Starting_Point
         if (args.length > 0)
         {
             final String ERROR_REPORTING_FLAG = "--error_reporting", HELP_FLAG = "--help", VERBOSE_FLAG = "--verbose", SCENARIO_OUTPUT_FLAG = "--scenario_output_flag",
-                         SIMULATION_RESULTS_CONSOLE_FLAG = "--simulation_results_console", FORCE_SEQUENTIAL_FLAG = "--force_sequential", DISPLAY_PROGRESS_FLAG = "--display_progress",
+                         SIMULATION_RESULTS_CONSOLE_FLAG = "--simulation_results_console", FORCE_SEQUENTIAL_FLAG = "--force_sequential", DISPLAY_PROGRESS_OFF_FLAG = "--display_progress_off",
                          INPUT_PARAMETER = "--input", OUTPUT_PARAMETER = "--output", HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
 
 
@@ -180,7 +180,8 @@ public class Starting_Point
 
             final Command_Line_Argument_Parser PARSED_ARGUMENTS = new Command_Line_Argument_Parser(Starting_Point.error_reporting);
 
-            PARSED_ARGUMENTS.add_flags(ERROR_REPORTING_FLAG, HELP_FLAG, VERBOSE_FLAG, SCENARIO_OUTPUT_FLAG, SIMULATION_RESULTS_CONSOLE_FLAG, FORCE_SEQUENTIAL_FLAG, DISPLAY_PROGRESS_FLAG);
+            PARSED_ARGUMENTS.add_flags(ERROR_REPORTING_FLAG, HELP_FLAG, VERBOSE_FLAG, SCENARIO_OUTPUT_FLAG, SIMULATION_RESULTS_CONSOLE_FLAG, FORCE_SEQUENTIAL_FLAG,
+                                       DISPLAY_PROGRESS_OFF_FLAG);
             PARSED_ARGUMENTS.add_parameters(INPUT_PARAMETER, OUTPUT_PARAMETER, HAND_SIZE_PARAMETER, TEST_HANDS_PARAMETER);
             PARSED_ARGUMENTS.parse(args);
 
@@ -195,7 +196,7 @@ public class Starting_Point
                                    SCENARIO_OUTPUT_FLAG + ": to output read decklist and scenarios in dot file format.\n" +
                                    SIMULATION_RESULTS_CONSOLE_FLAG + ": to have the simulation results be output to console instead of in a created file.\n" +
                                    FORCE_SEQUENTIAL_FLAG + ": to force the program to perform the simulation sequentially rather then allowing the program to pick sequential or parallel.\n" +
-                                   DISPLAY_PROGRESS_FLAG + ": to display simulation progress, generally should not be used as results in the program taking about 2.5 times longer.\n" +
+                                   DISPLAY_PROGRESS_OFF_FLAG + ": turns off displaying simulation progress, which speeds up the program.\n" +
                                    OUTPUT_PARAMETER + ": is where created files will go. Careful about trailing slashes, or surround it with quotation marks.\n" +
                                    INPUT_PARAMETER + ": is where to look for configuration file. If the value is a file will read only that one, else if is directory, then will read all files in that directory. Careful about trailing slashes, or surround it with quotation marks." +
                                    HAND_SIZE_PARAMETER + ": is starting hand size.\n" +
@@ -208,7 +209,7 @@ public class Starting_Point
                 Starting_Point.scenario_output = PARSED_ARGUMENTS.flag_seen(SCENARIO_OUTPUT_FLAG);
                 Starting_Point.simulation_results_console = PARSED_ARGUMENTS.flag_seen(SIMULATION_RESULTS_CONSOLE_FLAG);
                 Starting_Point.force_sequential = PARSED_ARGUMENTS.flag_seen(FORCE_SEQUENTIAL_FLAG);
-                Starting_Point.display_progress = PARSED_ARGUMENTS.flag_seen(DISPLAY_PROGRESS_FLAG);
+                Starting_Point.display_progress = !PARSED_ARGUMENTS.flag_seen(DISPLAY_PROGRESS_OFF_FLAG); //on by default
                 final File COMMAND_ARGUMENT;
                 {
                     final String INPUT_PATH = PARSED_ARGUMENTS.parameter_value(INPUT_PARAMETER);
