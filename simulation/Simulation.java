@@ -36,7 +36,7 @@ import structure.Scenario;
 <b>
 Purpose: final step which performs the actual simulation.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-04/2021-8-[17-22]/2021-12-18/2021-12-20/2022-5-28
+Date: 2021-08-04/2021-8-[17-22]/2021-12-18/2021-12-20/2021-12-25/2022-5-28
 </b>
 */
 
@@ -233,33 +233,6 @@ public class Simulation
     {
         Collections.shuffle(DECK);
         return new ArrayList<R>(DECK.subList(0, HAND_SIZE));
-    }
-
-    /**
-     * Frees all cards in hand. {@link Reservable#release()}
-     * 
-     * @param <R> the type of cards in the deck
-     * @param HAND to be reset
-     */
-    public static <R extends Reservable> void reset_hand(final ArrayList<R> HAND)
-    {
-        for (final R CARD : HAND)
-            CARD.release();
-    }
-
-    /**
-     * Passes arguments to {@link #simulate(boolean, boolean, int, int)} with first 2 arguments being false.
-     * 
-     * @param HAND_SIZE of the hand which will be used in the simulation
-     * @param TEST_HAND_COUNT number of times to run simulation
-     * 
-     * @return {@link #simulate(boolean, boolean, int, int)}
-     * 
-     * @see #simulate(boolean, boolean, int, int)
-     */
-    public String simulate(final int HAND_SIZE, final int TEST_HAND_COUNT)
-    {
-        return simulate(false, false, HAND_SIZE, TEST_HAND_COUNT);
     }
 
     /**
@@ -712,7 +685,7 @@ public class Simulation
         {
             if (this.FOREST.get(j).evaluate(current_hand))
                 ++HITS[j];
-            Simulation.reset_hand(current_hand);
+            Game_State.reset_hand(current_hand);
         }
     }
 }
