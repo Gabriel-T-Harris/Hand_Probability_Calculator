@@ -18,9 +18,9 @@ package structure;
 
 /**
 <b>
-Purpose: Requirement to be a node for evaluation purposes.<br>
+Purpose: Requirement to be used by a node for evaluation purposes.<br>
 Programmer: Alexander Oxorn, Gabriel Toban Harris <br>
-Date: 2021-07-29/2021-8-17/2021-8-21
+Date: 2021-07-29/2021-8-17/2021-8-21/2022-1-1
 </b>
 */
 
@@ -32,6 +32,13 @@ public interface Reservable
      * @return current reservedness
      */
     boolean isReserved();
+
+    /**
+     * Ensures that implementers have a name that they can be referred to as.
+     * 
+     * @return its name.
+     */
+    String get_name();
 
     /**
      * Reserves this card.

@@ -26,6 +26,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+import simulation.special_ability.Game_State;
 import starting_point.Starting_Point;
 import structure.Deck_Card;
 import structure.Evaluable;

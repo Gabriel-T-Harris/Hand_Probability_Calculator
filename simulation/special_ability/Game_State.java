@@ -1,19 +1,20 @@
-package simulation;
+package simulation.special_ability;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import structure.Reservable;
 
 /**
 <b>
 Purpose: Holds the locations of all the cards that are being checked.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-12-25
+Date: 2021-12-25/2021-12-30/2021-12-31/2022-1-1
 </b>
 
-* @param <R> is the value of the contents being stored.
+* @param <R> is the value of the contents being stored
 */
 
 public class Game_State<R extends Reservable>
@@ -29,7 +30,7 @@ public class Game_State<R extends Reservable>
     /**
      * Stores all the cards and where they are.
      */
-    protected final HashMap<Locations, ArrayList<R>> STORAGE = new HashMap<Locations, ArrayList<R>>(Locations.values().length + 1, 1f);//TODO: consider renaming
+    final HashMap<Locations, ArrayList<R>> STORAGE = new HashMap<Locations, ArrayList<R>>(Locations.values().length + 1, 1f);//TODO: consider renaming
 
     /**
      * Basic constructor. Note that parameter is shallowly copied to minimize costs.
@@ -43,10 +44,10 @@ public class Game_State<R extends Reservable>
     }
 
     /**
-     * Constructor meant to be used when //TODO link special abilities, are used.
-     * 
-     * @param HAND represents the cards in hand.
-     * @param GRAVEYARD represents the cards in graveyard.
+     * Constructor meant to be used when {@link Special_Ability_Base} are used.
+     *
+     * @param HAND represents the cards in hand
+     * @param GRAVEYARD represents the cards in graveyard
      */
     public Game_State(final ArrayList<R> HAND, final ArrayList<R> GRAVEYARD)
     {
@@ -55,7 +56,7 @@ public class Game_State<R extends Reservable>
         this.STORAGE.put(Locations.GRAVEYARD, GRAVEYARD);
     }
 
-    //getter
+    //getters
     /**
      * Universal getter to access underlying stored cards.
      * 
@@ -96,6 +97,38 @@ public class Game_State<R extends Reservable>
     }
 
     /**
+     * {@link #set_cards(Locations, ArrayList)}
+     */
+    @SuppressWarnings("javadoc")
+    public boolean set_cards(final Locations WHERE, final List<R> CARDS)
+    {
+        return this.set_cards(WHERE, new ArrayList<R>(CARDS));
+    }
+
+    /**
+     * Implementation of transferring cards from one location to another in a reusable way.
+     *
+     * @param AMOUNT to transfer
+     * @param FROM is where stuff is coming from
+     * @param TO is where it is going to
+     *
+     * @return true for carried out and false for could not be carried out
+     */
+    public boolean special_ability_transfer(final int AMOUNT, final Locations FROM, final Locations TO)
+    {
+        final ArrayList<R> SOURCE = this.STORAGE.get(FROM);
+
+        if (SOURCE != null && SOURCE.size() >= AMOUNT)
+        {
+            special_ability_transfer_subroutine(AMOUNT, FROM, TO);
+
+            return true;
+        }
+        else
+            return false;
+    }
+
+    /**
      * Convenience method. {@link structure.Reservable#release()} all cards in hand. {@link Reservable#release()}
      * 
      * @param <R> the type of cards in the deck
@@ -118,6 +151,14 @@ public class Game_State<R extends Reservable>
     }
 
     /**
+     * Removes the main deck part which is unused once the a hand has been fully drawn. Should be done to reduce overall size.
+     */
+    public void remove_main_deck()
+    {
+        this.STORAGE.remove(Locations.MAIN_DECK);
+    }
+
+    /**
      * Convenience method. Calls {@link #reset_hand(ArrayList)} on cards in specified location.
      * 
      * @param WHERE the cards to be reset are.
@@ -125,5 +166,39 @@ public class Game_State<R extends Reservable>
     public void reset_location(final Locations WHERE)
     {
         Game_State.reset_hand(this.get_cards(WHERE));
+    }
+
+    /**
+     * Core of {@link #special_ability_transfer(int, Locations, Locations)} that bypasses checks on FROM.
+     * 
+     * @param AMOUNT to transfer
+     * @param FROM is where stuff is coming from
+     * @param TO is where it is going to
+     */
+    void special_ability_transfer_subroutine(final int AMOUNT, final Locations FROM, final Locations TO)
+    {
+        this.special_ability_transfer_subroutine(0, AMOUNT, FROM, TO);
+    }
+
+    /**
+     * Core of {@link #special_ability_transfer(int, Locations, Locations)} that bypasses checks on FROM.
+     * 
+     * @param STARTING_INDEX of transfer
+     * @param AMOUNT to transfer
+     * @param FROM is where stuff is coming from
+     * @param TO is where it is going to
+     */
+    void special_ability_transfer_subroutine(final int STARTING_INDEX, final int AMOUNT, final Locations FROM, final Locations TO)
+    {
+        //move cards from source to destination
+        final ArrayList<R> DESTINATION = this.STORAGE.get(TO);
+        final List<R> TRANSFER = this.STORAGE.get(FROM).subList(STARTING_INDEX, AMOUNT);
+
+        if (DESTINATION != null)
+            DESTINATION.addAll(TRANSFER);
+        else
+            this.set_cards(TO, TRANSFER);
+
+        TRANSFER.clear(); //remove from source
     }
 }

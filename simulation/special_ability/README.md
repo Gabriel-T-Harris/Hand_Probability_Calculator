@@ -1,0 +1,1 @@
+Subpackage for special ability stuff. Created due to the ballooning number of files relating to special abilities. As well as to limit certain visibilities.

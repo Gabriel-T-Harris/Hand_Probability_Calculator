@@ -73,6 +73,12 @@ public class Deck_Card extends Base_Card implements Reservable
     }
 
     @Override
+    public String get_name()
+    {
+        return this.NAME;
+    }
+
+    @Override
     public void reserve() {
         reserved = true;
     }
