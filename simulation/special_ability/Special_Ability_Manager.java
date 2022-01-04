@@ -18,7 +18,7 @@ public class Special_Ability_Manager
     /**
      * Simple object to hold data for {@link Special_Ability_Manager#super_powers}.
      */
-    protected class Card_Effects //TODO: rename
+    protected class Card_Effects
     {
         /**
          * Represents the maximum number of times this ability can be used.
@@ -118,7 +118,7 @@ public class Special_Ability_Manager
         int hand_size = INPUT.get_unmodifiable_cards(Locations.HAND).size();
 
         //ensure there is a hand to work on
-        if (hand_size >= 1)
+        if (hand_size < 1)
             return;
 
         {
@@ -146,6 +146,8 @@ public class Special_Ability_Manager
             } while (hand_index < hand_size);
         }
 
+        //clean up
+        INPUT.remove_main_deck();
         this.reset_all();
     }
 }

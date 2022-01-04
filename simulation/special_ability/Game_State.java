@@ -30,7 +30,7 @@ public class Game_State<R extends Reservable>
     /**
      * Stores all the cards and where they are.
      */
-    final HashMap<Locations, ArrayList<R>> STORAGE = new HashMap<Locations, ArrayList<R>>(Locations.values().length + 1, 1f);//TODO: consider renaming
+    final HashMap<Locations, ArrayList<R>> STORAGE = new HashMap<Locations, ArrayList<R>>(Locations.values().length + 1, 1f);
 
     /**
      * Basic constructor. Note that parameter is shallowly copied to minimize costs.
