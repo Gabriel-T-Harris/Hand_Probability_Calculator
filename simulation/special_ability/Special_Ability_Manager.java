@@ -139,7 +139,7 @@ public class Special_Ability_Manager
                     //move card away
                     INPUT.special_ability_transfer_subroutine(hand_index, 1, Locations.HAND, Locations.GRAVEYARD); //For now hard code to go to Locations.GRAVEYARD, later maybe have it be definable.
 
-                    hand_size = hand_reference.size(); //in case hand sizse changed
+                    hand_size = hand_reference.size(); //in case hand size changed
                 }
                 else
                     ++hand_index;
