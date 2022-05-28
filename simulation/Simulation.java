@@ -16,15 +16,16 @@
 */
 package simulation;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.function.BiPredicate;
-import java.util.function.BooleanSupplier;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -275,41 +276,6 @@ public class Simulation
     }
 
     /**
-     * Subroutine to draw a hand. Note, returns shallow.
-     *
-     * @param <R> the type of cards in the deck
-     *
-     * @param HAND_SIZE to draw, should be >= DECK's size
-     * @param DECK to draw from
-     *
-     * @return created hand, backed  ({@link ArrayList#subList(int, int)}) by the original deck
-     */
-    public static <R extends Reservable> ArrayList<R> sample_hand(final int HAND_SIZE, final ArrayList<R> DECK, Random r)
-    {
-        // Based on libstdc++'s implementation of std::sample
-        ArrayList<R> toReturn = new ArrayList<>(HAND_SIZE);
-        Iterator<R> inputIterator = DECK.iterator();
-
-        int unsampled_size = DECK.size();
-        int n = Math.min(HAND_SIZE, unsampled_size);
-
-        for (R current = inputIterator.next(); n != 0; current = inputIterator.next()) {
-            if(r.nextInt(--unsampled_size) < n) {
-                toReturn.add(current);
-                --n;
-            }
-        }
-
-        return toReturn;
-    }
-
-    public static <R extends Reservable> ArrayList<R> draw_hand(final int HAND_SIZE, final ArrayList<R> DECK, Random rnd)
-    {
-        Collections.shuffle(DECK, rnd);
-        return new ArrayList<R>(DECK.subList(0, HAND_SIZE));
-    }
-
-    /**
      * Frees all cards in hand. {@link Reservable#release()}
      * 
      * @param <R> the type of cards in the deck
@@ -338,7 +304,6 @@ public class Simulation
         final int CORE_COUNT = Runtime.getRuntime().availableProcessors();
 
         if (CORE_COUNT > 1)
-//            return this.parallel_simulation(CORE_COUNT, HAND_SIZE, TEST_HAND_COUNT);
             return this.parallel_simulation2(HAND_SIZE, TEST_HAND_COUNT);
         else if (CORE_COUNT == 1)
             return Simulation.sequential_simulation(HAND_SIZE, TEST_HAND_COUNT, this.DECK, this.FOREST);
@@ -350,11 +315,11 @@ public class Simulation
     }
 
     protected String parallel_simulation2(final int HAND_SIZE, final int TEST_HAND_COUNT) {
-        class ScenarioCount {
+        class ScenarioCounter {
             final Scenario equation;
             final AtomicInteger count;
 
-            ScenarioCount(Scenario equation) {
+            ScenarioCounter(Scenario equation) {
                 this.equation = equation;
                 this.count = new AtomicInteger();
             }
@@ -367,7 +332,7 @@ public class Simulation
             }
         }
 
-        final List<ScenarioCount> forestCount = FOREST.stream().map(ScenarioCount::new).collect(Collectors.toList());
+        final List<ScenarioCounter> forestCounters = FOREST.stream().map(ScenarioCounter::new).collect(Collectors.toList());
         final long START_TIME; //simulation start time in milliseconds
 
         synchronized (Simulation.PARALLEL_SIMULATION_LOCK) {
@@ -376,9 +341,9 @@ public class Simulation
             Stream.generate(() -> Deck_Card.deep_copy(draw_hand(HAND_SIZE, DECK)))
                     .parallel()
                     .limit(TEST_HAND_COUNT)
-                    .forEach(hand -> forestCount.forEach(fc -> fc.run_hand(hand)));
+                    .forEach(hand -> forestCounters.forEach(fc -> fc.run_hand(hand)));
 
-            AtomicInteger[] HITS = forestCount.stream().map(a -> a.count).toArray(AtomicInteger[]::new);
+            AtomicInteger[] HITS = forestCounters.stream().map(a -> a.count).toArray(AtomicInteger[]::new);
 
             return Simulation.assemble_results_subroutine(HAND_SIZE, TEST_HAND_COUNT, START_TIME, HITS, this.FOREST);
         }
