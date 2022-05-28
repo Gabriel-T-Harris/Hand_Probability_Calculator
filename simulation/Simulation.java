@@ -38,8 +38,7 @@ import structure.Scenario;
 /**
 <b>
 Purpose: final step which performs the actual simulation.<br>
-Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-04/2021-8-[17-22]
+Programmer: Gabriel Toban Harris, Alexander Oxorn<br>
 </b>
 */
 
@@ -267,7 +266,7 @@ public class Simulation
      * @param HAND_SIZE to draw, should be >= DECK's size
      * @param DECK to draw from
      *
-     * @return created hand, backed  ({@link ArrayList#subList(int, int)}) by the original deck
+     * @return created hand, backed ({@link ArrayList#subList(int, int)}) by the original deck
      */
     public static <R extends Reservable> ArrayList<R> draw_hand(final int HAND_SIZE, final ArrayList<R> DECK)
     {
@@ -276,8 +275,8 @@ public class Simulation
     }
 
     /**
-     * Subroutine to draw a deep copied hand synchronously
-     **
+     * Subroutine to draw a deep copied hand synchronously.
+     *
      * @param HAND_SIZE to draw, should be >= DECK's size
      * @param DECK to draw from
      *
