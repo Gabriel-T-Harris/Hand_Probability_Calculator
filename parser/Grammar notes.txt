@@ -1,20 +1,20 @@
 Configuration file grammar:
 //regex which replace literal values used are represented by the following:
 decklist: decklist:
-card_name: [^;\]*_~]+ //includes CONDITION_CARD_END, CONDITION_FIELD, CONDITION_GY, CONDITION_BANISH
+card_name: "[^" + SEMI_COLON + CONDITION_CARD_END + CONDITION_FIELD + CONDITION_GY + CONDITION_BANISH + ASSIGN + "]+"
 scenarios: scenarios:
-scenario_name: [^=>]+ //include CONDITION_SCENARIO_END
+scenario_name: "[^" + ASSIGN + CONDITION_SCENARIO_END + "]+"
 display: display
 Upper case: not, and, or, xor, draw, mill, banish, reasoning
 Lower case: true, false
 single symbol are exactly the same. Text version is just for https://smlweb.cpsc.ucalgary.ca.
-id: "[^;=\n" + SENTINEL_START + SENTINEL_END + CONDITION_CARD_START + CONDITION_CARD_END +
+id: "[^\n" + SEMI_COLON + ASSIGN + SENTINEL_START + SENTINEL_END + CONDITION_CARD_START + CONDITION_CARD_END +
     CONDITION_SCENARIO_START + CONDITION_SCENARIO_END + CONDITION_EXPR_START + CONDITION_EXPR_END + 
     CONDITION_FIELD + CONDITION_GY + CONDITION_BANISH + "]+"
 
-//Numbers are gathered together as a single literal value. They also mean that other tokens mat not start with numbers.
+//Numbers are gathered together as a single literal value. They also mean that other tokens may not start with numbers.
 //lower case for literal, capital for production rule.
-//Note grammar does not have the unification resulting in ID, though is coded with that change.
+//Note grammar does not have the unification resulting in: ID, card_name, or scenario_name; though is coded with the result.
 START -> DECK SPECIAL_ABILITIES PROBABILITY .
 
 DECK -> DECK_START SENTINEL_START DECKLIST SENTINEL_END.
