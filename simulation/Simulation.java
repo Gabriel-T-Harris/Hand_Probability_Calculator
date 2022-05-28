@@ -630,15 +630,13 @@ public class Simulation
              * @param START partition value inclusive
              * @param END partition value exclusive
              */
-            protected void run_subroutine(final int START, final int END)
+            protected void run_subroutine(int START, final int END)
             {
-                int i = START; //technically could tweak stuff to use START as i, chose not to bother
-
                 if (DISPLAY_PROGRESS)
-                    for (; i < END; ++i, this.HANDS_DRAWN.incrementAndGet())
+                    for (; START < END; ++START, this.HANDS_DRAWN.incrementAndGet())
                         this.parallel_simulation_subroutine();
                 else
-                    for (; i < END; ++i)
+                    for (; START < END; ++START)
                         this.parallel_simulation_subroutine();
             }
 
