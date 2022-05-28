@@ -269,7 +269,7 @@ public class Simulation
      *
      * @return created hand, backed  ({@link ArrayList#subList(int, int)}) by the original deck
      */
-    public static <R extends Reservable> ArrayList<R> draw_hand(final int HAND_SIZE, final ArrayList<R> DECK)
+    public synchronized static <R extends Reservable> ArrayList<R> draw_hand(final int HAND_SIZE, final ArrayList<R> DECK)
     {
         Collections.shuffle(DECK);
         return new ArrayList<R>(DECK.subList(0, HAND_SIZE));
