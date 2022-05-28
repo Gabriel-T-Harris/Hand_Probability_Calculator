@@ -318,19 +318,65 @@ public class Simulation
 
         if (DISPLAY_PROGRESS)
         {
+            /**
+             * Simple wrapper to have effectively final integer. Should be faster than {@link AtomicInteger}.
+             */
+            class Effectively_Final_Integer
+            {
+                /**
+                 * Value being wrapped. Start at -1 so that call of {@link #increment_get()} will set it to 0.
+                 * Thus saving a function call and lowering instruction count.
+                 */
+                private int counter = -1;
+
+                //getter
+                /**
+                 * Simply a getter for {@link #counter}
+                 * 
+                 * @return value of {@link #counter}
+                 */
+                public int get_counter()
+                {
+                    return counter;
+                }
+
+                /**
+                 * Increment {@link #counter}, then return result.
+                 * 
+                 * @return result of increment
+                 */
+                public int increment_get()
+                {
+                    return ++counter;
+                }
+            }
+
             final float PROGRESS_COEFFICIENT = 100f / TEST_HAND_COUNT;
+            Effectively_Final_Integer hands_drawn = new Effectively_Final_Integer();
             //Have separate thread output progress to not create bottle neck.
-            AtomicInteger hands_drawn = new AtomicInteger(0);
+
             new Thread(() ->
             {
                 do
                 {
-                    System.out.printf("\r%.5f%% of hands drawn.", hands_drawn.floatValue() * PROGRESS_COEFFICIENT);
-                } while (hands_drawn.get() < TEST_HAND_COUNT);
-                System.out.println();
-            }).start();
+                    try
+                    {
+                        Thread.sleep(1000); //no need to run the program like every frame
+                    }
+                    catch (InterruptedException ex)
+                    {
+                        ex.printStackTrace();
+                        System.err.println("Ending SEPERATE_SEQUENTIAL_PROGRESS_THREAD.");
+                        break;
+                    }
 
-            for (; hands_drawn.get() < TEST_HAND_COUNT; hands_drawn.incrementAndGet())
+                    System.out.printf("\r%.5f%% of hands drawn.", hands_drawn.get_counter() * PROGRESS_COEFFICIENT);
+                } while (hands_drawn.get_counter() < TEST_HAND_COUNT);
+
+                System.out.println();
+            }, "SEPERATE_SEQUENTIAL_PROGRESS_THREAD").start();
+
+            for (; hands_drawn.increment_get() < TEST_HAND_COUNT;)
                 this.sequential_simulation_subroutine(HAND_SIZE, HITS);
         }
         else
@@ -438,6 +484,11 @@ public class Simulation
             private final double CACHE_PARTITION_BUFFER_SIZE_PRODUCT;
 
             /**
+             * Simply a counter that can be used to display progress.
+             */
+            private final AtomicInteger HANDS_DRAWN;
+
+            /**
              * Task dispenser. 
              */
             private final ThreadPoolExecutor TASK_OVERSEER;
@@ -474,6 +525,34 @@ public class Simulation
                 this.DECK = DECK;
                 this.FOREST = FOREST;
                 this.set_partition_count_related_values();
+
+                if (DISPLAY_PROGRESS)
+                {
+                    this.HANDS_DRAWN = new AtomicInteger(0);
+
+                    final Thread SEPERATE_PARALLEL_PROGRESS_THREAD = new Thread(() ->
+                    {
+                        do
+                        {
+                            try
+                            {
+                                Thread.sleep(1000); //no need to run the program like every frame
+                            }
+                            catch (InterruptedException ex)
+                            {
+                                ex.printStackTrace();
+                                System.err.println("Ending SEPERATE_PARALLEL_PROGRESS_THREAD.");
+                                break;
+                            }
+
+                            System.out.printf("\r%.5f%% of hands drawn.", this.HANDS_DRAWN.floatValue() * this.PROGRESS_COEFFICIENT);
+                        } while (this.HANDS_DRAWN.get() < TEST_HAND_COUNT);
+                    }, "SEPERATE_PARALLEL_PROGRESS_THREAD");
+                    SEPERATE_PARALLEL_PROGRESS_THREAD.setDaemon(true);
+                    SEPERATE_PARALLEL_PROGRESS_THREAD.start();
+                }
+                else
+                    this.HANDS_DRAWN = null;
             }
 
             @Override
@@ -553,22 +632,13 @@ public class Simulation
              */
             protected void run_subroutine(final int START, final int END)
             {
-                if (DISPLAY_PROGRESS)
-                {
-                    AtomicInteger hands_drawn = new AtomicInteger(START);
-                    new Thread(() ->
-                    {
-                        do
-                        {
-                            System.out.printf("\r%.5f%% of hands drawn.", hands_drawn.floatValue() * this.PROGRESS_COEFFICIENT);
-                        } while (hands_drawn.get() < END);
-                    }).start();
+                int i = START; //technically could tweak stuff to use START as i, chose not to bother
 
-                    for (; hands_drawn.get() < END; hands_drawn.incrementAndGet())
+                if (DISPLAY_PROGRESS)
+                    for (; i < END; ++i, this.HANDS_DRAWN.incrementAndGet())
                         this.parallel_simulation_subroutine();
-                }
                 else
-                    for (int i = START; i < END; ++i)
+                    for (; i < END; ++i)
                         this.parallel_simulation_subroutine();
             }
 
@@ -614,10 +684,12 @@ public class Simulation
                                        "\nStopping simulation as something likely went wrong. Results are likely inaccurate.");
                     TASK_OVERSEER.shutdownNow();
                 }
+                else
+                    System.out.print("\r100.00000% of hands drawn.");
             }
             catch (InterruptedException ex)
             {
-                System.err.println("Warning something went wrong with simulation, thus results are likely wrong.\n" + ex.getMessage());
+                System.err.println("Warning: Something went wrong with simulation, thus results are likely wrong.\n" + ex.getMessage());
                 TASK_OVERSEER.shutdownNow();
             }
         }
