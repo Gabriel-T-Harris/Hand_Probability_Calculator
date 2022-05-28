@@ -58,7 +58,7 @@ public class Special_Ability_Manager
         }
 
         /**
-         * To reset all parts which require resetting bettween calls to {@link #parse(Game_State)}
+         * To reset all parts which require resetting between calls to {@link #parse(Game_State)}
          */
         public void reset()
         {

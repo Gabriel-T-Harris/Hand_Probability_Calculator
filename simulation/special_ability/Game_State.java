@@ -120,7 +120,7 @@ public class Game_State<R extends Reservable>
 
         if (SOURCE != null && SOURCE.size() >= AMOUNT)
         {
-            special_ability_transfer_subroutine(AMOUNT, FROM, TO);
+            this.special_ability_transfer_subroutine(AMOUNT, FROM, TO);
 
             return true;
         }
