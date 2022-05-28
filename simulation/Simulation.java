@@ -269,10 +269,23 @@ public class Simulation
      *
      * @return created hand, backed  ({@link ArrayList#subList(int, int)}) by the original deck
      */
-    public synchronized static <R extends Reservable> ArrayList<R> draw_hand(final int HAND_SIZE, final ArrayList<R> DECK)
+    public static <R extends Reservable> ArrayList<R> draw_hand(final int HAND_SIZE, final ArrayList<R> DECK)
     {
         Collections.shuffle(DECK);
         return new ArrayList<R>(DECK.subList(0, HAND_SIZE));
+    }
+
+    /**
+     * Subroutine to draw a deep copied hand synchronously
+     **
+     * @param HAND_SIZE to draw, should be >= DECK's size
+     * @param DECK to draw from
+     *
+     * @return created hand copy, backed ({@link ArrayList#subList(int, int)}) by the original deck
+     */
+    public synchronized static ArrayList<Deck_Card> draw_safe_hand_copy(final int HAND_SIZE, final ArrayList<Deck_Card> DECK)
+    {
+        return Deck_Card.deep_copy(draw_hand(HAND_SIZE, DECK));
     }
 
     /**
@@ -338,7 +351,7 @@ public class Simulation
         synchronized (Simulation.PARALLEL_SIMULATION_LOCK) {
             START_TIME = System.currentTimeMillis();
 
-            Stream.generate(() -> Deck_Card.deep_copy(draw_hand(HAND_SIZE, DECK)))
+            Stream.generate(() -> draw_safe_hand_copy(HAND_SIZE, DECK))
                     .parallel()
                     .limit(TEST_HAND_COUNT)
                     .forEach(hand -> forestCounters.forEach(fc -> fc.run_hand(hand)));
@@ -565,11 +578,7 @@ public class Simulation
 
                 for (int i = START; i < END; ++i)
                 {
-                    //synchronise transformation of shallow to deep
-                    synchronized (this)
-                    {
-                        current_hand = Deck_Card.deep_copy(draw_hand(HAND_SIZE, this.DECK));
-                    }
+                    current_hand = draw_safe_hand_copy(HAND_SIZE, this.DECK);
 
                     this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS, this.FOREST, current_hand));
                 }
