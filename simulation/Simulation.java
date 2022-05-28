@@ -534,8 +534,7 @@ public class Simulation
                 //control partition size
                 {
                     final int BLOCKING_QUEUE_SIZE = this.TASK_OVERSEER.getQueue().size();
-                    /*System.err.printf("Blocking queue size: %d, Completed Tasks: %d, Available Processors: %d, Partition Count %d, Partition Size %d\n",
-                            BLOCKING_QUEUE_SIZE, this.TASK_OVERSEER.getTaskCount(), Runtime.getRuntime().availableProcessors(), this.partition_count, this.partition_size);*/
+
                     //Magic numbers have been tested to be rather good, also feels right as well.
                     final int UPPER_THRESHOLD = 125;
                     final int LOWER_THRESHOLD = 25;
