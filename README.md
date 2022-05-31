@@ -4,6 +4,8 @@
 
 This application calculates the chance of drawing a particular hand from a given finite deck. Both are defined at runtime. Obviously, hands are drawn without replacement. The calculation is performed through simulation (due to the mathematics requiring a dynamic exponential equation to account for overlapping scenarios).
 
+Releases found at https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator/releases.
+
 Pull requests welcome.
 
 ## How To Use
@@ -34,11 +36,13 @@ The lack of any of the following will result in their corresponding default valu
 - --scenario_output_flag: outputs all scenarios in dot file format. Be careful with using this, as it creates a lot of files, about equal to all the other output files that the other flags would create, combined.
 - --simulation_results_console: to have the simulation results be output to console instead of in a created file.
 - --force_sequential: to force the program to perform the simulation sequentially rather than allowing the program to pick sequential or parallel.
+- --display_progress_off: turns off displaying simulation progress, which speeds up the program.
+                                   
 
 ### Parameters
 
-- --input: is where to look for configuration file. If the value is a file, then will read only that one; else if it is a directory, then will read all files in that directory.
-- --output: is where created files will go.
+- --input: is where to look for configuration file. If the value is a file, then will read only that one; else if it is a directory, then will read all files in that directory. Careful about trailing slashes, or surround it with quotation marks.
+- --output: is where created files will go. Careful about trailing slashes, or surround it with quotation marks.
 - --hand_size: is starting hand size.
 - --test_hands: is the number of hands to simulate.
 

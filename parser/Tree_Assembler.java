@@ -1144,8 +1144,9 @@ public class Tree_Assembler
                         {
                             //clear remaining stack stuff
                             this.syntactical_stack.clear();
-                            this.syntactical_error_output.println("Error, repeated scenario name \"" + SCEANRIO_NAME +
-                                                                  "\", discarding this scenario. Detected not before line number " + INPUT.get_line_number());
+                            if (this.VERBOSE)
+                                this.syntactical_error_output.println("Error, repeated scenario name \"" + SCEANRIO_NAME +
+                                                                      "\", discarding this scenario. Detected not before line number " + INPUT.get_line_number());
                         }
                     }
                     else
