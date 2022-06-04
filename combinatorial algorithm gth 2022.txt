@@ -1,0 +1,191 @@
+int indices[]; //length is number to choose
+Object options[];
+
+//2 <= indices.length <= options.length
+
+//change indices
+void next_combination()
+{
+ 
+}
+
+
+//test examples, to find pattern derive algorithm, and test.
+
+//2 {a, b, c}, 3 combinations
+0, 1 -> a, b
+0, 2 -> a, c
+1, 2 -> b, c
+
+
+/*left to right movement, fix other pegs and only move one peg at a time, bounds checking and what not are implied
+move current peg right until all moves are done. Start at right most peg.
+Move current peg back to its current origin.
+Repeat with next peg until out of pegs. Hop over any peg in way.
+Move left most peg to be next to right most.
+Go back to start with new right most.
+Continue until end is reached.
+
+There is probably some smart convulted way to skip resets, there by reducing operation count.*/
+
+//3 {a, b, c, d, e}, 10 combinations
+0, 1, 2 -> a, b, c
+0, 1, 3 -> a, b, d
+0, 1, 4 -> a, b, e
+
+0, 3, 2 -> a, d, c
+0, 4, 2 -> a, e, c
+
+//left most -> right most
+1, 2, 3 -> b, c, d
+1, 2, 4 -> b, c, e
+
+1, 4, 3 -> b, e, d
+
+4, 2, 3 -> e, c, d
+
+//left most -> right most
+2, 3, 4 -> c, d, e
+
+
+//5 {a, b, c, d, e, f, g}, 7!/(5!(7-5)!) -> 21.
+0, 1, 2, 3, 4 -> a, b, c, d, e
+0, 1, 2, 3, 5 -> a, b, c, d, f
+0, 1, 2, 3, 6 -> a, b, c, d, g
+
+0, 1, 2, 5, 4 -> a, b, c, f, e
+0, 1, 2, 6, 4 -> a, b, c, g, e
+
+0, 1, 5, 3, 4 -> a, b, f, d, e
+0, 1, 6, 3, 4 -> a, b, g, d, e
+
+0, 5, 2, 3, 4 -> a, f, c, d, e
+0, 6, 2, 3, 4 -> a, g, c, d, e
+
+5, 1, 2, 3, 4 -> f, b, c, d, e
+6, 1, 2, 3, 4 -> g, b, c, d, e
+//11/21
+
+//I feel like about to skip some
+
+//left most -> right most
+//no moves for right most, hmmm, maybe more intermix steps
+//might just be the same as the last section
+//duplicates:
+1, 2, 3, 4, 5 -> b, c, d, e, f
+1, 2, 3, 4, 6 -> b, c, d, e, g
+
+1, 2, 3, 6, 5 -> b, c, d, g, f
+
+1, 2, 6, 4, 5 -> b, c, g, e, f
+
+1, 6, 3, 4, 5 -> b, g, d, e, f
+
+6, 2, 3, 4, 5 -> g, c, d, e, f
+//16/21
+
+Error, missing middle ones.
+
+Between left most to right most, attempt working up to it through intermixing. Resulting in larger gap size, there by hitting missing pieces.
+
+
+/*
+--Context/assumptions:
+-Start with all choices of extream left [0, 1, 2, ...].
+-R_1 means right most, L_1 means left most.
+-N is number of choices. N == choice array length.
+-K is number of items being chosen from. Items to pick from are in array.
+-2* <= N <= K. *could eventually become 1 with refinement. Though is litteral edge case.
+-R_N == L_1 && R_1 == L_N, as they count in opposite directions.
+
+Is described in terms of traversal because surounding details are minor and thus will be worked out late.
+Similarly assume bounds checking, though a lot of it should be known due to choice storage array.
+Also assume perfect information (can therotically be determined and will be kept track of in smart way). Again, such are minor details.
+
+--terms:
+-move, means shift by 1 position to right.
+-collision, 2 choices having/would have same index
+-set, not movement as stuff just is assigned a random access location
+-shift
+{
+ one being shifted is R_I (N >= I >= 1).
+
+ attempt move R_I //increment index or simulat increment as part of check
+
+/*Given that for R_I, there are N - I to left and I - 1 to right (movement is unidirectional), for many times an index can shift and when it can shift should be deterministic.
+Thus could probably be clever and skip some of the following checks steps and just do by knowing. Example for R_I, number of remaining shifts number of shifts index holding R_I is K - (I + index - 1).*/
+
+ If no collision, then set R_[I - 1, 1]to be next to them (such that index differences are 1 (0 gaps)). //new configuration
+ else
+ {
+   //I feel like recursive part (search) could be skipped by just shifting on correct (result) index. Should be deterministic.
+   attempt shift R_(I + 1) //recursively attempts shift, in which a succefull shift kills function stack due to effectively setting all ones before it (R_[I - 1, 1]).
+
+   if cannot shift due to bounds, then all combinations found and are currently at last combination {0, 0,..., 1, 1, 1}, thus done.
+ } 
+}
+
+proof:
+Think there are multiple ways. Feels like strong induction. As is like counting.
+
+algorithm:
+1) inital configuration //new configuration because none others exist 
+2) Move R_1 //new configuration, only R_1 moves
+3) Repeat #2 until hitting bounds.
+4) As can no longer move R_1, shift R_2 //if R_2 does not exist due to N == 1, then done.
+5) Shift succefull, thus go to #2.
+6) Cannot shift, thus done. //Cosmetic end point. Though depends on where done is marked. Does not matter.
+*/
+
+
+//5 {0:a, 1:b, 2:c, 3:d, 4:e, 5:f, 6:g}, can use anything for what is picked from letters are just easy to see apart from numbers. ":" is just explicit implict mapping to avoid recounting.
+//index array -> combination
+0, 1, 2, 3, 4 -> a, b, c, d, e //inital
+0, 1, 2, 3, 5 -> a, b, c, d, f //move
+0, 1, 2, 3, 6 -> a, b, c, d, g //move
+
+//shift R_2 (before shift is previous arrangement) 
+0, 1, 2, 4, 5 -> a, b, c, e, f
+0, 1, 2, 4, 6 -> a, b, c, e, g
+
+//shift R_2
+0, 1, 2, 5, 6 -> a, b, c, f, g
+
+//shift R_3 (effectively what happened)
+0, 1, 3, 4, 5 -> a, b, d, e, f
+0, 1, 3, 4, 6 -> a, b, d, e, g //move
+
+//shift R_2
+0, 1, 3, 5, 6 -> a, b, d, f, g
+
+//shift R_3
+0, 1, 4, 5, 6 -> a, b, e, f, g
+
+//shift R_4
+0, 2, 3, 4, 5 -> a, c, d, e, f
+0, 2, 3, 4, 6 -> a, c, d, e, g //move
+
+//shift R_2
+0, 2, 3, 5, 6 -> a, c, d, f, g
+
+//shift R_3
+0, 2, 4, 5, 6 -> a, c, e, f, g
+
+//shift R_4
+0, 3, 4, 5, 6 -> a, d, e, f, g
+
+//shift R_5
+1, 2, 3, 4, 5 -> b, c, d, e, f
+1, 2, 3, 4, 6 -> b, c, d, e, g //move
+
+//shift R_2
+1, 2, 3, 5, 6 -> b, c, d, f, g
+
+//shift R_3
+1, 2, 4, 5, 6 -> b, c, e, f, g
+
+//shift R_4
+1, 3, 4, 5, 6 -> b, d, e, f, g
+
+//shift R_5
+2, 3, 4, 5, 6 -> c, d, e, f, g //last one

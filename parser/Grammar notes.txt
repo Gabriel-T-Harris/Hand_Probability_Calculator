@@ -5,7 +5,7 @@ card_name: "[^" + SEMI_COLON + CONDITION_CARD_END + CONDITION_FIELD + CONDITION_
 scenarios: scenarios:
 scenario_name: "[^" + ASSIGN + CONDITION_SCENARIO_END + "]+"
 display: display
-Upper case: not, and, or, xor, draw, mill, banish, reasoning
+Upper case: not, and, or, xor, draw, mill, banish, reasoning, combinatoric
 Lower case: true, false
 single symbol are exactly the same. Text version is just for https://smlweb.cpsc.ucalgary.ca.
 id: "[^\n" + SEMI_COLON + ASSIGN + SENTINEL_START + SENTINEL_END + CONDITION_CARD_START + CONDITION_CARD_END +
