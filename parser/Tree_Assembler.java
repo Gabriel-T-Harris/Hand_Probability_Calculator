@@ -696,8 +696,8 @@ public class Tree_Assembler
                         case CONDITION_HAND_CARD_START:
                         {
                             //PRIMARY_EXPR -> CONDITION_HAND_CARD_START CARD_NAME CONDITION_HAND_CARD_END
-                            this.handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_CARD_POP, Semantic_Actions.PRIMARY_EXPR.name(),
-                                                            Semantic_Actions.CONDITION_CARD_START, Semantic_Actions.CARD_NAME, Semantic_Actions.CONDITION_CARD_END);
+                            this.handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_HAND_CARD_POP, Semantic_Actions.PRIMARY_EXPR.name(),
+                                                            Semantic_Actions.CONDITION_HAND_CARD_START, Semantic_Actions.CARD_NAME, Semantic_Actions.CONDITION_HAND_CARD_END);
                             break;
                         }
                         default:
@@ -715,20 +715,20 @@ public class Tree_Assembler
                     }
                     break;
                 }
-                case CONDITION_CARD_START:
+                case CONDITION_HAND_CARD_START:
                 {
                     switch (INPUT.get_type())
                     {
                         case CONDITION_HAND_CARD_START:
                         {
                             //CONDITION_HAND_CARD_START -> [
-                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_CARD_START.name(), INPUT);
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_HAND_CARD_START.name(), INPUT);
                             no_match = false;
                             break;
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_CARD_START, INPUT, Lexeme_Types.ID))
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_HAND_CARD_START, INPUT, Lexeme_Types.ID))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -740,20 +740,20 @@ public class Tree_Assembler
                     }
                     break;
                 }
-                case CONDITION_CARD_END:
+                case CONDITION_HAND_CARD_END:
                 {
                     switch (INPUT.get_type())
                     {
                         case CONDITION_HAND_CARD_END:
                         {
                             //CONDITION_HAND_CARD_START -> ]
-                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_CARD_END.name(), INPUT);
+                            this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_HAND_CARD_END.name(), INPUT);
                             no_match = false;
                             break;
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_CARD_END, INPUT, Lexeme_Types.AND, Lexeme_Types.OR, Lexeme_Types.XOR,
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_HAND_CARD_END, INPUT, Lexeme_Types.AND, Lexeme_Types.OR, Lexeme_Types.XOR,
                                                                 Lexeme_Types.SENTINEL_END, Lexeme_Types.CONDITION_EXPR_END))
                             {
                                 //remove semantic_stack top
@@ -1175,7 +1175,7 @@ public class Tree_Assembler
                     this.semantic_stack.remove(semantic_stack_end_index);
                     break;
                 }
-                case CONDITION_CARD_POP:
+                case CONDITION_HAND_CARD_POP:
                 {
                     //card condition in scenario
                     final int SYNTACTICAL_STACK_LAST_INDEX = this.syntactical_stack.size() - 1;
