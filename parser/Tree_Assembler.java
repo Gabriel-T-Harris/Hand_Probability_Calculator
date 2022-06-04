@@ -42,8 +42,8 @@ Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19/2021-8-[22, 23]/2021-11-
 </b>
 */
 
-//https://smlweb.cpsc.ucalgary.ca/vital-stats.php?grammar=START+-%3E+DECK+PROBABILITY+.%0D%0A%0D%0ADECK+-%3E+DECK_START+SENTINEL_START+DECK_LIST+SENTINEL_END.%0D%0ADECK_START+-%3E+deck+list%3A+.%0D%0ADECK_LIST+-%3E+CARD+MORE_CARDS+.%0D%0AMORE_CARDS+-%3E+CARD+MORE_CARDS+%7C+.%0D%0ACARD+-%3E+CARD_NAME+SEMI_COLON+.%0D%0ACARD_NAME+-%3E+id+.%0D%0A%0D%0APROBABILITY+-%3E+PROBABILITY_START+SENTINEL_START+SCENARIO_LIST+SENTINEL_END+.%0D%0APROBABILITY_START+-%3E+scenarios%3A+.%0D%0A%0D%0ASCENARIO_LIST+-%3E+SCENARIO+MORE_SCENARIOS+.%0D%0AMORE_SCENARIOS+-%3E+SCENARIO+MORE_SCENARIOS+%7C+.%0D%0A%0D%0ASCENARIO+-%3E+SCENARIO_NAME+ASSIGN+SENTINEL_START+TREE+DISPLAY+SENTINEL_END+.%0D%0ASCENARIO_NAME+-%3E+id+.%0D%0A%0D%0ATREE+-%3E+TREE_START+ASSIGN+SENTINEL_START+EXPR+SENTINEL_END+SEMI_COLON+.%0D%0ATREE_START+-%3E+scenario+.%0D%0A%0D%0AEXPR+-%3E+UNARY_EXPR+BINARY_EXPR+.%0D%0A%0D%0AUNARY_EXPR+-%3E+UNARY_OPERATOR+UNARY_EXPR+%7C+PRIMARY_EXPR+.%0D%0AUNARY_OPERATOR+-%3E+not+.%0D%0A%0D%0APRIMARY_EXPR+-%3E+CONDITION_CARD_START+CARD_NAME+CONDITION_CARD_END+%7C+CONDITION_SCENARIO_START+SCENARIO_NAME+CONDITION_SCENARIO_END+%7C+CONDITION_EXPR_START+EXPR+CONDITION_EXPR_END+.%0D%0A%0D%0ACONDITION_CARD_START+-%3E+open_bracket+.%0D%0ACONDITION_CARD_END+-%3E+close_bracket+.%0D%0ACONDITION_SCENARIO_START+-%3E+less_then+.%0D%0ACONDITION_SCENARIO_END+-%3E+greater_then+.%0D%0ACONDITION_EXPR_START+-%3E+open_parenthesis+.%0D%0ACONDITION_EXPR_END+-%3E+close_parenthesis+.%0D%0A%0D%0ABINARY_EXPR+-%3E+BINARY_OPERATOR+UNARY_EXPR+BINARY_EXPR+%7C+.%0D%0ABINARY_OPERATOR+-%3E+and+%7C+or+%7C+xor+.%0D%0A%0D%0ADISPLAY+-%3E+DISPLAY_START+ASSIGN+DISPLAY_VALUE+SEMI_COLON+%7C+.%0D%0ADISPLAY_START+-%3E+display+.%0D%0ADISPLAY_VALUE+-%3E+true+%7C+false+.%0D%0A%0D%0ASENTINEL_START+-%3E+open_brace+.%0D%0ASENTINEL_END+-%3E+close_brace+.%0D%0AASSIGN+-%3E+assign+.%0D%0ASEMI_COLON+-%3E+%3B.
-//https://smlweb.cpsc.ucalgary.ca/ll1-table.php?grammar=START+-%3E+DECK+PROBABILITY+.%0A%0ADECK+-%3E+DECK_START+SENTINEL_START+DECK_LIST+SENTINEL_END.%0ADECK_START+-%3E+deck+list%3A+.%0ADECK_LIST+-%3E+CARD+MORE_CARDS+.%0AMORE_CARDS+-%3E+CARD+MORE_CARDS+%7C+.%0ACARD+-%3E+CARD_NAME+SEMI_COLON+.%0ACARD_NAME+-%3E+id+.%0A%0APROBABILITY+-%3E+PROBABILITY_START+SENTINEL_START+SCENARIO_LIST+SENTINEL_END+.%0APROBABILITY_START+-%3E+scenarios%3A+.%0A%0ASCENARIO_LIST+-%3E+SCENARIO+MORE_SCENARIOS+.%0AMORE_SCENARIOS+-%3E+SCENARIO+MORE_SCENARIOS+%7C+.%0A%0ASCENARIO+-%3E+SCENARIO_NAME+ASSIGN+SENTINEL_START+TREE+DISPLAY+SENTINEL_END+.%0ASCENARIO_NAME+-%3E+id+.%0A%0ATREE+-%3E+TREE_START+ASSIGN+SENTINEL_START+EXPR+SENTINEL_END+SEMI_COLON+.%0ATREE_START+-%3E+scenario+.%0A%0AEXPR+-%3E+UNARY_EXPR+BINARY_EXPR+.%0A%0AUNARY_EXPR+-%3E+UNARY_OPERATOR+UNARY_EXPR+%7C+PRIMARY_EXPR+.%0AUNARY_OPERATOR+-%3E+not+.%0A%0APRIMARY_EXPR+-%3E+CONDITION_CARD_START+CARD_NAME+CONDITION_CARD_END+%7C+CONDITION_SCENARIO_START+SCENARIO_NAME+CONDITION_SCENARIO_END+%7C+CONDITION_EXPR_START+EXPR+CONDITION_EXPR_END+.%0A%0ACONDITION_CARD_START+-%3E+open_bracket+.%0ACONDITION_CARD_END+-%3E+close_bracket+.%0ACONDITION_SCENARIO_START+-%3E+less_then+.%0ACONDITION_SCENARIO_END+-%3E+greater_then+.%0ACONDITION_EXPR_START+-%3E+open_parenthesis+.%0ACONDITION_EXPR_END+-%3E+close_parenthesis+.%0A%0ABINARY_EXPR+-%3E+BINARY_OPERATOR+UNARY_EXPR+BINARY_EXPR+%7C+.%0ABINARY_OPERATOR+-%3E+and+%7C+or+%7C+xor+.%0A%0ADISPLAY+-%3E+DISPLAY_START+ASSIGN+DISPLAY_VALUE+SEMI_COLON+%7C+.%0ADISPLAY_START+-%3E+display+.%0ADISPLAY_VALUE+-%3E+true+%7C+false+.%0A%0ASENTINEL_START+-%3E+open_brace+.%0ASENTINEL_END+-%3E+close_brace+.%0AASSIGN+-%3E+assign+.%0ASEMI_COLON+-%3E+%3B.&substs=
+//https://smlweb.cpsc.ucalgary.ca/vital-stats.php?grammar=START+-%3E+DECK+PROBABILITY+.%0D%0A%0D%0ADECK+-%3E+DECK_START+SENTINEL_START+DECK_LIST+SENTINEL_END.%0D%0ADECK_START+-%3E+deck+list%3A+.%0D%0ADECK_LIST+-%3E+CARD+MORE_CARDS+.%0D%0AMORE_CARDS+-%3E+CARD+MORE_CARDS+%7C+.%0D%0ACARD+-%3E+CARD_NAME+SEMI_COLON+.%0D%0ACARD_NAME+-%3E+id+.%0D%0A%0D%0APROBABILITY+-%3E+PROBABILITY_START+SENTINEL_START+SCENARIO_LIST+SENTINEL_END+.%0D%0APROBABILITY_START+-%3E+scenarios%3A+.%0D%0A%0D%0ASCENARIO_LIST+-%3E+SCENARIO+MORE_SCENARIOS+.%0D%0AMORE_SCENARIOS+-%3E+SCENARIO+MORE_SCENARIOS+%7C+.%0D%0A%0D%0ASCENARIO+-%3E+SCENARIO_NAME+ASSIGN+SENTINEL_START+TREE+DISPLAY+SENTINEL_END+.%0D%0ASCENARIO_NAME+-%3E+id+.%0D%0A%0D%0ATREE+-%3E+TREE_START+ASSIGN+SENTINEL_START+EXPR+SENTINEL_END+SEMI_COLON+.%0D%0ATREE_START+-%3E+scenario+.%0D%0A%0D%0AEXPR+-%3E+UNARY_EXPR+BINARY_EXPR+.%0D%0A%0D%0AUNARY_EXPR+-%3E+UNARY_OPERATOR+UNARY_EXPR+%7C+PRIMARY_EXPR+.%0D%0AUNARY_OPERATOR+-%3E+not+.%0D%0A%0D%0APRIMARY_EXPR+-%3E+CONDITION_HAND_CARD_START+CARD_NAME+CONDITION_HAND_CARD_END+%7C+CONDITION_SCENARIO_START+SCENARIO_NAME+CONDITION_SCENARIO_END+%7C+CONDITION_EXPR_START+EXPR+CONDITION_EXPR_END+.%0D%0A%0D%0ACONDITION_CARD_START+-%3E+open_bracket+.%0D%0ACONDITION_CARD_END+-%3E+close_bracket+.%0D%0ACONDITION_SCENARIO_START+-%3E+less_then+.%0D%0ACONDITION_SCENARIO_END+-%3E+greater_then+.%0D%0ACONDITION_EXPR_START+-%3E+open_parenthesis+.%0D%0ACONDITION_EXPR_END+-%3E+close_parenthesis+.%0D%0A%0D%0ABINARY_EXPR+-%3E+BINARY_OPERATOR+UNARY_EXPR+BINARY_EXPR+%7C+.%0D%0ABINARY_OPERATOR+-%3E+and+%7C+or+%7C+xor+.%0D%0A%0D%0ADISPLAY+-%3E+DISPLAY_START+ASSIGN+DISPLAY_VALUE+SEMI_COLON+%7C+.%0D%0ADISPLAY_START+-%3E+display+.%0D%0ADISPLAY_VALUE+-%3E+true+%7C+false+.%0D%0A%0D%0ASENTINEL_START+-%3E+open_brace+.%0D%0ASENTINEL_END+-%3E+close_brace+.%0D%0AASSIGN+-%3E+assign+.%0D%0ASEMI_COLON+-%3E+%3B.
+//https://smlweb.cpsc.ucalgary.ca/ll1-table.php?grammar=START+-%3E+DECK+PROBABILITY+.%0A%0ADECK+-%3E+DECK_START+SENTINEL_START+DECK_LIST+SENTINEL_END.%0ADECK_START+-%3E+deck+list%3A+.%0ADECK_LIST+-%3E+CARD+MORE_CARDS+.%0AMORE_CARDS+-%3E+CARD+MORE_CARDS+%7C+.%0ACARD+-%3E+CARD_NAME+SEMI_COLON+.%0ACARD_NAME+-%3E+id+.%0A%0APROBABILITY+-%3E+PROBABILITY_START+SENTINEL_START+SCENARIO_LIST+SENTINEL_END+.%0APROBABILITY_START+-%3E+scenarios%3A+.%0A%0ASCENARIO_LIST+-%3E+SCENARIO+MORE_SCENARIOS+.%0AMORE_SCENARIOS+-%3E+SCENARIO+MORE_SCENARIOS+%7C+.%0A%0ASCENARIO+-%3E+SCENARIO_NAME+ASSIGN+SENTINEL_START+TREE+DISPLAY+SENTINEL_END+.%0ASCENARIO_NAME+-%3E+id+.%0A%0ATREE+-%3E+TREE_START+ASSIGN+SENTINEL_START+EXPR+SENTINEL_END+SEMI_COLON+.%0ATREE_START+-%3E+scenario+.%0A%0AEXPR+-%3E+UNARY_EXPR+BINARY_EXPR+.%0A%0AUNARY_EXPR+-%3E+UNARY_OPERATOR+UNARY_EXPR+%7C+PRIMARY_EXPR+.%0AUNARY_OPERATOR+-%3E+not+.%0A%0APRIMARY_EXPR+-%3E+CONDITION_HAND_CARD_START+CARD_NAME+CONDITION_HAND_CARD_END+%7C+CONDITION_SCENARIO_START+SCENARIO_NAME+CONDITION_SCENARIO_END+%7C+CONDITION_EXPR_START+EXPR+CONDITION_EXPR_END+.%0A%0ACONDITION_CARD_START+-%3E+open_bracket+.%0ACONDITION_CARD_END+-%3E+close_bracket+.%0ACONDITION_SCENARIO_START+-%3E+less_then+.%0ACONDITION_SCENARIO_END+-%3E+greater_then+.%0ACONDITION_EXPR_START+-%3E+open_parenthesis+.%0ACONDITION_EXPR_END+-%3E+close_parenthesis+.%0A%0ABINARY_EXPR+-%3E+BINARY_OPERATOR+UNARY_EXPR+BINARY_EXPR+%7C+.%0ABINARY_OPERATOR+-%3E+and+%7C+or+%7C+xor+.%0A%0ADISPLAY+-%3E+DISPLAY_START+ASSIGN+DISPLAY_VALUE+SEMI_COLON+%7C+.%0ADISPLAY_START+-%3E+display+.%0ADISPLAY_VALUE+-%3E+true+%7C+false+.%0A%0ASENTINEL_START+-%3E+open_brace+.%0ASENTINEL_END+-%3E+close_brace+.%0AASSIGN+-%3E+assign+.%0ASEMI_COLON+-%3E+%3B.&substs=
 public class Tree_Assembler
 {
     /**
@@ -368,7 +368,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CARD_NAME, INPUT, Lexeme_Types.SEMI_COLON, Lexeme_Types.CONDITION_CARD_END))
+                            if (this.convenience_error_handling(Semantic_Actions.CARD_NAME, INPUT, Lexeme_Types.SEMI_COLON, Lexeme_Types.CONDITION_HAND_CARD_END))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
@@ -593,7 +593,7 @@ public class Tree_Assembler
                     {
                         case CONDITION_EXPR_START:
                         case CONDITION_SCENARIO_START:
-                        case CONDITION_CARD_START:
+                        case CONDITION_HAND_CARD_START:
                         case NOT:
                         {
                             //Counting on BINARY_EXPR to either self terminate or perform the semantic popping to result in a 'single' piece.
@@ -621,7 +621,7 @@ public class Tree_Assembler
                     {
                         case CONDITION_EXPR_START:
                         case CONDITION_SCENARIO_START:
-                        case CONDITION_CARD_START:
+                        case CONDITION_HAND_CARD_START:
                         {
                             //UNARY_EXPR -> PRIMARY_EXPR
                             this.handle_case_subroutine(semantic_stack_end_index, Semantic_Actions.UNARY_EXPR.name(), Semantic_Actions.PRIMARY_EXPR);
@@ -662,7 +662,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.UNARY_OPERATOR, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_CARD_START,
+                            if (this.convenience_error_handling(Semantic_Actions.UNARY_OPERATOR, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_HAND_CARD_START,
                                                                 Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
                             {
                                 //remove semantic_stack top
@@ -693,9 +693,9 @@ public class Tree_Assembler
                                                             Semantic_Actions.CONDITION_SCENARIO_START, Semantic_Actions.SCENARIO_NAME, Semantic_Actions.CONDITION_SCENARIO_END);
                             break;
                         }
-                        case CONDITION_CARD_START:
+                        case CONDITION_HAND_CARD_START:
                         {
-                            //PRIMARY_EXPR -> CONDITION_CARD_START CARD_NAME CONDITION_CARD_END
+                            //PRIMARY_EXPR -> CONDITION_HAND_CARD_START CARD_NAME CONDITION_HAND_CARD_END
                             this.handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_CARD_POP, Semantic_Actions.PRIMARY_EXPR.name(),
                                                             Semantic_Actions.CONDITION_CARD_START, Semantic_Actions.CARD_NAME, Semantic_Actions.CONDITION_CARD_END);
                             break;
@@ -719,9 +719,9 @@ public class Tree_Assembler
                 {
                     switch (INPUT.get_type())
                     {
-                        case CONDITION_CARD_START:
+                        case CONDITION_HAND_CARD_START:
                         {
-                            //CONDITION_CARD_START -> [
+                            //CONDITION_HAND_CARD_START -> [
                             this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_CARD_START.name(), INPUT);
                             no_match = false;
                             break;
@@ -744,9 +744,9 @@ public class Tree_Assembler
                 {
                     switch (INPUT.get_type())
                     {
-                        case CONDITION_CARD_END:
+                        case CONDITION_HAND_CARD_END:
                         {
-                            //CONDITION_CARD_START -> ]
+                            //CONDITION_HAND_CARD_START -> ]
                             this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_CARD_END.name(), INPUT);
                             no_match = false;
                             break;
@@ -830,7 +830,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_EXPR_START, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_CARD_START,
+                            if (this.convenience_error_handling(Semantic_Actions.CONDITION_EXPR_START, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_HAND_CARD_START,
                                                                 Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
                             {
                                 //remove semantic_stack top
@@ -849,7 +849,7 @@ public class Tree_Assembler
                     {
                         case CONDITION_EXPR_END:
                         {
-                            //CONDITION_CARD_START -> )
+                            //CONDITION_HAND_CARD_START -> )
                             this.match_litteral_discard_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_EXPR_END.name(), INPUT);
                             no_match = false;
                             break;
@@ -924,7 +924,7 @@ public class Tree_Assembler
                         }
                         default:
                         {
-                            if (this.convenience_error_handling(Semantic_Actions.BINARY_OPERATOR, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_CARD_START,
+                            if (this.convenience_error_handling(Semantic_Actions.BINARY_OPERATOR, INPUT, Lexeme_Types.NOT, Lexeme_Types.CONDITION_HAND_CARD_START,
                                                                 Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
                             {
                                 //remove semantic_stack top
@@ -1034,7 +1034,7 @@ public class Tree_Assembler
                         default:
                         {
                             if (this.convenience_error_handling(Semantic_Actions.SENTINEL_START, INPUT, Lexeme_Types.ID, Lexeme_Types.TREE_START, Lexeme_Types.NOT,
-                                                                Lexeme_Types.CONDITION_CARD_START, Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
+                                                                Lexeme_Types.CONDITION_HAND_CARD_START, Lexeme_Types.CONDITION_SCENARIO_START, Lexeme_Types.CONDITION_EXPR_START))
                             {
                                 //remove semantic_stack top
                                 this.semantic_stack.remove(semantic_stack_end_index);
