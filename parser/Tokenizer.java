@@ -130,7 +130,7 @@ public class Tokenizer
     /**
      * Pattern indicating the definition of the {@link Lexeme_Types#DECK_START} {@link Token}.
      */
-    public final static Pattern DECK_START = Pattern.compile("\\s*deck_list:\\s*");
+    public final static Pattern DECK_START = Pattern.compile("\\s*decklist:\\s*");
 
     /**
      * Pattern indicating the definition of the {@link Lexeme_Types#PROBABILITY_START} {@link Token}.
