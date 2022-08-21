@@ -1,4 +1,4 @@
-deck list:
+decklist:
 {
 First Card;
 Second Card;

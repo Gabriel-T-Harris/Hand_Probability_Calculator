@@ -1,5 +1,5 @@
 //--simulation_results_console --input "Input/Salamangreat.txt"
-deck list:
+decklist:
 {
 Parallel eXceed;
 Parallel eXceed;

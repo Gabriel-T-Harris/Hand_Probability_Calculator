@@ -1,5 +1,5 @@
 //--simulation_results_console --input "Input/Drytron.txt"
-deck list:
+decklist:
 {
 Diviner of the Herald;
 //Diviner of the Herald;
