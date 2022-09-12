@@ -37,7 +37,7 @@ import structure.Scenario;
 <b>
 Purpose: final step which performs the actual simulation.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-04/2021-8-[17-22]/2021-12-18/2021-12-20/2021-12-25/2022-5-28
+Date: 2021-08-04/2021-8-[17-22]/2021-12-18/2021-12-20/2021-12-25/2022-5-28/2022-6-18
 </b>
 */
 
@@ -80,6 +80,41 @@ public class Simulation
             throw new IllegalArgumentException("FOREST must not be empty.");
         else if (this.DECK.isEmpty())
             throw new IllegalArgumentException("DECK must not be empty.");
+    }
+
+    /**
+     * Performs simulation. By differing to appropriate simulation function.
+     * 
+     * @param OVERRIDE when true will jump straight to calling {@link #sequential_simulation(boolean, int, int)} rather then analyzing {@link Runtime#availableProcessors()} that this program has access to and acting accordingly.
+     * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option) and false for no outputs
+     * @param HAND_SIZE of the hand which will be used in the simulation
+     * @param TEST_HAND_COUNT number of times to run simulation
+     * 
+     * @return the result of the simulation
+     */
+    public String simulate(final boolean OVERRIDE, final boolean DISPLAY_PROGRESS, final int HAND_SIZE, final int TEST_HAND_COUNT)
+    {
+        //centralize some operations
+        if (this.DECK.size() <= HAND_SIZE)
+            return "HAND_SIZE is at least as big as the deck itself, thus no point in carrying out a simulation.";
+
+        if (DISPLAY_PROGRESS)
+            System.out.println();
+
+        if (OVERRIDE)
+            return this.sequential_simulation(DISPLAY_PROGRESS, HAND_SIZE, TEST_HAND_COUNT);
+
+        final int CORE_COUNT = Runtime.getRuntime().availableProcessors();
+
+        if (CORE_COUNT > 1)
+            return this.parallel_simulation(DISPLAY_PROGRESS, CORE_COUNT, HAND_SIZE, TEST_HAND_COUNT);
+        else if (CORE_COUNT == 1)
+            return this.sequential_simulation(DISPLAY_PROGRESS, HAND_SIZE, TEST_HAND_COUNT);
+        else if (CORE_COUNT < 1)
+            throw new UnknownError("Impossible Error: somehow value from \"Runtime.getRuntime().availableProcessors();\" resulted in \"" + CORE_COUNT + "\" which is < 1.");
+        else
+            throw new UnknownError("Impossible Error: somehow value from \"Runtime.getRuntime().availableProcessors();\" resulted in \"" + CORE_COUNT +
+                                   "\" which is not < 1, == 1, nor > 1.");
     }
 
     /**
@@ -234,41 +269,6 @@ public class Simulation
     {
         Collections.shuffle(DECK);
         return new ArrayList<R>(DECK.subList(0, HAND_SIZE));
-    }
-
-    /**
-     * Performs simulation. By differing to appropriate simulation function.
-     * 
-     * @param OVERRIDE when true will jump straight to calling {@link #sequential_simulation(boolean, int, int)} rather then analyzing {@link Runtime#availableProcessors()} that this program has access to and acting accordingly.
-     * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option) and false for no outputs
-     * @param HAND_SIZE of the hand which will be used in the simulation
-     * @param TEST_HAND_COUNT number of times to run simulation
-     * 
-     * @return the result of the simulation
-     */
-    public String simulate(final boolean OVERRIDE, final boolean DISPLAY_PROGRESS, final int HAND_SIZE, final int TEST_HAND_COUNT)
-    {
-        //centralize some operations
-        if (this.DECK.size() <= HAND_SIZE)
-            return "HAND_SIZE is at least as big as the deck itself, thus no point in carrying out a simulation.";
-
-        if (DISPLAY_PROGRESS)
-            System.out.println();
-
-        if (OVERRIDE)
-            return this.sequential_simulation(DISPLAY_PROGRESS, HAND_SIZE, TEST_HAND_COUNT);
-
-        final int CORE_COUNT = Runtime.getRuntime().availableProcessors();
-
-        if (CORE_COUNT > 1)
-            return this.parallel_simulation(DISPLAY_PROGRESS, CORE_COUNT, HAND_SIZE, TEST_HAND_COUNT);
-        else if (CORE_COUNT == 1)
-            return this.sequential_simulation(DISPLAY_PROGRESS, HAND_SIZE, TEST_HAND_COUNT);
-        else if (CORE_COUNT < 1)
-            throw new UnknownError("Impossible Error: somehow value from \"Runtime.getRuntime().availableProcessors();\" resulted in \"" + CORE_COUNT + "\" which is < 1.");
-        else
-            throw new UnknownError("Impossible Error: somehow value from \"Runtime.getRuntime().availableProcessors();\" resulted in \"" + CORE_COUNT +
-                                   "\" which is not < 1, == 1, nor > 1.");
     }
 
     /**

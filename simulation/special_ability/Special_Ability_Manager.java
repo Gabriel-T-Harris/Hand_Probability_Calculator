@@ -9,7 +9,7 @@ import structure.Reservable;
 <b>
 Purpose: manages all special abilities<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-12-25/2022-1-1
+Date: 2021-12-25/2022-1-1/2022-6-18
 </b>
 */
 
@@ -99,14 +99,6 @@ public class Special_Ability_Manager
     }
 
     /**
-     * Resets number of times each card has been used. 
-     */
-    private void reset_all()
-    {
-        this.super_powers.values().forEach(Card_Effects::reset);
-    }
-
-    /**
      * Handle all special abilities. Should not be called multiple times one the same {@link Game_State}.
      *
      * @param <R> {@link Reservable}
@@ -149,5 +141,13 @@ public class Special_Ability_Manager
         //clean up
         INPUT.remove_main_deck();
         this.reset_all();
+    }
+
+    /**
+     * Resets number of times each card has been used. 
+     */
+    private void reset_all()
+    {
+        this.super_powers.values().forEach(Card_Effects::reset);
     }
 }
