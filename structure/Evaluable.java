@@ -211,7 +211,8 @@ public class Evaluable
      */
     <E extends Reservable> void printDebugStep(final Collection<E> hand)
     {
-        if (debugMode) {
+        if (Evaluable.debugMode)
+        {
             System.out.print(this + " ");
             List<String> usedAndUnusedCards = hand.stream().collect(Collector.of(
                     Evaluable::StringJoinerListGenerator,

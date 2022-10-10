@@ -106,6 +106,16 @@ public class Combinatorial_Iteration<E>
     }
 
     /**
+     * Returns the underlying options being chosen from.
+     * 
+     * @return an unmodifiable view of the underlying options being chosen from
+     */
+    public Collection<E> get_options()
+    {
+        return Collections.unmodifiableCollection(Arrays.asList(this.OPTIONS));
+    }
+
+    /**
      * Returns the current combination as a result of the current choices.
      * 
      * @return a representation of the current combination
