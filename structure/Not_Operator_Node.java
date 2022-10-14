@@ -45,7 +45,7 @@ public class Not_Operator_Node extends Base_Node
     }
 
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         TestResult result = CHILD.evaluate(hand, () -> TestResult.NotSuccess);
         if (result == TestResult.NotSuccess) {

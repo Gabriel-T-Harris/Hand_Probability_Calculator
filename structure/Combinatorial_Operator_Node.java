@@ -6,7 +6,7 @@ import java.util.Collection;
 <b>
 Purpose: Combinatorial operator<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2022-10-10
+Date: 2022-10-10/2022-10-13
 </b>
 */
 
@@ -50,16 +50,34 @@ public class Combinatorial_Operator_Node extends Base_Node
         return super.toString() + CHILDREN_DOT_FORMAT.toString();
     }
 
+    /**
+     * Subroutine to test current combination of {@link #CHILDREN}.
+     * 
+     * @return the result of testing the {@link Combinatorial_Iteration#get_current_combination()}
+     */
+    public TestResult evaluate_subroutine()
+    {
+        //evaluate function should not return a litteral value besides TestResult.Rollback.
+        //TestResult.NotSuccess is typically only returned from RollbackCallback's next argument
+        //TestResult.Success only comes from inital Evaluable.evaluate(Collection<E>)
+        //recursion? next is subsequent index
+    }
+
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next)
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next)
     {
         printDebugStep(hand);
 
-        TestResult result;
+        //FIXME: feels wrong, loop use
+        TestResult result = this.evaluate_subroutine();
+
+        //TODO: TestResult.NotSuccess should be handled
+        while (result != TestResult.Rollback)
+            result = !this.CHILDREN.done() ? TestResult.Rollback : this.evaluate_subroutine();
 
         //current over and, else rollback loop next combination until done. Then not success
 
-        return result;
+        return result; //looks wrong, next is not used, it is pass of success, next should be passed some how. Next goes with last index condition.
     }
 
     @Override

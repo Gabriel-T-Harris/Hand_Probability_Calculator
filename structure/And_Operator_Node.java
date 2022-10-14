@@ -40,7 +40,7 @@ public class And_Operator_Node extends Binary_Operator_Node
 
     // If LEFT_CHILD can take card(s), then make sure the RIGHT CHILD can also take card(s)
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         return LEFT_CHILD.evaluate(
                 hand,

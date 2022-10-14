@@ -41,7 +41,7 @@ public class Or_Operator_Node extends Binary_Operator_Node
     // If LEFT_CHILD can take card(s), then continue evaluation
     // If LEFT_CHILD rolls back, then evaluate the RIGHT CHILD
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         TestResult result = LEFT_CHILD.evaluate(hand, next);
         if (result == TestResult.Rollback)

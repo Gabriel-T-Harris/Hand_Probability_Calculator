@@ -41,7 +41,7 @@ public class Xor_Operator_Node extends Binary_Operator_Node
     // If LEFT_CHILD can take card(s), then make sure the RIGHT CHILD can't take card(s)
     // If LEFT_CHILD can't take card(s), then make sure the RIGHT CHILD can take card(s)
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         TestResult result = LEFT_CHILD.evaluate(
                 hand,

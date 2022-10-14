@@ -63,7 +63,7 @@ public class Scenario extends Evaluable
     }
 
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         return TREE_CONDITION.evaluate(hand, next);
     }

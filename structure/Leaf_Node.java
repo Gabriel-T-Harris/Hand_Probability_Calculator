@@ -53,7 +53,7 @@ public class Leaf_Node<T> extends Base_Node
       If no valid options, throw a Rollback signal
      */
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         if (Evaluable.debugMode) {
             System.out.printf("Trying to match %s\n", CARD);
             printDebugStep(hand);
