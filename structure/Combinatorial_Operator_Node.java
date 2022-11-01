@@ -6,7 +6,7 @@ import java.util.Collection;
 <b>
 Purpose: Combinatorial operator<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2022-10-10/2022-10-13
+Date: 2022-10-10/2022-10-13/2022-10-31
 </b>
 */
 
@@ -50,39 +50,49 @@ public class Combinatorial_Operator_Node extends Base_Node
         return super.toString() + CHILDREN_DOT_FORMAT.toString();
     }
 
-    /**
-     * Subroutine to test current combination of {@link #CHILDREN}.
-     * 
-     * @return the result of testing the {@link Combinatorial_Iteration#get_current_combination()}
-     */
-    public TestResult evaluate_subroutine()
-    {
-        //evaluate function should not return a litteral value besides TestResult.Rollback.
-        //TestResult.NotSuccess is typically only returned from RollbackCallback's next argument
-        //TestResult.Success only comes from inital Evaluable.evaluate(Collection<E>)
-        //recursion? next is subsequent index
-    }
-
     @Override
-    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next)
+    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, RollbackCallback next)
     {
-        printDebugStep(hand);
+        printDebugStep(HAND);
+        this.CHILDREN.reset_combinatorial_algorithm(); //reset every time for reuse
 
-        //FIXME: feels wrong, loop use
-        TestResult result = this.evaluate_subroutine();
+        final int COMBINATION_SIZE_MINUS_ONE = this.CHILDREN.get_choice_count() - 1;
+        TestResult result = this.recursive_evaluate_subroutine(0, COMBINATION_SIZE_MINUS_ONE, HAND, next);
 
-        //TODO: TestResult.NotSuccess should be handled
-        while (result != TestResult.Rollback)
-            result = !this.CHILDREN.done() ? TestResult.Rollback : this.evaluate_subroutine();
+        //Continue looking at combinations until successful or non
+        while ((result == TestResult.Rollback || result == TestResult.NotSuccess) && !this.CHILDREN.done())
+        {
+            this.CHILDREN.next_combincation();
+            result = this.recursive_evaluate_subroutine(0, COMBINATION_SIZE_MINUS_ONE, HAND, next);
+        }
 
-        //current over and, else rollback loop next combination until done. Then not success
-
-        return result; //looks wrong, next is not used, it is pass of success, next should be passed some how. Next goes with last index condition.
+        return result;
     }
 
     @Override
     protected Collection<? extends Evaluable> continue_breath_search()
     {
         return this.CHILDREN.get_options();
+    }
+
+    /**
+     * Subroutine to test current combination of {@link #CHILDREN}. 
+     * 
+     * @param CURRENT_INDEX is expected to start off at 0, represents the condition being looked at currently
+     * @param SIZE_MINUS_ONE is expected to be {@link Combinatorial_Iteration#get_choice_count()} - 1 to work properly
+     * @param HAND being evaluated
+     * @param next is what is to be evaluated in event current is successful, is also the accumulator of the recursive function
+     *
+     * @param <E> {@link Reservable} stuff to be usable for grand structure
+     * 
+     * @return the result of testing the {@link Combinatorial_Iteration#get_current_combination()}
+     */
+    private <E extends Reservable> TestResult recursive_evaluate_subroutine(final int CURRENT_INDEX, final int SIZE_MINUS_ONE, final Collection<E> HAND, RollbackCallback next)
+    {
+        if (CURRENT_INDEX == SIZE_MINUS_ONE)
+            return this.CHILDREN.get_current_combination().get(CURRENT_INDEX).evaluate(HAND, next);
+        else
+            return this.CHILDREN.get_current_combination().get(CURRENT_INDEX).evaluate(HAND,
+                                                                                       () -> this.recursive_evaluate_subroutine(CURRENT_INDEX + 1, SIZE_MINUS_ONE, HAND, next));
     }
 }

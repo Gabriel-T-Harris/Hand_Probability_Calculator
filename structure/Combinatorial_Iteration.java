@@ -25,7 +25,7 @@ import java.util.Collections;
 <b>
 Purpose: entire structure is to carry out combinatorial algorithm<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2022-06-04/2022-6-18/2022-6-19/2022-10-8/2022-10-10
+Date: 2022-06-04/2022-6-18/2022-6-19/2022-10-8/2022-10-10/2022-10-31
 </b>
 * @param <E> is the type of the objects being chosen
 */
@@ -258,6 +258,18 @@ public class Combinatorial_Iteration<E>
         }
         else
             throw new java.util.NoSuchElementException("Error: Combinatorial_Iteration.next_combination() has been called when it has no more combinations to make.");
+    }
+
+    /**
+     * Simply resets internal values such that the data structure can be reused.
+     */
+    public void reset_combinatorial_algorithm()
+    {
+        //set initial indices
+        for (int i = 0; i < this.INDICES.length; ++i)
+            this.INDICES[i] = i;
+
+        this.recalculate_current_combination();
     }
 
     /**
