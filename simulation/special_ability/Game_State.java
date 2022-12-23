@@ -13,7 +13,6 @@ Purpose: Holds the locations of all the cards that are being checked.<br>
 Programmer: Gabriel Toban Harris<br>
 Date: 2021-12-25/2021-12-30/2021-12-31/2022-1-1
 </b>
-
 * @param <R> is the value of the contents being stored
 */
 
