@@ -1,0 +1,83 @@
+//--simulation_results_console --input "testing/Test Input/Prolematic_Combinatorial_Test_Input_File.txt"
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+    //only one activation for testing purposes
+    Reasoning = {special_ability = {REASONING {Stopping Point 1; Stopping Point 2;};}; uses = 1;}
+}
+
+scenarios:
+{
+    Point 1 = {scenario = {*Stopping Point 1*};}
+    
+    //point 2 should happen more often that point 1
+    Point 2 = {scenario = {*Stopping Point 2*};}
+}
+
+/*
+Other:
+Line Comment, yes
+Block Comment, yes
+Block Comment error, no
+
+Deck List properties:
+Duplicate Card, no
+Invalid Card, no
+No Deck Error, no
+
+Special Ability properties:
+Has special ability section, yes
+Repeated special ability name, no
+Improper activation limit, no
+Unknown special ability action, no
+Reasoning special ability error, no
+
+Scenario List properties:
+No Scenario Defined Error, no
+Invalid Name, no
+Repeated Name Error, no
+Binary Operator, no
+Binary Operand Missing, no
+Reference Scenario, yes
+Undefined Referenced Scenario Error, no
+Empty scenario, no
+Has Display, no
+Invalid Display, no
+Unary Operator, no
+Multiple Unary, no
+Nesting of Expressions, no
+Combinatoric operator, no
+Combinatoric semantic error, no
+*/

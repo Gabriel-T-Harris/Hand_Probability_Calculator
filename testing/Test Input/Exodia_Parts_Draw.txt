@@ -1,0 +1,96 @@
+//--simulation_results_console --input "testing/Test Input/Exodia_Parts_Draw.txt"
+//Not meant to be taken seriously, it is a test after all.
+decklist:
+{
+Left Arm of the Forbidden One;
+Left Arm of the Forbidden One;
+Left Arm of the Forbidden One;
+Right Leg of the Forbidden One;
+Right Leg of the Forbidden One;
+Right Leg of the Forbidden One;
+Left Leg of the Forbidden One;
+Left Leg of the Forbidden One;
+Left Leg of the Forbidden One;
+Right Arm of the Forbidden One;
+Right Arm of the Forbidden One;
+Right Arm of the Forbidden One;
+Exodia the Forbidden One;
+Exodia the Forbidden One;
+Exodia the Forbidden One;
+One Day of Peace;
+One Day of Peace;
+One Day of Peace;
+Pot of Desires;
+Pot of Desires;
+Pot of Desires;
+Pot of Greed;
+Pot of Greed;
+Pot of Greed;
+Upstart Goblin;
+Upstart Goblin;
+Upstart Goblin;
+Into the Void;
+Into the Void;
+Into the Void;
+Chicken Game;
+Chicken Game;
+Chicken Game;
+}
+
+special_abilities:
+{
+    One Day of Peace = {special_ability = {DRAW 1;}; uses = 0;}
+
+    Pot of Desires = {special_ability = {BANISH 10; DRAW 2;}; uses = 1;}
+
+    Pot of Greed = {special_ability = {DRAW 2;}; uses = 0;}
+
+    Upstart Goblin = {special_ability = {DRAW 1;}; uses = 0;}
+
+    Into the Void = {special_ability = {DRAW 1;}; uses = 0;}
+
+    Chicken Game = {special_ability = {DRAW 1;}; uses = 0;}
+}
+
+scenarios:
+{
+    Victory = {scenario = {[Left Arm of the Forbidden One] AND [Right Leg of the Forbidden One] AND [Left Leg of the Forbidden One] AND [Right Arm of the Forbidden One] AND [Exodia the Forbidden One]};}
+    
+    Piece Banished = {scenario = {~Left Arm of the Forbidden One~ OR ~Right Leg of the Forbidden One~ OR ~Left Leg of the Forbidden One~ OR ~Right Arm of the Forbidden One~ OR ~Exodia the Forbidden One~};}
+}
+
+/*
+Other:
+Line Comment, yes
+Block Comment, yes
+Block Comment error, no
+
+Deck List properties:
+Duplicate Card, no
+Invalid Card, no
+No Deck Error, no
+
+Special Ability properties:
+Has special ability section, yes
+Repeated special ability name, no
+Improper activation limit, no
+Unknown special ability action, no
+Reasoning special ability error, no
+
+Scenario List properties:
+No Scenario Defined Error, no
+Invalid Name, no
+Repeated Name Error, no
+Binary Operator, yes
+Binary Operand Missing, no
+Reference Scenario, no
+Undefined Referenced Scenario Error, no
+Empty scenario, no
+Has Display, no
+Invalid Display, no
+Unary Operator, no
+Multiple Unary, no
+Nesting of Expressions, no
+Combinatoric operator, no
+Combinatoric semantic error, no
+*/
