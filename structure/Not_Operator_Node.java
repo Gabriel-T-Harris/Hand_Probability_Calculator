@@ -45,6 +45,14 @@ public class Not_Operator_Node extends Base_Node
         this.CHILD = CHILD;
     }
 
+    /**
+     * for dot format
+     */
+    public String toString()
+    {
+        return super.toString() + this.UNIQUE_IDENTIFIER + "->" + this.CHILD.UNIQUE_IDENTIFIER + ";\n";
+    }
+
     @Override
     protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
     {
@@ -77,14 +85,6 @@ public class Not_Operator_Node extends Base_Node
 
         // result should only ever be TestResult.Rollback here
         return NEXT.call();
-    }
-
-    /**
-     * for dot format
-     */
-    public String toString()
-    {
-        return super.toString() + this.UNIQUE_IDENTIFIER + "->" + this.CHILD.UNIQUE_IDENTIFIER + ";\n";
     }
 
     @Override

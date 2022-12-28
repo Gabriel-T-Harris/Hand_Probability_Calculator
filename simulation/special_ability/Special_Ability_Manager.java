@@ -150,7 +150,7 @@ public class Special_Ability_Manager
             int hand_index = 0;
             String key;
             Card_Effects placeholder;
-            Game_State<R> restoration_point;
+            Game_State<R> restoration_point; //note state before carrying out abilities in case a rewind is required
             ArrayList<R> hand_reference = INPUT.get_cards(Locations.HAND);
 
             do
@@ -166,7 +166,7 @@ public class Special_Ability_Manager
                         for (final Special_Ability_Base EFFECT : placeholder.ACTIONS)
                             if (!(legal_card_activation = EFFECT.perform_special_ability(INPUT)))
                             {
-                                INPUT.reinitialize(restoration_point);
+                                INPUT.reinitialize(restoration_point); //revert upon failure
                                 break; // stop upon failure
                             }
                     }

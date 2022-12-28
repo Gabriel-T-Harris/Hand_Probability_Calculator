@@ -33,13 +33,6 @@ public class Game_State<R extends Reservable>
     private final HashMap<Locations, ArrayList<R>> STORAGE = new HashMap<Locations, ArrayList<R>>(Locations.values().length + 1, 1f);
 
     /**
-     * Constructor that is meant to be used when manually constructing this custom Object.
-     */
-    private Game_State()
-    {
-    }
-
-    /**
      * Basic constructor. Note that parameter is shallowly copied to minimize costs.
      * 
      * @param HAND represents the cards in hand.
@@ -61,6 +54,13 @@ public class Game_State<R extends Reservable>
         this(HAND);
         MAIN_DECK.trimToSize();
         this.STORAGE.put(Locations.MAIN_DECK, MAIN_DECK);
+    }
+
+    /**
+     * Constructor that is meant to be used when manually constructing this custom Object.
+     */
+    private Game_State()
+    {
     }
 
     //getters
@@ -156,46 +156,6 @@ public class Game_State<R extends Reservable>
     }
 
     /**
-     * Convenience method. {@link structure.Reservable#release()} all cards in hand. {@link Reservable#release()}
-     * 
-     * @param <R> the type of cards in the deck
-     * 
-     * @param HAND to be reset
-     */
-    public static <R extends Reservable> void reset_hand(final ArrayList<R> HAND)
-    {
-        for (final R CARD : HAND)
-            CARD.release();
-    }
-
-    /**
-     * Convenience method. For {@link structure.Reservable#release()} all internal values.
-     */
-    public void reset_all()
-    {
-        for (final ArrayList<R> STUFF : this.STORAGE.values())
-            Game_State.reset_hand(STUFF);
-    }
-
-    /**
-     * Removes the main deck part which is unused once the a hand has been fully drawn. Should be done to reduce overall size.
-     */
-    public void remove_main_deck()
-    {
-        this.STORAGE.remove(Locations.MAIN_DECK);
-    }
-
-    /**
-     * Convenience method. Calls {@link #reset_hand(ArrayList)} on cards in specified location.
-     * 
-     * @param WHERE the cards to be reset are.
-     */
-    public void reset_location(final Locations WHERE)
-    {
-        Game_State.reset_hand(this.get_cards(WHERE));
-    }
-
-    /**
      * Essentially a reverse copy constructor. Sets internal data members to match argument. Note, such is completely shallow.
      * 
      * @param COPY_FROM is what this object will look like after this method call
@@ -240,5 +200,45 @@ public class Game_State<R extends Reservable>
             this.set_cards(TO, TRANSFER);
 
         TRANSFER.clear(); //remove from source
+    }
+
+    /**
+     * Convenience method. {@link structure.Reservable#release()} all cards in hand. {@link Reservable#release()}
+     * 
+     * @param <R> the type of cards in the deck
+     * 
+     * @param HAND to be reset
+     */
+    public static <R extends Reservable> void reset_hand(final ArrayList<R> HAND)
+    {
+        for (final R CARD : HAND)
+            CARD.release();
+    }
+
+    /**
+     * Convenience method. For {@link structure.Reservable#release()} all internal values.
+     */
+    public void reset_all()
+    {
+        for (final ArrayList<R> STUFF : this.STORAGE.values())
+            Game_State.reset_hand(STUFF);
+    }
+
+    /**
+     * Removes the main deck part which is unused once the a hand has been fully drawn. Should be done to reduce overall size.
+     */
+    public void remove_main_deck()
+    {
+        this.STORAGE.remove(Locations.MAIN_DECK);
+    }
+
+    /**
+     * Convenience method. Calls {@link #reset_hand(ArrayList)} on cards in specified location.
+     * 
+     * @param WHERE the cards to be reset are.
+     */
+    public void reset_location(final Locations WHERE)
+    {
+        Game_State.reset_hand(this.get_cards(WHERE));
     }
 }
