@@ -158,9 +158,9 @@ public class Tokenizer
     public final static Pattern FALSE = Pattern.compile("\\s*false\\s*");
 
     /**
-     * Pattern indicating the definition of the {@link Lexeme_Types#INTEGER} {@link Token}.
+     * Pattern indicating the definition of the {@link Lexeme_Types#NON_NEGATIVE_INTEGER} {@link Token}.
      */
-    public final static Pattern INTEGER = Pattern.compile("[0-9]+");
+    public final static Pattern NON_NEGATIVE_INTEGER = Pattern.compile("[0-9]+");
 
     /**
      * Pattern indicating the definition of the {@link Lexeme_Types#DRAW} {@link Token}.
@@ -190,7 +190,7 @@ public class Tokenizer
     /**
      * Pattern indicating the definition of the {@link Lexeme_Types#USES} {@link Token}.
      */
-    public final static Pattern USES = Pattern.compile("\\s*USES\\s*");
+    public final static Pattern USES = Pattern.compile("\\s*uses\\s*");
 
     /**
      * Pattern indicating the definition of the {@link Lexeme_Types#SPECIAL_ABILITY_START} {@link Token}.
@@ -345,8 +345,8 @@ public class Tokenizer
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.PROBABILITY_START, LINE_NUMBER, LEXEME));
                 else if (Tokenizer.DECK_START.matcher(LEXEME).matches())
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.DECK_START, LINE_NUMBER, LEXEME));
-                else if (Tokenizer.INTEGER.matcher(LEXEME).matches())
-                    return new Returned_Data(placeholder, new Token(Lexeme_Types.INTEGER, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.NON_NEGATIVE_INTEGER.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.NON_NEGATIVE_INTEGER, LINE_NUMBER, LEXEME));
                 else if (Tokenizer.COMBINATORIC.matcher(LEXEME).matches())
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.COMBINATORIC, LINE_NUMBER, LEXEME));
                 else if (Tokenizer.USES.matcher(LEXEME).matches())
