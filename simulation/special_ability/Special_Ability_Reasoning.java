@@ -41,7 +41,7 @@ public class Special_Ability_Reasoning implements Special_Ability_Base
     {
         int mill_count = 0;
         final int DECK_SIZE;
-        final ArrayList<?> MAIN_DECK = CURRENT_STATE.STORAGE.get(Locations.MAIN_DECK);
+        final ArrayList<?> MAIN_DECK = CURRENT_STATE.get_cards(Locations.MAIN_DECK);
         DECK_SIZE = MAIN_DECK.size();
 
         while (mill_count < DECK_SIZE)

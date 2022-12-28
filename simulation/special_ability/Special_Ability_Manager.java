@@ -9,7 +9,7 @@ import structure.Reservable;
 <b>
 Purpose: manages all special abilities<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-12-25/2022-1-1/2022-6-18
+Date: 2021-12-25/2022-1-1/2022-6-18/2022-12-[26, 27]
 </b>
 */
 
@@ -23,7 +23,7 @@ public class Special_Ability_Manager
         /**
          * Represents the maximum number of times this ability can be used.
          */
-        public final int ACTIVATION_LIMIT; //TODO: consider reducing to byte
+        public final int ACTIVATION_LIMIT;
 
         /**
          * Number of times this card has been used in current {@link Special_Ability_Manager#parse(Game_State)}
@@ -50,9 +50,14 @@ public class Special_Ability_Manager
          *
          * @param MAX_USES {@link #ACTIVATION_LIMIT}
          * @param ACTIONS {@link #ACTIONS}
+         * 
+         * @throws IllegalArgumentException if ACTIONS is empty
          */
         public Card_Effects(final int MAX_USES, final Special_Ability_Base[] ACTIONS)
         {
+            if (ACTIONS.length < 1)
+                throw new IllegalArgumentException("Error: ACTIONS must not be empty.");
+
             this.ACTIVATION_LIMIT = MAX_USES;
             this.ACTIONS = ACTIONS;
         }
@@ -75,6 +80,19 @@ public class Special_Ability_Manager
      * Adds card to be both managed and used.
      * 
      * @param NAME of card
+     * @param EFFECT of the card
+     * 
+     * @return true for added and false for not added (likely due to NAME having already been used)
+     */
+    public boolean add(final String NAME, final Special_Ability_Base EFFECT)
+    {
+        return this.add(NAME, new Special_Ability_Base[]{EFFECT});
+    }
+
+    /**
+     * Adds card to be both managed and used.
+     * 
+     * @param NAME of card
      * @param EFFECTS in order of card
      * 
      * @return true for added and false for not added (likely due to NAME having already been used)
@@ -82,6 +100,20 @@ public class Special_Ability_Manager
     public boolean add(final String NAME, final Special_Ability_Base[] EFFECTS)
     {
         return this.super_powers.putIfAbsent(NAME, new Card_Effects(EFFECTS)) == null;
+    }
+
+    /**
+     * Adds card to be both managed and used.
+     *
+     * @param ACTIVATION_LIMIT is the number of times a card can be used per {@link #parse(Game_State)}
+     * @param NAME of card
+     * @param EFFECT of the card card
+     * 
+     * @return true for added and false for not added (likely due to NAME having already been used)
+     */
+    public boolean add(final int ACTIVATION_LIMIT, final String NAME, final Special_Ability_Base EFFECT)
+    {
+        return this.add(ACTIVATION_LIMIT, NAME, new Special_Ability_Base[]{EFFECT});
     }
 
     /**
@@ -114,24 +146,44 @@ public class Special_Ability_Manager
             return;
 
         {
+            boolean legal_card_activation = false;
             int hand_index = 0;
             String key;
             Card_Effects placeholder;
-            ArrayList<R> hand_reference = INPUT.STORAGE.get(Locations.HAND);
+            Game_State<R> restoration_point;
+            ArrayList<R> hand_reference = INPUT.get_cards(Locations.HAND);
 
             do
             {
                 if (this.super_powers.containsKey(key = hand_reference.get(hand_index).get_name()) &&
-                    (placeholder = this.super_powers.get(key)).times_used <= placeholder.ACTIVATION_LIMIT)
+                    (placeholder = this.super_powers.get(key)).times_used < placeholder.ACTIVATION_LIMIT)
                 {
-                    //carry out all effects
-                    for (final Special_Ability_Base EFFECT : placeholder.ACTIONS)
-                        EFFECT.perform_special_ability(INPUT);
+                    if (placeholder.ACTIONS.length > 1)
+                    {
+                        restoration_point = INPUT.create_semi_shallow_copy();
 
-                    //move card away
-                    INPUT.special_ability_transfer_subroutine(hand_index, 1, Locations.HAND, Locations.GRAVEYARD); //For now hard code to go to Locations.GRAVEYARD, later maybe have it be definable.
+                        //carry out all effects
+                        for (final Special_Ability_Base EFFECT : placeholder.ACTIONS)
+                            if (!(legal_card_activation = EFFECT.perform_special_ability(INPUT)))
+                            {
+                                INPUT.reinitialize(restoration_point);
+                                break; // stop upon failure
+                            }
+                    }
+                    else
+                        legal_card_activation = placeholder.ACTIONS[0].perform_special_ability(INPUT);
 
-                    hand_size = hand_reference.size(); //in case hand size changed
+                    //Check that card was used successfully and then act accordingly.
+                    if (legal_card_activation)
+                    {
+                        //move card away
+                        INPUT.special_ability_transfer_subroutine(hand_index, 1, Locations.HAND, Locations.GRAVEYARD); //For now hard code to go to Locations.GRAVEYARD, later maybe have it be definable.
+                        ++placeholder.times_used; //update counter
+
+                        hand_size = hand_reference.size(); //in case hand size changed
+                    }
+                    else
+                        ++hand_index;
                 }
                 else
                     ++hand_index;

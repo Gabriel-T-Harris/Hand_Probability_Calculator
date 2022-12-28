@@ -15,7 +15,7 @@ public interface Special_Ability_Base
      * 
      * @param CURRENT_STATE which will be internally modified
      * 
-     * @return true for carried out and false for could not be carried out
+     * @return true for carried out and false for could not be carried out (no changes performed)
      */
     public abstract boolean perform_special_ability(final Game_State<?> CURRENT_STATE);
 }

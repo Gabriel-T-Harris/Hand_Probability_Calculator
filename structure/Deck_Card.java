@@ -43,7 +43,7 @@ public class Deck_Card extends Base_Card implements Reservable
     }
 
     /**
-     * Copy constructor.
+     * Special copy constructor.
      * 
      * @param INPUT to be copied.
      */

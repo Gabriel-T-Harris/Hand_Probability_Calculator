@@ -110,7 +110,7 @@ scenarios:
 
     //Idea is to not overlap with Alpha + Zeta scenario.
     Mu-Beta = {scenario = {
-                           (([Drytron Alpha Thuban] OR <Effective Drytron Nova>) AND ([Drytron Delta Altais] OR [Drytron Gamma Eltanin] OR [Foolish Burial])) OR
+                           (([Drytron Alpha Thuban] OR <Effective Drytron Nova>) AND ([Drytron Delta Altais] OR [Drytron Gamma Eltanin] OR [Foolish Burial])) OR //Foolish Burial + Drytron Alpha Thuban looks iffy
                            (([Foolish Burial] OR [Cyber Emergency]) AND ([Drytron Delta Altais] OR [Drytron Gamma Eltanin])) OR
                            (<Effective Ritual> AND [Drytron Gamma Eltanin] AND ([Drytron Zeta Aldhibah] OR [Drytron Delta Altais] OR [Foolish Burial]))
                           };}
