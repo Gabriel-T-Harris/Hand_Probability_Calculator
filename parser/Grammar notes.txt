@@ -16,7 +16,7 @@ non_negative_integer: [0-9]+
 //Numbers are gathered together as a single literal value. They also mean that other tokens may not start with numbers.
 //lower case for literal, capital for production rule.
 //Note grammar does not have the unification resulting in: ID, card_name, or scenario_name; though is coded with the result.
-//Non-Negative Integer for: draw, mill, and banish; are expected to be positive.
+//Non-Negative Integer for: draw, mill, and banish.
 //Non-Negative Integer for COMBINATORIC_BODY is expected to be >= 2.
 START -> DECK SPECIAL_ABILITIES PROBABILITY .
 

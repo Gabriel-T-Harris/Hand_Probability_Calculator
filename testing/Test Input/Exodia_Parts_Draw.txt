@@ -49,7 +49,7 @@ special_abilities:
 
     Into the Void = {special_ability = {DRAW 1;}; uses = 0;}
 
-    Chicken Game = {special_ability = {DRAW 1;}; uses = 0;}
+    Chicken Game = {special_ability = {DRAW 1;};} //test missing a activation limit, should be the same as uses = 0
 }
 
 scenarios:
