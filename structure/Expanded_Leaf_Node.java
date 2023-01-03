@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2021 Gabriel Toban Harris
+    Copyright (C) 2022 Gabriel Toban Harris
 
         This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,13 +16,14 @@
 */
 package structure;
 
+import java.util.Collection;
 import simulation.special_ability.Game_State;
 
 /**
 <b>
 Purpose: Exentension of {@link Leaf_Node} such that {@link simulation.special_ability.Game_State} is supported without having the costs for when it is not used.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2022-12-23
+Date: 2022-12-23/2022-12-31
 </b>
 * @param <T> is the type of card to hold, suggestion of {@link Base_Card}.
 */
@@ -41,10 +42,19 @@ public class Expanded_Leaf_Node<T> extends Leaf_Node<T>
      * @param WHERE is the place to look
      * @param CARD to be matched
      */
-    public Expanded_Leaf_Node(final String NAME, Game_State.Locations WHERE, final T CARD)
+    public Expanded_Leaf_Node(Game_State.Locations WHERE, final String NAME, final T CARD)
     {
         super(NAME, CARD);
         this.WHERE = WHERE;
+    }
+
+    @Override
+    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
+    {
+        if (WHERE != Game_State.Locations.HAND)
+            return TestResult.Rollback;
+        else
+            return super.evaluate(HAND, NEXT);
     }
 
     @Override

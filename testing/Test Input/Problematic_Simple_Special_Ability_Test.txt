@@ -6,7 +6,7 @@ thingy;
 
 special_abilities:
 {
-    //non-existent care referencing should be fine
+    //non-existent card referencing should be fine
     One Day of Peace = {special_ability = {DRAW 1;}; uses = 0;}
     
     //repeated special ability name

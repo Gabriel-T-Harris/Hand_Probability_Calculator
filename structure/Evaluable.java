@@ -74,7 +74,7 @@ public class Evaluable
     public final int UNIQUE_IDENTIFIER;
 
     /**
-     * Used to set {@link #UNIQUE_IDENTIFIER}
+     * Used to set {@link Evaluable#UNIQUE_IDENTIFIER}
      */
     private static int CREATED_NODES_COUNT = 0;
 

@@ -42,8 +42,8 @@ public class Combinatorial_Test
                                                                                       new Leaf_Node<Base_Card>("D", new Base_Card("D"))),
                                                                 new Leaf_Node<Base_Card>("A", new Base_Card("A")), new Leaf_Node<Base_Card>("B", new Base_Card("B"))};
 
-        final Combinatorial_Operator_Node COMBINATORIAL_BASIC_TEST = new Combinatorial_Operator_Node(2, "BASIC_TEST", BASIC_TEST_DATA),
-                COMBINATORIAL_MID_LEVEL_TEST = new Combinatorial_Operator_Node(2, "MID_LEVEL_TEST", MID_LEVEL_TEST_DATA);
+        final Combinatorial_Operator_Node COMBINATORIAL_BASIC_TEST = new Combinatorial_Operator_Node(2, BASIC_TEST_DATA),
+                COMBINATORIAL_MID_LEVEL_TEST = new Combinatorial_Operator_Node(2, MID_LEVEL_TEST_DATA);
 
         System.out.println("Simple tests, Test A_B: " + COMBINATORIAL_BASIC_TEST.evaluate(A_B_HAND) + ", Test C_B: " + COMBINATORIAL_BASIC_TEST.evaluate(C_B_HAND));
 

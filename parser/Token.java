@@ -29,17 +29,17 @@ public class Token
     /**
      * Type of Token this is.
      */
-    public final Lexeme_Types TYPE;
+    private final Lexeme_Types TYPE;
 
     /**
      * Location of token in source file.
      */
-    public final long LINE_NUMBER;
+    private final long LINE_NUMBER;
 
     /**
      * The value of the token.
      */
-    public final String LEXEME;
+    private final String LEXEME;
 
     /**
      * Constructor of Token.
@@ -85,6 +85,6 @@ public class Token
      */
     public String toString()
     {
-        return "[Lexeme type: " + this.get_type() + ", lexeme: " + get_lexeme() + ", line number: " + this.get_line_number() + "]";
+        return "[Lexeme type: " + this.get_type() + ", lexeme: " + this.get_lexeme() + ", line number: " + this.get_line_number() + "]";
     }
 }

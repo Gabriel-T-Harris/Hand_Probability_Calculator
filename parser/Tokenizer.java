@@ -87,7 +87,7 @@ public class Tokenizer
     /**
      * Special marker of both the start and end of a graveyard card in an expression. Definition of {@link Lexeme_Types#CONDITION_GY_CARD} {@link Token}.
      */
-    public final static String CONDITION_GY_CARD = "_";
+    public final static String CONDITION_GY_CARD = "#";
 
     /**
      * Special marker of both the start and end of a banished card in an expression. Definition of {@link Lexeme_Types#CONDITION_BANISH_CARD} {@link Token}.
@@ -188,9 +188,9 @@ public class Tokenizer
     public final static Pattern COMBINATORIC = Pattern.compile("\\s*COMBINATORIC\\s*");
 
     /**
-     * Pattern indicating the definition of the {@link Lexeme_Types#USES} {@link Token}.
+     * Pattern indicating the definition of the {@link Lexeme_Types#ACTIVATION_LIMITATION_START} {@link Token}.
      */
-    public final static Pattern USES = Pattern.compile("\\s*uses\\s*");
+    public final static Pattern ACTIVATION_LIMITATION_START = Pattern.compile("\\s*uses\\s*");
 
     /**
      * Pattern indicating the definition of the {@link Lexeme_Types#SPECIAL_ABILITY_START} {@link Token}.
@@ -296,7 +296,7 @@ public class Tokenizer
                 //defer to ID_CHAR_SET
                 return new Returned_Data(new Token(Lexeme_Types.ID, LINE_NUMBER, LEXEME.toString()));
             }
-            //parse multichar sequences
+            //parse multi-char sequences
             default:
                 return Tokenizer.gather_keyword_chars(LINE_NUMBER, LEXEME, INPUT);
         }
@@ -349,8 +349,8 @@ public class Tokenizer
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.NON_NEGATIVE_INTEGER, LINE_NUMBER, LEXEME));
                 else if (Tokenizer.COMBINATORIC.matcher(LEXEME).matches())
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.COMBINATORIC, LINE_NUMBER, LEXEME));
-                else if (Tokenizer.USES.matcher(LEXEME).matches())
-                    return new Returned_Data(placeholder, new Token(Lexeme_Types.USES, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.ACTIVATION_LIMITATION_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.ACTIVATION_LIMITATION_START, LINE_NUMBER, LEXEME));
                 else if (Tokenizer.SPECIAL_ABILITY_BODY_START.matcher(LEXEME).matches())
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.SPECIAL_ABILITY_BODY_START, LINE_NUMBER, LEXEME));
                 else if (Tokenizer.DRAW.matcher(LEXEME).matches())

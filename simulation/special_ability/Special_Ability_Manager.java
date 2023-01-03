@@ -25,7 +25,7 @@ import structure.Reservable;
 <b>
 Purpose: manages all special abilities<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-12-25/2022-1-1/2022-6-18/2022-12-[26, 27]
+Date: 2021-12-25/2022-1-1/2022-6-18/2022-12-[26, 27]/2023-1-1
 </b>
 */
 
@@ -52,9 +52,9 @@ public class Special_Ability_Manager
         public final Special_Ability_Base[] ACTIONS;
 
         /**
-         * Basic constructor.
+         * Basic constructor. {@link Card_Effects#ACTIVATION_LIMIT} set to max value.
          * 
-         * @param ACTIONS {@link #ACTIVATION_LIMIT}
+         * @param ACTIONS {@link Card_Effects#ACTIONS}
          */
         public Card_Effects(final Special_Ability_Base[] ACTIONS)
         {
@@ -64,8 +64,8 @@ public class Special_Ability_Manager
         /**
          * Parameterized constructor.
          *
-         * @param MAX_USES {@link #ACTIVATION_LIMIT}
-         * @param ACTIONS {@link #ACTIONS}
+         * @param MAX_USES {@link Card_Effects#ACTIVATION_LIMIT}, note that 0 is treated as {@link Integer#MAX_VALUE}
+         * @param ACTIONS {@link Card_Effects#ACTIONS}
          * 
          * @throws IllegalArgumentException if ACTIONS is empty
          */
@@ -74,7 +74,7 @@ public class Special_Ability_Manager
             if (ACTIONS.length < 1)
                 throw new IllegalArgumentException("Error: ACTIONS must not be empty.");
 
-            this.ACTIVATION_LIMIT = MAX_USES;
+            this.ACTIVATION_LIMIT = (MAX_USES != 0) ? MAX_USES : Integer.MAX_VALUE; //treat 0 as unlimited
             this.ACTIONS = ACTIONS;
         }
 
@@ -144,6 +144,16 @@ public class Special_Ability_Manager
     public boolean add(final int ACTIVATION_LIMIT, final String NAME, final Special_Ability_Base[] EFFECTS)
     {
         return this.super_powers.putIfAbsent(NAME, new Card_Effects(ACTIVATION_LIMIT, EFFECTS)) == null;
+    }
+
+    /**
+     * Simply indicates the number special abilities that are being managed.
+     * 
+     * @return an integer representing the number of special abilities stored
+     */
+    public int special_ability_count()
+    {
+        return this.super_powers.values().size();
     }
 
     /**

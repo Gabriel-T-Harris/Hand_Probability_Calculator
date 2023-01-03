@@ -39,12 +39,11 @@ public class Combinatorial_Operator_Node extends Base_Node
      * Constructor.
      * 
      * @param CHOOSE_N is the size of each combination
-     * @param NAME of the node
      * @param FROM_K_OPTIONS are the values to form combinations with
      */
-    public Combinatorial_Operator_Node(final int CHOOSE_N, final String NAME, final Evaluable[] FROM_K_OPTIONS)
+    public Combinatorial_Operator_Node(final int CHOOSE_N, final Evaluable[] FROM_K_OPTIONS)
     {
-        super(NAME + " choose " + CHOOSE_N + " from " + FROM_K_OPTIONS.length);
+        super("COMBINATORIC choose " + CHOOSE_N + " from " + FROM_K_OPTIONS.length);
         this.CHILDREN = new Combinatorial_Iteration<Evaluable>(CHOOSE_N, FROM_K_OPTIONS);
     }
 
