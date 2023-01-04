@@ -57,7 +57,7 @@ public class Token
 
     //getters
     /**
-     * @return the {@link #TYPE}
+     * @return the {@link Token#TYPE}
      */
     public Lexeme_Types get_type()
     {
@@ -73,7 +73,7 @@ public class Token
     }
 
     /**
-     * @return the {@link #LEXEME}
+     * @return the {@link Token#LEXEME}
      */
     public String get_lexeme()
     {

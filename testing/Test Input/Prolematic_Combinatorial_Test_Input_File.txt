@@ -8,6 +8,9 @@ scenarios:
 {
     //to many choices
     Semantically Invalid Combinatoric = {scenario = {COMBINATORIC {10; [thingy]; [thingy]; [thingy]; [thingy];}};}
+
+    //missing expressions
+    Semantically Invalid Combinatoric 2 = {scenario = {COMBINATORIC {2; [thingy]; [thingy]; ;; }};}
 }
 
 /*

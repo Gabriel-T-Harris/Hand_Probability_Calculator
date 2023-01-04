@@ -67,7 +67,7 @@ public class Combinatorial_Operator_Node extends Base_Node
     }
 
     @Override
-    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
+    protected synchronized <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
     {
         printDebugStep(HAND);
         this.CHILDREN.reset_combinatorial_algorithm(); //reset every time for reuse
@@ -86,7 +86,7 @@ public class Combinatorial_Operator_Node extends Base_Node
     }
 
     @Override
-    protected <E extends Reservable> TestResult evaluate(final Game_State<E> GAME_BOARD, final RollbackCallback NEXT)
+    protected synchronized <E extends Reservable> TestResult evaluate(final Game_State<E> GAME_BOARD, final RollbackCallback NEXT)
     {
         this.CHILDREN.reset_combinatorial_algorithm(); //reset every time for reuse
 
@@ -149,7 +149,6 @@ public class Combinatorial_Operator_Node extends Base_Node
         if (CURRENT_INDEX == SIZE_MINUS_ONE)
             return this.CHILDREN.get_current_combination().get(CURRENT_INDEX).evaluate(GAME_BOARD, NEXT);
         else
-            return this.CHILDREN.get_current_combination().get(CURRENT_INDEX)
-                                .evaluate(GAME_BOARD, () -> this.recursive_evaluate_subroutine(CURRENT_INDEX + 1, SIZE_MINUS_ONE, GAME_BOARD, NEXT));
+            return this.CHILDREN.get_current_combination().get(CURRENT_INDEX).evaluate(GAME_BOARD, () -> this.recursive_evaluate_subroutine(CURRENT_INDEX + 1, SIZE_MINUS_ONE, GAME_BOARD, NEXT));
     }
 }

@@ -77,7 +77,7 @@ scenarios:
 {
     Effective Drytron Fafnir = {scenario = {[Drytron Fafnir] OR [Terraforming]};display = false;}
 
-    Effective Drytron Nova = {scenarion = {[Drytron Nova] OR <Effective Drytron Fafnir>};display = false;}
+    Effective Drytron Nova = {scenario = {[Drytron Nova] OR <Effective Drytron Fafnir>};display = false;}
 
     Effective Cyber Angel Benten = {scenario = {[Cyber Angel Benten] OR [Preparation of Rites]};display = false;}
 

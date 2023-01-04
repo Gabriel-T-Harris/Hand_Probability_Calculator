@@ -68,7 +68,7 @@ public class Combinatorial_Iteration<E>
             throw new IllegalArgumentException("Error: must have OPTIONS to choose from, thus array cannot be empty.");
         else if (choose > OPTIONS.length)
             throw new IllegalArgumentException("Error: CHOOSE must be <= OPTIONS's length, yet received CHOOSE is \"" + choose + "\" and OPTIONS.length is \"" + OPTIONS.length +
-                                               '.');
+                                               "\".");
         //initialize starting indices
         this.INDICES = new int[choose];
 

@@ -47,7 +47,7 @@ import structure.Xor_Operator_Node;
 <b>
 Purpose: assembles the parts of a configuration file for simulating.<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19/2021-8-[22, 23]/2021-11-14/2022-12-[30, 31]/2023-1-[1, 2]
+Date: 2021-08-[4, 5]/2021-8-[7, 13]/2021-8-17/2021-8-19/2021-8-[22, 23]/2021-11-14/2022-12-[30, 31]/2023-1-[1, 3]
 </b>
 */
 
@@ -1024,7 +1024,7 @@ public class Tree_Assembler
                 {
                     switch (INPUT.get_type())
                     {
-                        case BANISH:
+                        case REASONING:
                         {
                             //REASONING -> reasoning SENTINEL_START DECKLIST SENTINEL_END
                             this.match_literal_add_handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.REASONING_POP, Semantic_Actions.REASONING.name(),
@@ -1504,6 +1504,7 @@ public class Tree_Assembler
                         case CONDITION_FIELD_CARD:
                         case CONDITION_EXPR_START:
                         case CONDITION_SCENARIO_START:
+                        case CONDITION_HAND_CARD_START:
                         case COMBINATORIC:
                         case NOT:
                         {
@@ -1572,7 +1573,7 @@ public class Tree_Assembler
                         {
                             //PRIMARY_EXPR -> CONDITION_BANISH_CARD CARD_NAME CONDITION_BANISH_CARD
                             this.handle_pop_case_subroutine(semantic_stack_end_index, Semantic_Actions.CONDITION_BANISH_CARD_POP, Semantic_Actions.PRIMARY_EXPR.name(),
-                                                            Semantic_Actions.CONDITION_HAND_CARD_START, Semantic_Actions.CARD_NAME, Semantic_Actions.CONDITION_HAND_CARD_END);
+                                                            Semantic_Actions.CONDITION_BANISH_CARD, Semantic_Actions.CARD_NAME, Semantic_Actions.CONDITION_BANISH_CARD);
                             break;
                         }
                         case CONDITION_GY_CARD:
@@ -2234,17 +2235,19 @@ public class Tree_Assembler
                     int marker_location = this.syntactical_stack.size() - 2; //Start from minimum location, while -5 could be down with happy paths, this ensures that in problematic cases, the marker is not over shot.
                     final int CHOOSE_N; //for COMBINATORIAL_NODE
                     final Combinatorial_Operator_Node COMBINATORIAL_NODE;
+                    final Evaluable[] OPTIONS;
 
                     //find for marker location
                     while (!Tokenizer.COMBINATORIC.matcher(this.syntactical_stack.get(marker_location).string_part).matches()) //marker must exist, will not go out of bounds
                         --marker_location;
 
-                    if (this.syntactical_stack.size() - marker_location >= 4)
+                    if (this.syntactical_stack.size() - marker_location < 5)
                     {
                         this.handle_scenario_critical_error(semantic_stack_end_index, "Failed to make Combinatorial Node around line number " + INPUT.get_line_number() + ". Not enough arguments, so either something unknown is very wrong or too many of the given expressions are malformed, at least 3 properly formed ones are required. Discarding whole scenario.");
                         break;
                     }
 
+                    //choice amount
                     CHOOSE_N = this.syntactical_stack.get(marker_location + 1).integer_part;
 
                     if (CHOOSE_N < 2)
@@ -2253,16 +2256,25 @@ public class Tree_Assembler
                         break;
                     }
 
+                    //what is being picked from
+                    {
+                        final List<Syntactical_Stack_Struct> EVALUABLE_STRUCTS = this.syntactical_stack.subList(marker_location + 2, this.syntactical_stack.size()); //+2 from marker is the start of the options.
+                        OPTIONS = new Evaluable[EVALUABLE_STRUCTS.size()];
+
+                        for (int i = 0; i < OPTIONS.length; ++i)
+                            OPTIONS[i] = EVALUABLE_STRUCTS.get(i).expression_part;
+                    }
+
                     try
                     {
-                        COMBINATORIAL_NODE = new Combinatorial_Operator_Node(CHOOSE_N, this.syntactical_stack.subList(marker_location + 2, this.syntactical_stack.size()).toArray(new Evaluable[0])); //+2 from marker is the start of the options.
+                        COMBINATORIAL_NODE = new Combinatorial_Operator_Node(CHOOSE_N, OPTIONS);
                     }
                     catch (IllegalArgumentException ex)
                     {
-                        this.handle_scenario_critical_error(semantic_stack_end_index, "Failed to make Combinatorial Node around line number " + INPUT.get_line_number() + ". Check following for more in formation: " + ex.getMessage() + "\nDiscarding whole scenario.");
+                        this.handle_scenario_critical_error(semantic_stack_end_index, "Failed to make Combinatorial Node around line number " + INPUT.get_line_number() + ". Check following for more in formation:\n" + ex.getMessage() + "\nDiscarding whole scenario.");
                         break;
                     }
-                    
+
                     this.syntactical_stack.subList(marker_location + 1, this.syntactical_stack.size()).clear(); //remove used pieces
                     this.syntactical_stack.get(marker_location).replace_string_with_expression(COMBINATORIAL_NODE); //set node where marker is, thus being space efficient
                     this.semantic_stack.remove(semantic_stack_end_index);
@@ -2294,13 +2306,13 @@ public class Tree_Assembler
                     int card_name_location = SYNTACTICAL_STACK_END_INDEX;
                     
                     //ensure that syntactical_stack is in a good state
-                    if (this.syntactical_stack.get(card_name_location).integer_part != null && this.syntactical_stack.get(--card_name_location).expression_part != null)
+                    if (this.syntactical_stack.get(card_name_location).integer_part != null && this.syntactical_stack.get(--card_name_location).special_ability_action_part != null)
                     {
                         //assume that first one not empty one is card name
                         do
                         {
                             --card_name_location;
-                        } while (!this.syntactical_stack.get(card_name_location).string_part.isEmpty());
+                        } while (this.syntactical_stack.get(card_name_location).string_part.isEmpty());
 
                         assert (card_name_location == 0); //nothing should be before it
 
@@ -2311,11 +2323,9 @@ public class Tree_Assembler
                             for (int i = 0; i < SPECIAL_ABILITY_ACTIONS.length; ++i, ++special_ability_start_index)
                                 SPECIAL_ABILITY_ACTIONS[i] = this.syntactical_stack.get(special_ability_start_index).special_ability_action_part;
 
-                            if (!this.card_effects.add(this.syntactical_stack.get(SYNTACTICAL_STACK_END_INDEX).integer_part,
-                                                       this.syntactical_stack.get(card_name_location).string_part, SPECIAL_ABILITY_ACTIONS) &&
-                                this.VERBOSE)
+                            if (!this.card_effects.add(this.syntactical_stack.get(SYNTACTICAL_STACK_END_INDEX).integer_part, this.syntactical_stack.get(card_name_location).string_part, SPECIAL_ABILITY_ACTIONS) && this.VERBOSE)
                                 this.syntactical_error_output.println("Error: Special Ability named \"" + this.syntactical_stack.get(card_name_location).string_part +
-                                                                      "\", around line " + INPUT.get_line_number() + " is malformed. Discarding it.");
+                                                                      "\", around line " + INPUT.get_line_number() + " is already defined. Discarding it.");
                         }
                     }
                     //panic
@@ -2349,7 +2359,7 @@ public class Tree_Assembler
                     final int RESULT_LOCATION = this.syntactical_stack.size() - 2;
                     final String MILL_MARKER = this.syntactical_stack.remove(RESULT_LOCATION).string_part;
 
-                    if (Tokenizer.DRAW.matcher(MILL_MARKER).matches())
+                    if (Tokenizer.MILL.matcher(MILL_MARKER).matches())
                     {
                         this.syntactical_stack.get(RESULT_LOCATION).replace_integer_with_special_ability_action(new Special_Ability_Mill(this.syntactical_stack.get(RESULT_LOCATION).integer_part));
                         this.semantic_stack.remove(semantic_stack_end_index);
@@ -2365,7 +2375,7 @@ public class Tree_Assembler
                     final int RESULT_LOCATION = this.syntactical_stack.size() - 2;
                     final String BANISH_MARKER = this.syntactical_stack.remove(RESULT_LOCATION).string_part;
 
-                    if (Tokenizer.DRAW.matcher(BANISH_MARKER).matches())
+                    if (Tokenizer.BANISH.matcher(BANISH_MARKER).matches())
                     {
                         this.syntactical_stack.get(RESULT_LOCATION).replace_integer_with_special_ability_action(new Special_Ability_Banish(this.syntactical_stack.get(RESULT_LOCATION).integer_part));
                         this.semantic_stack.remove(semantic_stack_end_index);

@@ -120,7 +120,7 @@ public class Simulation
     {
         //centralize some operations
         if (this.DECK.size() <= HAND_SIZE)
-            return "HAND_SIZE is at least as big as the deck itself, thus no point in carrying out a simulation.";
+            return "HAND_SIZE (" + HAND_SIZE + ") is at least as big as the deck itself, thus no point in carrying out a simulation.";
 
         if (DISPLAY_PROGRESS)
             System.out.println();
