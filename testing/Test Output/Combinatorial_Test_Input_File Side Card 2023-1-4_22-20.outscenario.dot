@@ -1,0 +1,33 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+199[label="OR"];
+199->197;
+199->198;
+197[label="OR"];
+197->196;
+197->91;
+198[label="Cosmic Cyclone"];
+196[label="OR"];
+196->194;
+196->195;
+91[label="Access Mystic Mine"];
+194[label="OR"];
+194->192;
+194->193;
+195[label="Lava Golem"];
+192[label="OR"];
+192->190;
+192->191;
+193[label="D.D. Crow"];
+190[label="OR"];
+190->188;
+190->189;
+191[label="Winged Dragon of Ra - Sphere Mode"];
+188[label="OR"];
+188->186;
+188->187;
+189[label="Droll & Lock Bird"];
+186[label="Dark Ruler No More"];
+187[label="Nibiru, the Primal Being"];
+}

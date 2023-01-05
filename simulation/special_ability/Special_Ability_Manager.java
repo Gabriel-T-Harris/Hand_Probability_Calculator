@@ -78,6 +78,12 @@ public class Special_Ability_Manager
             this.ACTIONS = ACTIONS;
         }
 
+        @Override
+        public String toString()
+        {
+            return "ACTIVATION_LIMIT: " + this.ACTIVATION_LIMIT + ", ACTIONS: [" + Special_Ability_Manager.print_out_array(", ", ACTIONS) + "]";
+        }
+
         /**
          * To reset all parts which require resetting between calls to {@link #parse(Game_State)}
          */
@@ -154,6 +160,52 @@ public class Special_Ability_Manager
     public int special_ability_count()
     {
         return this.super_powers.values().size();
+    }
+
+    @Override
+    public String toString()
+    {
+        return this.super_powers.isEmpty() ? "No Special Abilities exist." : this.super_powers.toString();
+    }
+
+    /**
+     * Function to turn a single single dimension generic array into a String.
+     * 
+     * @param <G> Any type, does not matter
+     *
+     * @param SEPARATOR String put between entries
+     * @param INPUT array to be printed
+     * 
+     * @return the result of all the values turned into Strings and concatenate together
+     */
+    public static <G> String print_out_array(final String SEPARATOR, final G[] INPUT)
+    {
+        if (INPUT.length == 0)
+            return "";
+        else if (INPUT.length == 1)
+            return INPUT[0].toString();
+
+        {
+            StringBuilder to_return = new StringBuilder(INPUT.length * 12);
+
+            to_return.append(INPUT[0]);
+
+            if (SEPARATOR.isEmpty())
+                for (int i = 1; i < INPUT.length; ++i)
+                    to_return.append(INPUT[i]);
+            else
+            {
+                for (int i = 1; i < INPUT.length - 1; ++i)
+                {
+                    to_return.append(SEPARATOR);
+                    to_return.append(INPUT[i]);
+                }
+
+                to_return.append(INPUT[INPUT.length - 1]);
+            }
+
+            return to_return.toString();
+        }
     }
 
     /**

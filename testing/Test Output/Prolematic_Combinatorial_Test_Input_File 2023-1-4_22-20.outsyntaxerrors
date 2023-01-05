@@ -1,0 +1,6 @@
+Failed to make Combinatorial Node around line number 10. Check following for more in formation:
+Error: CHOOSE must be <= OPTIONS's length, yet received CHOOSE is "10" and OPTIONS.length is "4".
+Discarding whole scenario.
+Error: while top of stack is EXPR and current Token is [Lexeme type: SEMI_COLON, lexeme: ;, line number: 13]
+Error: while top of stack is MORE_CHOICES and current Token is [Lexeme type: SEMI_COLON, lexeme: ;, line number: 13]
+Failed to make Combinatorial Node around line number 13. Not enough arguments, so either something unknown is very wrong or too many of the given expressions are malformed, at least 3 properly formed ones are required. Discarding whole scenario.

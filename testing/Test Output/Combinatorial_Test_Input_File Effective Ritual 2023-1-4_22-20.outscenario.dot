@@ -1,0 +1,41 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+62[label="OR"];
+62->60;
+62->61;
+60[label="OR"];
+60->56;
+60->59;
+61[label="Magikey Mechmusket - Batobuster"];
+56[label="OR"];
+56->50;
+56->55;
+59[label="Preparation of Rites"];
+50[label="OR"];
+50->46;
+50->49;
+55[label="Megalith Phul"];
+46[label="OR"];
+46->43;
+46->45;
+49[label="Megalith Ophiel"];
+43[label="OR"];
+43->38;
+43->42;
+45[label="Cyber Angel Natasha"];
+38[label="OR"];
+38->31;
+38->37;
+42[label="Cyber Angel Idaten"];
+31[label="OR"];
+31->28;
+31->30;
+37[label="Cyber Angel Benten"];
+28[label="OR"];
+28->25;
+28->26;
+30[label="Herald of Perfection"];
+25[label="Diviner of the Herald"];
+26[label="Drytron Meteonis Draconids"];
+}

@@ -1,0 +1,9 @@
+Note that precision falls off around the hundredth's place. Such is deemed acceptable given that only to about the tenth's place is required.
+Created by both Gabriel Toban Harris and Alexander Oxorn. Most recent release can be found at "https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator".
+
+hand size: 5
+number of test hands: 1500000
+Simulation duration (seconds): 5.099
+
+Chance of "Point 2" is about 47.682934%
+Chance of "Point 1" is about 23.8412%

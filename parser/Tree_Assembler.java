@@ -360,6 +360,7 @@ public class Tree_Assembler
                     break;
                 }
                 case PROBABILITY_START:
+                case SPECIAL_ABILITY_START:
                 {
                     result.append("\n\n" + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
                     result.append(L_H_S_[i].name());
@@ -367,6 +368,7 @@ public class Tree_Assembler
                     break;
                 }
                 case SCENARIO:
+                case SPECIAL_ABILITY:
                 {
                     result.append("\n" + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
                     result.append(L_H_S_[i].name());
@@ -386,6 +388,13 @@ public class Tree_Assembler
                     result.append(" " + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
                     result.append(L_H_S_[i].name());
                     result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL + " "); //combined at compile time
+                    break;
+                }
+                case NON_NEGATIVE_INTEGER:
+                {
+                    result.append(" " + Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL); //combined at compile time
+                    result.append(L_H_S_[i].name());
+                    result.append(Tree_Assembler.SPECIAL_UNLIKELY_SENTINEL);
                     break;
                 }
                 default:
@@ -2422,7 +2431,7 @@ public class Tree_Assembler
     }
 
     /**
-     * Out puts decklist that was read.
+     * Outputs decklist that was read.
      * 
      * @param PARTIAL_OUTPUT_DIRECTORY that is basis for new file. Expected to already have extension extracted, as rest is concatenated on to it
      */
@@ -2453,7 +2462,33 @@ public class Tree_Assembler
     }
 
     /**
-     * Out puts created scenarios, each to their own file in dot format.
+     * Outputs what the in play card effects are.
+     * 
+     * @param PARTIAL_OUTPUT_DIRECTORY that is basis for new file. Expected to already have extension extracted, as rest is concatenated on to it
+     */
+    public void print_out_card_effects(final String PARTIAL_OUTPUT_DIRECTORY)
+    {
+        if (this.card_effects == null)
+            return;
+
+        final File OUTPUT_FILE = Starting_Point.add_file_extension(true, Starting_Point.CARD_EFFECTS_FILE_EXTENSION, PARTIAL_OUTPUT_DIRECTORY);
+        try
+        {
+            OUTPUT_FILE.createNewFile(); //Try creating file first before bothering to assemble its contents.
+
+            try (final PrintWriter DECKLIST_OUTPUT = new PrintWriter(OUTPUT_FILE))
+            {
+                DECKLIST_OUTPUT.print(this.card_effects);
+            }
+        }
+        catch (IOException ex)
+        {
+            System.err.println(ex.getMessage() + "\nError caused with following path: " + OUTPUT_FILE.getAbsolutePath() + ", thus could not output its card effects.");
+        }
+    }
+
+    /**
+     * Outputs created scenarios, each to their own file in dot format.
      * 
      * @param PARTIAL_OUTPUT_DIRECTORY that is basis for new file. Expected to already have extension extracted, as rest is concatenated on to it
      */
@@ -2486,8 +2521,8 @@ public class Tree_Assembler
      */
     public void print_out_results(final String PARTIAL_OUTPUT_DIRECTORY)
     {
-        //TODO: add one for special abilities
         this.print_out_decklist(PARTIAL_OUTPUT_DIRECTORY);
+        this.print_out_card_effects(PARTIAL_OUTPUT_DIRECTORY);
         this.print_out_scenarios(PARTIAL_OUTPUT_DIRECTORY);
     }
 

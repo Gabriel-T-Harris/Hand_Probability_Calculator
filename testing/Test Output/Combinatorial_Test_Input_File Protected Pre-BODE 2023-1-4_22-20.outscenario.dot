@@ -1,0 +1,13 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+184[label="AND"];
+184->182;
+184->183;
+182[label="Pre-BODE"];
+183[label="OR"];
+183->85;
+183->179;
+85[label="Activatable Pre-Preparation of Rites"];
+179[label="Protection"];
+}

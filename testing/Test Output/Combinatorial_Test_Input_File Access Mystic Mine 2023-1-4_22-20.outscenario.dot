@@ -1,0 +1,13 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+90[label="OR"];
+90->88;
+90->89;
+88[label="OR"];
+88->86;
+88->87;
+89[label="Terraforming"];
+86[label="Mystic Mine"];
+87[label="Set Rotation"];
+}

@@ -1,0 +1,13 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+79[label="OR"];
+79->77;
+79->78;
+77[label="OR"];
+77->75;
+77->76;
+78[label="Megalith Ophiel"];
+75[label="Magikey Unlocking"];
+76[label="Dawn of the Herald"];
+}

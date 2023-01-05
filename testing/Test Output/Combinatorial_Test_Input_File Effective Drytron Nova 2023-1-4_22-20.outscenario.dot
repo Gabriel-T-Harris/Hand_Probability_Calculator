@@ -1,0 +1,9 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+19[label="OR"];
+19->18;
+19->17;
+18[label="Drytron Nova"];
+17[label="Effective Drytron Fafnir"];
+}

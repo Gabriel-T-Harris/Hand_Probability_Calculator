@@ -1,0 +1,18 @@
+Note that precision falls off around the hundredth's place. Such is deemed acceptable given that only to about the tenth's place is required.
+Created by both Gabriel Toban Harris and Alexander Oxorn. Most recent release can be found at "https://github.com/Gabriel-T-Harris/Hand_Probability_Calculator".
+
+hand size: 5
+number of test hands: 1500000
+Simulation duration (seconds): 18.883
+
+Chance of "Pre-BODE" is about 83.76054%
+Chance of "Beatrice" is about 50.135933%
+Chance of "Alpha + Zeta" is about 49.601734%
+Chance of "Side Card" is about 45.3642%
+Chance of "Side Pre-BODE" is about 34.1482%
+Chance of "Mu-Beta" is about 29.999666%
+Chance of "Bad Draw" is about 29.7838%
+Chance of "Protected Pre-BODE" is about 26.773201%
+Chance of "Protection" is about 26.551666%
+Chance of "Early Perfection" is about 16.984467%
+Chance of "Access Mystic Mine" is about 10.881866%

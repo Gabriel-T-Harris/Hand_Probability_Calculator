@@ -1,0 +1,13 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+181[label="OR"];
+181->180;
+181->164;
+180[label="OR"];
+180->106;
+180->132;
+164[label="Beatrice"];
+106[label="Alpha + Zeta"];
+132[label="Mu-Beta"];
+}

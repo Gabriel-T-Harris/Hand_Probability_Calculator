@@ -1,0 +1,36 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+105[label="OR"];
+105->95;
+105->104;
+95[label="COMBINATORIC choose 2 from 4"];
+95->92;
+95->93;
+95->94;
+95->20;
+104[label="AND"];
+104->96;
+104->103;
+92[label="Drytron Alpha Thuban"];
+93[label="Drytron Zeta Aldhibah"];
+94[label="Cyber Emergency"];
+20[label="Effective Drytron Nova"];
+96[label="Foolish Burial"];
+103[label="OR"];
+103->100;
+103->102;
+100[label="OR"];
+100->99;
+100->20;
+102[label="AND"];
+102->101;
+102->63;
+99[label="OR"];
+99->97;
+99->98;
+101[label="Drytron Alpha Thuban"];
+63[label="Effective Ritual"];
+97[label="Drytron Zeta Aldhibah"];
+98[label="Cyber Emergency"];
+}

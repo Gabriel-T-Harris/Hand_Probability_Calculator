@@ -1,0 +1,3166 @@
+&GTH&DECK&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+&GTH&DECK_START&GTH&
+&GTH&SENTINEL_START&GTH&&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+&GTH&SENTINEL_START&GTH&&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+&GTH&SPECIAL_ABILITY_START&GTH&
+&GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+&GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{&GTH&SPECIAL_ABILITY_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+&GTH&SPECIAL_ABILITY&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+&GTH&CARD_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {&GTH&SPECIAL_ABILITY_BODY_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {&GTH&SPECIAL_ABILITY_ACTION&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {&GTH&DRAW&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};&GTH&ACTIVATION_LIMITATION_START&GTH& &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+&GTH&SPECIAL_ABILITY&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+&GTH&CARD_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {&GTH&SPECIAL_ABILITY_BODY_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {&GTH&SPECIAL_ABILITY_ACTION&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {&GTH&DRAW&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};&GTH&ACTIVATION_LIMITATION_START&GTH& &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+&GTH&SPECIAL_ABILITY&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+&GTH&CARD_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {&GTH&SPECIAL_ABILITY_BODY_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {&GTH&SPECIAL_ABILITY_ACTION&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {&GTH&DRAW&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};&GTH&ACTIVATION_LIMITATION_START&GTH& &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+&GTH&SPECIAL_ABILITY&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+&GTH&CARD_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {&GTH&SPECIAL_ABILITY_BODY_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {special_ability &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {special_ability = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {special_ability = {&GTH&SPECIAL_ABILITY_ACTION&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {special_ability = {&GTH&DRAW&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&;&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&;&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&;}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&;};&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&;};&GTH&ACTIVATION_LIMITATION_START&GTH& &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&;};uses &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+&GTH&SPECIAL_ABILITY&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+&GTH&CARD_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {&GTH&SPECIAL_ABILITY_BODY_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {special_ability &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {special_ability = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};&GTH&ACTIVATION_LIMITATION_START&GTH& &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+&GTH&SPECIAL_ABILITY&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+&GTH&CARD_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {&GTH&SPECIAL_ABILITY_BODY_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&SPECIAL_ABILITY_ACTION&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {&GTH&DRAW&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION_START&GTH& &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&uses &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+&GTH&SPECIAL_ABILITY&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+&GTH&CARD_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {&GTH&SPECIAL_ABILITY_BODY_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&SPECIAL_ABILITY_ACTION&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {&GTH&REASONING&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING&GTH&SENTINEL_START&GTH&&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+}&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+&GTH&PROBABILITY_START&GTH&
+&GTH&SENTINEL_START&GTH&&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+&GTH&SENTINEL_START&GTH&&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {&GTH&CONDITION_HAND_CARD_START&GTH&&GTH&CARD_NAME&GTH&&GTH&CONDITION_HAND_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {[&GTH&CARD_NAME&GTH&&GTH&CONDITION_HAND_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy&GTH&CONDITION_HAND_CARD_END&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy]&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&}
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&}
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&}
+&GTH&SENTINEL_END&GTH&
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&}
+}
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&}
+}
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy]&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+One Day of Peace = {special_ability = {DRAW 1;};uses =  0;}
+
+Bad Uses = {special_ability = {DRAW 1;};uses =  1;}
+
+Into the Void = {special_ability = {DRAW 0;};uses =  6;}
+
+Unknown Action = {special_ability = {DRAW 2;};uses =  0;}
+
+Pot of Greed = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&;}
+
+Bad Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&}
+}
+
+scenarios:
+{
+Simple Scenario = {scenario = {[thingy]}&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&SENTINEL_END&GTH&
+

@@ -39,6 +39,12 @@ public class Special_Ability_Banish extends Special_Ability_Transfer
     }
 
     @Override
+    public String toString()
+    {
+        return "Banish " + this.TRANSFER_AMOUNT;
+    }
+
+    @Override
     public boolean perform_special_ability(final Game_State<?> CURRENT_STATE)
     {
         return CURRENT_STATE.special_ability_transfer(this.TRANSFER_AMOUNT, Locations.MAIN_DECK, Locations.BANISH);

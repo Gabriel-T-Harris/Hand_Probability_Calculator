@@ -53,6 +53,12 @@ public class Special_Ability_Reasoning implements Special_Ability_Base
     }
 
     @Override
+    public String toString()
+    {
+        return "Reasoning stopping points are: " + STOPPING_POINTS;
+    }
+
+    @Override
     public boolean perform_special_ability(final Game_State<?> CURRENT_STATE)
     {
         int mill_count = 0;

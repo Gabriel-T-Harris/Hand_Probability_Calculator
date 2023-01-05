@@ -87,7 +87,7 @@ Both card names and scenario names may be anything except for the following:
     - (
     - )
     - *
-    - _
+    - #
     - ~
 - Thus, anything not mentioned is allowed to form the name.
 
@@ -126,7 +126,7 @@ When a card is matched, it is marked as used so that it will not be considered f
 Boolean conditions are defined as a large expression as follows (note that all leading and trailing space characters are removed):
 - match card `[` card name `]` in hand
 - match card `*` card name `*` on field
-- match card `_` card name `_` in graveyard
+- match card `#` card name `#` in graveyard
 - match card `~` card name `~` that is banished
 - match already defined scenario `<` scenario name `>`
 - while `(` and `)` are used to group a whole subexpression.

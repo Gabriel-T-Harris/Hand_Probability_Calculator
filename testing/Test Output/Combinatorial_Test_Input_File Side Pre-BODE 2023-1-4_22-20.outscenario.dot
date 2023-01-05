@@ -1,0 +1,9 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+201[label="AND"];
+201->182;
+201->200;
+182[label="Pre-BODE"];
+200[label="Side Card"];
+}

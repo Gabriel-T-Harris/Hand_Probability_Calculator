@@ -1,0 +1,21 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+73[label="OR"];
+73->71;
+73->72;
+71[label="OR"];
+71->69;
+71->70;
+72[label="Foolish Burial"];
+69[label="OR"];
+69->67;
+69->68;
+70[label="Drytron Zeta Aldhibah"];
+67[label="OR"];
+67->65;
+67->66;
+68[label="Drytron Gamma Eltanin"];
+65[label="Drytron Delta Altais"];
+66[label="Drytron Alpha Thuban"];
+}

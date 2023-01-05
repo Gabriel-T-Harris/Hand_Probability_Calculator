@@ -1,0 +1,5932 @@
+&GTH&DECK&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+&GTH&DECK_START&GTH&
+&GTH&SENTINEL_START&GTH&&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+&GTH&SENTINEL_START&GTH&&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+&GTH&SENTINEL_END&GTH&&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}&GTH&SPECIAL_ABILITIES&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+&GTH&SPECIAL_ABILITY_START&GTH&
+&GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+&GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{&GTH&SPECIAL_ABILITY_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+&GTH&SPECIAL_ABILITY&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+&GTH&CARD_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {&GTH&SPECIAL_ABILITY_BODY&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {&GTH&SPECIAL_ABILITY_BODY_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = &GTH&SENTINEL_START&GTH&&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR_LIST&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_EXPR&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {&GTH&SPECIAL_ABILITY_ACTION&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {&GTH&REASONING&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING&GTH&SENTINEL_START&GTH&&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{&GTH&DECKLIST&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+&GTH&CARD&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+&GTH&CARD_NAME&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2&GTH&SEMI_COLON&GTH&&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;&GTH&MORE_CARDS&GTH&
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+}&GTH&SEMI_COLON&GTH&&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};&GTH&MORE_SPECIAL_ABILITY_EXPRS&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};}&GTH&SEMI_COLON&GTH&&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};&GTH&ACTIVATION_LIMITATION&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};&GTH&ACTIVATION_LIMITATION_START&GTH& &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses &GTH&ASSIGN&GTH&  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  &GTH&NON_NEGATIVE_INTEGER&GTH&&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1&GTH&SEMI_COLON&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+&GTH&MORE_SPECIAL_ABILITIES&GTH&&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+&GTH&SENTINEL_END&GTH&&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}&GTH&PROBABILITY&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+&GTH&PROBABILITY_START&GTH&
+&GTH&SENTINEL_START&GTH&&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+&GTH&SENTINEL_START&GTH&&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{&GTH&SCENARIO_LIST&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {&GTH&CONDITION_FIELD_CARD&GTH&&GTH&CARD_NAME&GTH&&GTH&CONDITION_FIELD_CARD&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*&GTH&CARD_NAME&GTH&&GTH&CONDITION_FIELD_CARD&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1&GTH&CONDITION_FIELD_CARD&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*}&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+&GTH&SCENARIO&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+&GTH&SCENARIO_NAME&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = &GTH&SENTINEL_START&GTH&&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {&GTH&TREE&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {&GTH&TREE_START&GTH& &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario &GTH&ASSIGN&GTH& &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = &GTH&SENTINEL_START&GTH&&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {&GTH&EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {&GTH&UNARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {&GTH&PRIMARY_EXPR&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {&GTH&CONDITION_FIELD_CARD&GTH&&GTH&CARD_NAME&GTH&&GTH&CONDITION_FIELD_CARD&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*&GTH&CARD_NAME&GTH&&GTH&CONDITION_FIELD_CARD&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2&GTH&CONDITION_FIELD_CARD&GTH&&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2*&GTH&BINARY_EXPR&GTH&&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2*&GTH&SENTINEL_END&GTH&&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2*}&GTH&SEMI_COLON&GTH&&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2*};&GTH&DISPLAY&GTH&&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2*};&GTH&SENTINEL_END&GTH&
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2*};}
+&GTH&MORE_SCENARIOS&GTH&&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2*};}
+&GTH&SENTINEL_END&GTH&
+
+decklist:
+{
+Stopping Point 1;
+Stopping Point 2;
+Stopping Point 2;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+Reasoning;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+card;
+}
+
+special_abilities:
+{
+Reasoning = {special_ability = {REASONING{
+Stopping Point 1;
+Stopping Point 2;
+};};uses =  1;}
+}
+
+scenarios:
+{
+Point 1 = {scenario = {*Stopping Point 1*};}
+
+Point 2 = {scenario = {*Stopping Point 2*};}
+}
+

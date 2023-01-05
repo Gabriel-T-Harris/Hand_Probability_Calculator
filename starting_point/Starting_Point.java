@@ -104,6 +104,11 @@ public class Starting_Point
     public final static String SYNTACTICAL_OUT_SCENARIO_FILE_EXTENSION = ".outscenario.dot";
 
     /**
+     * Extension of file for card effects.
+     */
+    public static final String CARD_EFFECTS_FILE_EXTENSION = ".specialeffects";
+
+    /**
      * File extension for the results of the simulation.
      */
     public final static String SIMULATION_RESULTS_EXTENSION = ".results";
