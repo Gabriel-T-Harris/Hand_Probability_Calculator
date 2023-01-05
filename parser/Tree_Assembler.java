@@ -337,7 +337,6 @@ public class Tree_Assembler
      */
     public static String derivation_subsubroutine(final Semantic_Actions... L_H_S_)
     {
-        //TODO: update for version 2
         //work on derivation
         StringBuilder result = new StringBuilder(32);
         for (int i = 0; i < L_H_S_.length; ++i)
