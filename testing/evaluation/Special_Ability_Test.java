@@ -25,7 +25,7 @@ public class Special_Ability_Test
         //simple test of abilities
         final Special_Ability_Manager CARD_EFFECTS = new Special_Ability_Manager();
         final Game_State<Deck_Card> CARD_TRACKER;
-        final ArrayList<Deck_Card> HAND = new ArrayList<Deck_Card>(), DECK = new ArrayList<Deck_Card>();;
+        final ArrayList<Deck_Card> HAND = new ArrayList<Deck_Card>(), DECK = new ArrayList<Deck_Card>();
 
         //set up basic card effects
         {
