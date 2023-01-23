@@ -147,7 +147,7 @@ public class Starting_Point
     /**
      * True to display progress, false not to. Having it true results in the program running a bit slower.
      */
-    private static boolean display_progress = false;
+    private static boolean display_progress = true;
 
     /**
      * size of hands to draw during simulation
