@@ -73,8 +73,8 @@ public class Combinatorial_Operator_Node extends Base_Node
         final int COMBINATION_SIZE_MINUS_ONE = this.CHILDREN.get_choice_count() - 1;
         //TODO: turn into object pool
         final Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point SAVE_POINT = this.CHILDREN.new Combinatorial_Iteration_Save_Point(); //make a new one each time
-
         TestResult result = Combinatorial_Operator_Node.recursive_evaluate_subroutine(0, COMBINATION_SIZE_MINUS_ONE, HAND, NEXT, SAVE_POINT);
+
         //Continue looking at combinations until successful or non
         while ((result == TestResult.Rollback || result == TestResult.NotSuccess) && !SAVE_POINT.done())
         {
@@ -91,7 +91,6 @@ public class Combinatorial_Operator_Node extends Base_Node
         final int COMBINATION_SIZE_MINUS_ONE = this.CHILDREN.get_choice_count() - 1;
         //TODO: turn into object pool
         final Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point SAVE_POINT = this.CHILDREN.new Combinatorial_Iteration_Save_Point(); //make a new one each time
-
         TestResult result = Combinatorial_Operator_Node.recursive_evaluate_subroutine(0, COMBINATION_SIZE_MINUS_ONE, GAME_BOARD, NEXT, SAVE_POINT);
 
         //Continue looking at combinations until successful or non
