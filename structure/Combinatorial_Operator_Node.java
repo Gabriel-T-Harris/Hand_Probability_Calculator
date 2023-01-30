@@ -17,24 +17,29 @@
 package structure;
 
 import java.util.Collection;
+import java.util.concurrent.ConcurrentLinkedDeque;
 import simulation.special_ability.Game_State;
 
 /**
 <b>
 Purpose: Combinatorial operator<br>
 Programmer: Gabriel Toban Harris<br>
-Date: 2022-10-10/2022-10-13/2022-10-31/2022-12-23/2023-1-22/2023-1-28
+Date: 2022-10-10/2022-10-13/2022-10-31/2022-12-23/2023-1-22/2023-1-28/2023-1-29
 </b>
 */
 
 public class Combinatorial_Operator_Node extends Base_Node
 {
-
     /**
      * Contains both pieces of data to form combinations with and generates combinations as well.
      */
-    public final Combinatorial_Iteration<Evaluable> CHILDREN;
+    private final Combinatorial_Iteration<Evaluable> CHILDREN;
 
+    /**
+     * Acts as an object pool of {@link Combinatorial_Iteration.Combinatorial_Iteration_Save_Point} to be object efficient.
+     */
+    private final ConcurrentLinkedDeque<Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point> SAVE_POINT_POOL =
+                                                                                                                               new ConcurrentLinkedDeque<Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point>();
     /**
      * Constructor.
      * 
@@ -71,8 +76,7 @@ public class Combinatorial_Operator_Node extends Base_Node
     {
         printDebugStep(HAND);
         final int COMBINATION_SIZE_MINUS_ONE = this.CHILDREN.get_choice_count() - 1;
-        //TODO: turn into object pool
-        final Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point SAVE_POINT = this.CHILDREN.new Combinatorial_Iteration_Save_Point(); //make a new one each time
+        final Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point SAVE_POINT = this.take();
         TestResult result = Combinatorial_Operator_Node.recursive_evaluate_subroutine(0, COMBINATION_SIZE_MINUS_ONE, HAND, NEXT, SAVE_POINT);
 
         //Continue looking at combinations until successful or non
@@ -82,6 +86,8 @@ public class Combinatorial_Operator_Node extends Base_Node
             result = Combinatorial_Operator_Node.recursive_evaluate_subroutine(0, COMBINATION_SIZE_MINUS_ONE, HAND, NEXT, SAVE_POINT);
         }
 
+        this.put_back(SAVE_POINT);
+
         return result;
     }
 
@@ -89,8 +95,7 @@ public class Combinatorial_Operator_Node extends Base_Node
     protected <E extends Reservable> TestResult evaluate(final Game_State<E> GAME_BOARD, final RollbackCallback NEXT)
     {
         final int COMBINATION_SIZE_MINUS_ONE = this.CHILDREN.get_choice_count() - 1;
-        //TODO: turn into object pool
-        final Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point SAVE_POINT = this.CHILDREN.new Combinatorial_Iteration_Save_Point(); //make a new one each time
+        final Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point SAVE_POINT = this.take();
         TestResult result = Combinatorial_Operator_Node.recursive_evaluate_subroutine(0, COMBINATION_SIZE_MINUS_ONE, GAME_BOARD, NEXT, SAVE_POINT);
 
         //Continue looking at combinations until successful or non
@@ -99,6 +104,8 @@ public class Combinatorial_Operator_Node extends Base_Node
             this.CHILDREN.next_combincation(SAVE_POINT);
             result = Combinatorial_Operator_Node.recursive_evaluate_subroutine(0, COMBINATION_SIZE_MINUS_ONE, GAME_BOARD, NEXT, SAVE_POINT);
         }
+
+        this.put_back(SAVE_POINT);
 
         return result;
     }
@@ -153,5 +160,31 @@ public class Combinatorial_Operator_Node extends Base_Node
             return SAVE_POINT.get_current_combination().get(CURRENT_INDEX).evaluate(GAME_BOARD, NEXT);
         else
             return SAVE_POINT.get_current_combination().get(CURRENT_INDEX).evaluate(GAME_BOARD, () -> Combinatorial_Operator_Node.recursive_evaluate_subroutine(CURRENT_INDEX + 1, SIZE_MINUS_ONE, GAME_BOARD, NEXT, SAVE_POINT));
+    }
+
+    /**
+     * Provides an a {@link Combinatorial_Iteration.Combinatorial_Iteration_Save_Point} for use.
+     * 
+     * @return an instance of {@link Combinatorial_Iteration.Combinatorial_Iteration_Save_Point} ready for use
+     */
+    private Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point take()
+    {
+        Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point to_return = this.SAVE_POINT_POOL.pollFirst();
+
+        if (to_return == null)
+            return this.CHILDREN.new Combinatorial_Iteration_Save_Point();
+        else
+            return to_return;
+    }
+
+    /**
+     * Both resets and returns objects to {@link Combinatorial_Operator_Node#SAVE_POINT_POOL} for reallocation.
+     * 
+     * @param INPUT is the object to be returned to the pool
+     */
+    private void put_back(final Combinatorial_Iteration<Evaluable>.Combinatorial_Iteration_Save_Point INPUT)
+    {
+        INPUT.reset_internals();
+        this.SAVE_POINT_POOL.addLast(INPUT);
     }
 }
