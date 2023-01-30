@@ -45,8 +45,8 @@ Date: 2021-08-04/2021-8-[17-22]/2021-12-18/2021-12-20/2021-12-25/2022-5-28/2022-
 public class Simulation
 {
     /**
-     * Object to act as a simple mutex on {@link #parallel_simulation(boolean, int, int, int)}. As 
-     * {@link #parallel_simulation(boolean, int, int, int)} attempts to use all the resources, thus only one parallel simulation should occur at a given time. 
+     * Object to act as a simple mutex on {@link Simulation#parallel_simulation(boolean, int, int, int)}. As 
+     * {@link Simulation#parallel_simulation(boolean, int, int, int)} attempts to use all the resources, thus only one parallel simulation should occur at a given time. 
      */
     private final static Object PARALLEL_SIMULATION_LOCK = new Object();
 
@@ -109,7 +109,7 @@ public class Simulation
     /**
      * Performs simulation. By differing to appropriate simulation function.
      * 
-     * @param OVERRIDE when true will jump straight to calling {@link #sequential_simulation(boolean, int, int)} rather then analyzing {@link Runtime#availableProcessors()} that this program has access to and acting accordingly.
+     * @param OVERRIDE when true will jump straight to calling {@link Simulation#sequential_simulation(boolean, int, int)} rather then analyzing {@link Runtime#availableProcessors()} that this program has access to and acting accordingly.
      * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option) and false for no outputs
      * @param HAND_SIZE of the hand which will be used in the simulation
      * @param TEST_HAND_COUNT number of times to run simulation
@@ -310,10 +310,10 @@ public class Simulation
     }
 
     /**
-     * <p>Carries out serial simulation with negligible (if any) parallelization. The trade off off with {@link #parallel_simulation(boolean, int, int, int)} is time for resources.</p>
+     * <p>Carries out serial simulation with negligible (if any) parallelization. The trade off off with {@link Simulation#parallel_simulation(boolean, int, int, int)} is time for resources.</p>
      * 
-     * <p>Note: Only instance should ever be running due to calling {@link #draw_hand(int, ArrayList)}, thereby making this not synchronization safe.
-     * Such is intentional for performance reasons. As well as it is not meant to be run in parallel, unlike {@link #parallel_simulation(boolean, int, int, int)}.</p>
+     * <p>Note: Only instance should ever be running due to calling {@link Simulation#draw_hand(int, ArrayList)}, thereby making this not synchronization safe.
+     * Such is intentional for performance reasons. As well as it is not meant to be run in parallel, unlike {@link Simulation#parallel_simulation(boolean, int, int, int)}.</p>
      * 
      * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option) and false for no outputs
      * @param HAND_SIZE of the hands drawn
@@ -333,19 +333,19 @@ public class Simulation
             /**
              * Simple wrapper to have effectively final integer. Should be faster than {@link AtomicInteger}.
              */
-            class Effectively_Final_Integer
+            final class Effectively_Final_Integer
             {
                 /**
-                 * Value being wrapped. Start at -1 so that call of {@link #increment_get()} will set it to 0.
+                 * Value being wrapped. Start at -1 so that call of {@link Effectively_Final_Integer#increment_get()} will set it to 0.
                  * Thus saving a function call and lowering instruction count.
                  */
                 private int counter = -1;
 
                 //getter
                 /**
-                 * Simply a getter for {@link #counter}
+                 * Simply a getter for {@link Effectively_Final_Integer#counter}
                  * 
-                 * @return value of {@link #counter}
+                 * @return value of {@link Effectively_Final_Integer#counter}
                  */
                 public int get_counter()
                 {
@@ -353,7 +353,7 @@ public class Simulation
                 }
 
                 /**
-                 * Increment {@link #counter}, then return result.
+                 * Increment {@link Effectively_Final_Integer#counter}, then return result.
                  * 
                  * @return result of increment
                  */
@@ -399,7 +399,7 @@ public class Simulation
     }
 
     /**
-     * Carries out parallel simulation. The trade off over {@link #sequential_simulation(boolean, int, int)} is resources for time.
+     * Carries out parallel simulation. The trade off over {@link Simulation#sequential_simulation(boolean, int, int)} is resources for time.
      * 
      * @param DISPLAY_PROGRESS is to output simulation progress, true for outputs (slower option) and false for no outputs
      * @param CORE_COUNT number of available cores
@@ -434,8 +434,8 @@ public class Simulation
              * Basic constructor.
              * 
              * @param HIT_COUNTER thingy to increment in event of test being passed
-             * @param EQUATION to perform testing on {@link #TEST_HAND} 
-             * @param TEST_HAND to be tested by {@link #EQUATION}
+             * @param EQUATION to perform testing on {@link Hand_Tester#TEST_HAND} 
+             * @param TEST_HAND to be tested by {@link Hand_Tester#EQUATION}
              */
             public Hand_Tester(final AtomicInteger HIT_COUNTER, final Scenario EQUATION, final ArrayList<Deck_Card> TEST_HAND)
             {
@@ -500,23 +500,23 @@ public class Simulation
         {
             /**
              * Multiplier which separates the buffer into a before and after. This controls the size of the before part, which implicitly affects the after part's size.
-             * Before and after, referring to {@link ThreadPoolExecutor#execute(Runnable)} self to {@link #TASK_OVERSEER} for execution, which is in between both partition parts.
+             * Before and after, referring to {@link ThreadPoolExecutor#execute(Runnable)} self to {@link Task_Manager#TASK_OVERSEER} for execution, which is in between both partition parts.
              */
             public final static double PARTITION_BUFFER_AMOUNT = 0.75d; //Feels like an optimal number, as it is between 50 and 100.
 
             /**
-             * Initial number of partitions to have. Inversely related to {@link #partition_size}.
-             * As {@link #modulate_parallelization()} will 'correct' it, the actual starting value is rather unimportant.
+             * Initial number of partitions to have. Inversely related to {@link Task_Manager#partition_size}.
+             * As {@link Task_Manager#modulate_parallelization()} will 'correct' it, the actual starting value is rather unimportant.
              */
             private int partition_count;
 
             /**
-             * Size of total partition, inversely related to {@link #partition_count}.
+             * Size of total partition, inversely related to {@link Task_Manager#partition_count}.
              */
             private int partition_size;
 
             /**
-             * Size of partition before {@link ThreadPoolExecutor#execute(Runnable)} self to {@link #TASK_OVERSEER}. Inversely related to {@link #partition_size} and also multiplied by {@link #PARTITION_BUFFER_AMOUNT}.
+             * Size of partition before {@link ThreadPoolExecutor#execute(Runnable)} self to {@link Task_Manager#TASK_OVERSEER}. Inversely related to {@link Task_Manager#partition_size} and also multiplied by {@link Task_Manager#PARTITION_BUFFER_AMOUNT}.
              */
             private int partition_buffer_size;
 
@@ -622,7 +622,7 @@ public class Simulation
             }
 
             /**
-             * Subroutine to set values affected by {@link #partition_count}.
+             * Subroutine to set values affected by {@link Task_Manager#partition_count}.
              */
             protected void set_partition_count_related_values()
             {
