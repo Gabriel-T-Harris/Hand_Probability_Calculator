@@ -491,7 +491,7 @@ public class Simulation
                 }
             }
         }
-        
+
         /**
          * {@link Runnable} to manage the supplying of {@link Runnable} to a {@link ThreadPoolExecutor}.
          * Also manages said {@link ThreadPoolExecutor} as well. Meant to be singleton, though could theoretically have multiple instances.
@@ -711,7 +711,7 @@ public class Simulation
                 for (int j = 1; j < Simulation.this.FOREST.size(); ++j)
                     this.TASK_OVERSEER.execute(new Hand_Tester(this.HITS[j], Simulation.this.FOREST.get(j), Deck_Card.deep_copy(CURRENT_HAND)));
             }
-            
+
             /**
              * Subroutine of {@link Simulation#parallel_simulation(boolean, int, int, int)}, point is to centralize a subpart of the code.
              * Additionally, this version is different from {@link Task_Manager#parallel_simulation_subroutine()} in that it handles {@link simulation.special_abiltity}.
