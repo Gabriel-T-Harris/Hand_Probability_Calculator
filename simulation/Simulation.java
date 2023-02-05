@@ -670,16 +670,16 @@ public class Simulation
             /**
              * Subroutine to both dispatch and run {@link Hand_Tester}
              * 
-             * @param START partition value inclusive
+             * @param start partition value inclusive
              * @param END partition value exclusive
              */
-            protected void run_subroutine(int START, final int END)
+            protected void run_subroutine(int start, final int END)
             {
                 if (DISPLAY_PROGRESS)
-                    for (; START < END; ++START, this.HANDS_DRAWN.incrementAndGet())
+                    for (; start < END; ++start, this.HANDS_DRAWN.incrementAndGet())
                         this.parallel_simulation_subroutine_picker();
                 else
-                    for (; START < END; ++START)
+                    for (; start < END; ++start)
                         this.parallel_simulation_subroutine_picker();
             }
 
