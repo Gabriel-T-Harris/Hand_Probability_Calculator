@@ -37,7 +37,7 @@ import simulation.Simulation;
 <b>
 Purpose: To be the central part which calls and runs the other parts. With the goal of calculating probability of a given hand.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-30/2021-8-1/2021-8-4/2021-8-[11, 13]/2021-8-17/2021-8-19/2021-8-21/2021-8-23/2021-12-20
+Date: 2021-07-30/2021-8-1/2021-8-4/2021-8-[11, 13]/2021-8-17/2021-8-19/2021-8-21/2021-8-23/2021-12-20/2023-1-4
 </b>
 */
 
@@ -104,6 +104,11 @@ public class Starting_Point
     public final static String SYNTACTICAL_OUT_SCENARIO_FILE_EXTENSION = ".outscenario.dot";
 
     /**
+     * Extension of file for card effects.
+     */
+    public static final String CARD_EFFECTS_FILE_EXTENSION = ".specialeffects";
+
+    /**
      * File extension for the results of the simulation.
      */
     public final static String SIMULATION_RESULTS_EXTENSION = ".results";
@@ -120,14 +125,14 @@ public class Starting_Point
     public final static Pattern HORIZONTAL_WHITESPACE_CHARACTER = Pattern.compile("\\h");
 
     /**
-     * for system errors
+     * for system errors, true to display them and false not to
      */
-    private static boolean error_reporting = false;
+    private static boolean error_reporting = true;
 
     /**
-     * for output decklist and scenarios
+     * for output decklist, scenarios, and special abilities
      */
-    private static boolean scenario_output = false;
+    private static boolean configuration_output = false;
 
     /**
      * true for create file for results, otherwise output to console
@@ -142,7 +147,7 @@ public class Starting_Point
     /**
      * True to display progress, false not to. Having it true results in the program running a bit slower.
      */
-    private static boolean display_progress = false;
+    private static boolean display_progress = true;
 
     /**
      * size of hands to draw during simulation
@@ -161,26 +166,26 @@ public class Starting_Point
 
     public static void main(String[] args)
     {
-        boolean verbose = false; //for outputting of progress, does include error files
+        boolean verbose = true; //for outputting of progress, does include error files
         final File[] SOURCE_FILES; //files to be parsed
 
         if (args.length > 0)
         {
-            final String ERROR_REPORTING_FLAG = "--error_reporting", HELP_FLAG = "--help", VERBOSE_FLAG = "--verbose", SCENARIO_OUTPUT_FLAG = "--scenario_output_flag",
+            final String ERROR_REPORTING_OFF_FLAG = "--error_reporting_off", HELP_FLAG = "--help", VERBOSE_OFF_FLAG = "--verbose_off", CONFIGURATION_OUTPUT_FLAG = "--scenario_output_flag",
                          SIMULATION_RESULTS_CONSOLE_FLAG = "--simulation_results_console", FORCE_SEQUENTIAL_FLAG = "--force_sequential", DISPLAY_PROGRESS_OFF_FLAG = "--display_progress_off",
                          INPUT_PARAMETER = "--input", OUTPUT_PARAMETER = "--output", HAND_SIZE_PARAMETER = "--hand_size", TEST_HANDS_PARAMETER = "--test_hands";
 
 
             for (int i = 0; i < args.length; ++i)
-                if (args[i].equals(ERROR_REPORTING_FLAG))
+                if (args[i].equals(ERROR_REPORTING_OFF_FLAG))
                 {
-                    Starting_Point.error_reporting = true;
+                    Starting_Point.error_reporting = false;
                     break;
                 }
 
             final Command_Line_Argument_Parser PARSED_ARGUMENTS = new Command_Line_Argument_Parser(Starting_Point.error_reporting);
 
-            PARSED_ARGUMENTS.add_flags(ERROR_REPORTING_FLAG, HELP_FLAG, VERBOSE_FLAG, SCENARIO_OUTPUT_FLAG, SIMULATION_RESULTS_CONSOLE_FLAG, FORCE_SEQUENTIAL_FLAG,
+            PARSED_ARGUMENTS.add_flags(ERROR_REPORTING_OFF_FLAG, HELP_FLAG, VERBOSE_OFF_FLAG, CONFIGURATION_OUTPUT_FLAG, SIMULATION_RESULTS_CONSOLE_FLAG, FORCE_SEQUENTIAL_FLAG,
                                        DISPLAY_PROGRESS_OFF_FLAG);
             PARSED_ARGUMENTS.add_parameters(INPUT_PARAMETER, OUTPUT_PARAMETER, HAND_SIZE_PARAMETER, TEST_HANDS_PARAMETER);
             PARSED_ARGUMENTS.parse(args);
@@ -191,9 +196,9 @@ public class Starting_Point
                                    Starting_Point.SOURCE_FILE_EXTENSION + "\n\nCommand line options are none for default file that should be located at: " +
                                    Starting_Point.DEFAULT_SOURCE_FILE_LOCATION + Starting_Point.DEFAULT_FILE + ".\n" +
                                    HELP_FLAG + ": for this message.\n" +
-                                   ERROR_REPORTING_FLAG + ": to show error messages, does not include error files.\n" +
-                                   VERBOSE_FLAG + ": for creation of files showing progress, does include error files.\n" +
-                                   SCENARIO_OUTPUT_FLAG + ": to output read decklist and scenarios in dot file format.\n" +
+                                   ERROR_REPORTING_OFF_FLAG + ": to not show error messages, does not include error files.\n" +
+                                   VERBOSE_OFF_FLAG + ": for turning off the creation of files showing progress, does include error files.\n" +
+                                   CONFIGURATION_OUTPUT_FLAG + ": to output read decklist, scenarios in dot file format, and special abilities.\n" +
                                    SIMULATION_RESULTS_CONSOLE_FLAG + ": to have the simulation results be output to console instead of in a created file.\n" +
                                    FORCE_SEQUENTIAL_FLAG + ": to force the program to perform the simulation sequentially rather then allowing the program to pick sequential or parallel.\n" +
                                    DISPLAY_PROGRESS_OFF_FLAG + ": turns off displaying simulation progress, which speeds up the program.\n" +
@@ -205,8 +210,8 @@ public class Starting_Point
             }
             else
             {
-                verbose = PARSED_ARGUMENTS.flag_seen(VERBOSE_FLAG);
-                Starting_Point.scenario_output = PARSED_ARGUMENTS.flag_seen(SCENARIO_OUTPUT_FLAG);
+                verbose = !PARSED_ARGUMENTS.flag_seen(VERBOSE_OFF_FLAG);
+                Starting_Point.configuration_output = PARSED_ARGUMENTS.flag_seen(CONFIGURATION_OUTPUT_FLAG);
                 Starting_Point.simulation_results_console = PARSED_ARGUMENTS.flag_seen(SIMULATION_RESULTS_CONSOLE_FLAG);
                 Starting_Point.force_sequential = PARSED_ARGUMENTS.flag_seen(FORCE_SEQUENTIAL_FLAG);
                 Starting_Point.display_progress = !PARSED_ARGUMENTS.flag_seen(DISPLAY_PROGRESS_OFF_FLAG); //on by default
@@ -305,7 +310,7 @@ public class Starting_Point
             SOURCE_FILES = new File[]{new File(Starting_Point.DEFAULT_SOURCE_FILE_LOCATION, Starting_Point.DEFAULT_FILE)};
 
         //Only attempt to create directories when they would be used.
-        if (Starting_Point.scenario_output || !Starting_Point.simulation_results_console || verbose)
+        if (Starting_Point.configuration_output || !Starting_Point.simulation_results_console || verbose)
             Starting_Point.create_theoretical_directories(Starting_Point.output_location);
 
         if (SOURCE_FILES.length == 1)
@@ -543,7 +548,7 @@ public class Starting_Point
                                                     "Said stacks are expected to be empty. Thus configuration file is so erroneous that it is not worth continuing with. " +
                                                     "Check error files for more details (be sure to explicitly enable their existence with the --verbose flag).");
 
-                if (Starting_Point.scenario_output)
+                if (Starting_Point.configuration_output)
                     GROW_FOREST.print_out_results(partial_output_directory); //Output decklist and all scenarios in dot format.
 
                 SIMULATOR = GROW_FOREST.create_result(); //create simulation from parsed tokens

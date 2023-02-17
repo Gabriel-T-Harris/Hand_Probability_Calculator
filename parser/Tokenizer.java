@@ -23,85 +23,102 @@ import java.util.regex.Pattern;
 <b>
 Purpose: Perform tokenization on input files, such that later stages may read a stream of tokens one by one.<br>
 Programmer: Gabriel Toban Harris <br>
-Date: 2021-07-[27, 28], 2021-7-30/2021-8-9/2021-8-23
+Date: 2021-07-[27, 28], 2021-7-30/2021-8-9/2021-8-23/2022-6-3
 </b>
 */
 
 public class Tokenizer
 {
     /**
-     * Special marker of section starts.
+     * Special marker of section starts. Definition of {@link Lexeme_Types#SENTINEL_START} {@link Token}.
      */
     public final static String SENTINEL_START = "{";
 
     /**
-     * Special marker of section end.
+     * Special marker of section end. Definition of {@link Lexeme_Types#SENTINEL_END} {@link Token}.
      */
     public final static String SENTINEL_END = "}";
 
     /**
-     * Special marker of the start of card in expression.
+     * Special marker of the start of a hand card in expression. Definition of {@link Lexeme_Types#CONDITION_HAND_CARD_START} {@link Token}.
      */
-    public final static String CONDITION_CARD_START = "[";
+    public final static String CONDITION_HAND_CARD_START = "[";
 
     /**
-     * Special marker of the end of card in expression.
+     * Special marker of the end of a hand card in expression. Definition of {@link Lexeme_Types#CONDITION_HAND_CARD_END} {@link Token}.
      */
-    public final static String CONDITION_CARD_END = "]";
+    public final static String CONDITION_HAND_CARD_END = "]";
 
     /**
-     * Special marker of section starts.
+     * Special marker of section starts. Definition of {@link Lexeme_Types#CONDITION_SCENARIO_START} {@link Token}.
      */
     public final static String CONDITION_SCENARIO_START = "<";
 
     /**
-     * Special marker of section end.
+     * Special marker of section end. Definition of {@link Lexeme_Types#CONDITION_SCENARIO_END} {@link Token}.
      */
     public final static String CONDITION_SCENARIO_END = ">";
 
     /**
-     * Special marker of the start of a subexpression.
+     * Special marker of the start of a subexpression. Definition of {@link Lexeme_Types#CONDITION_EXPR_START} {@link Token}.
      */
     public final static String CONDITION_EXPR_START = "(";
 
     /**
-     * Special marker of the end of a subexpression.
+     * Special marker of the end of a subexpression. Definition of {@link Lexeme_Types#CONDITION_EXPR_END} {@link Token}.
      */
     public final static String CONDITION_EXPR_END = ")";
 
     /**
-     * Special marker used in combination with others to identify parts.
+     * Special marker used in combination with others to identify parts. Definition of {@link Lexeme_Types#ASSIGN} {@link Token}.
      */
     public final static String ASSIGN = "=";
 
     /**
-     * Special marker of the end of various parts.
+     * Special marker of the end of various parts. Definition of {@link Lexeme_Types#SEMI_COLON} {@link Token}.
      */
     public final static String SEMI_COLON = ";";
 
     /**
-     * Simple concatenation of chars which are not allowed to be a part of any keyword, ID, or special marker of a part.
+     * Special marker of both the start and end of a field card in an expression. Definition of {@link Lexeme_Types#CONDITION_FIELD_CARD} {@link Token}.
      */
-    public final static String RESTRICTED_CHARS = ";=\n" + SENTINEL_START + SENTINEL_END + CONDITION_CARD_START + CONDITION_CARD_END + CONDITION_SCENARIO_START +
-                                                  CONDITION_SCENARIO_END + CONDITION_EXPR_START + CONDITION_EXPR_END;
+    public final static String CONDITION_FIELD_CARD = "*";
 
     /**
-     * Representation of unary operator not.
+     * Special marker of both the start and end of a graveyard card in an expression. Definition of {@link Lexeme_Types#CONDITION_GY_CARD} {@link Token}.
+     */
+    public final static String CONDITION_GY_CARD = "#";
+
+    /**
+     * Special marker of both the start and end of a banished card in an expression. Definition of {@link Lexeme_Types#CONDITION_BANISH_CARD} {@link Token}.
+     */
+    public final static String CONDITION_BANISH_CARD = "~";
+
+    /**
+     * Simple concatenation of chars which are not allowed to be a part of any keyword, ID, or special marker of a part.
+     */
+    public final static String RESTRICTED_CHARS = "\n" + Tokenizer.SEMI_COLON + Tokenizer.ASSIGN + Tokenizer.SENTINEL_START + Tokenizer.SENTINEL_END +
+                                                  Tokenizer.CONDITION_HAND_CARD_START + Tokenizer.CONDITION_HAND_CARD_END + Tokenizer.CONDITION_SCENARIO_START +
+                                                  Tokenizer.CONDITION_SCENARIO_END + Tokenizer.CONDITION_EXPR_START + Tokenizer.CONDITION_EXPR_END +
+                                                  Tokenizer.CONDITION_FIELD_CARD + Tokenizer.CONDITION_GY_CARD + Tokenizer.CONDITION_BANISH_CARD;
+
+    /**
+     * Representation of unary operator not. Definition of {@link Lexeme_Types#NOT} {@link Token}.
      */
     public final static Pattern NOT = Pattern.compile("\\s*NOT\\s*");
 
     /**
-     * Representation of binary operator and.
+     * Representation of binary operator and. Definition of {@link Lexeme_Types#AND} {@link Token}.
      */
     public final static Pattern AND = Pattern.compile("\\s*AND\\s*");
 
     /**
-     * Representation of binary operator or.
+     * Representation of binary operator or. Definition of {@link Lexeme_Types#OR} {@link Token}.
      */
     public final static Pattern OR = Pattern.compile("\\s*OR\\s*");
 
     /**
-     * Representation of binary operator xor.
+     * Representation of binary operator xor. Definition of {@link Lexeme_Types#XOR} {@link Token}.
      */
     public final static Pattern XOR = Pattern.compile("\\s*XOR\\s*");
 
@@ -113,7 +130,7 @@ public class Tokenizer
     /**
      * Pattern indicating the definition of the {@link Lexeme_Types#DECK_START} {@link Token}.
      */
-    public final static Pattern DECK_START = Pattern.compile("\\s*deck list:\\s*");
+    public final static Pattern DECK_START = Pattern.compile("\\s*decklist:\\s*");
 
     /**
      * Pattern indicating the definition of the {@link Lexeme_Types#PROBABILITY_START} {@link Token}.
@@ -141,9 +158,55 @@ public class Tokenizer
     public final static Pattern FALSE = Pattern.compile("\\s*false\\s*");
 
     /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#NON_NEGATIVE_INTEGER} {@link Token}.
+     */
+    public final static Pattern NON_NEGATIVE_INTEGER = Pattern.compile("[0-9]+");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#DRAW} {@link Token}.
+     */
+    public final static Pattern DRAW = Pattern.compile("\\s*DRAW\\s*");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#MILL} {@link Token}.
+     */
+    public final static Pattern MILL = Pattern.compile("\\s*MILL\\s*");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#BANISH} {@link Token}.
+     */
+    public final static Pattern BANISH = Pattern.compile("\\s*BANISH\\s*");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#REASONING} {@link Token}.
+     */
+    public final static Pattern REASONING = Pattern.compile("\\s*REASONING\\s*");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#COMBINATORIC} {@link Token}.
+     */
+    public final static Pattern COMBINATORIC = Pattern.compile("\\s*COMBINATORIC\\s*");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#ACTIVATION_LIMITATION_START} {@link Token}.
+     */
+    public final static Pattern ACTIVATION_LIMITATION_START = Pattern.compile("\\s*uses\\s*");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#SPECIAL_ABILITY_START} {@link Token}.
+     */
+    public final static Pattern SPECIAL_ABILITY_START = Pattern.compile("\\s*special_abilities:\\s*");
+
+    /**
+     * Pattern indicating the definition of the {@link Lexeme_Types#SPECIAL_ABILITY_BODY_START} {@link Token}.
+     */
+    public final static Pattern SPECIAL_ABILITY_BODY_START = Pattern.compile("\\s*special_ability\\s*");
+
+    /**
      * Definition of valid char that an ID lexeme can have.
      */
-    public final static Pattern ID_CHAR_SET = Pattern.compile("[^" + RESTRICTED_CHARS.replace("{", "\\{").replace("}", "\\}").replace("[", "\\[").replace("]", "\\]") + "]");
+    public final static Pattern ID_CHAR_SET = Pattern.compile("[^" + Tokenizer.RESTRICTED_CHARS.replace("{", "\\{").replace("}", "\\}").replace("[", "\\[").replace("]", "\\]") +
+                                                              "]");
 
     /**
      * Performs tokenization, after which other functions are called internally.
@@ -166,10 +229,10 @@ public class Tokenizer
                 return new Returned_Data(new Token(Lexeme_Types.SENTINEL_START, LINE_NUMBER, START));
             case Tokenizer.SENTINEL_END:
                 return new Returned_Data(new Token(Lexeme_Types.SENTINEL_END, LINE_NUMBER, START));
-            case Tokenizer.CONDITION_CARD_START:
-                return new Returned_Data(new Token(Lexeme_Types.CONDITION_CARD_START, LINE_NUMBER, START));
-            case Tokenizer.CONDITION_CARD_END:
-                return new Returned_Data(new Token(Lexeme_Types.CONDITION_CARD_END, LINE_NUMBER, START));
+            case Tokenizer.CONDITION_HAND_CARD_START:
+                return new Returned_Data(new Token(Lexeme_Types.CONDITION_HAND_CARD_START, LINE_NUMBER, START));
+            case Tokenizer.CONDITION_HAND_CARD_END:
+                return new Returned_Data(new Token(Lexeme_Types.CONDITION_HAND_CARD_END, LINE_NUMBER, START));
             case Tokenizer.CONDITION_SCENARIO_START:
                 return new Returned_Data(new Token(Lexeme_Types.CONDITION_SCENARIO_START, LINE_NUMBER, START));
             case Tokenizer.CONDITION_SCENARIO_END:
@@ -182,6 +245,12 @@ public class Tokenizer
                 return new Returned_Data(new Token(Lexeme_Types.ASSIGN, LINE_NUMBER, START));
             case Tokenizer.SEMI_COLON:
                 return new Returned_Data(new Token(Lexeme_Types.SEMI_COLON, LINE_NUMBER, START));
+            case Tokenizer.CONDITION_FIELD_CARD:
+                return new Returned_Data(new Token(Lexeme_Types.CONDITION_FIELD_CARD, LINE_NUMBER, START));
+            case Tokenizer.CONDITION_GY_CARD:
+                return new Returned_Data(new Token(Lexeme_Types.CONDITION_GY_CARD, LINE_NUMBER, START));
+            case Tokenizer.CONDITION_BANISH_CARD:
+                return new Returned_Data(new Token(Lexeme_Types.CONDITION_BANISH_CARD, LINE_NUMBER, START));
             //comments
             case "/":
             {
@@ -227,7 +296,7 @@ public class Tokenizer
                 //defer to ID_CHAR_SET
                 return new Returned_Data(new Token(Lexeme_Types.ID, LINE_NUMBER, LEXEME.toString()));
             }
-            //parse multichar sequences
+            //parse multi-char sequences
             default:
                 return Tokenizer.gather_keyword_chars(LINE_NUMBER, LEXEME, INPUT);
         }
@@ -274,6 +343,26 @@ public class Tokenizer
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.TRUE, LINE_NUMBER, LEXEME));
                 else if (Tokenizer.PROBABILITY_START.matcher(LEXEME).matches())
                     return new Returned_Data(placeholder, new Token(Lexeme_Types.PROBABILITY_START, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.DECK_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.DECK_START, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.NON_NEGATIVE_INTEGER.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.NON_NEGATIVE_INTEGER, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.COMBINATORIC.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.COMBINATORIC, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.ACTIVATION_LIMITATION_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.ACTIVATION_LIMITATION_START, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.SPECIAL_ABILITY_BODY_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.SPECIAL_ABILITY_BODY_START, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.DRAW.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.DRAW, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.MILL.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.MILL, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.BANISH.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.BANISH, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.REASONING.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.REASONING, LINE_NUMBER, LEXEME));
+                else if (Tokenizer.SPECIAL_ABILITY_START.matcher(LEXEME).matches())
+                    return new Returned_Data(placeholder, new Token(Lexeme_Types.SPECIAL_ABILITY_START, LINE_NUMBER, LEXEME));
                 else if (has_white_space_char)
                     return Tokenizer.gather_ID_chars(LINE_NUMBER, LEXEME_START.append(placeholder), INPUT);
                 else
@@ -324,10 +413,7 @@ public class Tokenizer
      */
     private static Returned_Data parse_potential_ID(final long LINE_NUMBER, final String REMAINDER, final String COMPLETE_LEXEME)
     {
-        //Test lexeme for special sequences, if all fail then is in fact ID.
-        if (Tokenizer.DECK_START.matcher(COMPLETE_LEXEME).matches())
-            return new Returned_Data(REMAINDER, new Token(Lexeme_Types.DECK_START, LINE_NUMBER, COMPLETE_LEXEME));
-        else
-            return new Returned_Data(REMAINDER, new Token(Lexeme_Types.ID, LINE_NUMBER, COMPLETE_LEXEME));
+        //Test lexeme for special sequences, if all fail then is in fact ID. No such sequences currently exist.
+        return new Returned_Data(REMAINDER, new Token(Lexeme_Types.ID, LINE_NUMBER, COMPLETE_LEXEME));
     }
 }

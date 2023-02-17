@@ -43,7 +43,7 @@ public class Deck_Card extends Base_Card implements Reservable
     }
 
     /**
-     * Copy constructor.
+     * Special copy constructor.
      * 
      * @param INPUT to be copied.
      */
@@ -70,6 +70,12 @@ public class Deck_Card extends Base_Card implements Reservable
     @Override
     public boolean isReserved() {
         return reserved;
+    }
+
+    @Override
+    public String get_name()
+    {
+        return this.NAME;
     }
 
     @Override

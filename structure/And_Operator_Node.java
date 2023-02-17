@@ -17,6 +17,7 @@
 package structure;
 
 import java.util.Collection;
+import simulation.special_ability.Game_State;
 
 /**
 <b>
@@ -40,11 +41,18 @@ public class And_Operator_Node extends Binary_Operator_Node
 
     // If LEFT_CHILD can take card(s), then make sure the RIGHT CHILD can also take card(s)
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         return LEFT_CHILD.evaluate(
                 hand,
                 () -> RIGHT_CHILD.evaluate(hand, next)
         );
+    }
+
+    // If LEFT_CHILD can take card(s), then make sure the RIGHT CHILD can also take card(s)
+    @Override
+    protected <E extends Reservable> TestResult evaluate(final Game_State<E> GAME_STATE, final RollbackCallback NEXT)
+    {
+        return LEFT_CHILD.evaluate(GAME_STATE, () -> RIGHT_CHILD.evaluate(GAME_STATE, NEXT));
     }
 }

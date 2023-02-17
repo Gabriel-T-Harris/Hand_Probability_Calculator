@@ -1,0 +1,19 @@
+Error: Special Ability named "One Day of Peace", around line 16 is already defined. Discarding it.
+Error: while top of stack is NON_NEGATIVE_INTEGER and current Token is [Lexeme type: ID, lexeme: number, line number: 16]
+Error: while top of stack is NON_NEGATIVE_INTEGER and current Token is [Lexeme type: SEMI_COLON, lexeme: ;, line number: 16]
+Error: Special Ability named "Bad Uses", around line 18 is malformed. Discarding it.
+Error: while top of stack is SPECIAL_ABILITY_EXPR_LIST and current Token is [Lexeme type: ID, lexeme: UNKNOWN_ACTION 4, line number: 21]
+Error: while top of stack is SPECIAL_ABILITY_EXPR_LIST and current Token is [Lexeme type: SEMI_COLON, lexeme: ;, line number: 21]
+Error: while top of stack is SPECIAL_ABILITY_EXPR_LIST and current Token is [Lexeme type: SENTINEL_END, lexeme: }, line number: 21]
+Error: while top of stack is SEMI_COLON and current Token is [Lexeme type: SENTINEL_END, lexeme: }, line number: 21]
+Error: Special Ability named "Unknown Action", around line 23 is malformed. Discarding it.
+Error: while top of stack is DECKLIST and current Token is [Lexeme type: SENTINEL_END, lexeme: }, line number: 26]
+Error: creating Reasoning Special Ability, no proper list of deck card stopping points received. Detected around line 26.
+Error: while top of stack is SENTINEL_END and current Token is [Lexeme type: SEMI_COLON, lexeme: ;, line number: 26]
+Error: while top of stack is PROBABILITY and current Token is [Lexeme type: SEMI_COLON, lexeme: ;, line number: 26]
+Error: while top of stack is PROBABILITY and current Token is [Lexeme type: ACTIVATION_LIMITATION_START, lexeme: uses, line number: 26]
+Error: while top of stack is PROBABILITY and current Token is [Lexeme type: ASSIGN, lexeme: =, line number: 26]
+Error: while top of stack is PROBABILITY and current Token is [Lexeme type: NON_NEGATIVE_INTEGER, lexeme: 0, line number: 26]
+Error: while top of stack is PROBABILITY and current Token is [Lexeme type: SEMI_COLON, lexeme: ;, line number: 26]
+Error: while top of stack is PROBABILITY and current Token is [Lexeme type: SENTINEL_END, lexeme: }, line number: 26]
+Error: while top of stack is PROBABILITY and current Token is [Lexeme type: SENTINEL_END, lexeme: }, line number: 27]

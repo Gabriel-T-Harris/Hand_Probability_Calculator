@@ -1,0 +1,29 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+175[label="AND"];
+175->168;
+175->174;
+168[label="OR"];
+168->167;
+168->24;
+174[label="OR"];
+174->85;
+174->173;
+167[label="OR"];
+167->165;
+167->166;
+24[label="Effective Cyber Angel Benten"];
+85[label="Activatable Pre-Preparation of Rites"];
+173[label="AND"];
+173->169;
+173->172;
+165[label="Cyber Angel Idaten"];
+166[label="Diviner of the Herald"];
+169[label="Dawn of the Herald"];
+172[label="OR"];
+172->170;
+172->171;
+170[label="Herald of Perfection"];
+171[label="Preparation of Rites"];
+}

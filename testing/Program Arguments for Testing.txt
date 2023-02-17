@@ -1,1 +1,5 @@
---verbose --error_reporting --scenario_output_flag --input "testing/Test Input/" --output "testing/Test Output/"
+//suggested flags
+--scenario_output_flag --input "testing/Test Input/" --output "testing/Test Output/"
+
+//command line
+java -cp Resources/Reusable_Java_gth_2021_8_5.jar; starting_point/Starting_Point --simulation_results_console

@@ -20,7 +20,7 @@ http://people.math.sfu.ca/~alspach/comp18/
 http://www.math.hawaii.edu/~ramsey/Probability/PokerHands.html
 */
 
-deck list:
+decklist:
 {
  Ace Clubs; Ace Diamonds; Ace Hearts; Ace Spades;
  Two Clubs; Two Diamonds; Two Hearts; Two Spades;

@@ -1,12 +1,12 @@
 //--simulation_results_console --input "Input/Drytron.txt"
-deck list:
+decklist:
 {
 Diviner of the Herald;
-Diviner of the Herald;
-Diviner of the Herald;
+//Diviner of the Herald;
+//Diviner of the Herald;
 Herald of Orange Light;
 Herald of Orange Light;
-Herald of Orange Light;
+//Herald of Orange Light;
 Drytron Delta Altais;
 Drytron Gamma Eltanin;
 Drytron Gamma Eltanin;
@@ -18,7 +18,7 @@ Drytron Alpha Thuban;
 Drytron Alpha Thuban;
 Eva;
 Drytron Meteonis Draconids;
-Herald of Perfection;
+//Herald of Perfection;
 Cyber Angel Benten;
 Cyber Angel Idaten;
 Cyber Angel Natasha;
@@ -29,18 +29,32 @@ Cyber Emergency;
 Cyber Emergency;
 Cyber Emergency;
 Terraforming;
-Ursarctic Drytron;
+//Ursarctic Drytron;
 Drytron Nova;
 Drytron Nova;
 Drytron Nova;
+Preparation of Rites;
 Preparation of Rites;
 Preparation of Rites;
 Meteonis Drytron;
-Dawn of the Herald;
+//Dawn of the Herald;
 Called by the Grave;
 Drytron Fafnir;
 Drytron Fafnir;
-Ursarctic Big Dipper;
+//Ursarctic Big Dipper;
+Dark Ruler No More;
+Dark Ruler No More;
+Dark Ruler No More;
+
+Nibiru, the Primal Being;
+Nibiru, the Primal Being;
+Nibiru, the Primal Being;
+//Droll & Lock Bird;
+//Droll & Lock Bird;
+//Droll & Lock Bird;
+//Winged Dragon of Ra - Sphere Mode;
+//Winged Dragon of Ra - Sphere Mode;
+//Winged Dragon of Ra - Sphere Mode;
 }
 
 //estimate
@@ -77,7 +91,7 @@ scenarios:
                              Some other 4+ combos exist, but are not worth writing out due to being both being impractical and unlikely.
                              -Phul, Level 6 Ritual, Meteonis, Alpha
                              -Phul, Level 6 Ritual, Zeta, level >= 4
-                             -Phul, -Level 6 Ritual, Meteonis, Drytron, level >= 4
+                             -Phul, Level 6 Ritual, Meteonis, Drytron, level >= 4
                              */
                             };}
 
@@ -94,4 +108,8 @@ scenarios:
     Post-BODE = {scenario = {<Pre-BODE> OR <Ursatron>};}
 
     Protected Post-BODE = {scenario = {<Post-BODE> AND <Protection>};}
+    
+    Side Card = {scenario = {[Dark Ruler No More] OR [Nibiru, the Primal Being] OR [Droll & Lock Bird] OR [Winged Dragon of Ra - Sphere Mode]};}
+    
+    Side Post-BODE = {scenario = {<Post-BODE> AND <Side Card>};}
 }

@@ -17,6 +17,7 @@
 package structure;
 
 import java.util.Collection;
+import simulation.special_ability.Game_State;
 
 /**
 <b>
@@ -41,11 +42,24 @@ public class Or_Operator_Node extends Binary_Operator_Node
     // If LEFT_CHILD can take card(s), then continue evaluation
     // If LEFT_CHILD rolls back, then evaluate the RIGHT CHILD
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         printDebugStep(hand);
         TestResult result = LEFT_CHILD.evaluate(hand, next);
         if (result == TestResult.Rollback)
             return RIGHT_CHILD.evaluate(hand, next);
+        return result;
+    }
+
+    // If LEFT_CHILD can take card(s), then continue evaluation
+    // If LEFT_CHILD rolls back, then evaluate the RIGHT CHILD
+    @Override
+    protected <E extends Reservable> TestResult evaluate(final Game_State<E> GAME_BOARD, final RollbackCallback NEXT)
+    {
+        TestResult result = LEFT_CHILD.evaluate(GAME_BOARD, NEXT);
+
+        if (result == TestResult.Rollback)
+            return RIGHT_CHILD.evaluate(GAME_BOARD, NEXT);
+
         return result;
     }
 }

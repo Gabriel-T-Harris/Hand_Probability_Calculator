@@ -1,4 +1,4 @@
-deck list:{} // no deck error
+decklist:{} // no deck error
 
 scenarios:{} // no scenarios error
 

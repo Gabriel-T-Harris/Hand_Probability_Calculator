@@ -1,0 +1,11 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+84[label="AND"];
+84->82;
+84->83;
+82[label="NOT"];
+82->81;
+83[label="Pre-Preparation of Rites"];
+81[label="Dawn of the Herald"];
+}

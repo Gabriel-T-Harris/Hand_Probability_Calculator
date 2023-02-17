@@ -18,6 +18,7 @@ package structure;
 
 import java.util.Collection;
 import java.util.Collections;
+import simulation.special_ability.Game_State;
 
 /**
 <b>
@@ -44,23 +45,46 @@ public class Not_Operator_Node extends Base_Node
         this.CHILD = CHILD;
     }
 
-    @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
-        printDebugStep(hand);
-        TestResult result = CHILD.evaluate(hand, () -> TestResult.NotSuccess);
-        if (result == TestResult.NotSuccess) {
-            return TestResult.Rollback;
-        }
-        // result should only ever be TestResult.Rollback here
-        return next.call();
-    }
-
     /**
      * for dot format
      */
     public String toString()
     {
         return super.toString() + this.UNIQUE_IDENTIFIER + "->" + this.CHILD.UNIQUE_IDENTIFIER + ";\n";
+    }
+
+    @Override
+    protected <E extends Reservable> TestResult evaluate(final Collection<E> HAND, final RollbackCallback NEXT)
+    {
+        printDebugStep(HAND);
+        TestResult result = CHILD.evaluate(HAND, () -> TestResult.NotSuccess);
+
+        return evaluate_subroutine(result, NEXT);
+    }
+
+    @Override
+    protected <E extends Reservable> TestResult evaluate(final Game_State<E> GAME_BOARD, final RollbackCallback NEXT)
+    {
+        TestResult result = CHILD.evaluate(GAME_BOARD, () -> TestResult.NotSuccess);
+
+        return evaluate_subroutine(result, NEXT);
+    }
+
+    /**
+     * Simple subroutine to ensure that callers line up. Such also removes duplication.
+     * 
+     * @param RESULT is the value to test against
+     * @param NEXT is what is to be done when successful
+     * 
+     * @return the culmination of all the function calls
+     */
+    private static TestResult evaluate_subroutine(final TestResult RESULT, final RollbackCallback NEXT)
+    {
+        if (RESULT == TestResult.NotSuccess)
+            return TestResult.Rollback;
+
+        // result should only ever be TestResult.Rollback here
+        return NEXT.call();
     }
 
     @Override

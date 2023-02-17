@@ -1,0 +1,9 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+23[label="OR"];
+23->21;
+23->22;
+21[label="Cyber Angel Benten"];
+22[label="Preparation of Rites"];
+}

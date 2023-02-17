@@ -1,0 +1,21 @@
+digraph {
+node [shape=record];
+node [fontname=Sans];charset="UTF-8" splines=true splines=spline rankdir =LR
+58[label="OR"];
+58->54;
+58->57;
+54[label="OR"];
+54->52;
+54->53;
+57[label="Exodia the Forbidden One"];
+52[label="OR"];
+52->48;
+52->51;
+53[label="Right Arm of the Forbidden One"];
+48[label="OR"];
+48->44;
+48->47;
+51[label="Left Leg of the Forbidden One"];
+44[label="Left Arm of the Forbidden One"];
+47[label="Right Leg of the Forbidden One"];
+}

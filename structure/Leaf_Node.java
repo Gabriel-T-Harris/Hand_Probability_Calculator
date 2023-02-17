@@ -23,7 +23,6 @@ import java.util.Collection;
 Purpose: Also will be used as the leaf node of the tree structure.<br>
 Programmer: Gabriel Toban Harris, Alexander Oxorn
 </b>
-
 * @param <T> is the type of card to hold, suggestion of {@link Base_Card}.
 */
 
@@ -40,7 +39,7 @@ public class Leaf_Node<T> extends Base_Node
      * @param NAME of the node
      * @param CARD to be matched
      */
-    public Leaf_Node(String NAME, final T CARD)
+    public Leaf_Node(final String NAME, final T CARD)
     {
         super(NAME);
         this.CARD = CARD;
@@ -53,7 +52,7 @@ public class Leaf_Node<T> extends Base_Node
       If no valid options, throw a Rollback signal
      */
     @Override
-    public <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
+    protected <E extends Reservable> TestResult evaluate(Collection<E> hand, RollbackCallback next) {
         if (Evaluable.debugMode) {
             System.out.printf("Trying to match %s\n", CARD);
             printDebugStep(hand);

@@ -1,0 +1,68 @@
+//--simulation_results_console --input "testing/Test Input/Prolematic_Combinatorial_Test_Input_File.txt"
+decklist:
+{
+thingy;
+}
+
+special_abilities:
+{
+    //non-existent card referencing should be fine
+    One Day of Peace = {special_ability = {DRAW 1;}; uses = 0;}
+    
+    //repeated special ability name
+    One Day of Peace = {special_ability = {DRAW 1;}; uses = 0;}
+    
+    //improper activation limit
+    Bad Uses = {special_ability = {DRAW 1;}; uses = number;}
+    
+    Into the Void = {special_ability = {DRAW 1;}; uses = 0;}
+    
+    //Unknown special ability action
+    Unknown Action = {special_ability = {UNKNOWN_ACTION 4;}; uses = 6}
+    
+    Pot of Greed = {special_ability = {DRAW 2;}; uses = 0;}
+    
+    //Missing decklist
+    Bad Reasoning = {special_ability = {REASONING {};}; uses = 0;}
+}
+
+scenarios:
+{
+    Simple Scenario = {scenario = {[thingy]};}
+}
+
+/*
+Other:
+Line Comment, yes
+Block Comment, yes
+Block Comment error, no
+
+Deck List properties:
+Duplicate Card, no
+Invalid Card, no
+No Deck Error, no
+
+Special Ability properties:
+Has special ability section, yes
+Repeated special ability name, yes
+Improper activation limit, yes
+Unknown special ability action, yes
+Reasoning special ability error, yes
+
+Scenario List properties:
+No Scenario Defined Error, no
+Invalid Name, no
+Repeated Name Error, no
+Binary Operator, no
+Binary Operand Missing, no
+Reference Scenario, yes
+Undefined Referenced Scenario Error, no
+Empty scenario, no
+Has Display, no
+Invalid Display, no
+Unary Operator, no
+Multiple Unary, no
+Nesting of Expressions, no
+Combinatoric operator, no
+Combinatoric semantic error, no
+*/

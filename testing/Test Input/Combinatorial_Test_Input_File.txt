@@ -1,0 +1,184 @@
+//--simulation_results_console --input "testing/Test Input/Combinatorial_Test_Input_File.txt"
+//Odds should match Input/Drytron_2.txt, as this is basically the same just with a combinatorial used.
+decklist:
+{
+Artifact Scythe;
+Diviner of the Herald;
+Drytron Delta Altais;
+Drytron Gamma Eltanin;
+Drytron Gamma Eltanin;
+Drytron Zeta Aldhibah;
+Drytron Zeta Aldhibah;
+Drytron Zeta Aldhibah;
+Drytron Alpha Thuban;
+Drytron Alpha Thuban;
+Drytron Alpha Thuban;
+Drytron Meteonis Draconids;
+Herald of Perfection;
+Cyber Angel Benten;
+Cyber Angel Benten;
+Cyber Angel Benten;
+Cyber Angel Idaten;
+Cyber Angel Natasha;
+Magikey Mechmusket - Batobuster;
+Megalith Ophiel;
+Megalith Phul;
+Megalith Phul;
+Pre-Preparation of Rites;
+Pre-Preparation of Rites;
+Pre-Preparation of Rites;
+Dark Ruler No More;
+Dark Ruler No More;
+Dark Ruler No More;
+Cyber Emergency;
+Cyber Emergency;
+Cyber Emergency;
+Terraforming;
+Foolish Burial;
+Drytron Nova;
+Drytron Nova;
+Drytron Nova;
+Preparation of Rites; //remove to bolster side card chance
+Preparation of Rites;
+Preparation of Rites;
+Meteonis Drytron;
+Dawn of the Herald;
+Called by the Grave;
+Drytron Fafnir;
+Drytron Fafnir;
+Magikey Unlocking;
+
+//Nibiru, the Primal Being;
+//Nibiru, the Primal Being;
+//Nibiru, the Primal Being;
+//Droll & Lock Bird;
+//Droll & Lock Bird;
+//Droll & Lock Bird;
+//D.D. Crow;
+//D.D. Crow;
+//D.D. Crow;
+//Winged Dragon of Ra - Sphere Mode;
+//Winged Dragon of Ra - Sphere Mode;
+//Winged Dragon of Ra - Sphere Mode;
+//Lava Golem;
+//Lava Golem;
+//Lava Golem;
+//Set Rotation;
+Cosmic Cyclone;
+//Cosmic Cyclone;
+//Cosmic Cyclone;
+//Mystic Mine;
+//Mystic Mine;
+//Mystic Mine;
+}
+
+//estimate
+scenarios:
+{
+    Effective Drytron Fafnir = {scenario = {[Drytron Fafnir] OR [Terraforming]};display = false;}
+
+    Effective Drytron Nova = {scenario = {[Drytron Nova] OR <Effective Drytron Fafnir>};display = false;}
+
+    Effective Cyber Angel Benten = {scenario = {[Cyber Angel Benten] OR [Preparation of Rites]};display = false;}
+
+    //without Cyber Emergency for Draconids
+    Effective Ritual = {scenario = {
+                                    [Diviner of the Herald] OR [Drytron Meteonis Draconids] OR [Herald of Perfection] OR
+                                    [Cyber Angel Benten] OR [Cyber Angel Idaten] OR [Cyber Angel Natasha] OR
+                                    [Megalith Ophiel] OR [Megalith Phul] OR [Preparation of Rites] OR [Magikey Mechmusket - Batobuster]
+                                   };display = false;}
+
+    //without Cyber Emergency nor Drytron Nova
+    Effective Drytron Monster = {scenario = {[Drytron Delta Altais] OR [Drytron Alpha Thuban] OR [Drytron Gamma Eltanin] OR [Drytron Zeta Aldhibah] OR [Foolish Burial]};display = false;}
+
+    Bad Draw = {scenario = {[Magikey Unlocking] OR [Dawn of the Herald] OR [Megalith Ophiel]};}
+    
+    //Assumes Herald of Perfection is either not in hand or tributable in hand to GY.
+    Activatable Pre-Preparation of Rites = {scenario = {NOT [Dawn of the Herald] AND [Pre-Preparation of Rites]};display = false;}
+
+    //Assuming Set Rotation is activatable, otherwise there are other problems. Is also small edge case.
+    Access Mystic Mine = {scenario = {[Mystic Mine] OR [Set Rotation] OR [Terraforming]};}
+
+    Alpha + Zeta = {scenario = {
+                                COMBINATORIC {2; [Drytron Alpha Thuban]; [Drytron Zeta Aldhibah]; [Cyber Emergency]; <Effective Drytron Nova>;} OR
+                                ([Foolish Burial] AND (
+                                                       ([Drytron Zeta Aldhibah] OR [Cyber Emergency] OR <Effective Drytron Nova>) OR
+                                                       ([Drytron Alpha Thuban] AND <Effective Ritual>) //Not considering Drytron, because that would be Mu-Beta scenario.
+                                                      )
+                                )
+                               };}
+
+    //Idea is to not overlap with Alpha + Zeta scenario.
+    Mu-Beta = {scenario = {
+                           (([Drytron Alpha Thuban] OR <Effective Drytron Nova>) AND ([Drytron Delta Altais] OR [Drytron Gamma Eltanin] OR [Foolish Burial])) OR //Foolish Burial + Drytron Alpha Thuban looks iffy
+                           (([Foolish Burial] OR [Cyber Emergency]) AND ([Drytron Delta Altais] OR [Drytron Gamma Eltanin])) OR
+                           (<Effective Ritual> AND [Drytron Gamma Eltanin] AND ([Drytron Zeta Aldhibah] OR [Drytron Delta Altais] OR [Foolish Burial]))
+                          };}
+
+    Beatrice =  {scenario = {
+                             (<Effective Cyber Angel Benten> AND ([Foolish Burial] OR [Cyber Emergency] OR <Effective Drytron Nova> OR [Drytron Alpha Thuban] OR [Drytron Zeta Aldhibah])) OR
+                             ([Diviner of the Herald] AND
+                                                          ([Meteonis Drytron] OR (<Activatable Pre-Preparation of Rites> OR [Herald of Perfection]) OR [Cyber Angel Benten] OR [Cyber Angel Idaten] OR [Preparation of Rites]) AND
+                                                          ([Cyber Emergency] OR <Effective Drytron Monster> OR <Effective Drytron Nova>)
+                             ) OR
+                             (<Activatable Pre-Preparation of Rites> AND ([Cyber Angel Benten] OR [Preparation of Rites]))
+                             /* 
+                             Some other 4+ combos exist, but are not worth writing out due to being both being impractical and unlikely.
+                             -Phul, Level 6 Ritual, Meteonis, Alpha
+                             -Phul, Level 6 Ritual, Zeta, level >= 4
+                             -Phul, Level 6 Ritual, Meteonis, Drytron, level >= 4
+                             */
+                            };}
+
+   Early Perfection = {scenario = {([Cyber Angel Idaten] OR [Diviner of the Herald] OR <Effective Cyber Angel Benten>) AND (<Activatable Pre-Preparation of Rites> OR
+                                                                                                                            ([Dawn of the Herald] AND ([Herald of Perfection] OR [Preparation of Rites]))
+                                                                                                                           )
+                                  };}
+
+    Protection = {scenario = {[Called by the Grave] OR <Early Perfection>};}
+
+    Pre-BODE =  {scenario = {<Alpha + Zeta> OR <Mu-Beta> OR <Beatrice>};}
+
+    //There are some edge cases not covered, in which one can divert resources to protection due to haven already drawn other pieces.
+    Protected Pre-BODE = {scenario = {<Pre-BODE> AND (<Activatable Pre-Preparation of Rites> OR <Protection>)};}
+    
+    Side Card = {scenario = {[Dark Ruler No More] OR [Nibiru, the Primal Being] OR [Droll & Lock Bird] OR [Winged Dragon of Ra - Sphere Mode] OR [D.D. Crow] OR [Lava Golem] OR <Access Mystic Mine> OR [Cosmic Cyclone]};}
+    
+    Side Pre-BODE = {scenario = {<Pre-BODE> AND <Side Card>};}
+}
+
+/*
+Other:
+Line Comment, yes
+Block Comment, yes
+Block Comment error, no
+
+Deck List properties:
+Duplicate Card, no
+Invalid Card, no
+No Deck Error, no
+
+Special Ability properties:
+Has special ability section, yes
+Repeated special ability name, no
+Improper activation limit, no
+Unknown special ability action, no
+Reasoning special ability error, no
+
+Scenario List properties:
+No Scenario Defined Error, no
+Invalid Name, no
+Repeated Name Error, no
+Binary Operator, yes
+Binary Operand Missing, no
+Reference Scenario, yes
+Undefined Referenced Scenario Error, no
+Empty scenario, no
+Has Display, yes
+Invalid Display, no
+Unary Operator, yes
+Multiple Unary, no
+Nesting of Expressions, yes
+Combinatoric operator, yes
+Combinatoric semantic error, no
+*/
